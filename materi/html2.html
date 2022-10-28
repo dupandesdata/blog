@@ -1,51 +1,78 @@
-<p>
-  &nbsp;<span style="color: red"><i>Domain Name System</i></span> (DNS) ditemukan oleh <span style="color: red">Paul Mackapetris</span> pada tahun <span style="color: red">1983</span> sebelum
-  ditemukan DNS untuk mengakses sebuah website menggunakan file<span style="color: red"> host.txt</span> yang berisi<i> IP address </i>dan <i>nama komputer</i>, namun file ini memiliki kekurangan
-  yaitu saat IP address berubah dan file tersebut ikut berubah.
-</p>
-<p><b>Apa itu domain?</b></p>
-<p>
-  Domain adalah sebuah nama yang diakhiri dengan<span style="color: red"> .com, .net </span>atau<span style="color: red"> .co.id</span> dll yang terhubung oleh IP address nama tersebut bersifat unik
-  yang terhubung dengan satu IP address tertentu. Contoh <span style="color: red">google.com</span> saat kita menuliskan domain tersebut maka DNS server kemudian mencari IP address yang terhubung
-  dengan domain tersebut.
-</p>
-<p><b>Pengertian tentang DNS Server&nbsp;</b></p>
-<p>
-  DNS server adalah sistem database yang melayani request untuk melakukan pencarian IP address sebuah website dengan menggunakan <i>Internet Protokol </i>atau<i> Transmission Control Protokol</i
-  >&nbsp; untuk penjelasan tentang protokol <a href="https://www.dupancode.my.id/2022/07/apa-itu-internet.html" rel="nofollow" target="_blank">baca selengkapnya</a>.&nbsp;
-</p>
-<p>
-  DNS mempermudah dalam mengakses website jika sebelumnya untuk mengakses website menggunaka IP address misalnya kita ingin mengakses <span style="color: red">google.com</span> kita harus menuliskan
-  IP address <span style="color: red">74.147.224.76</span> dengan adanya DNS server kita hanya menulis nama domain nya saja (<span style="color: red">google.com</span>). Maka secara otomatis DNS
-  server kemudian mencari IP address yang dimiliki oleh domain <span style="color: red">google.com</span> kemudian dikirim ke lokalhost dan di tampilkan peta browser kita.
-</p>
-<p><b>Jenis DNS Server</b></p>
-<p>Penting untuk mengetahui jenis DNS server karena berguna untuk pemasangan domain nantinya berikut adalah beberapa jenis DNS server:</p>
-<p><b>A record</b></p>
-<p>
-  Jenis DNS ini digunakan untuk menghubungkan hoetname ke<span style="color: red"> IP address 32bit</span>, IP address ini biasa disebut dengan istilah <span style="color: red">IPv4</span> contoh
-  sederhana penggunaan A record: nama domain<span style="color: red"> google.com</span> terhubung dengan IP address <span style="color: red">74.147.224.76</span> maka ketika kita menuliskan domain
-  tersebut DNS server akan menghubungkan dengan IP address tersebut.
-</p>
-<p><b>AAAA record</b></p>
-<p>Jenis DNS ini digunakan untuk menghubungkan hoetname ke<span style="color: red"> IP address 128bit </span>atau biasa disebut dengan istilah<span style="color: red"> IPv6</span>.</p>
-<p><b>CNAME record</b></p>
-<p>Jenis DNS ini digunakan untuk:</p>
-<p></p>
-<ul style="text-align: left">
-  <li>Memmbuat nama alias domain atau subdomain.</li>
-  <li>Mengarahkan domain ke hosting yang sama.</li>
-  <li>Menghapus nama subdomain misalnya <span style="color: red">dupancode.blogspot.com </span>menjadi <span style="color: red">dupancode.my.id</span></li>
-</ul>
-<p></p>
-<p><span style="background-color: white; color: #333333">Refrensi artikel terkait:</span></p>
-<p>
-  <span style="color: #333333"
-    ><span style="background-color: white"><a href="https://www.ketutrare.com/2013/05/sejarah-pengertian-keunggulan-dan.html?m=1" rel="nofollow" target="_blank">Referensi 1</a></span></span
-  >
-</p>
-<p>
-  <span style="color: #333333"
-    ><span style="background-color: white"><a href="https://www.jetorbit.com/panduan/mengenal-dan-mengetahui-jenis-jenis-dns-record/" rel="nofollow" target="_blank">Referensi 2</a></span></span
-  >
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Domain dan DNS Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="containerTop"></div>
+    <div class="materi">
+      <div class="menu-post" id="menuHtml">
+        <p id="html0"></p>
+      </div>
+      <div class="data-post">
+        <h2>Domain dan DNS Server</h2>
+        <p>
+          &nbsp;<span style="color: red"><i>Domain Name System</i></span> (DNS) ditemukan oleh <span style="color: red">Paul Mackapetris</span> pada tahun <span style="color: red">1983</span> sebelum
+          ditemukan DNS untuk mengakses sebuah website menggunakan file<span style="color: red"> host.txt</span> yang berisi<i> IP address </i>dan <i>nama komputer</i>, namun file ini memiliki
+          kekurangan yaitu saat IP address berubah dan file tersebut ikut berubah.
+        </p>
+        <p><b>Apa itu domain?</b></p>
+        <p>
+          Domain adalah sebuah nama yang diakhiri dengan<span style="color: red"> .com, .net </span>atau<span style="color: red"> .co.id</span> dll yang terhubung oleh IP address nama tersebut
+          bersifat unik yang terhubung dengan satu IP address tertentu. Contoh <span style="color: red">google.com</span> saat kita menuliskan domain tersebut maka DNS server kemudian mencari IP
+          address yang terhubung dengan domain tersebut.
+        </p>
+        <p><b>Pengertian tentang DNS Server&nbsp;</b></p>
+        <p>
+          DNS server adalah sistem database yang melayani request untuk melakukan pencarian IP address sebuah website dengan menggunakan <i>Internet Protokol </i>atau<i>
+            Transmission Control Protokol</i
+          >&nbsp; untuk penjelasan tentang protokol <a href="https://dupandesdata.github.io/blog/materi/html1.html" rel="nofollow" target="_blank">baca selengkapnya</a>.&nbsp;
+        </p>
+        <p>
+          DNS mempermudah dalam mengakses website jika sebelumnya untuk mengakses website menggunaka IP address misalnya kita ingin mengakses <span style="color: red">google.com</span> kita harus
+          menuliskan IP address <span style="color: red">74.147.224.76</span> dengan adanya DNS server kita hanya menulis nama domain nya saja (<span style="color: red">google.com</span>). Maka secara
+          otomatis DNS server kemudian mencari IP address yang dimiliki oleh domain <span style="color: red">google.com</span> kemudian dikirim ke lokalhost dan di tampilkan peta browser kita.
+        </p>
+        <p><b>Jenis DNS Server</b></p>
+        <p>Penting untuk mengetahui jenis DNS server karena berguna untuk pemasangan domain nantinya berikut adalah beberapa jenis DNS server:</p>
+        <p><b>A record</b></p>
+        <p>
+          Jenis DNS ini digunakan untuk menghubungkan hoetname ke<span style="color: red"> IP address 32bit</span>, IP address ini biasa disebut dengan istilah
+          <span style="color: red">IPv4</span> contoh sederhana penggunaan A record: nama domain<span style="color: red"> google.com</span> terhubung dengan IP address
+          <span style="color: red">74.147.224.76</span> maka ketika kita menuliskan domain tersebut DNS server akan menghubungkan dengan IP address tersebut.
+        </p>
+        <p><b>AAAA record</b></p>
+        <p>Jenis DNS ini digunakan untuk menghubungkan hoetname ke<span style="color: red"> IP address 128bit </span>atau biasa disebut dengan istilah<span style="color: red"> IPv6</span>.</p>
+        <p><b>CNAME record</b></p>
+        <p>Jenis DNS ini digunakan untuk:</p>
+        <p></p>
+        <ul style="text-align: left">
+          <li>Memmbuat nama alias domain atau subdomain.</li>
+          <li>Mengarahkan domain ke hosting yang sama.</li>
+          <li>Menghapus nama subdomain misalnya <span style="color: red">dupancode.blogspot.com </span>menjadi <span style="color: red">dupancode.my.id</span></li>
+        </ul>
+        <p></p>
+        <p><span style="background-color: white; color: #333333">Refrensi artikel terkait:</span></p>
+        <p>
+          <span style="color: #333333"
+            ><span style="background-color: white"><a href="https://www.ketutrare.com/2013/05/sejarah-pengertian-keunggulan-dan.html?m=1" rel="nofollow" target="_blank">Referensi 1</a></span></span
+          >
+        </p>
+        <p>
+          <span style="color: #333333"
+            ><span style="background-color: white"
+              ><a href="https://www.jetorbit.com/panduan/mengenal-dan-mengetahui-jenis-jenis-dns-record/" rel="nofollow" target="_blank">Referensi 2</a></span
+            ></span
+          >
+        </p>
+      </div>
+    </div>
+    <div class="containerBottom"></div>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
