@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dupan Code | Pengertian Selector Dasar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+  <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="containerTop"></div>
+  <div class="materi">
+    <div class="menu-post" id="menuHtml">
+      <p id="html0"></p>
+    </div>
+    <div class="data-post">
+      <h2>Pengertian Selector Dasar</h2>
+      <p>Selector pada CSS digunakan untuk menampung property dan value styling agar dapat dipanggil pada atribut html.</p>
+<h3>Selector All</h3>
+<p>Selector ini digunakan untuk memberi styling pada semua element html biasa digunakan untuk me-reset semua element.</p>
+<blockquote>
+  <p>Syntax selector</p>
+  <p>* {&nbsp;&nbsp;</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax CSS&nbsp;</p>
+  <p>* {</p>
+  <p>&nbsp; &nbsp; margin: 0;</p>
+  <p>&nbsp; &nbsp; padding: 0;</p>
+  <p>}</p>
+</blockquote>
+<p>Penjelasan:</p>
+<p>Kode CSS diatas berfungsi untuk me-reset margin dan padding untuk semua element html, ini berguna supaya kita memiliki kontrol penuh terhadap tag-tag HTML.</p>
+<h3>Class Selector</h3>
+<p>Class Selector digunakan sebagai penampung style tertent, class selector harus diawali dengan tanda <i>(titik)</i> di <u>depan nama selector</u>.</p>
+<blockquote>
+  <p>Syntax selector</p>
+  <p>.namaclass {&nbsp;</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax CSS&nbsp;</p>
+  <p>.myName {</p>
+  <p>&nbsp; &nbsp; color: blue;</p>
+  <p>}</p>
+</blockquote>
+<p>Penjelasan:</p>
+<p>Nama class tidak boleh menggunakan spasi hanya boleh menggunakan tanda hubung - contoh:</p>
+<blockquote>
+  <p>Syntax CSS&nbsp;</p>
+  <p>.my-name {</p>
+  <p>&nbsp; &nbsp; &nbsp;color: yellow;</p>
+  <p>}</p>
+</blockquote>
+<p>Untuk menggunakan class tersebut harus dilakukan pemanggilan dengan atribut <span style="color: red;">class="&nbsp; "</span></p>
+<blockquote>
+  <p>Syntax HTML&nbsp;</p>
+  <p>&lt;p class="myName"&gt;Dupandes&lt;/p&gt;</p>
+  <p>&lt;p class="my-name"&gt;Milenium&lt;/p&gt;</p>
+</blockquote>
+<blockquote>
+  <p>Output&nbsp;</p>
+  <p><span style="color: #2b00fe;">Dupandes</span></p>
+  <p><span style="color: #fcff01;">Milenium</span></p>
+</blockquote>
+<p>
+  Walaupun memiliki nama selector yang sama tapi memiliki styling yang berbeda, kenapa bisa begitu? Karena nama class selector yang pertama tidak diberi tanda hubung (myName) dan nama class selector
+  yang kedua diberi tanda hubung (my-name). Sesungguhnya kedua class tersebut adalah class yang berbeda walaupun memiliki kemiripan nama.
+</p>
+<p>Class tersebut bisa kita gunakan lebih dari satu tag.</p>
+<blockquote>
+  <p>Syntax HTML&nbsp;</p>
+  <p>&lt;p class="myName"&gt;Dupandes&lt;/p&gt;</p>
+  <p>&lt;p class="my-name"&gt;Milenium&lt;/p&gt;</p>
+  <p>&lt;p class="myName"&gt;Dani&lt;/p&gt;</p>
+  <p>&lt;p class="my-name"&gt;Arifin&lt;/p&gt;</p>
+</blockquote>
+<h3>ID Selector</h3>
+<p>Sama seperti class selector cuma dalam penulisan id selector menggunakan tanda #&nbsp;</p>
+<blockquote>
+  <p>Syntax Selector</p>
+  <p>#namaid {&nbsp;</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax CSS&nbsp;</p>
+  <p>#prof {</p>
+  <p>&nbsp; &nbsp; &nbsp;color: green;</p>
+  <p>}</p>
+</blockquote>
+<p>Untuk memanggil id selector tersebut dengan menggunakan atribut id=" " pada tag html yang dituju:</p>
+<blockquote>
+  <p>Syntax Selector</p>
+  <p>&lt;p id="prof"&gt;Dupandes&lt;/p&gt;</p></blockquote>
+<blockquote>
+  <p>Output</p>
+  <p><span style="color: #6aa84f;">Dupandes</span></p>
+</blockquote>
+<p>Penjelasan:</p>
+<p>Jika menggunakan id selector hanya bisa di panggil oleh satu tag saja karena bersifat unik yang hanya 1 didalam dokumen html.</p>
+<p>Disarankan jika menggunakan id selector nama id menggunakan dua kata maka kata kedua diawali dengan kapital #myProf karena nanti nya terhubung dengan javascript.</p>
+<h3>Tag Selector</h3>
+<p>Selector jenis ini digunakan untuk memberi styling pada tag tertentu:</p>
+<blockquote>
+  <p>Syntax selector:</p>
+  <p>tag {&nbsp;</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax CSS&nbsp;</p>
+  <p>p {</p>
+  <p>&nbsp; &nbsp; color: green;</p>
+  <p>}</p>
+</blockquote>
+<p>Penjelasan:</p>
+<p>Jika menggunakan element selector maka semua element yang menggunakan tag tersebut akan terkena style.</p>
+<blockquote>
+  <p>Syntax HTML&nbsp;</p>
+  <p>&lt;p&gt;paragraf 1&lt;/p&gt;</p>
+  <p>&lt;p&gt;paragraf 2&lt;/p&gt;</p>
+  <p>&lt;p&gt;paragraf 3&lt;/p&gt;</p>
+  <p>&lt;p&gt;paragraf 4&lt;/p&gt;</p>
+</blockquote>
+<blockquote>
+  <p>Output&nbsp;</p>
+  <p><span style="color: #6aa84f;">paragraf 1</span></p>
+  <p><span style="color: #6aa84f;">paragraf 2</span></p>
+  <p><span style="color: #6aa84f;">paragraf 3</span></p>
+  <p><span style="color: #6aa84f;">paragraf 4</span></p>
+</blockquote>
+<h3>Tag .Class Selector</h3>
+<p>Selector jenis ini digunakan memberikan styling pada anak dari tag html tersebut.</p>
+<blockquote>
+  <p>Syntax Selector&nbsp;</p>
+  <p>tag .namaClass {</p>
+  <p>}</p>
+</blockquote>
+<p>Contoh saya mempunyai dokumen html seperti ini:</p>
+<blockquote>
+  <p>Syntax HTML&nbsp;</p>
+  <p>&lt;section&gt;</p>
+  <p>&nbsp; &lt;p class="Judul"&gt;Kurikulum Pendidikan&lt;/p&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+  <p>&lt;/section&gt;</p>
+  <p>&lt;div&gt;</p>
+  <p>&nbsp; &lt;p class="Judul"&gt;Kurikulum Pendidikan&lt;/p&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+  <p>&lt;/div&gt;</p>
+</blockquote>
+<p>Saya ingin memberikan warna red pada class . judul tapi yang hanya berada didalam tag <span style="color: red;">&lt;section&gt;</span> saja.</p>
+<blockquote>
+  <p>Syntax CSS</p>
+  <p>section .Judul {</p>
+  <p>&nbsp; &nbsp; &nbsp; color: red;</p>
+  <p>&nbsp; &nbsp; }</p>
+</blockquote>
+<blockquote>
+  <p>Output .judul&nbsp; &gt; section&nbsp;</p>
+  <p><span style="color: red;">Kurikulum Pendidikan</span></p>
+  <p>Paragraf 2</p>
+</blockquote>
+<blockquote>
+  <p>Output .judul&nbsp; &gt; div</p>
+  <p>Kurikulum Pendidikan</p>
+  <p>Paragraf 2</p>
+</blockquote>
+<p>Penjelasan:</p>
+<p>
+  Syntax CSS diatas berfungsi untuk memberikan styling pada element yang memiliki class . judul yang berada didalam tag <u><span style="color: red;">&lt;section&gt;</span></u>, styling tersebut hanya berfungsi jika element class .judul diantara tag <u><span style="color: red;">&lt;section&gt;</span></u> dan <u><span style="color: red;">&lt;/section&gt;</span></u> walaupun
+  memiliki class yang sama jika tidak dibungkus dengan tag <span style="color: red;">&lt;section&gt;</span> maka styling tersebut tidak dapat digunakan.
+</p>
+<h3>(Parent) Tag</h3>
+<p>Select jenis ini digunakan untuk memilih semua tag yang didalam tag parent tersebut.</p>
+<blockquote>
+  <p>Syntax Selector</p>
+  <p>tag (parent) tag {</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax CSS&nbsp;</p>
+  <p>section p {</p>
+  <p>&nbsp; color: red;</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax HTML&nbsp;</p>
+  <p>&lt;section&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+  <p>&lt;/section&gt;</p>
+  <p>&lt;div&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+  <p>&lt;/div&gt;</p>
+</blockquote>
+<p>Penjelasan:</p>
+<p>
+  Selector jenis ini digunakan untuk memberi styling pada semua tag <span style="color: red;">&lt;p&gt;</span>&nbsp;yang berada didalam tag parent&nbsp;<u><span style="color: red;">&lt;section&gt;</span></u>, styling tersebut hanya berfungsi jika <span style="color: red;">&lt;p&gt;</span> diantara tag&nbsp;<u><span style="color: red;">&lt;section&gt;</span></u>&nbsp;dan&nbsp;<u><span style="color: red;">&lt;/section&gt;</span></u>&nbsp;walaupun memiliki tag yang sama jika tidak dibungkus dengan tag&nbsp;<span style="color: red;">&lt;section&gt;</span>&nbsp;maka styling tersebut tidak dapat digunakan.
+</p>
+<blockquote>
+  <p>Output &lt;p&gt; parent (&lt;section&gt;)</p>
+  <p><span style="color: red;">Paragraf 1</span></p>
+  <p><span style="color: red;">Paragraf 2</span></p>
+</blockquote>
+<blockquote>
+  <p>Output &lt;p&gt; parent (&lt;div&gt;)</p>
+  <p>Paragraf 1</p>
+  <p>Paragraf 2</p>
+</blockquote>
+<h3>Tag &gt; Tag</h3>
+<p>Selector jenis ini digunakan untuk memberi styling element yang didalam tag parent.</p>
+<blockquote>
+  <p>Syntax Selector</p>
+  <p>tag (parent) &gt; tag {</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax CSS</p>
+  <p>section &gt; p {</p>
+  <p>&nbsp; color: green;</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax HTML</p>
+  <p>&lt;section&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+  <p>&nbsp; &lt;div&gt;</p>
+  <p>&nbsp; &nbsp; &lt;p&gt;Paragraf 3&lt;/p&gt;</p>
+  <p>&nbsp; &nbsp; &lt;p&gt;Paragraf 4&lt;/p&gt;</p>
+  <p>&nbsp; &lt;/div&gt;</p>
+  <p>&lt;/section&gt;</p>
+</blockquote>
+<p>Penjelasan:</p>
+<p>
+  Walaupun memiliki tag yang sama namun jika menggunakan selector ini yang mendapatkan styling adalah tag &lt;p&gt; yang memiliki <u><span style="color: red;">parent &lt;section&gt;</span></u>. Dalam studi kasus ini element yang memiliki parent &lt;section&gt; adalah paragraf 1 dan paragraf 2, paragraf 3 dan paragraf 4 memiliki <u><span style="color: red;">parent &lt;div&gt;</span></u>
+</p>
+<blockquote>
+  <p>Output &lt;p&gt; parent (&lt;section&gt;)</p>
+  <p><span style="color: #6aa84f;">Paragraf 1</span></p>
+  <p><span style="color: #6aa84f;">Paragraf 2</span></p>
+</blockquote>
+<blockquote>
+  <p>Output &lt;p&gt; parent (&lt;div&gt;)</p>
+  <p>Paragraf 3</p>
+  <p>Paragraf 4</p>
+</blockquote>
+<h3>:first-child</h3>
+<p>Selector jenis ini digunakan untuk memberi styling pada element anak pertama dari element parent.</p>
+<blockquote>
+  <p>Syntax Selector</p>
+  <p>tag (parent) tag:first-child {</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax CSS</p>
+  <p>section p:first-child {</p>
+  <p>&nbsp; color: green;</p>
+  <p>}</p>
+</blockquote>
+<blockquote>
+  <p>Syntax HTML&nbsp;</p>
+  <p>&lt;section&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
+  <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+  <p>&lt;/section&gt;</p>
+</blockquote>
+<h3>:nth-child(n)</h3>
+<p>Selector jenis ini digunakan untuk memilih anak dari parent tertentu.</p>
+<blockquote>
+  <p>Syntax Selector&nbsp;</p>
+ <p> tag (parent) tag:nth-child(n) {</p>
+  <p>}</p>
+</blockquote>
+  <blockquote>
+    <p>Syntax CSS</p>
+    <p>section p:nth-child(3) {</p>
+    <p>&nbsp; color: green;</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax HTML&nbsp;</p>
+    <p>&lt;section&gt;</p>
+    <p>&nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
+    <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+    <p>&nbsp; &lt;p&gt;Paragraf 3&lt;/p&gt;</p>
+    <p>&nbsp; &lt;p&gt;Paragraf 4&lt;/p&gt;</p>
+    <p>&lt;/section&gt;</p>
+  </blockquote>
+  <p>Penjelasan:</p>
+  <p>
+    <span style="color: red;">(n)</span> diisi dengan <u><span style="color: red;">nomor anak dari parent</span></u> pada studi kasus ini saya menuliskan <i>:nth-child(3)</i> yang artinya saya
+    memberikan styling pada&lt;p&gt; yang anak ketiga dari element <span style="color: red;">&lt;section&gt;</span>
+  </p>
+  <blockquote>
+    <p>Output</p>
+    <p>Paragraf 1</p>
+    <p>Paragraf 2</p>
+    <p><span style="color: #6aa84f;">Paragraf 3</span></p>
+    <p>Paragraf 4</p>
+  </blockquote>
+  <h3>:last-child</h3>
+  <p>Selector jenis ini digunakan untuk memberi styling pada anak terakhir dari parent.</p>
+  <blockquote>
+    <p>Syntax Selector</p>
+    <p>tag (parent) tag:last-child {</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax CSS&nbsp;</p>
+    <p>section p:first-child {</p>
+    <p>&nbsp; color: green;</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax HTML</p>
+    <p>&lt;section&gt;</p>
+    <p>&nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
+    <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+    <p>&nbsp; &lt;p&gt;Paragraf 3&lt;/p&gt;</p>
+    <p>&nbsp;<span style="color: #6aa84f;"> &lt;p&gt;Paragraf 4&lt;/p&gt;</span></p>
+    <p>&lt;/section&gt;</p>
+  </blockquote>
+  <h3>:active</h3>
+  <p>Selector ini digunakan untuk memberi styling pada element saat diklik terjadi perubahan styling.</p>
+  <blockquote>
+    <p>Syntax Selector</p>
+    <p>tag:active {</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax CSS</p>
+    <p>a:active {</p>
+    <p>&nbsp; color: green;</p>
+    <p>&nbsp; background: yellow;</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax HTML</p>
+    <p>&lt;a href=""&gt;Klik Aja&lt;/a&gt;</p>
+  </blockquote>
+  <p>Penjelasan:</p>
+  <p>Element akan berubah styling saat kita melakukan sentuhan pada element tersebut, :active bisa digunakan untuk semua jenis element, coba klik hasil output:</p>
+
+  <style>
+  .ak:active {
+  color: green;
+  cursor: pointer;
+  background: yellow;
+  }
+  .ak:hover {
+  cursor: pointer;
+  }
+</style>
+  <blockquote>
+    <p>Output</p>
+    <span class="ak">Klik Aja</span>
+  </blockquote>
+  <h3>:hover</h3>
+  <p>Selector jenis ini digunakan untuk memberi styling pada element tertentu.</p>
+  <blockquote>
+    <p>Syntax Selector</p>
+    <p>tag:hover {</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax CSS&nbsp;</p>
+    <p>a:hover {</p>
+    <p>&nbsp; color: green;</p>
+    <p>&nbsp; background: yellow;</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax HTML</p>
+    <p>&lt;a href=""&gt;Arahkan kursor ke sini&lt;/a&gt;</p>
+  </blockquote>
+  <p>Penjelasan:</p>
+  <p>
+    Element akan berubah styling saat kita<span style="background-color: white;">
+      <u><span style="color: red;">mengarahkan kursor</span></u></span>
+    pada element tersebut, :hover bisa digunakan untuk semua jenis element, coba arahkan kursor ke hasil output:
+  </p>
+  <style>
+  .ho:hover {
+  color: green;
+  cursor: pointer;
+  cursor: pointer;
+  background: yellow;
+  }
+</style>
+  <blockquote>
+    <p>Output&nbsp;</p>
+    <p class="ho">Arahkan kursor ke sini</p>
+  </blockquote>
+  <h3>input:checked</h3>
+  <p>Selector jenis ini digunakan untuk memberi styling pada element yang terhubung dengan checkbox.</p>
+  <blockquote>
+    <p>Syntax Selector</p>
+    <p>input:checked {</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax CSS&nbsp;</p>
+    <p>input:checked {</p>
+    <p>&nbsp; height: 50px;</p>
+    <p>&nbsp; width: 50px;</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax HTML&nbsp;</p>
+    <p>&lt;form action=""&gt;</p>
+    <p>&nbsp; &lt;input type="radio" value="Pria" name="gender"&gt; Pria&lt;br/&gt;</p>
+    <p>&nbsp; &lt;input type="radio" value="wanita" name="gender"&gt; Wanita&lt;br/&gt;</p>
+    <p>&nbsp; &lt;input type="checkbox" value="sepeda"&gt; saya punya sepeda&lt;br/&gt;</p>
+    <p>&nbsp; &lt;input type="checkbox" value="mobil"&gt; saya punya mobil&lt;br/&gt;</p>
+    <p>&lt;/form&gt;</p>
+  </blockquote>
+  <style>
+  .coba input:checked {
+  height: 50px;
+  width: 50px;
+}
+</style>
+  
+  <p>Penjelasan:</p>
+  <p>Styling akan berfungsi jika kita mengeklik checkbox.</p>
+  <blockquote><p>Output&nbsp;</p>
+  <p>
+  <form class="coba" action="">
+  <input type="radio" value="Pria" name="gender"/> Pria<br/>
+  <input type="radio" value="wanita" name="gender"/> Wanita<br/>
+  <input type="checkbox" value="sepeda"/> saya punya sepeda<br/>
+  <input type="checkbox" value="mobil"/> saya punya mobil<br/>
+</form>
+  </p></blockquote>
+  <p>Grouping Selector&nbsp;</p>
+  <p>Selector jenis ini digunakan untuk memberi styling pada lebih dari satu element dengan styling yang sama.</p>
+  <blockquote>
+    <p>Syntax Selector</p>
+    <p>tag, tag , tag {</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax CSS</p>
+    <p>p, div, a {</p>
+    <p>&nbsp; color: green;</p>
+    <p>}</p>
+  </blockquote>
+  <blockquote>
+    <p>Syntax HTML</p>
+    <p>&lt;div&gt;ini element&lt;/div&gt;</p>
+    <p>&lt;p&gt;ini paragraf&lt;/p&gt;</p>
+    <p>&lt;a href=""&gt;ini link&lt;/a&gt;</p>
+  </blockquote>
+  <p>Penjelasan:</p>
+  <p>Kita juga dapat memberikan <u>style multiple selector</u> dengan menggunakan tanda <i>(koma)</i> , di akhir selector tersebut.</p>
+  <blockquote>
+  <p>Output</p>
+  <p style="color: green;">ini element</p>
+  <p style="color: green;">ini paragraf</p>
+  <p style="color: green;">ini link</p>
+  </blockquote>
+  <p>Contoh styling multiple</p>
+
+  <blockquote>
+    <p>Syntax CSS</p>
+    <p>p, .link, section .judul, div p:first-child, section p: nth-child(4) {</p>
+    <p>}</p>
+  </blockquote>
+
+
+    </div>
+  </div>
+  <div class="containerBottom"></div>
+  <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+  <script src="https://dupandesdata.github.io/database/post.js"></script>
+</body>
+
+</html>
