@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | JavaScript Type Number</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="containerTop"></div>
+    <div class="materi">
+      <div class="menu-post">
+        <p id="0"></p>
+      </div>
+      <div class="data-post">
+        <h2>JavaScript Type Number</h2>
+        <p>
+          Angka pada javascript tidak ada bilangan integer atau bilangan bulat yang ada hanya <u><span style="color: red">floating point</span></u> atau angka pecahan. Angka di dalam Javascript
+          terdiri dari <u><span style="color: red">64bit / 2⁶⁴ / 18x10¹⁸ / 18x1milyar milyar</span></u
+          >, angka pada JavaScript memiliki standar internasional berikut ini beberapa standar internasional :&nbsp;
+        </p>
+        <ul>
+          <li>
+            <span style="color: red">IEEE 754-1985</span> (<i>Binary Floating-Point Arithmetic</i>) standar yang diterbitkan pada tahun <span style="color: red"><u>1985</u></span
+            >. Standar ini hanya mencakup aritmatika titik-mengambang biner.
+          </li>
+          <li>
+            <span style="color: red">IEEE 754-2008</span> (<i>Floating-Point Radix-Independen</i>) diterbitkan pada <span style="color: red"><u>Agustus 2008</u></span
+            >, standar tersebut mengacu pada standar <span style="color: red">IEEE 754-1985 </span>asli.
+          </li>
+          <li>
+            <span style="color: red">IEEE 754-2019</span>, diterbitkan pada <span style="color: red"><u>Juli 2019</u></span
+            >. Standar ini adalah revisi kecil dari dan mengantikan IEEE 754-2008, IEEE 754-2019 ini mencakup klarifikasi seperti <u><span style="color: red">totalOrder</span></u
+            >, perbaikan seperti <u><span style="color: red">minNum</span></u> dan penambahan operasi baru hasil rekomendasi seperti <u><span style="color: red">augmentedAddition</span></u
+            >.&nbsp;
+          </li>
+        </ul>
+        <p>
+          Untuk saat standar angka yang digunakan oleh JavaScript mengikuti <u>standar <span style="color: red">IEEE 754-2019</span></u> dan akan diperbarui pada projects 2028.&nbsp; Sumber
+          <a href="https://en.m.wikipedia.org/wiki/IEEE_754">Wikipedia</a>.
+        </p>
+        <h3>Bilangan Integer&nbsp;</h3>
+        <blockquote>
+          <p>Syntax JavaScript&nbsp;</p>
+          <p>10, 2500 dan 123456</p>
+        </blockquote>
+        <p>
+          Loh kan tadi katanya javascript tidak ada bilangan integer? Ia betul tapi jika kita menemukan bilangan integer pada javascript akan diproses secara pecahan tapi hanya akurat sampai
+          <u><span style="color: red">15 digit</span></u
+          >.
+        </p>
+        <p>Studi kasus :</p>
+        <p>Kita tuliskan angka lalu enter javascript akan mengembalikan nilai tersebut.</p>
+        <blockquote>
+          <p>Console</p>
+          <p>&gt; 20</p>
+          <p>&lt; 20</p>
+          <p>&gt; 2500</p>
+          <p>&lt; 2500</p>
+          <p>&gt; 123456</p>
+          <p>&lt; 123456</p>
+          <p>&gt; 999999999999999</p>
+          <p>&lt; 999999999999999</p>
+        </blockquote>
+        <p>Penjelasan:</p>
+        <ul>
+          <li>20 lalu enter hasilnya 20</li>
+          <li>2500 lalu enter hasilnya 2500</li>
+          <li>123456 lalu enter hasilnya 123456</li>
+          <li>999999999999999 lalu enter hasilnya sama saja</li>
+          <li>&nbsp;jika kita menuliskan angka 9 sebanyak 16 digit apa yang terjadi?&nbsp;</li>
+        </ul>
+        <blockquote>
+          <p>Console</p>
+          <p>&gt; 9999999999999999</p>
+          <p>&lt; 1000000000000000</p>
+        </blockquote>
+        <p>Penjelasan:</p>
+        <p>
+          Jika kita kirimkan 16 digit keatas maka JavaScript akan memproses secara pecahan dan angka tersebut akan dibulatkan untuk menjadi angka yang berbeda bisa keatas atau kebawah. Jika kita ingin
+          membuat 16 digit keatas maka disarankan untuk menggunakan bilangan BigInt.&nbsp;
+        </p>
+        <h3>Bilangan Biglnt&nbsp;</h3>
+        <p>
+          Apa itu BigInt? Biglnt adalah sebuah bilangan bulat dengan presisi arbitrer. Dengan menggunakan bilangan biglnt kita dapat meyimpan angka 16 digit keatas agar tidak dapat dibulatkan seperti
+          studi kasus di atas, lalu bagaimana cara penulisan nya? Untuk membuat bilangan biglnt kita hanya menuliskan n diakhiri angka contoh :
+        </p>
+        <p>12345678901234569n // 17 digit&nbsp;</p>
+        <p>hasilnya tidak akan dibulatkan.&nbsp;</p>
+        <blockquote>
+          <p>Console</p>
+          <p>&gt; 12345678901234569n</p>
+          <p>&lt; 12345678901234569n</p>
+        </blockquote>
+        <p>Kita juga dapat menyimpan angka desimal tetapi koma diganti dengan titik, <span style="color: red">hati-hati</span> saat menulis!.</p>
+
+        <blockquote>
+          <p>Syntax JavaScript&nbsp;</p>
+          <p>0.3&nbsp;</p>
+          <p>4.15</p>
+          <p>200.123456789&nbsp;</p>
+        </blockquote>
+
+        <p>Kita hanya bisa menulis 17 digit dibelakang titik&nbsp;<span style="color: red">hati-hati</span> saat menjumlahkan bilangan pecahan.</p>
+
+        <blockquote>
+          <p>Console</p>
+          <p>&gt; 0.3 + 0.7</p>
+          <p>&lt; 1</p>
+          <p>&gt; 0.1 + 0.2</p>
+          <p>&lt; 0.30000000000004</p>
+        </blockquote>
+        <p>Penjelasan:</p>
+        <p>
+          0.3 + 0.7 = 1 tidak ada yang aneh, namun jika kita menjumlahkan 0.1 + 0.2 = 0.30000000000004 mengapa ini terjadi? Karena sebenarnya JavaScript menjumlahkan secara pecahan dan ada pecahan
+          yang cukup kecil jadi hasilnya tidak bulat.
+        </p>
+        <p>Maka <span>hati-hati</span> saat menjumlahkan bilangan pecahan karena hasilnya tidak seperti yang kita inginkan.&nbsp;</p>
+        <h3 style="text-align: left">Bilangan Eksponen</h3>
+        <p>Kita juga dapat menyimpan bilangan yang sangat besar dan sangat kecil dengan eksponen.</p>
+
+        <blockquote>
+          <p>Console&nbsp;</p>
+          <p>&gt; 123e5&nbsp;</p>
+          <p>&lt; 12300000</p>
+          <p>&gt; 123e-5&nbsp;</p>
+          <p>&lt; 0.00123&nbsp;</p>
+        </blockquote>
+        <p>Kita juga dapat menyimpan angka minus seperti -10 dan -0.4 JavaScript akan mengirimkan kembali nilai tersebut.&nbsp;</p>
+
+        <blockquote>
+          <p>Console&nbsp;</p>
+          <p>&gt; -10</p>
+          <p>&lt; -10</p>
+          <p>&gt; -0.4</p>
+          <p>&lt; 0.4</p>
+        </blockquote>
+        <p>Jadi kesimpulannya didalam 64bit tadi tidak dapat digunakan untuk membuat bilangan bulat (positif) saja tetapi banyak yang bisa kita gunakan, berikut adalah urutan penggunaan bit :</p>
+        <div class="separator" style="clear: both; text-align: center">
+          <img
+            border="0"
+            data-original-height="1080"
+            data-original-width="2408"
+            height="144"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibjx-7pXhBImv2iTXTpabO67PND3TiXfDwL70tz9LQJwNZdV0cn2C5ZlxL6pTtr3ORlCLZ-rfdL4jHrNFFqKBs6P_Qt9q9H8esK8Tm5Mv53_4gGOGz_u1nJaIkYtRsf-atZM2StixO7YeSiZ8VtiW721iIWxiAu1F7nPdUdMpfc75vwMeE3Ff2avi7/s320/Screenshot_20220923-163451_Video%20Player.jpg"
+            width="320"
+          />
+        </div>
+        <p>64bit itu terbagi menjadi tiga bagian seperti gambar di atas.</p>
+        <ul>
+          <li>1bit untuk Sign bit bilangan negatif (minus)</li>
+          <li>11bit untuk Exponent bilangan positif (bulat)</li>
+          <li>53bit untuk Significand precision disimpan secara eksplisit untuk bilangan sebenarnya termasuk pecahan</li>
+        </ul>
+        <p><span style="color: red">Hati-hati</span>&nbsp;jika kita menuliskan angka pada javascript jangan awali dengan 0 memang kenapa? Contoh kita cari tahu</p>
+        <blockquote>
+          <p>Console</p>
+          <p>&gt; 022</p>
+          <p>&lt; 18</p>
+        </blockquote>
+        <p>
+          Kenapa kok jadi 18? Karena bilangan yang diawali dengan <span style="color: red">0</span> dianggap sebagai bilangan oktal, bilangan yang berbasis <span style="color: red">8</span>. Apa itu
+          pengertian dari bilangan oktal? Bilangan hasil pengelompokan dari 3bit bilangan biner yang diurutkan dari belakang.
+        </p>
+        <p>
+          <span>Hati-hati</span> saat menuliskan angka pada javascript dengan diawali oleh <span style="color: red">0x</span>&nbsp;javascript akan mengembalikan nilai tersebut dalam bentuk bilangan
+          <u><span style="color: red">hexadesimal</span></u
+          >. Apa itu bilang hexadesimal? Bilangan yang berbasis <span style="color: red"><u>16</u></span> yaitu <span style="color: red">123456789ABCDEF</span>.
+        </p>
+        <p>JavaScript juga memiliki angka spesial yaitu:</p>
+        <ul>
+          <li>Infinity</li>
+          <li>-Infinity&nbsp;</li>
+          <li>NaN (Not a Number)</li>
+        </ul>
+        <p>Infinity adalah angka spesial dengan properti khusus yang disebut Infinity positif dan Infinity negatif.</p>
+        <blockquote>
+          <p>Positif Infinity</p>
+          <p>&gt; 10 / 0</p>
+          <p>&lt; Infinity</p>
+        </blockquote>
+        <p>Penjelasan:</p>
+        <p>Nilai positif apa pun yang dibagi dengan 0 maka hasilnya adalah positif Infinity.</p>
+        <blockquote>
+          <p>Negatif Infinity&nbsp;</p>
+          <p>&gt; -2 / 0</p>
+          <p>&lt; -Infinity</p>
+        </blockquote>
+
+        <p>Penjelasan:</p>
+        <p>Nilai negatif apa pun yang dibagi dengan 0 maka hasilnya adalah negatif Infinity.</p>
+        <p><span>Hati-hati</span> jika mengurang, mengali &amp; membagi sebuah bilangan dengan string! Hasilnya NaN (Not a Number).</p>
+
+        <blockquote>
+          <p>Console</p>
+          <p>&gt; 10 - "jeruk"</p>
+          <p>&lt; NaN</p>
+          <p>&gt; 10 * "jeruk"</p>
+          <p>&lt; NaN</p>
+          <p>&gt; 10 / "jeruk"</p>
+          <p>&lt; NaN</p>
+          <p>&gt; 0 / 0</p>
+          <p>&lt; NaN</p>
+        </blockquote>
+        <p>
+          Hati-hati jika mengurang, mengali &amp; membagi angka dengan string, string tersebut dianggap sebagai bilangan integer, jadi javascript akan mengurang, mengali &amp; membagi sebagai mana
+          mestinya.
+        </p>
+        <blockquote>
+          <p>Console</p>
+          <p>&gt; 10 - "5"</p>
+          <p>&lt; 5</p>
+          <p>&gt; 100 / 10</p>
+          <p>&lt; 10&nbsp;</p>
+          <p>&gt; 10 * 10</p>
+          <p>&lt; 100</p>
+        </blockquote>
+        <p></p>
+      </div>
+    </div>
+    <div class="containerBottom"></div>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
