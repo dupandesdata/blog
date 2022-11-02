@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Struktur Dasar JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="containerTop"></div>
+    <div class="materi">
+      <div class="menu-post">
+        <p id="0"></p>
+      </div>
+      <div class="data-post">
+        <h2>Struktur Dasar JavaScript</h2>
+        <p>
+          &nbsp;Program JavaScript terdiri dari beberapa block-block dan berjalan dari atas ke bawah dan dari kiri ke kanan jadi tidak akan tertukar dengan program lain, karena JavaScript akan
+          mengerjakan block perblocka dalam menulis JavaScript terdapat dua metode yaitu:
+        </p>
+        <h3>Metode Inline/Internal JavaScript</h3>
+        <p>
+          Metode ini adalah dimana penulisan script dalam satu file dengan dokumen html dan dibungkus dengan tag
+          <u><span style="color: red">&lt;script&gt;</span></u
+          >....<u><span style="color: red">&lt;/script&gt;</span></u> biasanya diletakkan sebelum tag <u><span style="color: red">&lt;/head&gt;</span></u> atau
+          <u><span style="color: red">&lt;/body&gt;</span></u> .
+        </p>
+        <blockquote>
+          <p>Source Code&nbsp;</p>
+          <p>&lt;!DOCTYPE html&gt;</p>
+          <p>&lt;html&gt;</p>
+          <p>&lt;head&gt;</p>
+          <p>&nbsp;&lt;title&gt;Belajar Struktur Dasar Javascript&lt;/title&gt;</p>
+          <p>&nbsp;&lt;script type="text/javascript"&gt;</p>
+          <p>&nbsp; &nbsp;//JavaScript code</p>
+          <p>document.getElementById("coba").innerHTML = "Saya belajar JavaScript"</p>
+          <p>&nbsp;&lt;/script&gt;</p>
+          <p>&lt;/head&gt;</p>
+          <p>&lt;body&gt;</p>
+          <p>&lt;p id="coba"&gt;&lt;/p&gt;</p>
+          <p>&lt;/body&gt;</p>
+          <p>&lt;/html&gt;</p>
+        </blockquote>
+        <blockquote>
+          <p>Output</p>
+          <p>Saya belajar JavaScript</p>
+        </blockquote>
+        <p>Penjelasan:</p>
+        <p>Fungsi tag &lt;script&gt; adalah untuk memberi tau kepada browser bahwa yang kita tulis adalah JavaScript.</p>
+        <p>
+          Type digunakan untuk menandakan bahwa ini adalah type JavaScript namun dengan
+          <a href="https://dupandesdata.github.io/blog/materi/javascript1.html" rel="nofollow" target="_blank">ES6</a> kita penulisan type tersebut bersifat opsional kita bisa menuliskan seperti ini
+          saja:
+        </p>
+        <blockquote>
+          <p>Syntax JavaScript</p>
+          <p>&lt;script&gt;</p>
+          <p>&nbsp; &nbsp;JavaScript code</p>
+          <p>&lt;/script&gt;</p>
+        </blockquote>
+        <p>Metode Inline JavaScript jarang sekali digunakan dalam pembuatan website karena jadi satu dengan dokumen html kita akan rumit untuk menambahkan atau merubah script tersebut.</p>
+        <h3>Metode Linked/Eksternal JavaScript</h3>
+        <p>
+          Metode ini digunakan untuk menulis JavaScript di file yang berbeda dengan dokumen html, metode ini tidak membutuhkan tag pembungkus <span style="color: red">&lt;script&gt;</span>....<span
+            style="color: red"
+            >&lt;/script&gt;</span
+          >
+          file yang berisi JavaScript harus <u><span style="color: red">berekstensi .js</span></u> sebagai contoh berikut:
+        </p>
+        <blockquote>
+          <p>script.js</p>
+          <p>document.getElementById("coba").innerHTML = "Saya belajar JavaScript"</p>
+        </blockquote>
+        <p>Untuk dapat digunakan pada dokumen html kita harus memanggil file tersebut dengan cara:</p>
+        <blockquote>
+          <p>Syntax HTML</p>
+          <p>&lt;script src="...."&lt;/script&gt;</p>
+        </blockquote>
+        <p>Isi bagian src dengan alamat file JavaScript itu disimpan jika menyimpan file satu folder dengan dokumen html.</p>
+        <blockquote>
+          <p>Syntax HTML</p>
+          <p>&lt;script src="script.js"&lt;/script&gt;</p>
+        </blockquote>
+        <p>Jika file tersebut sudah di upload ke hosting dan berbeda folder maka harus menuliskan alamat domain tempat script tersebut disimpan.</p>
+        <blockquote>
+          <p>Syntax HTML</p>
+          <p>&lt;script src="https://dupandesdata.github.io/database/script.js"&lt;/script&gt;</p>
+        </blockquote>
+        <p>
+          Syntax tersebut bisa diletakkan sebelum tag <u><span style="color: red">&lt;/head&gt;</span></u> atau <u><span style="color: red">&lt;/body&gt;</span></u> .
+        </p>
+        <blockquote>
+          <p>Source Code&nbsp;</p>
+          <p>&lt;!DOCTYPE html&gt;</p>
+          <p>&lt;html&gt;</p>
+          <p>&lt;head&gt;</p>
+          <p>&nbsp;&lt;title&gt;Belajar Struktur Dasar Javascript&lt;/title&gt;</p>
+          <p>&lt;script src="script.js"&lt;/script&gt;</p>
+          <p>&lt;/head&gt;</p>
+          <p>&lt;body&gt;</p>
+          <p>&lt;p id="coba"&gt;&lt;/p&gt;</p>
+          <p>&lt;/body&gt;</p>
+          <p>&lt;/html&gt;</p>
+        </blockquote>
+        <blockquote>
+          <p>Output</p>
+          <p>Saya belajar JavaScript</p>
+        </blockquote>
+        <p>
+          Hasilnya sama seperti motode Inline tetapi jika kita ingin mengedit script lebih mudah daripada metode Inline, bayangkan jika menggunakan Inline dan kita tulis didalam index.html gak mungkin
+          didalam file index berisi beberapa baris saja bahkan sampai ribuan baris kita akan rumit untuk mencari script yang akan di edit itulah kenapa metode Inline jarang digunakan.
+        </p>
+        <h3>Memberi Komentar</h3>
+        <p>Komentar berfungsi untuk menandai fungsi dari block script agar mempermudah dalam membaca script dan JavaScript mengabaikan itu berikut dua cara menulis komentar:</p>
+        <ol>
+          <li>//&nbsp;</li>
+        </ol>
+        <ul>
+          <li>Teks apa saja yang ditulis setelah // sampai akhir baris dianggap sebagai komentar.</li>
+        </ul>
+        <ol>
+          <li>/*.......*/</li>
+        </ol>
+        <ul>
+          <li>Teks apa saja yang ditulis setelah karakter /* dan */ dianggap sebagai komentar dengan banyak baris (multiline).</li>
+        </ul>
+        <blockquote>
+          <p>Source Code&nbsp;</p>
+          <p>&lt;script type="text/javascript"&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; // Ini komentar satu baris</p>
+          <p>&nbsp; &nbsp; &nbsp; /*</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp;Ini baris pertama&nbsp;</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp;Ini baris kedua</p>
+          <p>&nbsp; &nbsp; &nbsp; */</p>
+          <p>&lt;/script&gt;</p>
+        </blockquote>
+        <h3>Case Sensitivity</h3>
+        <p>
+          Seperti halnya dengan program lain JavaScript juga memiliki <u><span style="color: red">case-sensitive</span></u
+          >. Ini berfungsi bahwa jika kita membuat nama variabel, nama funcition, dan lainnya harus bersifat <u><span style="color: red">unik tidak boleh sama</span></u
+          >.
+        </p>
+        <p>
+          Seperti halnya dengan selector pada CSS karakter sangat sensitif terhadap isi dari nama variabel, contoh kita membuat nama variabel house, House dan HOUSE itu memiliki arti yang berbeda pada
+          JavaScript.
+        </p>
+        <h3>Titik Koma ;</h3>
+        <p>Penulisan titik koma pada akhir perintah JavaScript bersifat opsional namun disarankan untuk menggunakan <span style="color: red">;</span> pada akhir perintah.</p>
+        <h3>Tanda Petik&nbsp;</h3>
+        <p>
+          Ada dua jenis tanda petik yaitu tanda petik satu <span style="color: red">'</span> dan tanda petik dua <span style="color: red">"</span> fungsi dari keduanya adalah untuk membuat kalimat
+          pada JavaScript, namun ketika kita membuat kalimat dengan menggunakan tanda petik satu harus diakhiri dengan tanda petik satu.
+        </p>
+        <blockquote>
+          <p>Source Code</p>
+          <p>'Saya belajar JavaScript'</p>
+          <p>"Saya belajar JavaScript"</p>
+        </blockquote>
+      </div>
+    </div>
+    <div class="containerBottom"></div>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
