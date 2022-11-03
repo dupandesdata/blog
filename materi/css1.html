@@ -8,60 +8,60 @@
   </head>
 
   <body>
-    <div class="containerTop"></div>
-    <div class="materi">
+    <section class="containerTop"></section>
+    <section class="materi">
       <div class="menu-post">
         <p id="css0"></p>
       </div>
-      <div class="data-post">
+      <article>
         <h2>Pengertian Struktur Dasar</h2>
         <p>
           <span style="color: red"><i>&nbsp;Cascading Style Shee</i>&nbsp;</span>adalah bahasa design (<i>Styling Language</i>) yang berisi sekumpulan format untuk mengatur bagaimana styling tag-tag
           HTML pada dokumen. Berikut ini rekomendasi CSS cara menampilkan styling pada tag HTML:
         </p>
-        <h4>Embedded CSS</h4>
+        <h3>Embedded CSS</h3>
         <p>Styling ini diletakkan dalam satu block element HTML.&nbsp;</p>
-        <blockquote>
+        <code>
           <p>Syntax CSS</p>
           <p>style="&nbsp; "</p>
-        </blockquote>
-        <blockquote>
+        </code>
+        <code>
           <p>index.html</p>
           <p>&lt;p style="color: blue; font-size: 10pt"&gt; ini paragraf&lt;/p&gt;</p>
-        </blockquote>
+        </code>
         <p>penjelasan:</p>
         <p>CSS jenis Embedded adalah penulisan styling langsung pada block dan hanya berlaku pada block tersebut saja.</p>
-        <h4>Inline/Internal CSS</h4>
+        <h3>Inline/Internal CSS</h3>
         <p>
           Styling ini ditulis secara langsung dalam dokumen HTML namun harus dibungkus oleh tag <u><span style="color: red">&lt;style&gt;....&lt;/style&gt;</span></u
           >.
         </p>
-        <blockquote>
+        <code>
           <p>Syntax CSS</p>
           <p>&lt;style&gt;</p>
           <p>selector {&nbsp;&nbsp; }</p>
           <p>&nbsp;&lt;/style&gt;</p>
-        </blockquote>
-        <h4>Linked/ Eksternal CSS</h4>
+        </code>
+        <h3>Linked/ Eksternal CSS</h3>
         <p>
           Styling ini diletakkan di file yang berbeda yang berekstensi .css penulisan styling CSS Linked sama seperti Inline namun tidak di bungkus dengan tag &lt;style&gt;....&lt;/style&gt; untuk
           dapat menggunakan CSS ini kita harus memanggil file tersebut dengan tag
           <span style="color: red"><u>&lt;link/&gt;</u></span
           >.
         </p>
-        <blockquote>
+        <code>
           <p>style.css</p>
           <p>.h1 {</p>
           <p>&nbsp; text-align: center;</p>
           <p>&nbsp; color: #000;</p>
           <p>}</p>
-        </blockquote>
+        </code>
         <p>Tag &lt;link/&gt; harus diletakkan sebelum tag &lt;/head&gt;</p>
-        <blockquote>
+        <code>
           <p>Syntax HTML&nbsp;</p>
           <p>&lt;link href="...." rel="stylesheet"/&gt;</p>
-        </blockquote>
-        <blockquote>
+        </code>
+        <code>
           <p>index.html</p>
           <p>&lt;!DOCTYPE html&gt;</p>
           <p>&lt;html&gt;</p>
@@ -74,23 +74,22 @@
           <p>&nbsp; &nbsp; &lt;h1&gt;Dupan Code&lt;/h1&lt;</p>
           <p>&nbsp; &lt;/body&gt;</p>
           <p>&lt;/html&gt;</p>
-        </blockquote>
-
+        </code>
         <p>Penjelasan:</p>
         <p>
           Jika kita menjalankan dokumen html di lokalhost dan file CSS tersebut satu folder dengan dokumen html maka kita bisa menuliskan nama filenya saja dalam href, tetapi jika file tersebut sudah
           di upload ke server hosting contohnya github maka kita harus menuliskan alamat file tersebut.
         </p>
-        <blockquote>
+        <code>
           <p>Eksternal CSS&nbsp;</p>
           <p>&lt;link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet"/&gt;</p>
-        </blockquote>
+        </code>
         <p>
           Dalam studi kasus ini style langsung mengenai tag html, ini biasanya digunakan untuk memberi style yang sama disemua tag tersebut. Cara ini mempermudah proses pembuatan website kita tidak
           perlu memanggil style tersebut setiap kali menuliskan <i><u>elemen tag h1</u></i
           >.
         </p>
-        <p>CSS memiliki tiga type selector</p>
+        <h4>CSS memiliki tiga type selector</h4>
         <ol>
           <li>ID selector&nbsp;</li>
           <li>Class selector&nbsp;</li>
@@ -102,20 +101,19 @@
           >&nbsp;pada elemen html, id selector ini memiliki <u><span style="color: red">sifat unik</span></u> di satu halaman biasanya digunakan untuk memberi
           <u><span style="color: red">style unik</span></u> pada tag yang di berikan atribut tersebut.
         </p>
-        <blockquote>
+        <code>
           <p>Syntax HTML</p>
           <p>&lt;p id="myName"&gt;Dupandes&lt;/p&gt;</p>
-        </blockquote>
+        </code>
         <p>
           <span style="color: red">Class selector</span> adalah sebuah class yang sudah kita berikan style yang diinginkan pada lebih dari satu tag, untuk memanggil class selector ini kita menggunakan
           <i>atribut <span style="color: red">class="&nbsp; "</span></i
           >&nbsp;pada elemen html.
         </p>
-        <p></p>
-        <blockquote>
+        <code>
           <p>Syntax HTML</p>
           <p>&lt;div class="prof"&gt;Web Development&lt;/div&gt;</p>
-        </blockquote>
+        </code>
         <p>Penjelasan:</p>
         <p>Walaupun digunakan pada tad yang berada namun mempunyai class selector yang sama ini akan menghasilkan output styling yang sama.</p>
         <p>
@@ -123,24 +121,24 @@
           tanda , pada akhir selector.
         </p>
         <p>Penulisan Grouping dengan menggunakan tag:</p>
-        <blockquote>
+        <code>
           <p>h1, h2, h3, p, div {</p>
           <p>color: red;</p>
           <p>}</p>
-        </blockquote>
+        </code>
         <p>Penulisan HTML:</p>
-        <blockquote>
+        <code>
           <p>&lt;h1&gt;Saya&lt;/h1&gt;</p>
           <p>&lt;h2&gt;Sedang belajar&lt;/h2&gt;</p>
           <p>&lt;h3&gt;CSS&lt;/h3&gt;</p>
           <p>&lt;p&gt;Ini menyenangkan&lt;/p&gt;</p>
           <p>&lt;div&gt;Sekali&lt;/div&gt;</p>
-        </blockquote>
+        </code>
         <p>Penjelasan:</p>
         <p>Walaupun dokumen html ditulis dengan tag yang berbeda tetapi dengan menggunakan CSS Grouping memiliki styling yang sama yaitu warna font red.</p>
-      </div>
-    </div>
-    <div class="containerBottom"></div>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
     <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
     <script src="https://dupandesdata.github.io/database/post.js"></script>
   </body>
