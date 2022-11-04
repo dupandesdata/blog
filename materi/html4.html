@@ -8,12 +8,12 @@
   </head>
 
   <body>
-    <div class="containerTop"></div>
-    <div class="materi">
+    <section class="containerTop"></section>
+    <section class="materi">
       <div class="menu-post">
         <p id="html0"></p>
       </div>
-      <div class="data-post">
+      <article>
         <h2>Struktur Dokumen HTML Dasar</h2>
         <h3>Pengertian</h3>
 <p>
@@ -33,147 +33,155 @@
         </ul>
         <h3>Tag HTML</h3>
         <p>Tag html terdiri dari tag pembuka dan tak penutup sebagai berikut:</p>
-        <blockquote>
+        <code>
           <p>Tag Pembuka</p>
-          <p>&lt;html&gt;</p>
-        </blockquote>
-        <blockquote>
+          <p>&lt;&gt;</p>
+        </code>
+        <code>
           <p>Tag Penutup</p>
-          <p>&lt;/html&gt;</p>
-        </blockquote>
-        <p>Berikut beberapa tag yang harus dihafalkan:</p>
-        <blockquote>
-          <p>Syntax HTML&nbsp;</p>
-          <p>&lt;html&gt; &lt;/html&gt;</p>
-          <p>&lt;head&gt; &lt;/head&gt;</p>
-          <p>&lt;title&gt; &lt;/title&gt;</p>
-          <p>&lt;body&gt; &lt;/body&gt;</p>
-          <p>&lt;main&gt; &lt;/main&gt;</p>
-  <p>&lt;h1&gt; &lt;/h1&gt;</p>
-  <p>&lt;h2&gt; &lt;/h2&gt;</p>
-  <p>&lt;h3&gt; &lt;/h3&gt;</p>
-  <p>&lt;h4&gt; &lt;/h4&gt;</p>
-  <p>&lt;h5&gt; &lt;h5&gt;</p>
-  <p>&lt;h6&gt; &lt;/h6&gt;</p
-          <p>&lt;div&gt; &lt;/div&gt;</p>
-          <p>&lt;section&gt; &lt;/section&gt;</p>
-          <p>&lt;p&gt; &lt;/p&gt;</p>
-          <p>&lt;footer&gt; &lt;/footer&gt;</p>
-        </blockquote>
+          <p>&lt;/&gt;</p>
+        </code>
         <h3>Dokumen HTML</h3>
         <p>Dalam membuat dokumen html kita butuh beberapa tag yang wajib ditulis sebagai berikut:</p>
-        <blockquote>
+        <h4>&lt;html&gt;</h4>
+        <p>(<i>HyperText Markup Language</i>) berguna untuk membungkus semua element HTML, jadi ketika kita menuliskan dokumen HTML harus
+          berada di antara tag <u><span style="color: red">&lt;html&gt;</span></u> dan <u><span style="color: red">&lt;/html&gt;</span></u>.
+        </p>
+        <code>
           <p>Syntax HTML Dasar&nbsp;</p>
           <p>&lt;html&gt;</p>
+          <p>&lt;/html&gt;</p>
+        </code>
+        <h4>&lt;head&gt;</h4> 
+        <p>digunakan untuk menyimpan informasi tentang dokumen HTML yang meliputi tag meta, title, link, css dan script.
+</p>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;html&gt;</p>
           <p>&lt;head&gt;</p>
-          <p>&nbsp; &nbsp; &lt;meta charset="UTF-8"&gt;</p>
-          <p>&nbsp; &nbsp; &lt;title&gt;Judul halaman&lt;/title&gt;</p>
+          <p>&lt;/head&gt;</p>
+          <p>&lt;/html&gt;</p>
+        </code>
+        <h4>&lt;meta&gt;</h4> 
+        <p>digunakan untuk memberitahukan kepada browser informasi dokumen HTML seperti deskripsi, verifikasi, format dll.
+        </p>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;html&gt;</p>
+          <p>&lt;meta/&gt;</p>
+          <p>&lt;head&gt;</p>
+          <p>&lt;/head&gt;</p>
+          <p>&lt;/html&gt;</p>
+        </code>
+        <h4>&lt;title&gt;</h4>
+        <p>digunakan untuk membuat judul file atau judul halaman website yang akan ditampilkan dalam tab browser.</p>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;html&gt;</p>
+          <p>&lt;meta/&gt;</p>
+          <p>&lt;title&gt;judul halaman&lt;/title&gt;</p>
+          <p>&lt;head&gt;</p>
+          <p>&lt;/head&gt;</p>
+          <p>&lt;/html&gt;</p>
+        </code>
+          <h4>&lt;body&gt;</h4> 
+        <p>digunakan untuk membungkus element yang akan di tampilkan pada browser.
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;html&gt;</p>
+          <p>&lt;meta/&gt;</p>
+          <p>&lt;title&gt;judul halaman&lt;/title&gt;</p>
+          <p>&lt;head&gt;</p>
           <p>&lt;/head&gt;</p>
           <p>&lt;body&gt;</p>
           <p>&lt;/body&gt;</p>
           <p>&lt;/html&gt;</p>
-        </blockquote>
-        <p>Penjelasan:</p>
-        <p>
-          Tag <span style="color: red">&lt;html&gt;</span>&nbsp;(<i>HyperText Markup Language</i>) berguna untuk membungkus semua element html, jadi ketika kita menuliskan element-element html harus
-          berada di antara tag <u style="color: red">&lt;html&gt;</u> dan <u style="color: red">&lt;/html&gt;</u>.
-        </p>
-        <p>Tag <span style="color: red">&lt;head&gt;</span> digunakan untuk membungkus tag meta, tag title, css dan script.</p>
-        <blockquote>
+        </code>
+        <h4>&lt;style&gt;</h4>
+        <p>digunakan untuk membuat CSS internal, tag ini biasanya diletakkan sebelum tag <u><span style="color: red">&lt;body&gt;</span></u> dan <u><span style="color: red">&lt;/body&gt;</span></u>.</p>
+        <code>
           <p>Syntax HTML</p>
+          <p>&lt;html&gt;</p>
+          <p>&lt;meta/&gt;</p>
+          <p>&lt;title&gt;judul halaman&lt;/title&gt;</p>
           <p>&lt;head&gt;</p>
-          <p>&nbsp; &nbsp; &lt;meta charset="UTF-8"&gt;</p>
-          <p>&nbsp; &nbsp; &lt;title&gt;Judul halaman&lt;/title&gt;</p>
-          <p><br /></p>
-          <p>&nbsp; &nbsp; &lt;style&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; kode css</p>
-          <p>&nbsp; &nbsp; &lt;/style&gt;</p>
-          <p><br /></p>
-          <p>&nbsp; &nbsp; &lt;script&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; kode javascript&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;/script&gt;</p>
+          <p>&lt;style&gt;
+          <p>CSS</p>
+          <p>&lt;/style&gt;</p>
           <p>&lt;/head&gt;</p>
-        </blockquote>
-        <p>Tag <span style="color: red">&lt;meta&gt;</span> digunakan untuk memberitahukan kepada browser bagaimana dokumen html tersebut akan ditampilkan.&nbsp;</p>
-        <p>
-          Tag <span style="color: red">&lt;body&gt;</span> digunakan untuk membungkus element yang akan di tampilkan pada browser, namun ada beberapa script yang harus ditulis diantara
-          <u style="color: red">&lt;body&gt;</u> dan <u style="color: red">&lt;/body&gt;</u>.
-        </p>
-        <blockquote>
-          <p>Syntax HTML&nbsp;</p>
           <p>&lt;body&gt;</p>
-          <p>&nbsp; &nbsp; &lt;h1&gt;Judul Artikel&lt;/h1&gt;</p>
-          <p>&nbsp; &nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
-          <p>&nbsp; &nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
-          <p>&nbsp; &nbsp; &lt;img src="" alt=""&gt;</p>
-          <p>&nbsp; &nbsp; &lt;p&gt;Paragraf 3&lt;/p&gt;</p>
-          <p>&nbsp; &nbsp;&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;section&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;Element 1&lt;/div&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;Element 2&lt;/div&gt;</p>
-          <p>&nbsp; &nbsp; &lt;/section&gt;</p>
-          <p>&nbsp; &nbsp;&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;script&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; kode javascript&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;/script&gt;</p>
-          <p>&nbsp; &nbsp;&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;footer&gt;Copyright 2020&lt;/footer&gt;</p>
           <p>&lt;/body&gt;</p>
-        </blockquote>
-        <p></p>
+          <p>&lt;/html&gt;</p>
+        </code>
+        <h4>&lt;script&gt;</h4>
+        <p>digunakan untuk membuat script internal seperti JavaScript biasanya diletakkan sebelum 
+          <u><span style="color: red">&lt;body&gt;</span></u> dan <u><span style="color: red">&lt;/body&gt;</span></u>.
+        </p>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;html&gt;</p>
+          <p>&lt;meta/&gt;</p>
+          <p>&lt;title&gt;judul halaman&lt;/title&gt;</p>
+          <p>&lt;head&gt;</p>
+          <p>&lt;style&gt;
+          <p>CSS</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;/head&gt;</p>
+          <p>&lt;body&gt;</p>
+          <p>&lt;script&gt;</p>
+          <p>JavaScript</p>
+          &lt;/script&gt;</p>
+          <p>&lt;/body&gt;</p>
+          <p>&lt;/html&lt;</p>
+        </code>
+        <h4>&lt;footer&lt;</h4>
+        <p>digunakan untuk membuat footer biasanya berisi beberapa informasi website seperti copyright yang diletakan paling akhir sebelum tag <u><span style="color: red">&lt;/body&gt;</span></u>.</p>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;html&gt;</p>
+          <p>&lt;meta/&gt;</p>
+          <p>&lt;title&gt;judul halaman&lt;/title&gt;</p>
+          <p>&lt;head&gt;</p>
+          <p>&lt;style&gt;
+          <p>CSS</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;/head&gt;</p>
+          <p>&lt;body&gt;</p>
+          <p>&lt;script&gt;</p>
+          <p>JavaScript</p>
+          &lt;/script&gt;</p>
+          <p>&lt;footer&gt;Copyright 2022
+          &lt;/footer&gt;</p>
+          <p>&lt;/body&gt;</p>
+          <p>&lt;/html&lt;</p>
+        </code>
         <p>
           Untuk membuat dokumen html yang baik kita harus memenuhi standar <i><u>World Wide Web Consortium</u></i> (<a
-            href="https://www.w3.org/TR/html401/struct/global.html"
-            rel="nofollow"
-            target="_blank"
-            >W3C</a
-          >). Agar dokumen html yang kita buat dapat mendukung HTML 5 maka harus diawali dengan&nbsp;<u><span style="color: red">&lt;!DOCTYPE html&gt;</span></u
-          >&nbsp;(<i>Document Type Declaration</i>) yang berfungsi untuk menyatakan kepada browser bahwa dokumen yang kita tulis adalah tipe html yang sudah mendukung HTML 5.
+            href="httli dengan&nbsp;<u><span style="color: red">&lt;!DOCTYPE html&gt;</span></u>&nbsp;(<i>Document Type Declaration</i>) yang berfungsi untuk menyatakan kepada browser bahwa dokumen yang kita tulis adalah tipe html yang sudah mendukung HTML 5.
         </p>
-        <p></p>
-        <blockquote>
+        <code>
           <p>Syntax HTML&nbsp;</p>
           <p>&lt;!DOCTYPE html&gt;</p>
           <p>&lt;html&gt;</p>
+          <p>&lt;meta/&gt;</p>
+          <p>&lt;title&gt;judul halaman&lt;/title&gt;</p>
           <p>&lt;head&gt;</p>
-          <p>&nbsp; &nbsp; &lt;meta charset="UTF-8"&gt;</p>
-          <p>&nbsp; &nbsp; &lt;title&gt;Judul halaman&lt;/title&gt;</p>
-          <p><br /></p>
-          <p>&nbsp; &nbsp; &lt;style&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; kode css</p>
-          <p>&nbsp; &nbsp; &lt;/style&gt;</p>
-          <p>&nbsp; &nbsp;&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;script&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; kode javascript&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;/script&gt;</p>
+          <p>&lt;style&gt;
+          <p>CSS</p>
+          <p>&lt;/style&gt;</p>
           <p>&lt;/head&gt;</p>
           <p>&lt;body&gt;</p>
-          <p>&nbsp; &nbsp; &lt;h1&gt;Judul Artikel&lt;/h1&gt;</p>
-          <p>&nbsp; &nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
-          <p>&nbsp; &nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
-          <p>&nbsp; &nbsp; &lt;img src="" alt=""&gt;</p>
-          <p>&nbsp; &nbsp; &lt;p&gt;Paragraf 3&lt;/p&gt;</p>
-          <p>&nbsp; &nbsp;&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;section&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;Element 1&lt;/div&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;Element 2&lt;/div&gt;</p>
-          <p>&nbsp; &nbsp; &lt;/section&gt;</p>
-          <p>&nbsp; &nbsp;&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;script&gt;</p>
-          <p>&nbsp; &nbsp; &nbsp; &nbsp; kode javascript&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;/script&gt;</p>
-          <p>&nbsp; &nbsp;&nbsp;</p>
-          <p>&nbsp; &nbsp; &lt;footer&gt;Copyright 2020&lt;/footer&gt;</p>
+          <p>&lt;script&gt;</p>
+          <p>JavaScript</p>
+          &lt;/script&gt;</p>
+          <p>&lt;footer&gt;Copyright 2022
+          &lt;/footer&gt;</p>
           <p>&lt;/body&gt;</p>
-          <p>&lt;/html&gt;</p>
-        </blockquote>
-        <p>Tugas buatlah sebuah website personal cv sebagai contoh berikut:</p>
-        <div class="separator" style="clear: both; text-align: center">
-          <img border="0" data-original-height="500" data-original-width="800" height="500" src="https://img.harianjogja.com/posts/2020/08/08/1046555/tampilan-web-pertama.jpg" width="500" />
-        </div>
-      </div>
-    </div>
-    <div class="containerBottom"></div>
+          <p>&lt;/html&lt;</p>
+        </code>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
     <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
     <script src="https://dupandesdata.github.io/database/post.js"></script>
   </body>
