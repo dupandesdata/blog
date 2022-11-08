@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
     <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -15,48 +16,196 @@
       </div>
       <article>
         <h2>Jenis Atribut Dasar HTML</h2>
-        <p>Atribut dasar adalah atribut yang bisa digunakan oleh semua tag HTML, atribut ini biasanya digunakan untuk memanggil style atau script kedalam tag tertentu.</p>
-        <h3>1 Atribut</h3>
-        <p>
-          <i><u>class="..."</u></i> <i><u>id="..."</u></i> atribut ini kita bisa gunakan untuk memanggil style CSS dan perintah javascript, bersifat universal jadi semua tag html bisa menggunakan
-          atribut ini.
-        </p>
-        <h3>2. Atribut&nbsp;</h3>
-        <p>
-          <i><u>href="..."</u></i> atribut ini untuk memberi link ke halaman lain dan memanggil CSS eksternal, atribut ini tidak bisa digunakan untuk semua jenis tag html atribut ini digunakan pada
-          tag <i><u>&lt;a&gt;</u></i> dan tag <i><u>&lt;link&gt;</u></i>
-        </p>
-        <h3>3. Atribut</h3>
-        <p>
-          <i><u>src="..."</u></i> atribut ini untuk memanggil link gambar dan link javascript eksternal, sama seperti halnya dengan href atribut ini tidak bisa digunakan pada semua tag html hanya
-          dapat digunakan untuk tag <u><i>&lt;img&gt;</i></u> dan <u><i>&lt;script&gt;</i></u>
-        </p>
-        <p>Cara membuat text ketika kita klik menuju halaman lain:</p>
+        <p>Atribut dasar adalah atribut yang bisa digunakan oleh semua tag HTML, atribut ini digunakan untuk memanggil style CSS atau script kedalam element tertentu.</p>
+        <table class="ws-table-all notranslate">
+          <tbody>
+            <tr>
+              <th style="width: 25%">Attribute</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>class="&nbsp; "</td>
+              <td>Memanggil satu atau lebih nama selector CSS untuk suatu elemen (Internal/Eksternal CSS )</td>
+            </tr>
+
+            <tr>
+              <td>hidden</td>
+              <td>Menentukan pada suatu elemen untuk tidak menampilkan pada browser&nbsp;</td>
+            </tr>
+            <tr>
+              <td>id="&nbsp; "</td>
+              <td>Memanggil id selector CSS atau JavaScript yang bersifat unik&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>style="&nbsp; "</td>
+              <td>Membuat Embedded CSS pada element tertentu</td>
+            </tr>
+            <tr>
+              <td>tabindex</td>
+              <td>Menentukan urutan tabbing element tertentu&nbsp;</td>
+            </tr>
+            <tr>
+              <td>title<br /></td>
+              <td>Membuat informasi tambahan tentang suatu element saat di hover&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Class Selector</h3>
         <code>
           <p>Syntax HTML&nbsp;</p>
-          <p>&lt;a href="https://dupancode.my.id"&gt;klik disini&lt;/a&gt;</p>
+          <p>&lt;element class="nama selector"&gt;content&lt;/element&gt;</p>
         </code>
-        <ol>
-          <li>Tag &lt;a&gt; adalah tag pembuka.</li>
-          <li>Atribut harus berada di &lt;a dan sebelum &gt;</li>
-          <li>Pada antara &gt; dan &lt;/a&gt; itu adalah tempat dimana kita menuliskan tulis dan elemen yang akan kita buat menjadi bisa di klik.</li>
-          <li>&lt;/a&gt; adalah tag penutup.</li>
-        </ol>
-        <p>Hasilnya seperti ini coba kalian klik</p>
-        <p>
-          <a href="http://dupancode.my.id"><b>Klik disini</b></a>
-        </p>
-        <p>>Kita juga dapat memberikan 3 atribut sekaligus.</p>
+        <p>Dengan menggunakan atribut ini kita dapat memanggil selector CSS tertentu.</p>
         <code>
-          <p>Syntax HTML&nbsp;</p>
-          <p>&lt;a href="..." class="..." id="..."&gt;elemen atau konten&lt;/a&gt;</p>
+          <p>Source code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; .ex {</p>
+          <p>&nbsp; &nbsp; color: red;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;p class="ex"&gt;ini adalah contoh memanggil 1 class selector&lt;/p&gt;</p>
         </code>
-        <ul>
-          <li>href untuk memberi link.</li>
-          <li>class untuk memberi style.</li>
-          <li>id untuk memanggil javascript.</li>
-        </ul>
-        <p>belum paham dengan class selector dan id selector silahkan baca artikel:&nbsp; <a href="https://dupandesdata.github.io/blog/materi/css2.html">Pengertian Selector CSS Dasar</a></p>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .ex {
+                color: red;
+              }
+            </style>
+
+            <p class="ex">ini adalah contoh memanggil 1 class selector</p>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>Untuk menuliskan nama class selector harus didalam tanda <span style="color: red">"&nbsp; "</span> .</p>
+        <p>Kita juga bisa memanggil dua atau lebih class selector dalam satu element.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; .ex {</p>
+          <p>&nbsp; &nbsp; color: red;</p>
+          <p>&nbsp; }</p>
+          <p>&nbsp; .ex2 {</p>
+          <p>&nbsp; &nbsp; font-size: 20px;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;p class="ex ex2"&gt;ini adalah contoh memanggil 2 class selector&lt;/p&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .ex {
+                color: red;
+              }
+              .ex2 {
+                font-size: 20px !important;
+              }
+            </style>
+
+            <p class="ex ex2">ini adalah contoh memanggil 2 class selector</p>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>Dalam pemanggilan lebih dari satu nama class harus di pisahkan oleh spasi dan tetap berada didalam tanda "&nbsp; " .</p>
+        <h3>Hidden</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;element hidden&gt;content&lt;/element&gt;</p>
+        </code>
+        <p>Atribut ini digunakan untuk menyembunyikan sesuatu element agar tidak ditampilkan pada browser tetapi jika kita cek kedalam source code terdapat element tersebut.</p>
+        <code>
+          <p>Source Code&nbsp;</p>
+          <p>&lt;p&gt;ini element 1&lt;/p&gt;</p>
+          <p>&lt;p hidden&gt;ini element 2&lt;/p&gt;</p>
+          <h3>Id Selector</h3>
+        </code>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;element id="nama selector"&gt;content&lt;/element&gt;</p>
+        </code>
+        <p>
+          Atribut ini digunakan untuk memanggil id yang berbeda di CSS atau JavaScript biasa di tulis dengan menggunakan
+          <span style="color: red">#</span> pada CSS, tidak seperti halnya dengan menggunakan atribut class selector atribut id hanya bisa diisi dengan satu id.
+        </p>
+        <code>
+          <p>Source code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; #ex {</p>
+          <p>&nbsp; &nbsp; color: rgb(0, 81, 255);</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;p id="ex"&gt;ini adalah contoh memanggil id selector&lt;/p&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              #ex {
+                color: rgb(0, 81, 255);
+              }
+            </style>
+
+            <p id="ex">ini adalah contoh memanggil id selector</p>
+          </div>
+        </div>
+        <h3>Style</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;element style="isi styling embedded CSS"&gt;content&lt;/element&gt;</p>
+        </code>
+        <p>
+          Atribut ini digunakan untuk membuat Embedded CSS pada element tertentu kita dapat menulis selayaknya menuliskan css tetapi tidak menggunakan selector, jika menggunakan style kita harus
+          menutup tag tersebut agar tidak mempengaruhi element lainnya.
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;p style="color: rgb(0, 255, 34);"&gt;ini adalah contoh penggunaan atribut style&lt;/p&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p style="color: rgb(0, 255, 34)">ini adalah contoh penggunaan atribut style</p>
+          </div>
+        </div>
+        <h3>Tabindex</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;element tab="nomor"&gt;content&lt;/element&gt;</p>
+        </code>
+        <p>Atribut ini digunakan untuk membuat urutan tab elemen, tabindex digunakan untuk memvalidasi di setiap elemen namun, tidak selalu berguna. (ketika tombol "tab" digunakan untuk navigasi).</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;p tabindex="1"&gt;ini element 1&lt;/p&gt;</p>
+          <p>&lt;p tabindex="2"&gt;ini element 2&lt;/p&gt;</p>
+          <p>&lt;p tabindex="3"&gt;ini element 3&lt;/p&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p tabindex="1">ini element 1</p>
+            <p tabindex="2">ini element 2</p>
+            <p tabindex="3">ini element 3</p>
+          </div>
+        </div>
+        <h3>Title</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;element title="informasi"&gt;content&lt;/element&gt;</p>
+        </code>
+        <p>Atribut ini digunakan untuk membuat informasi tentang suatu element tertentu saat di hover oleh mouse.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;p title="ini element 1"&gt;arahkan kursor ke sini&lt;/p&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p title="ini element 1">arahkan kursor ke sini</p>
+          </div>
+        </div>
       </article>
     </section>
     <section class="containerBottom"></section>
