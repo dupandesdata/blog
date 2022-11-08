@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Membuat Container Dasar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="0"></p>
+      </div>
+      <article>
+        <style>
+          .bd {
+            width: 80%;
+            border: 1px dashed #000;
+            background: #2f4fab;
+            padding: 9px;
+            font-size: 11pt;
+            color: #fff;
+            text-align: center;
+            margin-top: 5.5px;
+          }
+          .hd {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 7px;
+            background: #ff000063;
+            padding: 6px;
+          }
+          .hd div {
+            background: green;
+            font-size: 8pt;
+            padding: 3px;
+          }
+          .main {
+            padding: 2px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px dashed #fff;
+            font-size: 8pt;
+            background: #ff000063;
+            padding: 3px;
+          }
+          .m-p {
+            display: flex;
+            flex-direction: column;
+            width: 90px;
+            height: 100px;
+            background: green;
+            border: 1px dashed #000;
+            text-align: center;
+            align-items: center;
+            padding: 5px 0;
+          }
+          .selec {
+            margin: 4px 0;
+            padding: 1px;
+            background: navy;
+            width: 90%;
+          }
+          .ft {
+            border: 1px dashed #fff;
+            background: #ff000063;
+          }
+        </style>
+        <h2>Membuat Container Dasar</h2>
+        <p>&nbsp;Dalam membuat sebuah website terdiri dari beberapa container, perhatikan gambar berikut:</p>
+
+        <section class="bd">
+          <div>Header</div>
+          <section class="hd">
+            <div>&lt;h1&gt;</div>
+            <div>&lt;nav&gt;</div>
+          </section>
+          <div style="margin-top: 5px">Main</div>
+          <section class="main">
+            <section>
+              <div class="m-p">
+                <div>&lt;aside&gt;</div>
+              </div>
+            </section>
+            <section>
+              <div class="m-p">
+                <div>&lt;article&gt;</div>
+                <div class="selec">&lt;section&gt;</div>
+                <div class="selec">&lt;section&gt;</div>
+                <div class="selec">&lt;section&gt;</div>
+              </div>
+            </section>
+            <section>
+              <div class="m-p">
+                <div>&lt;aside&gt;</div>
+              </div>
+            </section>
+          </section>
+          <div style="margin-top: 5px">footer</div>
+          <section class="ft">
+            <div>&lt;h6&gt;</div>
+          </section>
+        </section>
+        <p>
+          Kotak yang berwarna merah adalah container utama, container utama berfungsi sebagai wadah untuk menampung satu atau lebih element berikut ini adalah unsur-unsur yang dimiliki oleh container
+          utama.
+        </p>
+        <h3>Margin Umum</h3>
+        <p>Dengan menggunakan container utama kita tidak perlu memberikan margin element pada setiap element.</p>
+        <h3>Font Umum</h3>
+        <p>Ini mempermudah kita untuk memberi jenis font.</p>
+        <h3>Position</h3>
+        <p>Ini biasanya digunakan saat kita berkerja dengan menggunakan flexbox atau grid yang dimana kita tidak perlu menghitung jumlah margin untuk setiap element-element.</p>
+        <p>Dalam pembuatan container pada HTML 4 adalah menggunakan tag &lt;div&gt; dan di bedakan oleh class atau id seperti berikut:</p>
+        <div class="separator" style="clear: both; text-align: center">
+          <img
+            border="0"
+            data-original-height="530"
+            data-original-width="520"
+            height="320"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqTslB_cTPRc-SRs2oG8d2uim_aMGH2xHj2JyVl0RNcEATqzpxlkxVc5X3Er5aE-2xVkskTDmNDuifZ5a_R4ViryJhtRbpiEOMQkpT_NoRhkPpIrNLySY315xwgFyophLfRnwQb2QKtGToTvPK8ZQa0cpBQFtpLo9lYkKw7mxd7h7qIHKRDgR7TmxD/s320/html4layout.jpg"
+            width="314"
+          />
+        </div>
+        <div class="separator" style="clear: both; font-size: 7pt; text-align: center">wpbeginner.com</div>
+        <p>
+          Hal ini tentunya akan sangat membingungkan karena container dengan element terbuat oleh tag yang sama, dengan adanya HTML 5 maka kita dapat membedakan antara container dan element yang
+          berada didalam container tersebut.
+        </p>
+        <p>Berikut beberapa tag yang digunakan untuk membuat container.</p>
+        <h4>Tag &lt;header&gt;</h4>
+        <p>Tag ini digunakan untuk membuat container header yang berisi:</p>
+        <ul>
+          <li>&lt;h1&gt; (nama website)</li>
+          <li>&lt;nav&gt; (navigasi utama)</li>
+        </ul>
+        <section class="bd">
+          <div>Header</div>
+          <section class="hd">
+            <div>&lt;h1&gt;</div>
+            <div>&lt;nav&gt;</div>
+          </section>
+        </section>
+        <h4>Tag &lt;main&gt;</h4>
+        <p>Tag ini digunakan untuk membuat container yang berisi beberapa container didalam nya:</p>
+        <ul>
+          <li>&lt;article&gt; (content utama website)</li>
+          <li>&lt;aside&gt; (sidebar kanan atau kiri)</li>
+        </ul>
+        <section class="bd">
+          <div style="margin-top: 5px">Main</div>
+          <section class="main">
+            <section>
+              <div class="m-p">
+                <div>&lt;aside&gt;</div>
+              </div>
+            </section>
+            <section>
+              <div class="m-p">
+                <div>&lt;article&gt;</div>
+                <div class="selec">&lt;section&gt;</div>
+                <div class="selec">&lt;section&gt;</div>
+                <div class="selec">&lt;section&gt;</div>
+              </div>
+            </section>
+            <section>
+              <div class="m-p">
+                <div>&lt;aside&gt;</div>
+              </div>
+            </section>
+          </section>
+        </section>
+        <h4>Tag &lt;article&gt;</h4>
+        <p>Tag ini digunakan untuk membuat artikel dan beberapa container didalam nya:</p>
+        <ul>
+          <li>&lt;h2&gt; - &lt;h5&gt; (judul artikel atau subjudul)</li>
+          <li>&lt;p&gt; (content paragraf)</li>
+          <li>&lt;section&gt; (container menampilkan iklan)</li>
+        </ul>
+        <h4>Tag &lt;footer&gt;</h4>
+        <ul>
+          <li>Tag ini digunakan untuk membuat footer:</li>
+          <li>&lt;h6&gt; (copyright atau informasi lain tentang website)</li>
+        </ul>
+        <section class="bd">
+          <div style="margin-top: 5px">footer</div>
+          <section class="ft">
+            <div>&lt;h6&gt;</div>
+          </section>
+        </section>
+        <p>Source Code</p>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
