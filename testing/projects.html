@@ -1,0 +1,75 @@
+<section class="bd">
+  <div>Header</div>
+  <section class="hd">
+    <div>&lt;h1&gt;</div>
+    <div>&lt;nav&gt;</div>
+  </section>
+  <div style="margin-top: 5px;">Main</div>
+  <section class="main">
+    <section>
+      <div class="m-p">
+        <div>Sidebar Kiri</div>
+        <div>&lt;aside&gt;</div>
+      </div>
+    </section>
+    <section>
+      <div class="m-p">
+        <div>Artikel</div>
+        <div>&lt;article&gt;</div>
+      </div>
+    </section>
+    <section>
+      <div class="m-p">
+        <div>Sidebar Kanan</div>
+        <div>&lt;aside&gt;</div>
+      </div>
+    </section>
+  </section>
+    <div>footer</div>
+  <section class="ft">
+    <div>&lt;h6&gt;</div>
+  </section>
+</section>
+<style>
+  .bd {
+    width: 80%;
+    border: 1px dashed #000;
+    background: #2f4fab;
+    padding: 9px;
+    font-size: 11pt;
+    color: #fff;
+    text-align: center;
+  }
+  .hd {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7px;
+    background: red;
+    padding: 6px;
+  }
+  .hd div {
+    background: green;
+    border: 1px dashed #000;
+  }
+  .main {
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px dashed #fff;
+    font-size: 8pt;
+  }
+  .m-p {
+    width: 90px;
+    height: 100px;
+    background: green;
+    border: 1px dashed #000;
+    text-align: center;
+    padding: 5px 0;
+  }
+  .m-p div:nth-child(2) {
+    margin-top: 30%;
+  }
+  .ft {
+    background: red;
+  }
+</style>
