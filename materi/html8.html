@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Membuat Teks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="html0"></p>
+      </div>
+      <article>
+        <h2>Membuat Teks</h2>
+        <p>
+          &nbsp;Untuk membuat sebuah teks kita dapat menggunakan semua jenis tag HTML namun dalam membuat teks terdapat tag-tag khusus untuk yang digunakan untuk membuat teks, ibaratkan seperti anda
+          minum air dengan menggunakan selain gelas seperti mangkuk bisa si bisa tetapi bukan kegunaannya alangkah baiknya jika menggunakan gelas untuk meminum air. Sama seperti HTML ada tag-tag yang
+          alangkah baiknya jika difungsikan dengan tepat seperti halnya gelas untuk meminum air bukan mangkuk, berikut ini adalah tag HTML yang tepat untuk membuat teks.
+        </p>
+        <h3>Tag &lt;p&gt;</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;article&gt;</p>
+          <p>&nbsp; &lt;p&gt;Paragraf&lt;/p&gt;</p>
+          <p>&lt;/article&gt;</p>
+        </code>
+        <p>
+          Tag ini digunakan untuk membuat paragraf tag <span style="color: red">&lt;p&gt;</span>&nbsp;yang di bungkus dengan tag <span style="color: red">&lt;article&gt;</span> sebaiknya tidak
+          diberikan atribut apapun.
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;article&gt;</p>
+          <p>&nbsp; &lt;p&gt;Paragraf 1&lt;/p&gt;</p>
+          <p>&nbsp; &lt;p&gt;Paragraf 2&lt;/p&gt;</p>
+          <p>&nbsp; &lt;p&gt;Paragraf 3&lt;/p&gt;</p>
+          <p>&lt;/article&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <article>
+              <p>Paragraf 1</p>
+              <p>Paragraf 2</p>
+              <p>Paragraf 3</p>
+            </article>
+          </div>
+        </div>
+        <p>
+          Dalam penggunaan tag &lt;p&gt; disarankan untuk&nbsp;<u>tidak boleh</u> menjadi parent tag utama dari sebuah content, tag &lt;p&gt; biasanya digunakan untuk menjadi parent tag
+          <span style="color: red">&lt;span&gt;</span> dan tag <span style="color: red">&lt;a&gt;</span>&nbsp;tag lainnya yang digunakan untuk membuat teks, berikut adalah penggunaan tag &lt;p&gt;
+          yang benar seperti berikut:
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;!-- penggunaan yang benar --&gt;</p>
+          <p>&lt;section&gt;</p>
+          <p>&nbsp; &lt;article&gt;</p>
+          <p>&nbsp; &nbsp; &lt;p&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; Saya belajar &lt;a href="https://dupancode.my.id/materi/html5"&gt; &lt;span color="red"&gt;HTML&lt;/span&gt;&lt;/a&gt;</p>
+          <p>&nbsp; &nbsp; &lt;/p&gt;</p>
+          <p>&nbsp; &lt;/article&gt;</p>
+          <p>&lt;/section&gt;</p>
+          <p><br /></p>
+          <p>&lt;!-- penggunaan yang salah --&gt;&nbsp;</p>
+          <p>&lt;p&gt;</p>
+          <p>&nbsp; &lt;p&gt;</p>
+          <p>&nbsp; &nbsp;Saya belajar &lt;a href="https://dupancode.my.id/materi/html5"&gt; &lt;span color="red"&gt;HTML&lt;/span&gt;&lt;/a&gt;</p>
+          <p>&nbsp; &lt;/p&gt;</p>
+          <p>&lt;/p&gt;</p>
+        </code>
+        <h3>Tag &lt;span&gt;</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;span style="&nbsp; " atribut=" "&gt;Teks&lt;/span&gt;</p>
+        </code>
+        <p>
+          Tag<span style="color: red"> &lt;span&gt;</span>&nbsp;digunakan untuk memberikan styling embedded CSS contohnya membuat teks tertentu menjadi berwarna pada paragraf, tag ini juga bisa
+          menambahkan semua jenis&nbsp;<a href="https://dupandesdata.github.io/blog/materi/html5" rel="nofollow" target="_blank">atribut dasar</a>.
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;p&gt;</p>
+          <p>&nbsp; &nbsp; Saya belajar &lt;span style="color: red"&gt;HTML&lt;/span&gt;</p>
+          <p>&lt;/p&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p>Saya belajar <span style="color: red">HTML</span></p>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>Atribut style dapat berisi beberapa property dan value CSS.</p>
+        <p>Dalam penggunaan nya tag <span style="color: red">&lt;span&gt;</span> disarankan <u>tidak boleh</u> menjadi parent tag lain, tag ini biasanya memiliki parent seperti berikut:</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;!-- penggunaan yang benar --&gt;</p>
+          <p>&lt;article&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Saya belajar &lt;span color="red"&gt;HTML&lt;/span&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;</p>
+          <p>&lt;/article&gt;</p>
+          <p><br /></p>
+          <p>&lt;!-- penggunaan yang salah --&gt;</p>
+          <p>&lt;span&gt;</p>
+          <p>&nbsp; &nbsp; &lt;span&gt;Ini nama element&lt;/span&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;span&gt;Ini paragraf&lt;/span&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;span&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Saya belajar &lt;span color="red"&gt;HTML&lt;/span&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/span&gt;</p>
+          <p>&lt;/span&gt;</p>
+        </code>
+        <h3>Font Tebal</h3>
+        <code>
+          <p>Syntax HTML&nbsp;</p>
+          <p>&lt;b&gt;&nbsp; &lt;/b&gt;</p>
+        </code>
+        <p>Untuk membuat teks tertentu menjadi tebal secara default.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;p&gt;&nbsp;</p>
+          <p>&nbsp; &nbsp; &nbsp;Saya senang belajar &lt;b&gt;HTML&lt;/b&gt; di website &lt;b&gt;DupanCode&lt;/b&gt;</p>
+          <p>&lt;/p&gt;&nbsp;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p>Saya senang belajar <b>HTML</b> di website <b>DupanCode</b></p>
+          </div>
+        </div>
+        <h3>Font Miring</h3>
+        <code>
+          <p>Syntax HTML&nbsp;</p>
+          <p>&lt;i&gt;&nbsp; &lt;/i&gt;</p>
+        </code>
+        <p>Untuk membuat teks tertentu menjadi miring secara default.</p>
+        <code>
+          <p>Source Code</p>
+          <p>Saya senang belajar &lt;i&gt;HTML&lt;/i&gt; di website &lt;i&gt;DupanCode&lt;/i&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p>Saya senang belajar <i>HTML</i> di website <i>DupanCode</i></p>
+          </div>
+        </div>
+        <h3>Font Bergaris Bawah&nbsp;</h3>
+        <code>
+          <p>Syntax HTML&nbsp;</p>
+          <p>&lt;u&gt;&nbsp; &lt;/u&gt;</p>
+        </code>
+        <p>Untuk membuat teks tertentu memiliki garis bawah secara default.</p>
+        <code>
+          <p>Source Code</p>
+          <p>Saya senang belajar &lt;u&gt;HTML&lt;/u&gt; di website &lt;u&gt;DupanCode&lt;/u&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p>Saya senang belajar <u>HTML</u> di website <u>DupanCode</u></p>
+          </div>
+        </div>
+        <h3>Tag &lt;strong&gt;</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;strong&gt;Teks&lt;/strong&gt;</p>
+        </code>
+        <p>Tag ini digunakan untuk membuat teks tertentu menjadi tebal dan kuat untuk menandakan bahwa teks tersebut penting.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;!-- penggunaan yang benar --&gt;</p>
+          <p>&lt;section&gt;</p>
+          <p>&nbsp; &lt;article&gt;</p>
+          <p>&nbsp; &nbsp; &lt;p&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; Saya belajar &lt;strong&gt;HTML&lt;/strong&gt;</p>
+          <p>&nbsp; &nbsp; &lt;/p&gt;</p>
+          <p>&nbsp; &lt;/article&gt;</p>
+          <p>&lt;/section&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p>Saya belajar <strong>HTML</strong></p>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
