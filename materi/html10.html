@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | List Item</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+  <style>
+    ol li {
+      border-bottom: none !important;
+      padding: 0 !important;
+    }
+    li {
+      margin: 0 !important;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="html0"></p>
+      </div>
+      <article>
+        <h2>List Item</h2>
+        <p>
+          Daftar atau list adalah sebuah baris yang memiliki nomor atau simbol yang digunakan untuk memberi urutan dari sebuah daftar, didalam pemrograman HTML terbagi menjadi dua bagian yaitu:&nbsp;
+        </p>
+        <p>Ordered dan Unordered</p>
+        <h3>Daftar Ordered&nbsp;</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;ol&gt;</p>
+          <p>&nbsp; &lt;li&gt;&nbsp; &lt;/li&gt;</p>
+          <p>&lt;ol&gt;</p>
+        </code>
+        <p>
+          Dalam membuat daftar ordered atau daftar&nbsp; berurut kita dapat menggunakan tag &lt;ol&gt; yang didalam nya terdapat tag <span style="color: red">&lt;li&gt; &lt;/li&gt;</span>&nbsp;(list
+          item).
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;ol&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 1&lt;/li&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 2&lt;/li&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 3&lt;/li&gt;</p>
+          <p>&lt;/ol&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <ol>
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
+            </ol>
+          </div>
+        </div>
+        <p>
+          Tag &lt;ol&gt; bisa menggunakan semua&nbsp;<a href="https://dupandesdata.github.io/blog/materi/html5" rel="nofollow" target="_blank">atribut dasar</a>. Berikut atribut yang hanya dimiliki
+          oleh tag &lt;ol&gt; .
+        </p>
+        <h4>Reversed</h4>
+
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;ol reversed&gt;</p>
+          <p>&nbsp; &lt;li&gt;&nbsp; &lt;/li&gt;</p>
+          <p>&lt;ol&gt;</p>
+        </code>
+
+        <p>Atribut ini adalah atribut boolean digunakan untuk membuat urutan daftar menurun (9,8,7...), bukan menaik (1, 2, 3...).</p>
+
+        <code>
+          <p>Source Code</p>
+          <p>&lt;ol reversed&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 1&lt;/li&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 2&lt;/li&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 3&lt;/li&gt;</p>
+          <p>&lt;/ol&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <ol reversed>
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
+            </ol>
+          </div>
+        </div>
+        <h4>Start</h4>
+
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;ol start="&nbsp; "&gt;</p>
+          <p>&nbsp; &lt;li&gt;&nbsp; &lt;/li&gt;</p>
+          <p>&lt;/ol&gt;</p>
+        </code>
+
+        <p>Atribut ini digunakan untuk mnentukan nilai awal dari daftar pertama.</p>
+
+        <code>
+          <p>Source Code</p>
+          <p>&lt;ol start="20"&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 1&lt;/li&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 2&lt;/li&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 3&lt;/li&gt;</p>
+          <p>&lt;/ol&gt;</p>
+        </code>
+
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <ol style="margin-left: 30px" start="20">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
+            </ol>
+          </div>
+        </div>
+
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;ol type="&nbsp; "&gt;</p>
+          <p>&nbsp; &lt;li&gt;&nbsp; &lt;/li&gt;</p>
+          <p>&lt;/ol&gt;</p>
+        </code>
+        <p>Atribut ini digunakan untuk penanda dalam daftar beruruta (huruf atau angka), nilai ini selalu berupa bilangan bulat, meskipun jenis penomorannya adalah angka atau romawi.&nbsp;</p>
+        <h3>Nilai Atribut</h3>
+        <table>
+          <tr>
+            <th>Nilai</th>
+            <th>Keterangan</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Nilai Default (1, 2, 3, 4 ....)</td>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td>Nilai berdasarkan abjad huruf kecil (a, b, c, d ....)</td>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>Nilai berdasarkan abjad huruf kapital (A, B, C, D ....)</td>
+          </tr>
+          <tr>
+            <td>i</td>
+            <td>Angka Romawi keci (i, ii, iii, iv ....)</td>
+          </tr>
+          <tr>
+            <td>I</td>
+            <td>Angka Romawi kapital (I, II, III, IV ....)</td>
+          </tr>
+        </table>
+        <h3>Daftar Unordered</h3>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;ul&gt;</p>
+          <p>&nbsp; &lt;li&gt;&nbsp;&nbsp;&lt;/li&gt;</p>
+          <p>&lt;ul&gt;</p>
+        </code>
+        <p>
+          Tag ini digunakan untuk membuat daftar yang tidak berurutan (berpoin), tag ini juga bisa menggunakan semua&nbsp;<a
+            href="https://dupandesdata.github.io/blog/materi/html5"
+            rel="nofollow"
+            target="_blank"
+            >atribut dasar</a
+          >.
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;ul&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 1&lt;/li&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 2&lt;/li&gt;</p>
+          <p>&nbsp; &lt;li&gt;list item 3&lt;/li&gt;</p>
+          <p>&lt;ul&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <ul>
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
