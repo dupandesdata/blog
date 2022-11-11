@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Tag Tabel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="html0"></p>
+      </div>
+      <article>
+        <h2>Tag Tabel</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 11 November 2022</p>
+        </div>
+        <p>&nbsp;Tabel digunakan untuk membuat sebuah data agar dapat dibaca dengan mudah, seperti halnya dengan menggunakan Excel table pada HTML terbuat dengan tiga unsur yaitu:</p>
+        <ul>
+          <li>Baris</li>
+          <li>Kolom</li>
+          <li>Sel</li>
+        </ul>
+        <p>Ada beberapa tag khusus untuk membuat tabel pada html seperti berikut:</p>
+        <h4>Tag &lt;table&gt;</h4>
+        <p>Digunakan untuk&nbsp; mendefinisikan bahwa kita akan membuat tabel.</p>
+        <h4>Tag &lt;th&gt;</h4>
+        <p>kepanjangan dari th adalah table head yang digunakan untuk membuat judul pada tabel.</p>
+        <h4>Tag &lt;thead&gt;</h4>
+        <p>Digunakan sebagai pembungkus tabel bagian kepala.</p>
+        <h4>Tag &lt;tbody&gt;</h4>
+        <p>Digunakan sebagai pembungkus body dari tabel.</p>
+        <h4>Tag &lt;tr&gt;</h4>
+        <p>Kepanjangan dari tr adalah tabel row yang digunakan untuk membuat baris baru.</p>
+        <h4>Tag &lt;td&gt;</h4>
+        <p>Kepanjangan dari td adalah table data digunakan untuk membuat sel baru.</p>
+        <p>Struktur dasar tabel seperti ini:</p>
+
+        <code>
+          <p>Source Code</p>
+          <p>&lt;table&gt;</p>
+          <p>&nbsp; &lt;tbody&gt;</p>
+          <p>&nbsp; &nbsp; &lt;thead&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &lt;th&gt;NAMA&lt;/th&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &lt;th&gt;USIA&lt;/th&gt;</p>
+          <p>&nbsp; &nbsp; &lt;/thead&gt;</p>
+          <p>&nbsp; &nbsp; &lt;tr&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &lt;td&gt;Dani&lt;/td&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &lt;td&gt;20 tahun&lt;/td&gt;</p>
+          <p>&nbsp; &nbsp; &lt;/tr&gt;</p>
+          <p>&nbsp; &nbsp; &lt;tr&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &lt;td&gt;Ayu&lt;/td&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &lt;td&gt;18 tahun&lt;/td&gt;</p>
+          <p>&nbsp; &nbsp; &lt;/tr&gt;</p>
+          <p>&nbsp; &nbsp; &lt;tr&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &lt;td&gt;Dita&lt;/td&gt;</p>
+          <p>&nbsp; &nbsp; &nbsp; &lt;td&gt;19 tahun&lt;/td&gt;</p>
+          <p>&nbsp; &nbsp; &lt;/tr&gt;</p>
+          <p>&nbsp; &lt;/tbody&gt;</p>
+          <p>&lt;/table&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              #bdr {
+                --accent-color: #fff !important;
+                --text-color: slategray;
+                --bgColorDarker: #ececec;
+                --bgColorLighter: #fcfcfc;
+                --insideBorderColor: lightgray;
+                width: 125px !important;
+                margin: 0;
+                padding: 0;
+                border: none !important;
+                border-collapse: none !important;
+                color: var(--text-color);
+                table-layout: normal !important;
+                font-family: Arial, Helvetica, sans-serif;
+              }
+              #bdr th,
+              td {
+                padding: 0 !important;
+                font-weight: normal !important;
+                text-align: left !important;
+              }
+              #bdr td {
+                display: table-cell !important;
+                color: #000;
+                font-size: 12pt !important;
+                vertical-align: inherit !important;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+              }
+              #bdr tbody tr {
+                border: none;
+                background-color: white;
+              }
+              #bdr thead tr {
+                color: rgb(0, 0, 0);
+                background-color: #fff;
+                font-size: normal !important;
+              }
+              #bdr th {
+                letter-spacing: normal;
+                font-family: auto;
+              }
+            </style>
+            <table id="bdr">
+              <tbody>
+                <thead>
+                  <th>NAMA</th>
+                  <th>USIA</th>
+                </thead>
+                <tr>
+                  <td>Dani</td>
+                  <td>20 tahun</td>
+                </tr>
+                <tr>
+                  <td>Ayu</td>
+                  <td>18 tahun</td>
+                </tr>
+                <tr>
+                  <td>Dita</td>
+                  <td>19 tahun</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Untuk mempercantik tampilan tabel kita bisa menggunakan atribut berikut ini:</p>
+        <h3>Atribut Border</h3>
+        <p>Atribut ini hanya terdapat satu pada satu tabel atribut border hanya di letakan pada tag <span style="color: red"> &lt;table&gt;</span> saja.</p>
+
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;table border="n"&gt;</p>
+          <p>...</p>
+          <p>&lt;table&gt;</p>
+        </code>
+
+        <p>Penjelasan:</p>
+        <p>n diisi dengan tingkat ketebalan garis semakin tinggi angka nya semakin besar pula garis nya.</p>
+
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              #nobdr {
+                --accent-color: #fff !important;
+                --text-color: slategray;
+                --bgColorDarker: #ececec;
+                --bgColorLighter: #fcfcfc;
+                --insideBorderColor: lightgray;
+                width: 50% !important;
+                margin: 0;
+                padding: 0;
+                border: none !important;
+                color: var(--text-color);
+                table-layout: normal !important;
+                font-family: Arial, Helvetica, sans-serif;
+              }
+              #nobdr th,
+              #nobdr td {
+                border: 1px solid #000 !important;
+                padding: 0 !important;
+                font-weight: normal !important;
+                text-align: left !important;
+              }
+              #nobdr td {
+                display: table-cell !important;
+                color: #000;
+                font-size: 12pt !important;
+                vertical-align: inherit !important;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+              }
+              #nobdr tbody tr {
+                border: none;
+                background-color: white;
+              }
+              #nobdr thead tr {
+                color: rgb(0, 0, 0);
+                background-color: #fff;
+                font-size: normal !important;
+              }
+              #nobdr th {
+                letter-spacing: normal;
+                font-family: auto;
+              }
+            </style>
+            <table id="nobdr">
+              <tbody>
+                <thead>
+                  <th>NAMA</th>
+                  <th>USIA</th>
+                </thead>
+                <tr>
+                  <td>Dani</td>
+                  <td>20 tahun</td>
+                </tr>
+                <tr>
+                  <td>Ayu</td>
+                  <td>18 tahun</td>
+                </tr>
+                <tr>
+                  <td>Dita</td>
+                  <td>19 tahun</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h3>Atribut Rowspan</h3>
+        <p>
+          Atribut ini digunakan untu menggabungkan beberapa baris menjadi satu sell, biasanya digunakan pada tag
+          <span style="color: red">&lt;th&gt;</span> atau <span style="color: red">&lt;td&gt;</span> .
+        </p>
+
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;th rowspan="n"&gt;&lt;/th&gt;</p>
+          <p>&lt;td rowspan="n"&gt;&lt;/td&gt;</p>
+        </code>
+
+        <p>Penjelasan</p>
+        <p>n diisi dengan jumlah baris yang akan digabungkan menjadi satu sell.</p>
+        <p><br /></p>
+        <h3>Atribut Colspan</h3>
+        <p>
+          Atribut ini digunakan untu menggabungkan beberapa kolom menjadi satu sell, biasanya digunakan pada tag <span style="color: red">&lt;th&gt;</span> atau
+          <span style="color: red">&lt;td&gt;</span> .
+        </p>
+        <code>
+          <p>Syntax HTML</p>
+          <p>&lt;th colspan="n"&gt;&lt;/th&gt;</p>
+          <p>&lt;td colspan="n"&gt;&lt;/td&gt;</p>
+        </code>
+
+        <p>Penjelasan</p>
+        <p>n diisi dengan jumlah kolom yang akan digabungkan menjadi satu sell.</p>
+        <p>tag ini juga bisa menambahkan semua jenis&nbsp;<a href="https://dupandesdata.github.io/blog/materi/html5" rel="nofollow" target="_blank">atribut dasar</a>.</p>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
