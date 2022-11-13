@@ -190,16 +190,21 @@ footer {
     right: 3px;
     background-color: ;
   }
-
+  nav ul {
+    flex-direction: column;
+}
+  nav ul li {
+    background: #18212ec7;
+}
   .menu-items {
+    display: none;
     height: 100%;
     width: 100%;
     text-align: center;
     position: absolute;
     opacity: 0;
     font-size: 12pt;
-    top: 30px;
-    background: black;
+    top: 36px;
     transform: translateX(-10%);
     transition: transform 100ms ease-in-out, opacity 200ms;
   }
@@ -209,7 +214,7 @@ footer {
   }
 
   .menu-items li a {
-    color: red;
+    color: #fff;
   }
 
   .menu-items li a:hover {
@@ -235,6 +240,7 @@ footer {
     display: block;
     transform: translateX(0%);
     opacity: 1;
+    left: 0;
   }
 
   .ham-menu .line {
@@ -259,7 +265,7 @@ footer {
 
   .check:checked ~ .ham-menu .line1 {
     display: block;
-    transform: rotate(50deg);
+    transform: rotate(43deg);
   }
 
   .check:checked ~ .ham-menu .line2 {
@@ -268,7 +274,7 @@ footer {
 
   .check:checked ~ .ham-menu .line3 {
     display: block;
-    transform: rotate(-50deg);
+    transform: rotate(-43deg);
   }
   .sertifi div {
     text-align: center;
