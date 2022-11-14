@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Element Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://dupandesdata.github.io/database/web/css/allstyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://dupandesdata.github.io/database/web/css/materi.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="https://kit.fontawesome.com/5988f24ed4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="html0"></p>
+      </div>
+      <article>
+        <h2>Element Form</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 14 November 2022</p>
+        </div>
+        <p>
+          &nbsp;Form digunakan sebagai interaksi user dengan sebuah sistem
+          dengan cara mengirimkan data atau informasi yang diperlukan oleh
+          sistem agar dapat berjalan, data yang diperoleh akan di proses disisi
+          server kemudian akan dikembalikan kepada user hasil pemrosesan
+          tersebut.&nbsp;
+        </p>
+        <p>
+          Contoh sederhana penggunaan form adalah form login agar dapat berjalan
+          form login membutuhkan data Username dan Password, data tersebut akan
+          dikirim kepada server kemudian akan diproses untuk melakukan
+          pengecekan ke database lalu akan dikembalikan kepada user hasil dari
+          pemrosesan tersebut.
+        </p>
+        <p>
+          Berikut ini adalah beberapa bahasa pemrograman yang digunakan untuk
+          memproses data yang diperoleh dari form:
+        </p>
+        <ul>
+          <li>PHP&nbsp;</li>
+          <li>ASP</li>
+          <li>JSP</li>
+          <li>Python</li>
+          <li>Ruby</li>
+          <li>Dan lain sebagainya&nbsp;</li>
+        </ul>
+        <p>Untuk membuat form menggunakan tag berikut:</p>
+        <code class="syntax">
+          <p>&lt;form&gt;...&lt;/form&gt;</p>
+        </code>
+        <p>Terdapat dua jenis atribut form untuk mengirim data yaitu:</p>
+        <code class="syntax">
+          <p>Action</p>
+          <p>method</p>
+        </code>
+
+        <h3>Action</h3>
+        <p>
+          Atribut ini digunakan untuk menuliskan alamat file yang akan memeroses
+          data contoh login.php maka data yang diperoleh akan di proses didalam
+          file login.php
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;form action="login.php"&gt;</p>
+          <p>&lt;/form&gt;</p>
+        </code>
+        <h3>Method</h3>
+        <p>
+          Atribut ini digunakan berfungsi sebagai metode pengiriman data, data
+          tersebut dikirimkan dengan cara URL atau dalam bentuk transaksi
+          posting HTTP. Terdapat dua jenis method yaitu:&nbsp;
+        </p>
+        <code class="syntax">
+          <p>method="get"</p>
+          <p>method="post"</p>
+        </code>
+        <p><span style="color: #cc0000">method="get"</span> berfungsi untuk:</p>
+        <ul>
+          <li>Mengirimkan data dalam bentuk URL.</li>
+          <li>Panjang max dari URL adalah 3000 karakter.</li>
+          <li>
+            Method get sangat sensitif terhadap kebocoran data karena data yang
+            dikirim dalam bentuk URL sehingga dapat terlihat.
+          </li>
+        </ul>
+        <p>
+          <span style="color: #cc0000">method="post"</span> berfungsi untuk:
+        </p>
+        <ul>
+          <li>
+            Mengirimkan data dalam bentuk permainan http request sehingga tidak
+            dapat terlihat.
+          </li>
+          <li>Tidak ada pembatasan jumlah karakter.</li>
+          <li>Tidak dapat di-bookmark.</li>
+        </ul>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;form action="script/URL" method="get/post"&gt;</p>
+          <p>&nbsp; .......</p>
+          <p>&lt;/form&gt;</p>
+        </code>
+        <h3>HTML Input</h3>
+        <p>
+          Ini adalah element yang wajib ada didalam struktur form element ini
+          digunakan untuk interaksi antara program dengan user, sehingga user
+          dapat memasukan data yang dibutuhkan oleh program agar program
+          tersebut bisa berjalan, macam-macam type
+          <a href="https://dupandesdata.github.io/blog/materi/html13"
+            >element input</a
+          >.
+        </p>
+        <p>Berikut ini adalah beberapa element pendukung &lt;form&gt;</p>
+        <h3>Fieldset</h3>
+        <code class="syntax">
+          <p>&lt;fieldset&gt;...&lt;/fieldset&gt;</p>
+        </code>
+        <p>Element ini digunakan untuk mengelompokkan logic input.</p>
+        <h3>Legend</h3>
+        <code class="syntax">
+          <p>&lt;legend&gt;...&lt;/legend&gt;</p>
+        </code>
+        <p>
+          Element ini digunakan untuk membuat&nbsp; informasi dari kelompok
+          kontrol input.
+        </p>
+        <h3>Button</h3>
+        <code class="syntax">
+          <p>&lt;input type="submit"/&gt;</p>
+        </code>
+        <p>
+          Element ini digunakan untuk mengirim data yang sudah diberikan oleh
+          user kemudian akan diproses oleh program tertentu dan akan di
+          kembalikan ke user hasil dari pemrosesan data tersebut.
+        </p>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
