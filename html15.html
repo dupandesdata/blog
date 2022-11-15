@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Form Input Validasi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="html0"></p>
+      </div>
+      <article>
+        <h2>Form Input Validasi</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 15 November 2022</p>
+        </div>
+        <p>
+          Tag input adalah sebuah element kontrol interaktif yang digunakan untuk menerima data dari user. Element ini merupakan tag paling kompleks dari semua tag html karena tag input biasanya
+          memiliki banyak sekali atribut yang berfungsi untuk memvalidasi data yang di masukkan oleh user.
+        </p>
+        <p>Berikut adalah jenis-jenis type yang biasa digunakan:</p>
+        <ol>
+          <li>&lt;input type="checkbox"&gt;</li>
+          <li>&lt;input type="submit"&gt;</li>
+          <li>&lt;input type="text"&gt;</li>
+          <li>&lt;input type="password"&gt;</li>
+          <li>&lt;input type="email"&gt;</li>
+        </ol>
+        <p><a href="https://www.w3schools.com/html/html_form_input_types.asp">Cek selengkapnya</a>&nbsp;&nbsp;</p>
+        <p>Berikut ini beberapa atribut validasi data yang bisa kita gunakan:</p>
+        <h3>Atribut Minlength</h3>
+        <code class="syntax">
+          <p>minlegth="n"</p>
+        </code>
+        <p>
+          Atribut ini digunakan untuk membatasi minimum karakter, misalnya user harus menuliskan nama lengkap tidak mungkin nama lengkap berisi satu karakter saja? Karena itu kita bisa set minimal
+          karakter yang harus dituliskan oleh user.
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;form action=" " method="post"&gt;</p>
+          <p>&nbsp; &lt;label&gt;Siapa nama kamu&nbsp;</p>
+          <p>&nbsp; &nbsp;&lt;input type="text" minlength="5" /&gt;</p>
+          <p>&nbsp; &lt;/label&gt;</p>
+          <p>&lt;/form&gt;</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; input:invalid {</p>
+          <p>&nbsp; &nbsp; color: white;</p>
+          <p>&nbsp; &nbsp; background: red;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <iframe src="https://dupandesdata.github.io/dupancode/output/validasi-minlength.html" width="100%" height="60"> </iframe>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>
+          Pada atribut minlength, n diisi dengan jumlah minimal karakter yang harus dituliskan pada input tersebut, source code diatas adalah membuat element input menjadi merah jika user menuliskan
+          kurang dari 5 karakter.
+        </p>
+        <h3>Atribut Maxlength</h3>
+        <code class="syntax">
+          <p>maxlength="n"</p>
+        </code>
+        <p>Atribut ini digunakan untuk membatasi maximum karakter, misalnya user harus menuliskan nama lengkap yang berisi minimal 5 karakter dan maximal 25 karakter.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;form action=" " method="post"&gt;</p>
+          <p>&nbsp; &lt;label&gt;Siapa nama kamu&nbsp;</p>
+          <p>&nbsp; &nbsp;&lt;input type="text" minlength="5" maxlength="25"/&gt;</p>
+          <p>&nbsp; &lt;/label&gt;</p>
+          <p>&lt;/form&gt;</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; input:invalid {</p>
+          <p>&nbsp; &nbsp; color: white;</p>
+          <p>&nbsp; &nbsp; background: red;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <iframe src="https://dupandesdata.github.io/dupancode/output/validasi-maxlength.html" width="100%" height="60"> </iframe>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>
+          Pada atribut minlength n diisi dengan jumlah maximal karakter yang harus dituliskan pada input tersebut, source code diatas adalah membuat element input menjadi merah jika user menuliskan
+          kurang dari 5 karakter dan lebih dari 25 karakter.
+        </p>
+        <h3>Atribut Required</h3>
+        <code class="syntax">
+          <p>required</p>
+        </code>
+        <p>Atribut ini digunakan agar user diwajibkan untuk mengisi data yang diperlukan sebelum dikirim.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;form action=" " method="post"&gt;</p>
+          <p>&nbsp; &lt;label&gt;Siapa nama kamu</p>
+          <p>&nbsp; &nbsp;&lt;input type="text" minlength="5" required/&gt;</p>
+          <p>&nbsp; &lt;/label&gt;</p>
+          <p>&nbsp; &lt;input type="submit" value="Krim"/&gt;</p>
+          <p>&lt;/form&gt;</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; input:invalid {</p>
+          <p>&nbsp; &nbsp; color: white;</p>
+          <p>&nbsp; &nbsp; background: red;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <iframe src="https://dupandesdata.github.io/dupancode/output/validasi-required.html" width="100%" height="90"> </iframe>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>Jika user belum menulis nama lengkap lalu mengklik tombol krim itu tidak akan bisa.</p>
+        <p>Atribut ini dapat digunakan pada input type: text, number, search, email, telp, url, checkbox, file, radio, dan date.</p>
+        <h3>Atribut Min</h3>
+        <code class="syntax">
+          <p>min="n"</p>
+        </code>
+        <p>Atribut ini sama seperti minlength tetapi digunakan untuk input type number.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;form action=" " method="post"&gt;</p>
+          <p>&nbsp; &lt;label&gt;Masukan 2 digit angka</p>
+          <p>&nbsp; &nbsp;&lt;input type="number" min="2" required/&gt;</p>
+          <p>&nbsp; &lt;/label&gt;</p>
+          <p>&nbsp; &lt;input type="submit" value="Krim"/&gt;</p>
+          <p>&lt;/form&gt;</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; input:invalid {</p>
+          <p>&nbsp; &nbsp; color: white;</p>
+          <p>&nbsp; &nbsp; background: red;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <iframe src="https://dupandesdata.github.io/dupancode/output/validasi-min.html" width="100%" height="60"> </iframe>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>
+          Pada atribut min, n diisi dengan jumlah minimal digit yang harus dituliskan pada input tersebut, source code diatas adalah membuat element input menjadi merah jika user menuliskan kurang
+          dari 2 digit angka.&nbsp;
+        </p>
+        <h3>Atribut Max</h3>
+        <code class="syntax">
+          <p>max="n"</p>
+        </code>
+        <p>Atribut ini sama seperti maxlength tetapi digunakan untuk input type number.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;form action=" " method="post"&gt;</p>
+          <p>&nbsp; &lt;label&gt;Masukan 2 - 5 digit angka</p>
+          <p>&nbsp; &nbsp;&lt;input type="number" min="2" max="5" required/&gt;</p>
+          <p>&nbsp; &lt;/label&gt;</p>
+          <p>&nbsp; &lt;input type="submit" value="Krim"/&gt;</p>
+          <p>&lt;/form&gt;</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; input:invalid {</p>
+          <p>&nbsp; &nbsp; color: white;</p>
+          <p>&nbsp; &nbsp; background: red;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <iframe src="https://dupandesdata.github.io/dupancode/output/validasi-max.html" width="100%" height="60"> </iframe>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>
+          Pada atribut max, n diisi dengan jumlah maximal digit yang harus dituliskan pada input tersebut, source code diatas adalah membuat element input menjadi merah jika user menuliskan kurang
+          dari 2 dan lebih dari 5 digit angka.
+        </p>
+        <h3>Atribut Placeholder</h3>
+        <code class="syntax">
+          <p>placeholder="keterangan"</p>
+        </code>
+        <p>Atribut ini digunakan untuk menampilkan petunjuk tentang penulisan data, misalnya sampel atau deskripsi singkat mengenai format yang ditetapkan).</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;form action=" " method="post"&gt;</p>
+          <p>&nbsp; &lt;label&gt;Siapa nama kamu</p>
+          <p>&nbsp; &nbsp;&lt;input type="text" minlength="5" placeholder="Chandra Kirana" required/&gt;</p>
+          <p>&nbsp; &lt;/label&gt;</p>
+          <p>&nbsp; &lt;input type="submit" value="Krim"/&gt;</p>
+          <p>&lt;/form&gt;</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; input:invalid {</p>
+          <p>&nbsp; &nbsp; color: white;</p>
+          <p>&nbsp; &nbsp; background: red;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <iframe src="https://dupandesdata.github.io/dupancode/output/validasi-placeholder.html" width="100%" height="60"> </iframe>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>
+          Pada atribut ini, keterangan ditulis dengan format yang sudah diberikan, contoh penulisan nama lengkap kita sudah set minimal 5 karakter dan maximal 25 karakter kita bisa menggunakan
+          placeholder untuk memberi tau kepada user penulisan nama yang benar.
+        </p>
+        <h3>Atribut Pattern</h3>
+        <code class="syntax">
+          <p>pattern="/modifier(s)/Expression"</p>
+        </code>
+        <p>adalah ekspresi reguler yang valueharus cocok dengan input agar nilai lulus validasi batasan</p>
+        <p>
+          Atribut ini digunakan sebagai ekspresi reguler/format penulisan data yang harus dituliskan oleh user dengan format yang sudah ditetapkan, misalnya untuk menuliskan nama lengkap hanya boleh
+          menggunakan huruf a-z saja.
+        </p>
+        <p>Atribut ini dapat digunakan pada input type: text, number, search, email, telp, url</p>
+        <p>Berikut beberapa format yang kita bisa gunakan:</p>
+        <table>
+          <tbody>
+            <thead>
+              <th>Modifier</th>
+              <th>Keterangan</th>
+            </thead>
+            <tr>
+              <td>g</td>
+              <td>Pencocokan global</td>
+            </tr>
+            <tr>
+              <td>i</td>
+              <td>Pencocokan case-insensitive</td>
+            </tr>
+            <tr>
+              <td>m</td>
+              <td>Pencocokan case-insensitivem Pencocokan multiline</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <thead>
+              <th>Expression</th>
+              <th>Keterangan</th>
+            </thead>
+            <tr>
+              <td>[abc]</td>
+              <td>Menentukan karakter penulisan input hanya (A -Z)</td>
+            </tr>
+            <tr>
+              <td>[^abc]</td>
+              <td>Menentukan karakter penulisan input tidak boleh menggunakan (A -Z)</td>
+            </tr>
+            <tr>
+              <td>[0-9]</td>
+              <td>Menentukan karakter penulisan input type number (0 - 9)</td>
+            </tr>
+            <tr>
+              <td>[^0-9]</td>
+              <td>Menentukan karakter penulisan input tidak boleh menggunakan (0 - 9)</td>
+            </tr>
+            <tr>
+              <td>(x|y)</td>
+              <td>Menentukan salah satu alternatif yang ditentukan</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <thead>
+              <th>Metacharacter</th>
+              <th>Keterangan</th>
+            </thead>
+            <tr>
+              <td>/d</td>
+              <td>Menentukan angka</td>
+            </tr>
+            <tr>
+              <td>{n,}</td>
+              <td>Menentukan jumlah karakter</td>
+            </tr>
+          </tbody>
+          <p>Berikut ini format validasi input dengan regular expression.</p>
+          <code class="syntax">
+            <p>&lt;input pattern="regexp"&gt;</p>
+          </code>
+          <table>
+            <tbody>
+              <thead>
+                <th>Regexp</th>
+                <th>Keterangan</th>
+              </thead>
+              <tr>
+                <td>(?=.*[A-Z])(?=.*[^0-9]).{5,}</td>
+                <td>Memvalidasi nama</td>
+              </tr>
+              <tr>
+                <td>[a-z0-9.@-_]{5,}</td>
+                <td>Memvalidasi email</td>
+              </tr>
+              <tr>
+                <td>(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}</td>
+                <td>Memvalidasi password</td>
+              </tr>
+              <tr>
+                <td>[+62]{1}[0-9]\d{13}</td>
+                <td>Memvalidasi nomor telpon Indonesia</td>
+              </tr>
+            </tbody>
+          </table>
+        </table>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
