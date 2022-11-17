@@ -1,98 +1,277 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Dupan Code | Box Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
 
-<head>
-  <title>Dupan Code | Property dan Value CSS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
-  <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
-</head>
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>Box Model</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 17 November 2022</p>
+        </div>
+        <p>
+          Box Model adalah sebuah kotak pembungkus dari setiap elemen HTML, element tersebut di representasikan sebagai box-box dan memahami box ini adalah kunci utama dari sebuah styling tata letak
+          dasar dengan CSS.
+        </p>
+        <div class="separator" style="clear: both; text-align: center">
+          <img
+            border="0"
+            data-original-height="430"
+            data-original-width="516"
+            height="267"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZZ9YTOvUozcdwPgkCVQ87VEuWv7poD5lFB19b3zzI6wx-udWcVQAYi73H07-Q_K4TpDsK3PPhpR3KIv2CRxjAwAMXgumhmexMU7OL2QrL-50--P3nvaDjw2atDfRmRtmJUfA-8nxw-Db1k0JsgbIhonrZvgwjpHU0Y_G5Nsw7pWSUy1d_7s4X73Em/s320/box-model.jpg"
+            width="320"
+          />
+        </div>
+        <h3>Property dan Value CSS</h3>
+        <p>Property CSS adalah sebuah perintah yang diberikan untuk memberi warna, mengubah ukuran dan mengubah bentuk elemen html.</p>
+        <p>
+          Property dan value diletakkan pada kurang kurawal&nbsp;<span style="color: red">{ }</span> untuk memberi sebuah <u>value</u> jangan lupa untuk menambahkan <u><i>(dua titik)</i></u> : pada
+          akhir <u>property</u> dan untuk value diakhiri dengan (<i>titik koma</i>);&nbsp;
+        </p>
+        <h3>Height</h3>
+        <code class="syntax">
+          <p>Selector { height: value }</p>
+        </code>
+        <p>Properti ini digunakan untuk mengatur tinggi element, untuk menggunakan properti hieght harus berbarengan dengan <u>width</u>.</p>
+        <h3>Width</h3>
+        <code class="syntax">
+          <p>Selector { width: value }</p>
+        </code>
+        <p>Properti ini digunakan untuk mengatur lebar element, untuk menggunakan properti hieght harus berbarengan dengan <u>height</u>.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>div {</p>
+          <p>&nbsp; height: 200px;</p>
+          <p>&nbsp; width: 200px;</p>
+          <p>&nbsp; color: green;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;div&gt;&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .div {
+                height: 200px;
+                width: 200px;
+                background: green;
+              }
+            </style>
 
-<body>
-  <div class="containerTop"></div>
-  <div class="materi">
-    <div class="menu-post">
-      <p id="css0"></p>
-    </div>
-    <div class="data-post">
-      <h2>Property dan Value CSS</h2>
-      <p>Property CSS adalah sebuah perintah yang diberikan untuk memberi warna, mengubah ukuran dan mengubah bentuk elemen html.</p>
-<p>
-  Property dan value diletakkan pada kurang kurawal&nbsp;<span style="color: red">{ }</span> untuk memberi sebuah <u>value</u> jangan lupa untuk menambahkan <u><i>(dua titik)</i></u> :
-  <span style="color: red">pada akhir property </span>dan untuk value&nbsp;<span style="color: red">diakhiri dengan</span> ;&nbsp;
-</p>
-<blockquote>
-  <p>Syntax CSS</p>
-  <p>selector {</p>
-  <p>&nbsp; property: value;</p>
-  <p>}</p>
-</blockquote>
-<p>Property dibawah ini adalah jenis property yang wajib dihafal:&nbsp;</p>
-<p><b>Property:</b></p>
-<ol>
-  <li>height = untuk memberi style tinggi.</li>
-  <li>width = untuk memberi style lebar.</li>
-  <li>pandding = mengosongkan ruang di sekitar elemen.</li>
-  <li>margin = membuat jarak pada elemen.</li>
-  <li>float = memaksa elemen ke kiri atau kanan.&nbsp;</li>
-</ol>
-<p>
-  <u><i>Value</i></u> adalah tempat dimana kita menulis warna, tinggi dan lebar, besar dan kecil suatu konten.
-</p>
-<p><b>Value:</b></p>
-<ol>
-  <li>px = <span style="color: red">pixels</span> digunakan untuk memberi ukuran fix element.</li>
-  <li>pt = <span style="color: red">points</span>&nbsp;digunakan untuk memberi ukuran font.</li>
-  <li>vh = <span style="color: red">viewport</span>&nbsp;digunakan untuk memberi ukuran element/text yang ditampilkan sesuai layar.</li>
-  <li>em = <span style="color: red">rem</span> digunakan untuk memberi ukuran element/text yang menyesuaikan dengan layar.</li>
-  <li>% = <span style="color: red">persen </span>digunakan untuk memberikan ukuran element/text sesuai layar.&nbsp;</li>
-</ol>
-<p><b>Property dan value</b>&nbsp;</p>
-<p>adalah sebuah syntax CSS yang bisa digunakan untuk property atau bisa juga digunakan sebagai value sebagai berikut:</p>
-<ol>
-  <li>top = atas</li>
-  <li>bottom = bawah</li>
-  <li>right = kanan</li>
-  <li>left = kiri</li>
-</ol>
-<p>Bertindak sebagai property:</p>
-<blockquote>
-  <p>Syntax Property</p>
-  <p>top: value;</p>
-  <p>bottom: value;</p>
-  <p>right: value;</p>
-  <p>left: value;</p>
-</blockquote>
-<blockquote>
-  <p>Syntax CSS&nbsp;</p>
-  <p>selector {</p>
-  <p>&nbsp; top: 10px;</p>
-  <p>}</p>
-</blockquote>
-<p>Penjelasan:</p>
-<p>Syntax CSS diatas berfungsi memberikan jarak bagian atas dari element tertentu.</p>
-<p>Bertindak sebagai value</p>
-<blockquote>
-  <p>Syntax Value</p>
-  <p>nama property: top;</p>
-  <p>nama property: bottom;</p>
-  <p>nama property: right;</p>
-  <p>nama property: left;</p>
-</blockquote>
-<blockquote>
-  <p>Syntax CSS</p>
-  <p>selector {</p>
-  <p>&nbsp; float: right;</p>
-  <p>}</p>
-</blockquote>
-<p>Penjelasan:</p>
-<p>Syntax CSS diatas berfungsi untuk menampilkan element di kanan halaman.</p>
+            <div class="div"></div>
+          </div>
+        </div>
+        <h3>Margin</h3>
+        <code class="syntax"> <p>Selector { margin: value; }</p></code>
+        <p>Property margin adalah sebuah perintah untuk memberikan <b>jarak/ruang&nbsp;bagian luar</b>&nbsp;antara satu elemen dengan elemen yang lainnya.</p>
+        <div class="separator" style="clear: both; text-align: center">
+          <img
+            border="0"
+            data-original-height="1042"
+            data-original-width="874"
+            height="320"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQqRpX8WYu4quld9bJ0FBkSkeZsgxisYPlHbwHXz5iz5TtQIoRlLOmuWkVoVklcbawttNOw640RVfoaMlo0OIycrUCtd9UyKJp5qe33PYhtQPh-9AFcis8V9_48ObkzWYGrjtzuEzMZY5URu3wPVKU8MChRsZDHz5P3FzCoTSf3tPHq6dXAH9E6pAF/s320/20221117_070211.jpg"
+            width="268"
+          />
+        </div>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>div {</p>
+          <p>&nbsp; height: 200px;</p>
+          <p>&nbsp; width: 200px;</p>
+          <p>&nbsp; margin: 20px;</p>
+          <p>&nbsp; color: green;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;div&gt;&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .div1 {
+                margin: 20px;
+                height: 200px;
+                width: 200px;
+                background: green;
+              }
+            </style>
 
-    </div>
-  </div>
-  <div class="containerBottom"></div>
-  <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
-  <script src="https://dupandesdata.github.io/database/post.js"></script>
-</body>
+            <div class="div1"></div>
+          </div>
+        </div>
+        <h3>Padding</h3>
+        <code class="syntax">
+          <p>Selector { padding: value; }</p>
+        </code>
+        <p>Properti padding adalah sebuah perintah untuk memberikan<b> jarak/ruang bagian dalam element</b>.</p>
+        <div class="separator" style="clear: both; text-align: center">
+          <img
+            border="0"
+            data-original-height="1280"
+            data-original-width="1241"
+            height="320"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmJrIK0-Tk4yXhR9vhWcEX7tFwI3yL9Mvrv3Pr922OFfUlrLrDehK_i8FwK2ccTGkyCCktOA9KZKyh5p2amJdFysVYefmkJCdYGK1EiPmgDPA7GFtt7hunANI8B6IGH7I19m6W80RyNINHB7iFwR66Qtf0lG9_CNdSobOFbIepD-3bFVvJxYwYYr-p/s320/20221117_074232.jpg"
+            width="310"
+          />
+        </div>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>div {</p>
+          <p>&nbsp; margin: 20px;</p>
+          <p>&nbsp; padding: 20px;</p>
+          <p>&nbsp; height: 200px;</p>
+          <p>&nbsp; width: 200px;</p>
+          <p>&nbsp; color: green;</p>
+          <p>}</p>
 
+          <p>.box {</p>
+          <p>width: 100px;</p>
+          <p>height: 100px;</p>
+          <p>background: coral;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;div&gt;</p>
+          <p>&lt;div class="box"&gt;ini content&lt;/div&gt;</p>
+          <p>&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .div2 {
+                margin: 20px;
+                padding: 20px;
+                height: 200px;
+                width: 200px;
+                background: green;
+              }
+              .box {
+                width: 100px;
+                height: 100px;
+                background: coral;
+              }
+            </style>
+
+            <div class="div2"><div class="box"></div></div>
+          </div>
+        </div>
+        <p>Konsep dasar penulisan value margin atau padding sama sebagai berikut:</p>
+        <ul>
+          <li>margin/padding: 10px 5px 5px 10px;</li>
+          <li>margin/padding: 10px 5px 10px;</li>
+          <li>margin/padding: 8px 12px ;</li>
+        </ul>
+        <div class="separator" style="clear: both; text-align: center">
+          <img
+            border="0"
+            data-original-height="623"
+            data-original-width="423"
+            height="320"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBpC0jZ-E_D1eP7dxru6TDQBE3l27iFMrPWhFzxz0TPKQzcgy3yI_dn_30Ixi5BwoCvRszdireZAWA-DMNMm33SBSc7ntEBgLIG4N6Xen2-MjJ9ddFOQtiZ3ReSaltJbWVYrRrf2AZnnkSqTv67C1VFwMe7a4S9c2ZH7iEZsVU1AjMZbSZaBsn8f3c/s320/6370076.jpg"
+            width="217"
+          />
+        </div>
+        <p>Selain itu margin dan padding juga ditulis seperti berikut:</p>
+        <h4>Padding</h4>
+        <ul>
+          <li>padding-top: 10px;</li>
+          <li>padding-left:&nbsp;5px;</li>
+          <li>padding-bottom:&nbsp;7px;</li>
+          <li>padding-right:&nbsp;9px;</li>
+        </ul>
+        <h4>Margin</h4>
+        <ul>
+          <li>margin-top: 10px;</li>
+          <li>margin-left:&nbsp;5px;</li>
+          <li>margin-bottom:&nbsp;7px;</li>
+          <li>margin-right:&nbsp;9px;</li>
+        </ul>
+        <p>Penjelasan:</p>
+        <p>Angka silahkan disesuaikan dengan kebutuhan.</p>
+        <ul>
+          <li>padding/margin-top (hanya jarak atas)</li>
+          <li>padding/margin-left (hanya jarak kiri)</li>
+          <li>padding/margin-bottom (hanya jarak bawah)</li>
+          <li>padding/margin-right (hanya jarak kanan)</li>
+        </ul>
+        <p>Contoh saya akan membuat margin top saja sebesar 20px maka kita tidak perlu menulis seperti ini:</p>
+        <code class="syntax">
+          <p>Selector { margin: 20px 0 0 0; }</p>
+        </code>
+        <p>Penjelasan:</p>
+        <p>
+          Kode diatas berfungsi mengatur jarak luar element bagian atas sebesar 20px dan bawah, kanan dan kiri 0 penulisan seperti itu kurang baik, karena penulisan seperti itu digunakan jika kita
+          ingin memberikan margin atas, bawah, kanan dan kiri namun ketika kita ingin memberikan jarak tertentu saja gunakan:
+        </p>
+        <h4>Padding</h4>
+        <ul>
+          <li>padding-top: ;</li>
+          <li>padding-left: ;</li>
+          <li>padding-bottom: ;</li>
+          <li>padding-right: ;</li>
+        </ul>
+        <h4>Margin&nbsp;</h4>
+        <ul>
+          <li>margin-top: ;</li>
+          <li>margin-left: ;</li>
+          <li>margin-bottom: ;</li>
+          <li>margin-right: ;</li>
+        </ul>
+        <h4>Border</h4>
+        <p>Properti ini digunakan untuk memberi garis tepi pada element tertentu, untuk membuat border cek disini.</p>
+        <p>Untuk mengatur ukuran element HTML kita dapat menggunakan satuan sebagai berikut:</p>
+        <table>
+          <tbody></tbody>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>px</td>
+              <td>Pixels digunakan untuk memberi ukuran fix pada element/font.</td>
+            </tr>
+            <tr>
+              <td>pt</td>
+              <td>Points digunakan untuk memberi ukuran font.</td>
+            </tr>
+            <tr>
+              <td>vh</td>
+              <td>Viewport digunakan untuk memberi ukuran element/font yang ditampilkan sesuai layar.</td>
+            </tr>
+            <tr>
+              <td>rem</td>
+              <td>Rem ukuran font relatif pada elemen root.</td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td>persen digunakan untuk memberikan ukuran element/font sesuai dengan lebar/tinggi element parent.</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
 </html>
