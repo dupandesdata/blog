@@ -1,105 +1,178 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dupan Code | Property Margin CSS</title>
+    <title>Dupan Code | Properti Display Default</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
     <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div class="containerTop"></div>
-    <div class="materi">
+    <section class="containerTop"></section>
+    <section class="materi">
       <div class="menu-post">
         <p id="css0"></p>
       </div>
-      <div class="data-post">
-        <h2>Property Margin CSS</h2>
-        <p>&nbsp;<i>Apa itu property margin:</i></p>
-        <p>
-          Property <i>margin</i> adalah sebuah perintah untuk memberikan <i>ruang</i> antara satu elemen dengan elemen yang lainnya. Jarak yang di hasilkan oleh property ini adalah jarak bagian luar
-          elemen, berikut ini adalah cara penulisan margin.
-        </p>
-        <blockquote>
-          <p>Syntax Property&nbsp;</p>
-          <p>h1 { margin: 0 0 0 0; }&nbsp;</p>
-        </blockquote>
-        <p>Penjelasan:</p>
-        <ul>
-          <li>Angka pertama adalah jarak bagian atas (top)</li>
-          <li>Angka kedua adalah jarak bagian kiri (left)</li>
-          <li>Angka ketiga adalah jarak bagian bawah (bottom)</li>
-          <li>Angka keempat adalah jarak bagian kanan (right)&nbsp;</li>
-        </ul>
-        <p>Saya ingin membuat sebuah elemen yang jarak top 30px left 50px bottom 20px right 10px.</p>
-        <p>Maka saya akan tulis seperti ini:</p>
-        <blockquote>
-          <p>Syntax CSS</p>
-          <p>selector {&nbsp;</p>
-          <p>margin: 30px 50px 20px 10px&nbsp;</p>
-          <p>}</p>
-        </blockquote>
-        <p>
-          Jika kita mau semua jarak margin di setiap sisi nya sama kita hanya menuliskan satu angka yaitu <u><i>margin: nolai;</i></u> Ini akan membuat jarak top, left, bottom &amp; right menjadi
-          sama.&nbsp;
-        </p>
-        <blockquote>
-          <p>Syntax CSS&nbsp;</p>
-          <p>selector {&nbsp;</p>
-          <p>margin: 40px;</p>
-          <p>}</p>
-        </blockquote>
-        <p>Output:</p>
-        <div class="separator" style="clear: both; text-align: center">
-          <img
-            border="0"
-            data-original-height="494"
-            data-original-width="582"
-            height="272"
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQPX1NKsqCpqYJHIKCM-QsmyPtW7DIonf4lpRHsTKRW8zHt99Wp5mptTXeUJW8qXQM0kQpQ999LcN3-OvqE1Yug5xUyH6Rh4VFQpUewa9yw3uDifv1OeXBOFRx3sekPi2c0XJ8uQ1rEYkF1WRht7Sq1TBpGrIEKBMbu5026JGBc8cimxg7uSiBARqs/s320/more%20info.jpg"
-            width="320"
-          />
+      <article>
+        <h2>Properti Display Default</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 18 November 2022</p>
         </div>
-        <p>Penjelasan:</p>
-        <p>Garis tepi kita anggap saja elemen lain.</p>
         <p>
-          Pada materi pelajaran&nbsp;<a href="https://dupandesdata.github.io/blog/materi/css1.html" rel="nofollow"><span style="color: #6fa8dc">Property dan Value CSS</span></a
-          >&nbsp;kita sudah mempelajari ada empat property pendukung yaitu:&nbsp;
+          Display adalah salah satu properti CSS yang digunakan untuk mengontrol tata letak setiap element HTML bagaimana element tersebut ditampilkan pada browser,&nbsp; setiap element HTML memiliki
+          display default yang berbeda oleh karena itu setiap element HTML memiliki perilaku tampilan yang berbeda.
         </p>
-        <ul>
-          <li>top</li>
-          <li>bottom</li>
-          <li>right</li>
-          <li>left</li>
-        </ul>
-        <p>Kita bisa menggunakan property tersebut untuk mendukung property margin, dengan cara memberi tanda -&nbsp; sebagai berikut:</p>
-        <blockquote>
-          <p>Syntax Property</p>
-          <p>selector {</p>
-          <p>margin-top: value;</p>
-          <p>margin-left: value;</p>
-          <p>margin-bottom: value;</p>
-          <p>margin-right: value;</p>
+        <h3>Display Block</h3>
+        <code class="syntax">
+          <p>display: block;</p>
+        </code>
+        <p>
+          Display jenis ini digunakan untuk menampilkan element dimulai dengan <u>baris baru</u>, jika element HTML memiliki display ini ia tidak akan bisa berjejer ke samping sebagai tag
+          <span style="color: red">&lt;p&gt;</span>, <span style="color: red">&lt;div&gt;</span>, <span style="color: red">&lt;section&gt;</span> dan lain-lain. Element yang memiliki display ini dapat
+          kita ubah/mengatur&nbsp;<u>height</u>&nbsp;dan <u>width</u>, hampir semua element HTML memiliki display default block.
+        </p>
+        <h3>Display Inline</h3>
+        <code class="syntax">
+          <p>display: inline;</p>
+        </code>
+        <p>
+          Display jenis ini digunakan untuk menampilkan element <u>tidak dimulai dengan baris baru</u>, element yang memiliki display ini akan berjejer ke samping seperti tag<span style="color: red">
+            &lt;a&gt;</span
+          >, <span style="color: red">&lt;span&gt;</span>,<span style="color: red"> &lt;b&gt;</span> dan lain-lain. Kita tidak dapat
+          mengubah/mengatur&nbsp;<u>height</u>&nbsp;dan&nbsp;<u>width</u>&nbsp;supaya kita bisa mengatur lebar dan tinggi nya kita bisa merubah display menjadi
+          <span style="color: red"><u>inline-block</u></span
+          >.
+        </p>
+        <h3>Display Inline-block</h3>
+        <p>
+          Display jenis ini adalah gabungan antara inline dan block yang digunakan untuk mengatur lebar dan tinggi element yang memiliki <u><span style="color: red">display default inline</span></u
+          >, lalu bagaimana cara untuk merubah display menjadi inline-block? Kita cukup menuliskan:
+        </p>
+        <code class="syntax">
+          <p>display: Inline-block</p>
+        </code>
+        <p>&lt;span&gt; adalah tag HTML yang memiliki display default inline ciri-ciri element yang berdisplay Inline ia akan berjejer ke samping dan tidak dapat diatur lebar dan tinggi nya.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp;span {</p>
+          <p>&nbsp; width: 150px;</p>
+          <p>&nbsp; height: 150px;</p>
+          <p>&nbsp;background: green;</p>
           <p>}</p>
-        </blockquote>
-        <p>Penjelasan:</p>
-        <ul>
-          <li>margin-top (hanya jarak atas)</li>
-          <li>margin-left (hanya jarak kiri)</li>
-          <li>margin-bottom (hanya jarak bawah)</li>
-          <li>margin-right (hanya jarak kanan)</li>
-        </ul>
-        <p>Contoh:</p>
-        <blockquote>
-          <p>Syntax CSS&nbsp;</p>
-          <p>selector {&nbsp;</p>
-          <p>margin-top: 20px;</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;span&gt;element 1&lt;/span&gt;</p>
+          <p>&lt;span&gt;element 2&lt;/span&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              span {
+                width: 150px;
+                height: 150px;
+              }
+            </style>
+            <span>element 1</span>
+            <span>element 2</span>
+          </div>
+        </div>
+        <p>Penjelasan&nbsp;</p>
+        <p>Tidak berpengaruh apapun karena kita belum mengubahnya menjadi inline-block.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp;span {</p>
+          <p>&nbsp; display: Inline-block;</p>
+          <p>&nbsp; width: 150px;</p>
+          <p>&nbsp; height: 150px;</p>
+          <p>&nbsp;background: green;</p>
           <p>}</p>
-        </blockquote>
-        <p>Maka elemen yang diberi margin tersebut memiliki jarak bagian atas sebesar 20px.</p>
-      </div>
-    </div>
-    <div class="containerBottom"></div>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;span&gt;element 1&lt;/span&gt;</p>
+          <p>&lt;span&gt;element 2&lt;/span&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .span {
+                display: inline-block;
+                width: 150px;
+                height: 150px;
+                background: green;
+              }
+            </style>
+            <span class="span">element 1</span>
+            <span class="span">element 2</span>
+          </div>
+        </div>
+        <p>Kita juga dapat mengganti suatu tag menjadi display block atau Inline.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp;span {</p>
+          <p>&nbsp;color: green;</p>
+          <p>}</p>
+          <p>&nbsp;div {</p>
+          <p>&nbsp;color: red;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;span&gt;element span&lt;/span&gt;</p>
+          <p>&lt;span&gt;element span&lt;/span&gt;</p>
+          <p>&lt;div&gt;element div&lt;/div&gt;</p>
+          <p>&lt;div&gt;element div&lt;/div&gt;</p>
+        </code>
+        <p>Output secara default:</p>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <span style="color: green">element span</span>
+            <span style="color: green">element span</span>
+            <div style="color: red">element div</div>
+            <div style="color: red">element div</div>
+          </div>
+        </div>
+        <p>Kita akan merubah display &lt;div&gt; menjadi inline dan &lt;span&gt; menjadi block, oh iya cara ini dapat dilakukan pada semua tag HTML.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp;span {</p>
+          <p>&nbsp;display: block;</p>
+          <p>&nbsp;color: green;</p>
+          <p>}</p>
+          <p>&nbsp;div {</p>
+          <p>&nbsp;display: inline;</p>
+          <p>&nbsp;color: red;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;span&gt;element span&lt;/span&gt;</p>
+          <p>&lt;span&gt;element span&lt;/span&gt;</p>
+          <p>&lt;div&gt;element div&lt;/div&gt;</p>
+          <p>&lt;div&gt;element div&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <div style="color: green">element span</div>
+            <div style="color: green">element span</div>
+            <span style="color: red">element div</span>
+            <span style="color: red">element div</span>
+          </div>
+        </div>
+        <h3>Display None</h3>
+        <code class="syntax">
+          <p>display: none;</p>
+        </code>
+        <p>
+          Display jenis ini digunakan untuk menghilangkan element tertentu biasanya berguna saat kita membuat responsif, jika pada layar maksimal 700px element tersebut ditampilkan dan jika lebar
+          layar minimal 900px maka element tersebut tidak ditampilkan.
+        </p>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
     <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
     <script src="https://dupandesdata.github.io/database/post.js"></script>
   </body>
