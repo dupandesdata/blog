@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Background Color</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="html0"></p>
+      </div>
+      <article>
+        <h2>Background Color</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 19 November 2022</p>
+        </div>
+        <h3>Background</h3>
+        <code class="syntax">
+          <p>background: value;</p>
+        </code>
+        <p>Property ini digunakan untuk memberikan warna pada element html.</p>
+        <p>Property ini memiliki beberapa value sebagai berikut</p>
+        <table>
+          <tbody>
+            <thead>
+              <th>Jenis</th>
+              <th>Value</th>
+            </thead>
+            <tr>
+              <td>Color</td>
+              <td>red, yellow, green</td>
+            </tr>
+            <tr>
+              <td>Hexadecimal</td>
+              <td>#fff, #000, #00ff00</td>
+            </tr>
+            <tr>
+              <td>Red-green-blue</td>
+              <td>rgba(108.58.63), rgba(0%.100%.50%)</td>
+            </tr>
+            <tr>
+              <td>Hue-saturation-lightness</td>
+              <td>hsl(245.75%.50%)</td>
+            </tr>
+            <tr>
+              <td>Hue-saturation-lightness-alpha</td>
+              <td>hsla(245.75%.50%.0.1)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Untuk penggunaannya seperti ini:</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>.box {</p>
+          <p>width: 100px;</p>
+          <p>height: 100px;</p>
+          <p>background: #888;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p><br /></p>
+          <p>&lt;div class="box"&gt;&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .box {
+                width: 100px;
+                height: 100px;
+                background: #888;
+              }
+            </style>
+            <div class="box"></div>
+          </div>
+        </div>
+        <h3>background-image</h3>
+        <code class="syntax">
+          <p>background-image: url;</p>
+        </code>
+        <p>Property ini digunakan untuk membuat gambar menjadi background pada element html, value dari aproperty ini adalah url gambar.</p>
+        <p>Untuk penggunaannya seperti ini:</p>
+        <code>
+          <p>Source Code</p>
+          <p>body { background-image: image.jpg }</p>
+        </code>
+        <p>Property mempunyai kelemahan jika kita memasukkan gambar yang berukuran kecil maka akan diduplikat sebanyak ukuran element html yang diberikan gambar tersebut.</p>
+        <p>Penjelasan:</p>
+        <p>
+          Element html memiliki ukuran 400x400px dan gambar yang kita sediakan ukuran 100px maka gambar tersebut akan diduplikat sebanyak 4buah secara otomatis.
+          <a href="https://dupandesdata.github.io/dupancode/output/background-image.html">Cek disini</a>
+        </p>
+        <h3>Background-repat</h3>
+        <p>
+          Property ini digunakan untuk melengkapi property background-image yang berfungsi untuk mengatur pengulangan gambar, baik itu secara horizontal dan vertikal property ini memiliki empat nilai
+          sebagai berikut:
+        </p>
+        <ol>
+          <li>no-repeat</li>
+          <li>repeat</li>
+          <li>repeat-x</li>
+          <li>repeat-z</li>
+        </ol>
+        <p>Penjelasan:</p>
+        <ol>
+          <li>no-repeat adalah perintah yang membuat gambar tidak melakukan pengulangan secara horizontal.</li>
+          <li>repeat adalah perintah yang membuat gambar melakukan pengulangan secara horizontal dan vertikal.</li>
+          <li>repeat-x adalah perintah yang membuat gambar melakukan pengulangan secara horizontal.</li>
+          <li>repeat-z adalah perintah yang membuat gambar melakukan pengulangan secara vertikal.</li>
+        </ol>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>body {</p>
+          <p>background-image: /image.jpg;</p>
+          <p>background-repat: no-repat;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+        </code>
+        <p><a href="https://dupandesdata.github.io/dupancode/output/background-image-repat.html">Cek disini</a></p>
+        <h3>Bckground-position</h3>
+        <p>
+          Property ini digunakan untuk mengatur posisi gambar mirip dengan text-align yang berfungsi mengatur posisi element html sedangkan background-position digunakan untuk melengkapi property
+          background-image.
+        </p>
+        <code class="syntax">
+          <p>background-position: value;</p>
+        </code>
+        <p>Ada beberapa value yang bisa kita gunakan:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>left top</td>
+              <td>right top</td>
+            </tr>
+            <tr>
+              <td>left center</td>
+              <td>right center</td>
+            </tr>
+            <tr>
+              <td>left bottom</td>
+              <td>right bottom</td>
+            </tr>
+            <tr>
+              <td>center top</td>
+              <td>50% 50%</td>
+            </tr>
+            <tr>
+              <td>center center</td>
+              <td>50px 50px</td>
+            </tr>
+            <tr>
+              <td>center bottom</td>
+              <td>initial</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Untuk penggunaannya seperti ini:</p>
+        <code>
+          <p>Source Code</p>
+          <p>body {</p>
+          <p>background-image: url('gambar.png');</p>
+          <p>background-repeat: no-repeat;</p>
+          <p>background-position: right top;</p>
+          <p>}</p>
+        </code>
+        <h3>Background-attachment</h3>
+        <code class="syntax">
+          <p>background-attachment: value;</p>
+        </code>
+        <p>
+          Property ini digunakan untuk membuat background gambar ikut scrolling mouse atau tidak, property ini sering digunakan sebagai background fixed jika mouse di scroll gambar tersebut tidak
+          mengikuti scroll mouse.
+        </p>
+        <p>Property ini memiliki beberapa nilai:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Deskripsi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>scroll</td>
+              <td>background bergulir jika mouse dicroll</td>
+            </tr>
+            <tr>
+              <td>fixed</td>
+              <td>background tidak bergulir atau posisi tetap jika mouse di scroll</td>
+            </tr>
+            <tr>
+              <td>local</td>
+              <td>background akan bergulir sesuai dengan isi content</td>
+            </tr>
+            <tr>
+              <td>initial</td>
+              <td>nilai standarnya/default</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Background-size</h3>
+        <p>Property ini digunakan sebagai pelengkap dari background-image yang berfungsi mengatur ukuran background image agar sesuai dengan kebutuhan.</p>
+        <code class="syntax">
+          <p>background-size: value;</p>
+        </code>
+        <p>Berikut beberapa value yang bisa digunakan:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Deskripsi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>px, em, mm, cm, dll</td>
+              <td>Digunakan untuk lebar dan tinggi dari gambar background.</td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td>Digunakan untuk lebar dan tinggi dari gambar background dengan ukuran persen.</td>
+            </tr>
+            <tr>
+              <td>auto</td>
+              <td>Digunakan untuk menampilkan gambar background dengan ukuran asli dari gambar.</td>
+            </tr>
+            <tr>
+              <td>contain</td>
+              <td>resize image, merubah ukuran gambar dan memastikan gambar terlihat sepenuhnya</td>
+            </tr>
+            <tr>
+              <td>cover</td>
+              <td>membuat gambar background fullscreen.</td>
+            </tr>
+            <tr>
+              <td>initial</td>
+              <td>setel value ke default.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Color</h3>
+        <code class="syntax">
+          <p>color: value;</p>
+        </code>
+        <p>
+          Properti ini digunakan untuk mengatur warna teks element tertentu karena pada dasarnya semua element HTML memiliki warna teks hitam secara default, misalnya kita membuat sebuah button yang
+          memiliki background hijau dan teks nya berwarna putih.
+        </p>
+        <p>Berikut ini adalah value yang bisa kita gunakan untuk memberi warna teks:</p>
+        <table>
+          <tbody>
+            <thead>
+              <th>Jenis</th>
+              <th>Value</th>
+            </thead>
+            <tr>
+              <td>Color</td>
+              <td>red, yellow, green</td>
+            </tr>
+            <tr>
+              <td>Hexadecimal</td>
+              <td>#fff, #000, #00ff00</td>
+            </tr>
+          </tbody>
+        </table>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>.box {</p>
+          <p>width: 100px;</p>
+          <p>height: 50px;</p>
+          <p>background: #888;</p>
+          <p>color: red;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p><br /></p>
+          <p>&lt;div class="box"&gt;Hello Word&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .boxz {
+                width: 100px;
+                background: #888;
+                height: 50px;
+                color: red;
+              }
+            </style>
+
+            <div class="boxz">Hello Word</div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
