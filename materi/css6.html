@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Font Properti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>Font Properti</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 21 November 2022</p>
+        </div>
+        <p>
+          &nbsp;Font property adalah sebuah styleling CSS yang digunakan untuk memberi gaya teks, mengatur ukuran font dan mengatur jenis font yang akan ditampilkan dalam browser. Agar terlihat lebih
+          rapi dan menarik, seperti halnya Microsoft Word kita juga dapat memberikan ketebalan teks, mengatur teks size, jenis font.
+        </p>
+        <h3>Font Style</h3>
+        <code class="syntax">
+          <p>font-style: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk menetapkan font family bagaimana font tersebut akan ditampilkan pada element html, apakah normal, miring, atau miring dari file.</p>
+        <table>
+          <tbody>
+            <thead>
+              <th>Value</th>
+              <th>Keterangan</th>
+            </thead>
+            <tr>
+              <td>normal</td>
+              <td>Digunakan untuk menampilkan tulisan pada umumnya</td>
+            </tr>
+            <tr>
+              <td>italic</td>
+              <td>Digunakan untuk membuat tulisan menjadi miring</td>
+            </tr>
+            <tr>
+              <td>oblique</td>
+              <td>Digunakan untuk membuat tulisan lebih miring</td>
+            </tr>
+            <tr>
+              <td>oblique 10deg</td>
+              <td>Digunakan menentukan kemiringan font 1-45deg</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p class="dc-nomal">Dupan Code ini value normal</p>
+            <p class="dc-italic">Dupan Code ini value italic</p>
+            <p class="dc-oblique">Dupan Code ini value oblique</p>
+            <p style="font-style: oblique 39deg">Dupan Code ini value oblique 39deg</p>
+          </div>
+        </div>
+        <style tipe="text/css">
+          .dc-normal {
+            font-style: normal;
+          }
+          .dc-italic {
+            font-style: italic;
+          }
+          .dc-oblique {
+            font-style: oblique;
+          }
+        </style>
+        <h3>Font Size</h3>
+        <code class="syntax">
+          <p>font-size: value;</p>
+        </code>
+        <p>Property ini berfungsi untuk memberi ukuran pada tulisan, kita bisa merubah ukuran font pada elemen html.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>px</td>
+              <td>Pixels digunakan untuk memberi ukuran fix pada element/font.</td>
+            </tr>
+            <tr>
+              <td>pt</td>
+              <td>Points digunakan untuk memberi ukuran font.</td>
+            </tr>
+            <tr>
+              <td>vh</td>
+              <td>Viewport digunakan untuk memberi ukuran element/font yang ditampilkan sesuai layar.</td>
+            </tr>
+            <tr>
+              <td>rem</td>
+              <td>Rem ukuran font relatif pada elemen root.</td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td>Persen digunakan untuk memberikan ukuran element/font sesuai dengan lebar/tinggi element parent.</td>
+            </tr>
+          </tbody>
+        </table>
+        <style tipe="text/css">
+          .dc-px {
+            font-size: 20px !important;
+          }
+          .dc-pt {
+            font-size: 15pt !important;
+          }
+          .dc-em {
+            font-size: 0.8rem !important;
+          }
+          .dc-persen {
+            font-size: 77% !important;
+          }
+        </style>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p class="dc-px">Dupan Code ini value 20px</p>
+            <p class="dc-pt">Dupan Code ini value 15pt</p>
+            <p class="dc-em">Dupan Code ini value 0.8rem</p>
+            <p class="dc-persen">Dupan Code ini value 77%</p>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>Silahkan ganti nilai (angka) sesuai dengan kebutuhan.</p>
+        <h3>Font Family</h3>
+        <code class="syntax">
+          <p>font-family: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk menentukan daftar font pada element HTML dari daftar tersebut terbagi menjadi dua yaitu:</p>
+        <ul>
+          <li>Font prioritas adalah font utama dari sebuah element, font ini ditandai dengan menggunakan tanda petik dua.</li>
+          <li>Font alternatif adalah font-font yang di dukung oleh browser jika font prioritas tidak di dukung oleh browser.</li>
+        </ul>
+        <p>
+          Oleh sebab itu value font family dapat lebih dari satu dan dipisahkan dengan tanda koma untuk pada akhir jenis font, di sarankan untuk menggunakan satu font untuk halaman website ini
+          mempengaruhi kecepatan sebuah website semakin banyak font yang digunakan semakin lama loading website.
+        </p>
+        <style tipe="text/css">
+          @import url("https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap");
+          .teks {
+            font-family: Arial, Helvetica, sans-serif !important;
+          }
+          .teks2 {
+            font-family: "Rubik Distressed", cursive !important;
+          }
+        </style>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; @import url("https://fonts.googleapis.com/css2?family=Rubik+Distressed&amp;display=swap");</p>
+          <p>&nbsp; .teks {</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp;font-family: Arial, Helvetica, sans-serif;</p>
+          <p>}</p>
+          <p>&nbsp; &nbsp;.teks2 {</p>
+          <p>&nbsp; &nbsp; &nbsp; &nbsp;font-family: "Rubik Distressed", cursive, sans-serif;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;p class="teks"&gt;Ini teks Arial&lt;/p&gt;</p>
+          <p>&lt;p class="teks2"&gt;Ini teks Rubik Distressed&lt;/p&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <p class="teks">Ini teks Arial</p>
+            <p class="teks2">Ini teks Rubik Distressed</p>
+          </div>
+        </div>
+        <h3>Font Weight</h3>
+        <code class="syntax">
+          <p>font-weight: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk mengatur ketebalan font, jenis value dalam property ini yaitu:</p>
+        <table>
+          <tbody>
+            <thead>
+              <th>Value</th>
+              <th>Keterangan</th>
+            </thead>
+            <tr>
+              <td>normal</td>
+              <td>Tidak ada yang terjadi atau sama seperti 400</td>
+            </tr>
+            <tr>
+              <td>bold</td>
+              <td>Digunakan untuk membuat teks tebal atau seperti 700</td>
+            </tr>
+            <tr>
+              <td>bolder</td>
+              <td>Digunakan untuk membuat teks lebih tebal dari element parent (relatif)</td>
+            </tr>
+            <tr>
+              <td>number</td>
+              <td>Number Digunakan untuk membuat teks tebal sesuai dengan nilai yang diberikan, nilai yang dapat digunakan antara 100 hingga 900</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
