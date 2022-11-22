@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Border Properti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>Border Properti</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 22 November 2022</p>
+        </div>
+        <p>&nbsp;Border CSS adalah properti&nbsp;CSS yang digunakan untuk memberi atau menghilangkan garis tepi pada element html.&nbsp;</p>
+        <h3>Border Style</h3>
+        <code class="syntax">
+          <p>selector {border-style: solid;}</p>
+        </code>
+        <p>Properti ini digunakan untuk membuat border style (gaya garis) berikut ini adalah value border style:</p>
+        <table>
+          <thead>
+            <th>value</th>
+            <th>Keterangan</th>
+          </thead>
+          <tr>
+            <td>none</td>
+            <td>Digunakan&nbsp;untuk menghilangkan border.</td>
+          </tr>
+          <tr>
+            <td>hidden</td>
+            <td>sama seperti none.</td>
+          </tr>
+          <tr>
+            <td>sotrd</td>
+            <td>Digunakan&nbsp;untuk membuat garis tunggal dan padat seperti bolpoint.</td>
+          </tr>
+          <tr>
+            <td>double</td>
+            <td>untuk membuat dua garis seperti bolpoint.</td>
+          </tr>
+          <tr>
+            <td>dotted</td>
+            <td>Digunakan&nbsp;untuk membuat garis titik-titik.</td>
+          </tr>
+          <tr>
+            <td>dashed</td>
+            <td>Digunakan&nbsp;untuk membuat garis tepi putus-putus.</td>
+          </tr>
+          <tr>
+            <td>groove</td>
+            <td>untuk membuat garis terukir.</td>
+          </tr>
+        </table>
+        <h3>Border Width</h3>
+        <code class="syntax">
+          <p>selector {border-width: value;}</p>
+        </code>
+        <p>Properti ini digunakan untuk mengatur ketebalan garis, value adalah ketebalan garis.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>px</td>
+              <td>Pixels digunakan untuk memberi ukuran fix pada element/font.</td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td>Persen digunakan untuk memberikan ukuran element/font sesuai dengan lebar/tinggi element parent.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Border Color</h3>
+        <code class="syntax">
+          <p>selector&nbsp;{border-color: value;}</p>
+        </code>
+        <p>Properti ini digunakan untuk memberi warna garis tepi, berikut ini adalah value Border color:</p>
+        <table>
+          <tbody></tbody>
+          <thead>
+            <tr>
+              <th>Jenis</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Color</td>
+              <td>red, yellow, green</td>
+            </tr>
+            <tr>
+              <td>Hexadecimal</td>
+              <td>#fff, #000, #00ff00</td>
+            </tr>
+            <tr>
+              <td>Red-green-blue</td>
+              <td>rgba(108.58.63), rgba(0%.100%.50%)</td>
+            </tr>
+            <tr>
+              <td>Hue-saturation-lightness</td>
+              <td>hsl(245.75%.50%)</td>
+            </tr>
+            <tr>
+              <td>Hue-saturation-lightness-alpha</td>
+              <td>hsla(245.75%.50%.0.1)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Kita juga bisa mendeklarasikan tiga properti border dalam satu deklarasi seperti ini:</p>
+        <code class="syntax">
+          <p>selector {border: 1px solid red;}</p>
+        </code>
+        <p>Penjelasan:</p>
+        <ul>
+          <li>1px adalah value border width.</li>
+          <li>Solid adalah value border style.</li>
+          <li>Red adalah value border color.</li>
+        </ul>
+        <h3>Borde Radius</h3>
+        <code class="syntax">
+          <p>selector {border-radius: value;}</p>
+        </code>
+        <p>Properti ini digunakan untuk mengatur sudut element HTML, dengan border radius kita dapat merubah atau mengatur sudut element tertentu value yang digunakan berbentuk persen % dan px.</p>
+
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style tipe="text/css">
+              .dc4 {
+                border-radius: 25px;
+
+                border: 2px solid #000;
+              }
+            </style>
+            <div class="dc4">ini hasilnya border-radius: 25px</div>
+
+            <style tipe="text/css">
+              .dc5 {
+                border-radius: 25%;
+
+                border: 2px solid #000;
+
+                margin-top: 7px;
+              }
+            </style>
+
+            <div class="dc5">ini hasilnya border-radius: 25%</div>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>Jika kita menggunakan persentase maka sudut akan di buat berdasarkan lebar dari element.</p>
+        <p>Kita sudah bisa membuat border tetapi border yang kita buat mengelilingi element, supaya kita bisa membuat border pada sisi tertentu bisa menggunakan:</p>
+        <ul>
+          <li>border-top: value;</li>
+          <li>border-bottom: value;</li>
+          <li>border-righ: value;</li>
+          <li>border-left:</li>
+        </ul>
+        <code>
+          <p>Source Code</p>
+          <p>.bdr {border-top: 1px solid red;}</p>
+          <p>&lt;div class="bdr"&gt;ini border-top red&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .bdr {
+                width: 70%;
+                border-top: 1px solid red;
+              }
+            </style>
+            <div class="bdr">ini border-top red</div>
+          </div>
+        </div>
+        <p>Penjelasan:</p>
+        <p>Properti ini menggunakan tiga value yaitu:</p>
+        <ul>
+          <li>Border width</li>
+          <li>Border style</li>
+          <li>Border color</li>
+        </ul>
+        <h4>Latihan:</h4>
+        <p>Buatlah teks yang memiliki border bottom warna hijau, ketebalan nya 2px dan style double.</p>
+        <code>
+          <p>Source Code</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp;.latihan {</p>
+          <p>&nbsp; width: 70%;</p>
+          <p>&nbsp; border-bottom: 2px double green;</p>
+          <p>}</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;div class="latihan"&gt;Latihan&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .latihan {
+                width: 70%;
+                border-bottom: 2px double green;
+              }
+            </style>
+            <div class="latihan">Latihan</div>
+          </div>
+        </div>
+        <p>Kita juga dapat membuat border radius dengan menggunakan top, bottom, right dan left.</p>
+        <ul>
+          <li>border-top-right-radius: value;</li>
+          <li>border-top-left-radius value;</li>
+          <li>border-bottom-righ-radius: value;</li>
+          <li>border-bottom-left-radius value;</li>
+        </ul>
+
+        <p>Penjelasan:</p>
+        <p>Properti ini digunakan untuk membuat sudut tumpul pada sisi tertentu, value mengikuti border radius diatas.</p>
+        <h4>Latihan:</h4>
+        <p>Buatlah tombol dengan sudut tumpul 20px atas kanan dan 20px bawah kiri.</p>
+        <code>
+          <p>Source Code&nbsp;</p>
+          <p>&lt;style&gt;</p>
+          <p>&nbsp; .latihan2 {</p>
+          <p>&nbsp; &nbsp; width: 70%;</p>
+          <p>&nbsp; &nbsp; padding-left: 13px;</p>
+          <p>&nbsp; &nbsp; border: 2px solid green;</p>
+          <p>&nbsp; &nbsp; border-top-right-radius: 20px;</p>
+          <p>&nbsp; &nbsp; border-bottom-left-radius: 20px;</p>
+          <p>&nbsp; }</p>
+          <p>&lt;/style&gt;</p>
+          <p>&lt;div class="latihan2"&gt;Latihan&lt;/div&gt;</p>
+        </code>
+        <div class="output">
+          <div class="window"></div>
+          <div class="content-out">
+            <style>
+              .latihan2 {
+                width: 70%;
+                padding-left: 13px;
+                border: 2px solid green;
+                border-top-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+              }
+            </style>
+            <div class="latihan2">Latihan</div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
