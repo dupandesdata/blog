@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Height dan Width</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>Height dan Width</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 23 November 2022</p>
+        </div>
+        <h3>Height</h3>
+        <code class="syntax">
+          <p>height: value;</p>
+        </code>
+        <p>
+          Properti ini tidak mempengaruhi padding atau margin, value yang bisa dilakukan hanya angka positif sedangkan angka negatif seperti height: -10px tidak diterima. Properti height tidak
+          mempengaruhi element lain kecuali dengan selector yang sama.&nbsp;
+        </p>
+        <h3>Width</h3>
+        <code class="syntax">
+          <p>width: value;</p>
+        </code>
+        <p>
+          Properti ini digunakan untuk menentukan lebar element, properti ini merupakan bagian dari area "konten" dan mempengaruhi (
+          <a href="https://dupandesdata.github.io/blog/materi/css3">model kotak</a> ). Value yang bisa dilakukan hanya angka positif sedangkan angka negatif seperti width: -10px tidak diterima.
+          Properti width tidak mempengaruhi element lain kecuali dengan selector yang sama.
+        </p>
+        <h3>Value</h3>
+        <p>Properti height dan width memiliki value sebagai berikut:</p>
+        <table>
+          <thead>
+            <th>Jenis Value</th>
+            <th>Keterangan</th>
+          </thead>
+          <tr>
+            <td>auto</td>
+            <td>menghitung ketinggian sesuai dengan konten yang ada didalam elemen yang ditentukan</td>
+          </tr>
+          <tr>
+            <td>length</td>
+            <td>Menentukan tinggi atau lebar dalam satuan px, cm, vh, pt dll</td>
+          </tr>
+          <tr>
+            <td>%</td>
+            <td>Menentukan tinggi atau lebar dalam bentuk persentase yang diukur dari elemeet parent</td>
+          </tr>
+        </table>
+        <h3>Min &amp; Max Konten</h3>
+        <p>
+          Properti ini digunakan untuk tinggi/lebar minimum dan maksimum element tertentu, properti ini juga berkaitan dengan responsive jika kita memiliki elemet dengan lebar (700px) maka secara
+          otomatis browser akan menambahkan scrollbar jika dibuka dengan menggunakan ukuran layar di bawah 700px.
+        </p>
+        <p>
+          Dengan menggunakan max-width, element tersebut jika dibuka dengan ukuran layar kecil atau kurang dari 700px maka yang terjadi lebar element yang tadinya 700px menjadi 100% dan ketika dibuka
+          dengan ukuran layar melebihi 700px maka akan memiliki lebar 700px.
+        </p>
+        <code class="syntax">
+          <p>min-height: value;</p>
+          <p>max-height: value;</p>
+          <p>max-width: value;</p>
+          <p>min-width: value;</p>
+        </code>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
