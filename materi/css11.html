@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Text Decoration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>Text Decoration</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 28 November 2022</p>
+        </div>
+        <p>&nbsp;Properti CSS ini digunakan untuk membuat/mengatur tampilan dekorasi teks agar terlihat menarik pada halaman website.</p>
+        <h3>Decoration Line</h3>
+        <code class="syntax">
+          <p>text-decoration-line: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk mendekorasi garis pada teks, berikut beberapa value yang bisa dilakukan:</p>
+        <table>
+          <thead>
+            <th>Value</th>
+            <th>Output</th>
+          </thead>
+          <tr>
+            <td>overline</td>
+            <td style="text-decoration: overline">Saya senang belajar CSS</td>
+          </tr>
+          <tr>
+            <td>line-through</td>
+            <td style="text-decoration: line-through">Saya senang belajar CSS</td>
+          </tr>
+          <tr>
+            <td>underline</td>
+            <td style="text-decoration: underline">Saya senang belajar CSS</td>
+          </tr>
+          <tr>
+            <td>overline underline</td>
+            <td style="text-decoration: overline underline">Saya senang belajar CSS</td>
+          </tr>
+        </table>
+        <h3>Decoration Color</h3>
+        <code class="syntax">
+          <p>text-decoration-color: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk mendekorasi garis warna pada teks, berikut beberapa value yang bisa dilakukan:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Jenis</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Color</td>
+              <td>red, yellow, green</td>
+            </tr>
+            <tr>
+              <td>Hexadecimal</td>
+              <td>#fff, #000, #00ff00</td>
+            </tr>
+            <tr>
+              <td>Red-green-blue</td>
+              <td>rgba(108.58.63), rgba(0%.100%.50%)</td>
+            </tr>
+            <tr>
+              <td>Hue-saturation-lightness</td>
+              <td>hsl(245.75%.50%)</td>
+            </tr>
+            <tr>
+              <td>Hue-saturation-lightness-alpha</td>
+              <td>hsla(245.75%.50%.0.1)</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Decoration Style</h3>
+        <code class="syntax">
+          <p>text-decoration-style: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk mendekorasi gaya garis pada teks, berikut beberapa value yang bisa dilakukan:</p>
+        <table>
+          <thead>
+            <th>Value</th>
+            <th>Output</th>
+          </thead>
+          <tr>
+            <td>solid&nbsp;</td>
+            <td style="text-decoration-line: underline; text-decoration-style: solid">Saya senang belajar CSS</td>
+          </tr>
+          <tr>
+            <td>double</td>
+            <td style="text-decoration-line: underline; text-decoration-style: double">Saya senang belajar CSS</td>
+          </tr>
+          <tr>
+            <td>dotted</td>
+            <td style="text-decoration-line: underline; text-decoration-style: dotted">Saya senang belajar CSS</td>
+          </tr>
+          <tr>
+            <td>dashed</td>
+            <td style="text-decoration-line: underline; text-decoration-style: dashed">Saya senang belajar CSS</td>
+          </tr>
+          <tr>
+            <td>wavy</td>
+            <td style="text-decoration-line: underline; text-decoration-style: wavy">Saya senang belajar CSS</td>
+          </tr>
+        </table>
+        <blockquote>
+          <span id="quote">❛❛</span>
+          <span>Catatan:</span>
+          <p>Untuk pengguna properti text-decoration-style harus bersamaan dengan text-decoration-line</p>
+        </blockquote>
+        <h3>Decoration Thickness</h3>
+        <code class="syntax">
+          <p>text-decoration-thickness: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk mendekorasi ketebalan gaya garis pada teks, berikut beberapa value yang bisa dilakukan:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>px</td>
+              <td>Pixels</td>
+            </tr>
+            <tr>
+              <td>pt</td>
+              <td>Points</td>
+            </tr>
+            <tr>
+              <td>vh</td>
+              <td>Viewport</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Secara default semua link tag &lt;a&gt; memiliki garisbawa, namun garis bawah tersebut terkesan buruk bagi tampilan seperti dalam tampilan navbar akan terkesan buruk jika memiliki garis
+          bawah pada link untuk menghapus garis bawah tersebut kita bisa menggunakan:
+        </p>
+        <code class="syntax">
+          <p>text-decoration: none;</p>
+        </code>
+        <code>
+          <p>Source Code</p>
+          <p>a {</p>
+          <p>&nbsp; text-decoration: none;</p>
+          <p>}</p>
+        </code>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
