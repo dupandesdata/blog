@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | CSS Style Link</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>CSS Style Link</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 30 November 2022</p>
+        </div>
+        <p>&nbsp;CSS ini digunakan untuk memberi styling pada elemen link agar terlihat berbeda dengan teks lainnya supaya user mengetahui <a href="/materi/html9">element link</a> tersebut.</p>
+        <p>
+          Seperti halnya element pada umumnya kita dapat memberikan styling seperti background, color, font-family dll namun, element link memiliki sytling default tergantung pada statusnya sebagai
+          berikut:
+        </p>
+        <table>
+          <thead>
+            <th>Syntax</th>
+            <th>Keterangan</th>
+          </thead>
+          <tr>
+            <td>a:link&nbsp;</td>
+            <td>Kondisi ketika link normal (belum dikunjungi)</td>
+          </tr>
+          <tr>
+            <td>a:visited</td>
+            <td>Kondisi ketika link sudah dikunjungi oleh user</td>
+          </tr>
+          <tr>
+            <td>a:hover</td>
+            <td>Kondisi link ketika dihover</td>
+          </tr>
+          <tr>
+            <td>a:active</td>
+            <td>Kondisi saat link di klik oleh user</td>
+          </tr>
+        </table>
+        <p>Teks yang mengandung link secara default bergaris bawah dan memiliki warna yang berbeda tergantung pada status kondisinya.</p>
+        <div style="display: flex">
+          <h4>a:link</h4>
+          <p>~ memiliki warna biru dan bergaris bawah.</p>
+        </div>
+        <div style="display: flex">
+          <h4>a:visited</h4>
+          <p>~ memiliki warna ungu dan bergaris bawah.</p>
+        </div>
+        <div style="display: flex">
+          <h4>a:active</h4>
+          <p>~ memiliki warna merah dan bergaris bawah.</p>
+        </div>
+        <p>Namun sytling tersebut akan hilang ketika kita memberikan warna:</p>
+        <code>
+          <p>Source Code</p>
+          <p>a { color: #000; }</p>
+        </code>
+        <p>
+          Source code diatas adalah membuat semua tag <span style="color: red"> &lt;a&gt;</span> berwarna hitam termasuk a:link, a:visited dan a:active untuk menghilangkan garis bawah pada element
+          link kita bisa menggunakan <a href="/materi/css11">Text Decoration</a>:
+        </p>
+        <code>
+          <p>Source Code</p>
+          <p>a {&nbsp;</p>
+          <p>&nbsp; &nbsp; &nbsp;color: #000;</p>
+          <p>&nbsp; &nbsp; &nbsp;text-decoration: none;</p>
+          <p>}</p>
+        </code>
+        <div></div>
+        <p>Kita juga dapat membuat styling sesuka hati seperti berikut:&nbsp;</p>
+        <code>
+          <p>Source Code&nbsp;</p>
+          <p>a {&nbsp;</p>
+          <p>&nbsp; &nbsp; &nbsp;text-decoration: none;</p>
+          <p>}</p>
+          <p>a:link {</p>
+          <p>&nbsp; color: green;</p>
+          <p>}</p>
+          <p>a:visited {</p>
+          <p>&nbsp; color: blue;</p>
+          <p>}</p>
+          <p>a:hover {</p>
+          <p>&nbsp; color: red;</p>
+          <p>&nbsp; text-decoration: underline;</p>
+          <p>}</p>
+          <p>a:active {</p>
+          <p>&nbsp; color: yellow;</p>
+          <p>&nbsp; text-decoration: solid;</p>
+          <p>}</p>
+        </code>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
