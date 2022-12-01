@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | CSS Style List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>CSS Style List</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 1 Desember 2022</p>
+        </div>
+        <p>
+          &nbsp;CSS ini digunakan untuk mempercantik tampilan <a href="/materi/html10">Unordered List dan Ordered List</a>, Kita dapat mengatur tampilan daftar dengan menggunakan properti daftar CSS
+          sebagai berikut:
+        </p>
+        <ul>
+          <li>Membuat jarak antara teks dan penanda dalam daftar.</li>
+          <li>Menggunakan gambar sebagai pengganti angka atau poin.</li>
+          <li>Merubah gaya tampilan bentuk penanda.</li>
+          <li>Mengatur warna background.</li>
+          <li>Menghilangkan penanda.</li>
+        </ul>
+        <p>
+          CSS ini digunakan untuk mengatur element yang memiliki <span style="background-color: #eeeeee; color: #cc0000">display list-item</span> biasanya
+          <span style="color: red">&lt;ol&gt;</span> atau <span style="color: red">&lt;ul&gt;</span> termasuk <span style="color: red">&lt;li&gt;</span>, karena element &lt;li&gt; ini mewarisi display
+          element induk (&lt;ul&gt; dan &lt;ol&gt;).
+        </p>
+        <h3>Penanda Item Daftar</h3>
+        <code class="syntax">
+          <p>list-style-type: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk menentukan gaya penanda item daftar &lt;ul&gt; atau &lt;ol&gt;.</p>
+        <table>
+          <thead>
+            <th>Value</th>
+            <th>Output&nbsp;</th>
+          </thead>
+          <tr>
+            <td>circle</td>
+            <td>
+              <ul style="list-style-type: circle">
+                <li>Selamat pagi</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>square</td>
+            <td>
+              <ul style="list-style-type: square">
+                <li>Selamat pagi</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>upper-roman</td>
+            <td>
+              <ol style="list-style-type: upper-roman">
+                <li>Selamat pagi</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>lower-alpha;</td>
+            <td>
+              <ol style="list-style-type: lower-alpha">
+                <li>Selamat pagi</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>url(..img.jpg)</td>
+            <td>
+              <ul style="list-style: square url(https://www.w3schools.com/css/sqpurple.gif)">
+                <li>Selamat pagi</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>none</td>
+            <td>Selamat pagi</td>
+          </tr>
+        </table>
+        <style>
+          ol li {
+            border-bottom: none !important;
+            padding: 0 0 5px;
+          }
+        </style>
+        <h3>Properti Daftar Posisi</h3>
+        <code class="syntax">
+          <p>list-style-position: value;</p>
+        </code>
+        <p>Properti ini digunakan untuk menentukan penanda daftar item terletak di dalam atau di luar konten.</p>
+        <p>Value:</p>
+        <code class="syntax">
+          <p>inside | outside</p>
+        </code>
+        <p>Penjelasan&nbsp;</p>
+        <p><b>inside</b> penanda akan termasuk kedalam element daftar item jika item berada pada baris kedua, maka akan dibungkus di bawah penanda.</p>
+        <p><b>outside</b> ini adalah value default yang menunjukkan bahwa penanda berada di luar element item daftar.&nbsp;</p>
+        <blockquote>
+          <span id="quote">❛❛</span>
+          <span>Catatan:</span>
+          <p>
+            Dalam menggunakan properti <span style="background-color: #eeeeee; color: #cc0000">list-style-image</span> sebaiknya bersama dengan
+            <span style="background-color: #eeeeee; color: #cc0000">list-style-type</span> maka jika gambar mengalami masalah sehingga tidak muncul,
+            <span style="background-color: #eeeeee; color: #cc0000">list-style-type</span> akan ddigunakan sebagai cadangan.
+          </p>
+        </blockquote>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
