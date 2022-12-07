@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | CSS Position</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>CSS Position</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 6 Desember 2022</p>
+        </div>
+        <p>&nbsp;Properti CSS yang digunakan untuk mengatur/memanipulasi posisi element tertentu.</p>
+        <code class="syntax">
+          <p>position: value;</p>
+        </code>
+        <p>Terdapat lima jenis value posisi yang berbeda:</p>
+        <h4>static</h4>
+        <code class="syntax">
+          <p>position: static;</p>
+        </code>
+        <p>Posisi element secara default posisi ini tidak akan berpengaruh dengan box-offset (top, bottom, right, left dan z-index).</p>
+        <h4>relative</h4>
+        <code class="syntax">
+          <p>position: relative;</p>
+        </code>
+        <p>
+          Posisi ini digunakan untuk menaikkan dimensi element kita dapat mengatur box-offset (top, bottom, right, left dan z-index). Namun ketika element diberikan posisi ini tempat yang awal yang
+          tadinya ditempati oleh element tersebut masih tersedia, posisi ini digunakan pada element parent yang memiliki child element absolute. Perhatikan gambar berikut:
+        </p>
+        <div class="separator" style="clear: both; text-align: center">
+          <img
+            border="0"
+            data-original-height="146"
+            data-original-width="500"
+            height="93"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGs79XlwMKqHaJ5fW0icDEnkSgiNwp1KMwW0QjX1B7-VS9EgqaVL6JOQ7VgPKPe25-s1ByV0_cvwt-EjZ_DGeZqm4dkQriQvv19WGWOV5djHtzPscvXq5ru2V1RFtIyfKhQyAYIRtWzrZ0-Hoswzhx0J5Qj1U_hUxXK6FVogYQxyNcFaVelVEn6sL3/s320/1_pe9E2kzrX4-picsay.jpg"
+            width="320"
+          />
+        </div>
+        <h4>Absolute</h4>
+        <code class="syntax">
+          <p>position: absolute;</p>
+        </code>
+        <p>
+          Posisi ini sama dengan relative jika di posisi relative meninggalkan tempat yang awal ditempati oleh element tersebut, dalam posisi ini element tidak meninggalkan tempat/ruang yang
+          sebelumnya di tempati:
+        </p>
+        <div class="separator" style="clear: both; text-align: center">
+          <img
+            border="0"
+            data-original-height="120"
+            data-original-width="381"
+            height="101"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIAM9yHQYVxnnY6jHRzsXfLX6NrII5k61BbTH5fafqsJBhiE4P271D6Ekb4zBmqlNNugVK4u7gy8I__sWTQBBHYEeL5pCy7Hb4RsQqrNU7N-hkWNPULDIqLux08vX0VUftSXPM69_7Zmwwp3Re_bk3KpokAxwsJc8Skl_P0F2q_gEGZp-YdA_Xahhi/s320/1_pe9E2kzrX4-picsay.jpg"
+            width="320"
+          />
+        </div>
+        <p>
+          Jika anda menggunakan posisi ini maka element parent dari element yang diberikan posisi ini harus memiliki posisi relative. Jika tidak maka element tersebut akan memiliki top 0 dan left 0
+          yaitu berada di pojok kiri atas, k
+        </p>
+        <blockquote>
+          <span id="quote">❛❛</span>
+          <span>Catatan:</span>
+          <p>Posisi absolute jika tidak diberikan parent yang memiliki posisi relative maka ia akan menggunakan body sebagai pembatas.</p>
+        </blockquote>
+        <h3>fixed</h3>
+        <code class="syntax">
+          <p>position: fixed;</p>
+        </code>
+        <p>
+          Posisi ini digunakan untuk menetapkan element relative terhadap viewport jika halaman di scroll maka element tersebut ditampilkan melayang,kita dapat mengatur box-offset (top, bottom, right,
+          left dan z-index).
+        </p>
+
+        <iframe src="https://dupandesdata.github.io/dupancode/output/absolute.html" width="60%" height="120"> </iframe>
+        <h3>Sticky</h3>
+        <code class="syntax">
+          <p>position: sticky;</p>
+        </code>
+        <p>
+          Posisi ini merupakan gabungan dari posisi relative dan fixed, posisi ini bergantung pada user scroll. Element tersebut diposisikan dengan posisi relatif sampai memenuhi offset tertentu
+          terpenuhi di viewport, kemudian jika di scroll akan menempel di tempatnya (seperti posisi: fixed).
+        </p>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
