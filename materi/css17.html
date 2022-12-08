@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Z-index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>Z-index</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 8 Disember 2022</p>
+        </div>
+        <p>
+          &nbsp;Properti CSS yang digunakan untuk menentukan tumpukan element, dimana kita bisa memanipulasi element nilai z-index lebih besar akan menutupi element dengan nilai z-index yang lebih
+          kecil.
+        </p>
+        <p>
+          Pada dasarnya semua element HTML memiliki display default inline atau black mereka tidak bisa di tumpuk, ada kalanya kita harus menumpuk element kita harus menggunakan
+          <a href="/css16">properti position</a>.
+        </p>
+        <code class="syntax">
+          <p>z-index: value;</p>
+        </code>
+        <p>Value yang bisa digunakan yaitu bilangan positif atau negatif yaitu dari 0 - tak terhingga.</p>
+        <code>
+          <p>Source Code</p>
+          <div>
+            <div>&lt;<span style="color: #e06c75">style</span>&gt;</div>
+            <div>&nbsp; <span style="color: #d19a66">.container</span> {</div>
+            <div>&nbsp; &nbsp; height: <span style="color: #d19a66">100</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; width: <span style="color: #d19a66">250</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; display: <span style="color: #d19a66">flex</span>;</div>
+            <div>&nbsp; &nbsp; position: <span style="color: #d19a66">relative</span>;</div>
+            <div>&nbsp; &nbsp; margin-top: <span style="color: #d19a66">4</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; }</div>
+            <div>&nbsp; <span style="color: #d19a66">.container</span><span style="color: #c678dd"> </span><span style="color: #e06c75">div</span> {</div>
+            <div>&nbsp; &nbsp; height: <span style="color: #d19a66">50</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; width: <span style="color: #d19a66">80</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; padding: <span style="color: #d19a66">0</span> <span style="color: #d19a66">5</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; left: <span style="color: #d19a66">0</span>;</div>
+            <div>&nbsp; &nbsp; font-size: <span style="color: #d19a66">9</span><span style="color: #e06c75">pt</span>;</div>
+            <div>&nbsp; &nbsp; position: <span style="color: #d19a66">absolute</span>;</div>
+            <div>&nbsp; }</div>
+            <div>
+              &nbsp; <span style="color: #d19a66">.container</span><span style="color: #c678dd"> </span><span style="color: #e06c75">div</span><span style="color: #56b6c2">:nth-child</span
+              ><span style="color: #c678dd">(</span><span style="color: #d19a66">1</span><span style="color: #c678dd">)</span> {
+            </div>
+            <div>&nbsp; &nbsp; background: lightcoral;</div>
+            <div>&nbsp; }</div>
+            <div>
+              &nbsp; <span style="color: #d19a66">.container</span><span style="color: #c678dd"> </span><span style="color: #e06c75">div</span><span style="color: #56b6c2">:nth-child</span
+              ><span style="color: #c678dd">(</span><span style="color: #d19a66">2</span><span style="color: #c678dd">)</span> {
+            </div>
+            <div>&nbsp; &nbsp; top: <span style="color: #d19a66">15</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; left: <span style="color: #d19a66">6</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; background: lightseagreen;</div>
+            <div>&nbsp; }</div>
+            <div>
+              &nbsp; <span style="color: #d19a66">.container</span><span style="color: #c678dd"> </span><span style="color: #e06c75">div</span><span style="color: #56b6c2">:nth-child</span
+              ><span style="color: #c678dd">(</span><span style="color: #d19a66">3</span><span style="color: #c678dd">)</span> {
+            </div>
+            <div>&nbsp; &nbsp; top: <span style="color: #d19a66">30</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; left: <span style="color: #d19a66">11</span><span style="color: #e06c75">px</span>;</div>
+            <div>
+              &nbsp; &nbsp; background: <span style="color: #56b6c2">rgb</span>(<span style="color: #d19a66">167</span>, <span style="color: #d19a66">81</span>,
+              <span style="color: #d19a66">201</span>);
+            </div>
+            <div>&nbsp; }</div>
+            <div>
+              &nbsp; <span style="color: #d19a66">.container</span><span style="color: #c678dd"> </span><span style="color: #e06c75">div</span><span style="color: #56b6c2">:nth-child</span
+              ><span style="color: #c678dd">(</span><span style="color: #d19a66">4</span><span style="color: #c678dd">)</span> {
+            </div>
+            <div>&nbsp; &nbsp; top: <span style="color: #d19a66">45</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; left: <span style="color: #d19a66">16</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; &nbsp; background: lawngreen;</div>
+            <div>&nbsp; }</div>
+            <div>&lt;/<span style="color: #e06c75">style</span>&gt;</div>
+            <br />
+            <div>&lt;<span style="color: #e06c75">section</span> <span style="color: #d19a66">class</span>=<span style="color: #98c379">"container"</span>&gt;</div>
+            <div>&nbsp; &lt;<span style="color: #e06c75">div</span>&gt;element1&lt;/<span style="color: #e06c75">div</span>&gt;</div>
+            <div>&nbsp; &lt;<span style="color: #e06c75">div</span>&gt;element2&lt;/<span style="color: #e06c75">div</span>&gt;</div>
+            <div>&nbsp; &lt;<span style="color: #e06c75">div</span>&gt;element3&lt;/<span style="color: #e06c75">div</span>&gt;</div>
+            <div>&nbsp; &lt;<span style="color: #e06c75">div</span>&gt;element4&lt;/<span style="color: #e06c75">div</span>&gt;</div>
+            <div>&lt;/<span style="color: #e06c75">section</span>&gt;</div>
+            <br />
+          </div>
+        </code>
+        <style>
+          .container {
+            height: 100px;
+            width: 250px;
+            display: flex;
+            position: relative;
+            margin-top: 4px;
+          }
+          .container div {
+            height: 50px;
+            width: 80px;
+            padding: 0 5px;
+            left: 0;
+            font-size: 9pt;
+            position: absolute;
+          }
+          .container div:nth-child(1) {
+            background: lightcoral;
+          }
+          .container div:nth-child(2) {
+            top: 15px;
+            left: 6px;
+            background: lightseagreen;
+          }
+          .container div:nth-child(3) {
+            top: 30px;
+            left: 11px;
+            background: rgb(167, 81, 201);
+          }
+          .container div:nth-child(4) {
+            top: 45px;
+            left: 16px;
+            background: lawngreen;
+          }
+        </style>
+        <section class="container">
+          <div>element1</div>
+          <div>element2</div>
+          <div>element3</div>
+          <div>element4</div>
+        </section>
+        <blockquote>
+          <span id="quote">❛❛</span>
+          <span>Catatan:</span>
+          <p>Jika element ditumpuk tanpa z-index maka element terakhir akan menepati paling depan.</p>
+        </blockquote>
+        <p>Dengan menggunakan z-index kita dapat menampilkan element yang berada di urutan paling belakang ke depan</p>
+        <code>
+          <p>Source Code</p>
+          <div>
+            <div>
+              &nbsp;<span style="color: #d19a66">.container</span><span style="color: #c678dd"> </span><span style="color: #e06c75">div</span><span style="color: #56b6c2">:nth-child</span
+              ><span style="color: #c678dd">(</span><span style="color: #d19a66">1</span><span style="color: #c678dd">)</span><span style="color: #abb2bf"> {</span>
+              <div>&nbsp; background: lightcoral;</div>
+              <div>&nbsp; z-index: <span style="color: #d19a66">1</span>;</div>
+              <div>}</div>
+            </div>
+          </div>
+        </code>
+        <section class="container">
+          <div style="z-index: 1">element1</div>
+          <div>element2</div>
+          <div>element3</div>
+          <div>element4</div>
+        </section>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
