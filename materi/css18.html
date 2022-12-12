@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | Overflow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>Overflow</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 12 Desember 2022</p>
+        </div>
+        <p>
+          &nbsp;Properti ini digunakan untuk mengontrol area konten/child element jika melebihi batas ukuran yang sudah ditetapkan, contoh sederhana ketika konten/child element melebihi width device
+          maka secara otomatis browser akan menambahkan scrollbar hal ini bisa diatasi dengan overflow. Perinsip dasar overflow adalah memotong/menyembunyikan sebuah konten yang melebihi batas
+          width/height.
+        </p>
+        <code class="syntax">
+          <p>overflow: visible | hidden | scroll | auto | inherit</p>
+        </code>
+        <table>
+          <thead>
+            <th>Value</th>
+            <th>Keterangan</th>
+          </thead>
+          <tr>
+            <td>Visible</td>
+            <td>Ini adalah value default tidak berpengaruh apapun</td>
+          </tr>
+          <tr>
+            <td>Hidden&nbsp;</td>
+            <td>Digunakan untuk memotong konten/element yang melebihi batas ukuran yang sudah ditetapkan</td>
+          </tr>
+          <tr>
+            <td>Scroll</td>
+            <td>Digunakan untuk membuat scrollbar sumbu x dan y</td>
+          </tr>
+          <tr>
+            <td>Auto</td>
+            <td>Digunakan untuk membuat scrollbar jika konten/element sudah melebihi batas ukuran width/height yang ditetapkan</td>
+          </tr>
+        </table>
+
+        <table>
+          <thead>
+            <th>Syntax</th>
+            <th>Keterangan</th>
+          </thead>
+          <tr>
+            <td>Overflow-X</td>
+            <td>Digunakan untuk memotong sumbu x (horizontal)</td>
+          </tr>
+          <tr>
+            <td>Overflow-Y</td>
+            <td>Digunakan untuk memotong sumbu y (vertikal)</td>
+          </tr>
+        </table>
+        <p>
+          Kita juga dapat menggunakan <a href="/materi/css9" target="_blank" rel="dofollow">min dan max</a> untuk memunculkan scrollbar, jadi ketika konten belum melebihi batas ukuran min dan max
+          scrollbar tidak muncul.
+        </p>
+        <code>
+          <p>Source Code</p>
+          <div>
+            <span style="color: #e06c75">div</span><span style="color: #abb2bf"> {</span>
+            <div>&nbsp; width: <span style="color: #d19a66">fit-content</span>;</div>
+            <div>&nbsp; height: <span style="color: #d19a66">150</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; max-height: <span style="color: #d19a66">300</span><span style="color: #e06c75">px</span>;</div>
+            <div>&nbsp; overflow: <span style="color: #d19a66">auto</span>;</div>
+            <div>}</div>
+          </div>
+        </code>
+        <h3>Body overflow</h3>
+        <p>
+          Ini digunakan untuk membuat agar tidak terjadi scrollbar horizontal ketika ada sebuah element yang melebihi dari width body, untuk menggunakan nya kita harus menuliskan bersama dengan meta
+          tag seperti ini:
+        </p>
+        <code>
+          <p>Source Code</p>
+          <div>
+            <div>&lt;<span style="color: #e06c75">head</span>&gt;</div>
+            <div>&nbsp; &lt;<span style="color: #e06c75">title</span>&gt;My Web&lt;/<span style="color: #e06c75">title</span>&gt;</div>
+            &nbsp; &lt;<span style="color: #e06c75">meta</span> <span style="color: #d19a66">name</span>=<span style="color: #98c379">"viewport"</span>
+            <span style="color: #d19a66">content</span>=<span style="color: #98c379">"width=device-width, initial-scale=1.0"</span> /&gt;
+            <div>&nbsp; &lt;<span style="color: #e06c75">style</span>&gt;</div>
+            <div>&nbsp; &nbsp; <span style="color: #e06c75">body</span> {</div>
+            <div>&nbsp; &nbsp; &nbsp; overflow-x: <span style="color: #d19a66">hidden</span>;</div>
+            <div>&nbsp; &nbsp; }</div>
+            <div>&nbsp; &lt;/<span style="color: #e06c75">style</span>&gt;</div>
+            <div>&lt;/<span style="color: #e06c75">head</span>&gt;</div>
+          </div>
+        </code>
+        <blockquote>
+          <span id="quote">❛❛</span>
+          <span>Catatan:</span>
+          <p>Untuk penempatan meta tag harus dituliskan sebelum &lt;/head&gt; .</p>
+        </blockquote>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
