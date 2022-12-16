@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dupan Code | float</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://dupandesdata.github.io/database/web/css/allstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://dupandesdata.github.io/database/web/css/materi.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/5988f24ed4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <section class="containerTop"></section>
+    <section class="materi">
+      <div class="menu-post">
+        <p id="css0"></p>
+      </div>
+      <article>
+        <h2>CSS float</h2>
+        <div class="author">
+          <p><i class="fa-solid fa-user"></i> Dupandes Milenium KD.</p>
+          <p><i class="fa-solid fa-clock"></i> 16 Disember 2022</p>
+        </div>
+        <p>&nbsp;Properti ini digunakan untuk memaksa posisi element berada di kiri atau kanan tetapi tidak keluar dari element parent, float juga terpengaruh oleh box model.</p>
+        <code class="syntax">
+          <p>float: none | left | right;</p>
+        </code>
+        <table>
+          <thead>
+            <th>Value</th>
+            <th>Keterangan</th>
+          </thead>
+          <tr>
+            <td>none</td>
+            <td>Digunakan untuk menghilangkan float</td>
+          </tr>
+          <tr>
+            <td>left</td>
+            <td>Memaksa posisi element berada di kiri</td>
+          </tr>
+          <tr>
+            <td>right&nbsp;</td>
+            <td>Memaksa posisi element berada di kanan&nbsp;</td>
+          </tr>
+        </table>
+        <p>Untuk memahami tujuan float didalam tata letak cetak, perhatikan gambar berikut:</p>
+        <style>
+          .gambar {
+            width: 60%;
+            background: royalblue;
+            padding: 5px;
+            margin: 7px auto;
+          }
+          .left,
+          .right {
+            height: 100px;
+            width: 70px;
+          }
+          .left {
+            background: lawngreen;
+            float: left;
+          }
+          .right {
+            background: lightcoral;
+            float: right;
+          }
+        </style>
+        <div class="gambar">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <p>
+          Element berwarna hijau diatur dengan <u>float left</u> dan element merah diatur dengan <u>float right</u>, sehingga menciptakan ruang kosong kita dapat memberikan teks/element dalam ruang
+          tersebut berbeda dengan menggunakan <a href="/materi/css3">margin</a>.
+        </p>
+        <h3>Pembersih float</h3>
+        <p>Saat menggunakan float kita mungkin menginginkan element berikutnya berada di bawah (tidak mengambang di kanan atau kiri), dengan menggunakan clear properti.</p>
+        <h4>Clear</h4>
+        <code class="syntax">
+          <p>clear: value;</p>
+        </code>
+        <p>Properti ini menentukan apa yang dilakukan oleh element yang berada di sebelah element mengambang (float).</p>
+        <p>Properti clear dapat memiliki salah satu dari nilai berikut:</p>
+        <table>
+          <thead>
+            <th>Value</th>
+            <th>Keterangan</th>
+          </thead>
+          <tr>
+            <td>none</td>
+            <td>Ini default tidak terjadi perubahan.</td>
+          </tr>
+          <tr>
+            <td>left</td>
+            <td>Element berada di bawah element float left.</td>
+          </tr>
+          <tr>
+            <td>right</td>
+            <td>Element berada di bawah element float right&nbsp;</td>
+          </tr>
+          <tr>
+            <td>both</td>
+            <td>Element berada ke bawah element float left dan right&nbsp;</td>
+          </tr>
+        </table>
+        <blockquote>
+          <span id="quote">❛❛</span>
+          <span>Catatan:</span>
+          <p>Dalam membersihkan float, value properti clear harus cocok dengan float yang sedang digunakan, Jika element di-float ke kiri, maka harus menggunakan clear left.&nbsp;</p>
+        </blockquote>
+        <h4>Clearfix</h4>
+        <p>Terkadang ketika memberikan float pada sebuah element maka element tersebut ditampilkan seperti posisi absolute, ia jika element parent tidak di berikan clearfix maka akan meluap.</p>
+        <style>
+          .box {
+            border: 1px #333 solid;
+            width: 70%;
+            height: 100px;
+            margin: 0 auto 90px;
+          }
+          .box img {
+            width: 100px;
+            height: 100px;
+            clear: right;
+            float: right;
+          }
+        </style>
+        <div class="box">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptates doloremque eveniet tempore omnis, natus adipisci harum molestiae hic, maiores porro inventore optio fuga sunt id
+            explicabo nesciunt libero nisi!
+          </p>
+          <img src="https://images.pexels.com/photos/10668576/pexels-photo-10668576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+        </div>
+        <code>
+          <p>CSS Code</p>
+          <div>
+            &nbsp;<span style="color: #d19a66">.clearfix</span><span style="color: #56b6c2">::after</span><span style="color: #abb2bf"> {</span>
+            <div>&nbsp; content: <span style="color: #98c379">""</span>;</div>
+            <div>&nbsp; clear: <span style="color: #d19a66">both</span>;</div>
+            <div>&nbsp; display: <span style="color: #d19a66">table</span>;</div>
+            <div>}</div>
+          </div>
+        </code>
+      </article>
+    </section>
+    <section class="containerBottom"></section>
+    <script src="https://dupandesdata.github.io/database/web/containerpost.js"></script>
+    <script src="https://dupandesdata.github.io/database/post.js"></script>
+  </body>
+</html>
