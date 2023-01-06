@@ -1,1 +1,35 @@
-<h1> yjpp</h1>
+<script>
+// Memeriksa apakah pengguna sudah login atau belum
+if (!localStorage.getItem("loggedIn")) {
+  document.write("Anda harus login terlebih dahulu untuk mengakses halaman ini.");
+} else {
+  let lastLogin = localStorage.getItem("lastLogin");
+  const currentTime = Date.now();
+  if (!lastLogin) {
+    // Menyimpan waktu saat ini sebagai waktu login terakhir jika belum ada
+    lastLogin = currentTime;
+    localStorage.setItem("lastLogin", lastLogin);
+  }
+  if (currentTime - lastLogin > 86400000) { 
+    document.write("Anda harus login kembali karena sesi Anda telah berakhir.");
+  } else {
+    localStorage.setItem("lastLogin", currentTime);
+    // Konten halaman admin
+    document.write("<h1>Halaman Admin</h1>");
+    document.write("<p>Selamat datang di halaman admin!</p>");
+    document.write("<button onclick='logout()'>Logout</button>");
+  }
+}
+
+function logout() {
+  // Menghapus item "loggedIn" dari local storage
+  localStorage.removeItem("loggedIn");
+
+  // Menampilkan pesan logout
+  alert("Anda berhasil logout.");
+
+  // Kembali ke halaman login
+  window.location.replace("/projects/login");
+}
+
+</script>
