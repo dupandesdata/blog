@@ -56,8 +56,8 @@ input[type="button"]:hover {
 <script>
   // Membuat objek login dengan username dan password sebagai propertinya
   const login = {
-    username: "dm000",
-    password: "zxcv000"
+    username: "000",
+    password: "000"
   }
 
   function loginBtn() {
@@ -68,7 +68,7 @@ if (inputUsername === login.username && inputPassword === login.password) {
   // Menandai pengguna sebagai sudah login
   localStorage.setItem("loggedIn", true);
   // Mengarahkan ke halaman "admin.html"
-  window.location.assign("http://localhost:8158/admin.html");
+  window.location.assign("/projects/login/admin.html");
 } else {
   alert("Username atau password Anda salah. Silakan coba lagi.");
 }
