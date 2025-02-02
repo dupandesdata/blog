@@ -1,0 +1,200 @@
+h1:hover,
+#typewriter {
+  color: #05bd70e5;
+}
+
+nav li,
+h1,
+h2 {
+  transition: all 0.3s ease-in-out;
+}
+
+.blur {
+  filter: blur(6px);
+  transition: all 0.5s ease-in-out;
+}
+
+img.loaded {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+header h2 {
+  opacity: 0;
+}
+
+h2.loaded {
+  opacity: 1;
+}
+
+nav li:hover {
+  background: rgba(212, 212, 223, 0.418);
+  color: #10a573cb;
+  border-radius: 10px;
+}
+
+
+.slide-in {
+  animation: slideIn 0.3s ease forwards;
+  transform: translateX(-100%);
+}
+
+.slide-out {
+  animation: slideOut 0.3s ease forwards;
+  transform: translateX(0);
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.card-projects>div {
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.card-projects>div:hover {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    #05bd70e5 0px 0px 0px 1px;
+  color: #000;
+
+  h2 {
+    color: #05bd70e5;
+  }
+}
+
+.project-code a:hover {
+  color: #10a573cb;
+}
+
+@media (max-width: 760px) {
+  .project-containeiner {
+    flex-direction: column;
+  }
+
+  .project-containeiner div {
+    margin-top: 7px;
+
+  }
+}
+
+
+.cursor {
+  border-left: 2px solid rgb(0, 0, 0);
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active in <2.1.8 */
+  {
+  opacity: 0;
+}
+
+.list-enter-active,
+.list-leave-active {
+  height: 23px;
+  transition: all 0.5s ease;
+}
+
+.list-enter,
+.list-leave-to
+
+/* .list-leave-active in <2.1.8 */
+  {
+  opacity: 0;
+  height: 0;
+}
+
+@media (max-width: 760px) {
+  header h2 {
+    opacity: 1;
+  }
+
+  .mobile-33 {
+    height: 33px;
+  }
+
+  .w-full-mx760 {
+    width: 100%;
+  }
+
+  .container-hiro {
+    position: absolute;
+    top: 32px;
+  }
+
+  header .mobile {
+    width: 100%;
+  }
+
+  nav {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-bottom: 5px;
+    height: 100vh;
+  }
+
+  nav ul {
+    margin-top: 89px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #app {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header {
+    width: 16rem !important;
+
+    .container {
+      margin-top: 56px;
+      width: 16rem !important;
+    }
+  }
+
+  nav {
+    transition: width 0.3s ease;
+    height: 100vh;
+    top: 153px !important;
+  }
+
+  header>div {
+    flex-direction: column;
+  }
+
+  .profile {
+    width: 86px;
+    display: block;
+    margin: 35px auto 0;
+  }
+}
