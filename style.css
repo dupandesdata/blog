@@ -34,6 +34,22 @@ nav li:hover {
 }
 
 
+/* Gaya untuk transisi masuk */
+.home-enter-active,
+.home-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+/* Gaya saat elemen masuk */
+.home-enter {
+  opacity: 0;
+}
+
+/* Gaya saat elemen keluar */
+.home-leave-to {
+  opacity: 0;
+}
+
 .slide-in {
   animation: slideIn 0.3s ease forwards;
   transform: translateX(-100%);
@@ -105,32 +121,27 @@ nav li:hover {
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
+.skils svg {
+  width: 25px;
+  height: 25px;
 }
 
-.fade-enter,
-.fade-leave-to
-
-/* .fade-leave-active in <2.1.8 */
-  {
-  opacity: 0;
+.dropdown {
+  background-color: oklch(0.97 0 0 / 0.08);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.list-enter-active,
-.list-leave-active {
-  height: 23px;
-  transition: all 0.5s ease;
+/* Make the dropdown animate. */
+.dropdown-content {
+  min-width: max-content;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s;
 }
 
-.list-enter,
-.list-leave-to
-
-/* .list-leave-active in <2.1.8 */
-  {
-  opacity: 0;
-  height: 0;
+/* The max-height should be set to something that will always be a little bit bigger than the height of the content. */
+.dropdown-open {
+  max-height: 200px;
 }
 
 @media (max-width: 760px) {
@@ -148,7 +159,14 @@ nav li:hover {
 
   .container-hiro {
     position: absolute;
-    top: 32px;
+    top: 38px;
+    width: 96%;
+
+    .profile {
+      border: 2px solid #fff;
+      margin: 56px 0;
+      width: 75px;
+    }
   }
 
   header .mobile {
@@ -163,7 +181,7 @@ nav li:hover {
   }
 
   nav ul {
-    margin-top: 89px;
+    margin-top: 132px;
   }
 }
 
@@ -180,6 +198,10 @@ nav li:hover {
       margin-top: 56px;
       width: 16rem !important;
     }
+
+    h2 {
+      margin-top: 12px;
+    }
   }
 
   nav {
@@ -195,6 +217,6 @@ nav li:hover {
   .profile {
     width: 86px;
     display: block;
-    margin: 35px auto 0;
+    margin: 18px 41px 9px;
   }
 }
