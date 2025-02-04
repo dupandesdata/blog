@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Halaman Tidak Ditemukan</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div id="app" class="text-center p-6">
+        <h1 class="text-6xl font-bold text-gray-800 mb-4">404</h1>
+        <p class="text-xl text-gray-600 mb-6">Oops! Halaman yang Anda cari tidak ditemukan.</p>
+        <button @click="goHome" class="px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition">Kembali ke Beranda</button>
+    </div>
+    
+    <script>
+        const app = Vue.createApp({
+            methods: {
+                goHome() {
+                    window.location.href = "/";
+                }
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>
