@@ -19,7 +19,7 @@
   <div id="app">
     <header class="flex justify-between w-full lg:h-35 relative">
       <section class="md:fixed bg-white md:shadow-lg lg:px-5 w-full-mx760 container">
-        <section class="flex space-x-2 md:flex-col p-2 border-1 border-b ">
+        <section class="flex space-x-2 md:flex-col p-2" style="border-bottom: 1px solid #1ec47f;">
           <div class="w-full-mx760 flex items-center md:flex-col mobile-33">
             <transition name="slide" @before-leave="beforeLeave" @leave="leave">
               <div class="container-hiro slide-in">
@@ -77,17 +77,6 @@
                 </router-link>
               </li>
               <li @click="toggleMenuList">
-                <router-link class="flex items-center px-4 py-2" aria-label="Blog" to="/">
-                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20"
-                    width="20" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z">
-                    </path>
-                  </svg>
-                  <span class="ml-2">Blog</span>
-                </router-link>
-              </li>
-              <li @click="toggleMenuList">
                 <router-link class="flex items-center px-4 py-2" aria-label="Roadmap" to="/roadmap">
                   <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                     stroke-linejoin="round" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
@@ -96,6 +85,17 @@
                     <rect width="8" height="8" x="13" y="13" rx="2"></rect>
                   </svg>
                   <span class="ml-2">Roadmap</span>
+                </router-link>
+              </li>
+              <li @click="toggleMenuList">
+                <router-link class="flex items-center px-4 py-2" aria-label="Blog" to="/blog">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20"
+                    width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z">
+                    </path>
+                  </svg>
+                  <span class="ml-2">Blog</span>
                 </router-link>
               </li>
               <li @click="toggleMenuList">
@@ -115,95 +115,228 @@
       </section>
     </header>
     <main class="md:mt-16 px-3 mt-5 md:px-10 md:w-5/6">
-      <router-view></router-view>
+      <transition name="home">
+        <router-view></router-view>
+      </transition>
     </main>
   </div>
 
   <script>
     const Home = {
+      data() {
+        return {
+          articles: [],
+        };
+      },
+      created() {
+        axios
+          .get(
+            "https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/post.json"
+          )
+          .then((response) => {
+            this.articles = response.data.articles.map((article) => ({
+              ...article,
+              slug:
+                article.path +
+                "/" +
+                article.title
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/-+$/g, "")
+            }));
+          })
+          .catch((error) => {
+            // handle error
+            console.log(error);
+          });
+      },
       template: `
-        <section>
+    <section>
+        <div class="flex">
+            <h2 class="text-center text-2xl">Hi, I'm</h2>
+            <span class="text-2xl font-bold ml-1" id="typewriter">
+                {{ $parent.currentText }}<span class="cursor"></span>
+            </span>
+        </div>
+        <p class="mt-4 text-neutral-800 leading-7">
+            Saya seorang insinyur pengembangan web yang bersemangat, dengan fokus
+            mendalam pada pengembangan front-end. Dengan keahlian dalam JavaScript
+            dan Google Script, saya memiliki pengalaman yang solid dalam semua aspek
+            teknologi web. Saya adalah pemain tim yang kolaboratif dan berdedikasi
+            untuk menciptakan aplikasi web yang efisien, dapat diskalakan, dan
+            memukau secara visual. Mari kita wujudkan solusi digital yang inovatif
+            bersama-sama!
+        </p>
+        <div class="flex items-center gap-1 text-xl font-medium text-neutral-800 mt-5">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m21.706 5.291-2.999-2.998A.996.996 0 0 0 18 2H6a.996.996 0 0 0-.707.293L2.294 5.291A.994.994 0 0 0 2 5.999V19c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5.999a.994.994 0 0 0-.294-.708zM6.414 4h11.172l.999.999H5.415L6.414 4zM4 19V6.999h16L20.002 19H4z">
+            </path>
+            <path d="M15 12H9v-2H7v4h10v-4h-2z"></path>
+          </svg>
+          <div class="capitalize">Projects</div>
+        </div>
+        <p class="mb-6 border-b border-dashed border-neutral-600 pb-6 pt-2 text-neutral-600 dark:text-neutral-400">
+          Menampilkan minat saya pada teknologi, desain, dan pemecahan masalah
+          melalui kode.
+        </p>
+      <section  class="card-projects flex flex-wrap justify-between">
+        <div v-for="article in articles" :key="article.id" class="w-full lg:w-[45%] mb-6 relative">
+            <div class="space-y-2 p-2">
+              <h2 class="font-sora cursor-pointer text-lg text-neutral-700 hover:text-teal-800">
+                {{ article.title }}
+              </h2><div class="flex space-x-4">
+  <!-- Tombol Dokumentasi -->
+  <a :href="article.document" class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9m-9-4h9m-9-4h9m-9-4h9M3 4h6v16H3z"></path>
+    </svg>
+    Dokumentasi
+  </a>
+  
+  <!-- Tombol Demo -->
+  <a :href="article.demo" class="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition">
+    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-5.596 3.252A1 1 0 018 13.584V8.416a1 1 0 011.156-.987l5.596 3.252a1 1 0 010 1.736z"></path>
+    </svg>
+    Demo
+  </a>
+</div>
+              <p class="text-sm leading-relaxed text-neutral-700 dark:text-neutral-400">
+                {{ article.content }}
+              </p>
+              <p class="text-xs leading-relaxed text-neutral-700 dark:text-neutral-400">
+                Development: {{ article.dev }} > Published: {{ article.published_date }}
+              </p>
+            </div>
+        </div>
+      </section>
+
+    </section>
+    `
+    };
+    const About = {
+      template: `
+<section >
+<h1 class="font-sora text-2xl font-medium">About</h1>
+<p class=" text-neutral-600">Cerita pendek tentang saya.</p>
+<div class="my-4 border-t border-gray-300 dark:border-neutral-700 my-6"></div>
+<p>Saya seorang insinyur pengembangan web yang bersemangat dan ahli dalam konservasi, yang mengkhususkan diri
+  dalam
+  pengembangan front-end. Sejak awal karier saya, saya telah terpesona oleh dunia teknologi dan bagaimana aplikasi
+  web dapat mengubah cara kita berinteraksi dengan informasi dan satu sama lain.</p>
+<p class="mt-2">Dengan pengalaman mendalam dalam JavaScript dan Google Script, saya telah terlibat dalam berbagai
+  proyek yang menantang dan menarik. Saya percaya bahwa kode yang baik tidak hanya harus berfungsi dengan baik,
+  tetapi juga terlihat menarik dan memberikan pengalaman pengguna yang luar biasa.</p>
+<p class="mt-2">Saya senang bekerja dalam tim yang dinamis, di mana kolaborasi dan inovasi adalah kunci untuk
+  mencapai tujuan bersama. Saya berkomitmen untuk menciptakan aplikasi web yang tidak hanya efisien dan dapat
+  diskalakan, tetapi juga memenuhi kebutuhan pengguna dengan cara yang intuitif.</p>
+<p class="mt-2">Dengan setiap proyek baru, saya berusaha menghadirkan solusi digital inovatif ke dalam kehidupan
+  sehari-hari. Saya percaya bahwa teknologi berpotensi menciptakan dampak positif, dan saya bersemangat untuk
+  terus
+  belajar dan berkembang di bidang ini. Mari kita bersatu untuk mewujudkan ide-ide kreatif yang bermanfaat.</p>
+</section>
+`
+    };
+    const Roadmap = {
+      data() {
+        return {
+          sklis: [],
+          openIndex: null, // Menyimpan index dropdown yang terbuka
+        };
+      },
+      created() {
+        axios
+          .get(
+            "https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/sklis.json"
+          )
+          .then((response) => {
+            this.sklis = response.data.skils;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
+      methods: {
+        toggleDropdown(index) {
+          this.openIndex = this.openIndex === index ? null : index;
+        },
+      },
+      template: `
+    <section class="skils">
+      <h1 class="font-sora text-2xl font-medium">Roadmap</h1>
+      <p class="mb-6 border-b border-dashed border-neutral-600 pb-6 pt-2 text-neutral-600 dark:text-neutral-400">
+        Berikut adalah jalur pembelajaran dan playlist saya.
+      </p>
+
+      <ul>
+        <li v-for="(item, index) in sklis" :key="index" class="dropdown mt-5 p-3 rounded-lg"">
+          <button @click="toggleDropdown(index)" class="w-full flex justify-between items-center w-full cursor-pointer">
             <div class="flex">
-                <h2 class="text-center text-2xl">Hi, I'm</h2>
-                <span class="text-2xl font-bold ml-1" id="typewriter">
-                    {{ $parent.currentText }}<span class="cursor"></span>
-                </span>
+                <svg stroke-width="0" role="img" :viewBox="item.viewBox" :fill="item.color" height="100%" width="100%"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path :d="item.d"></path>
+                </svg>
+              <span class="ml-3">{{ item.title }}</span>
+              </div>
+            <i :class="{ 'fa-solid fa-chevron-up': openIndex === index, 'fa-solid fa-chevron-down' : openIndex !== index }" style="font-size: 18px; color: #3a3a3ad9;"></i>
+          </button>
+          <ul 
+            class="dropdown-content flex mt-2" 
+            :class="{ 'dropdown-open': openIndex === index, '': openIndex !== index }"
+            aria-label="submenu">
+            <li><a :href="item.videoLink" target="_blank" class="text-blue-500 hover:underline">Video</a></li>
+            <li><a :href="item.documentLink" target="_blank" class="text-blue-500 hover:underline ml-3">Document</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  `,
+    };
+    const Blog = {
+      template: `
+            <div>
+                <h1>Segera hadir..</h1>
             </div>
-            <p class="mt-4 text-neutral-800 leading-7">
-                Saya seorang insinyur pengembangan web yang bersemangat, dengan fokus
-                mendalam pada pengembangan front-end. Dengan keahlian dalam JavaScript
-                dan Google Script, saya memiliki pengalaman yang solid dalam semua aspek
-                teknologi web. Saya adalah pemain tim yang kolaboratif dan berdedikasi
-                untuk menciptakan aplikasi web yang efisien, dapat diskalakan, dan
-                memukau secara visual. Mari kita wujudkan solusi digital yang inovatif
-                bersama-sama!
-            </p>
-            <div class="flex items-center gap-1 text-xl font-medium text-neutral-800 dark:text-neutral-300">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="m21.706 5.291-2.999-2.998A.996.996 0 0 0 18 2H6a.996.996 0 0 0-.707.293L2.294 5.291A.994.994 0 0 0 2 5.999V19c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5.999a.994.994 0 0 0-.294-.708zM6.414 4h11.172l.999.999H5.415L6.414 4zM4 19V6.999h16L20.002 19H4z">
-                </path>
-                <path d="M15 12H9v-2H7v4h10v-4h-2z"></path>
-              </svg>
-              <div class="capitalize">Projects</div>
+        `
+    };
+    const Contact = {
+      template: `
+            <div>
+                <h1>Segera hadir..</h1>
             </div>
-            <p class="mb-6 border-b border-dashed border-neutral-600 pb-6 pt-2 text-neutral-600 dark:text-neutral-400">
-              Menampilkan minat saya pada teknologi, desain, dan pemecahan masalah
-              melalui kode.
-            </p>
-          <section class="card-projects">
-            <div v-for="article in articles" :key="article.id" class="w-[95%] lg:w-full mb-6 relative">
-              <a href="'https://dupandes2000.github.io/my-project/' + $parent.generateSlug(article.path, article.title)">
-                <div class="overflow-hidden">
-                </div>
-                <div class="space-y-2 p-2">
-                  <h2 class="font-sora cursor-pointer text-lg text-neutral-700 hover:text-teal-800">
-                    {{ article.title }}
-                  </h2>
-                  <p class="text-sm leading-relaxed text-neutral-700 dark:text-neutral-400">
-                    {{ article.content }}
-                  </p>
-                  <p class="text-xs leading-relaxed text-neutral-700 dark:text-neutral-400">
-                    Developer: {{ article.dev }} > Published: {{ article.published_date }}
-                  </p>
-                </div>
-              </a>
-            </div>
-          </section>
-        </section>
         `
     };
 
-    const About = { template: '<div>Tentang</div>' };
-
     const routes = [
       { path: '/', component: Home },
-      { path: '/about', component: About }
+      { path: '/about', component: About },
+      { path: '/roadmap', component: Roadmap },
+      { path: '/blog', component: Blog },
+      { path: '/contact', component: Contact },
     ];
-
     const router = new VueRouter({
       routes
     });
 
     new Vue({
-      el: '#app',
+      el: "#app",
       router,
       data() {
         return {
-          articles: [],
-          loading: false,
-          coverPp: "https://i.pinimg.com/564x/94/6f/de/946fde6213aec69618591411d5840fd2.jpg",
+          coverPp:
+            "https://i.pinimg.com/564x/94/6f/de/946fde6213aec69618591411d5840fd2.jpg",
           isMenuOpen: false,
           elementLoaded: false,
           currentText: "",
-          typing: true,
+          typing: true
         };
       },
       computed: {
         isMobile() {
           return window.innerWidth <= 800;
-        },
+        }
       },
       methods: {
         onLoad() {
@@ -216,9 +349,6 @@
           if (this.isMobile) {
             this.isMenuOpen = !this.isMenuOpen;
           }
-        },
-        generateSlug(path, title) {
-          return title ? path + title.toLowerCase().replace(/\s+/g, '-') : '';
         },
         typeAnimation() {
           const texts = [
@@ -268,19 +398,11 @@
         // });
         if (window.matchMedia("(min-width: 900px)").matches) {
           this.toggleMenu();
-        };
+        }
         this.typeAnimation();
-        axios.get('https://raw.githubusercontent.com/dupandesdata/artikel/refs/heads/main/data.json')
-          .then(function (response) {
-            this.articles = response.data.articles;
-            console.log(this.articles);
-          })
-          .catch(function (error) {
-            // handle error
-            console.log(error);
-          })
       }
     });
+
   </script>
 </body>
 
