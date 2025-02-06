@@ -188,20 +188,20 @@
                 {{ article.title }}
               </h2><div class="flex space-x-4">
   <!-- Tombol Dokumentasi -->
-  <a :href="article.document" class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+  <router-link :to="{ name: 'project', params: { id: article.link } }"  class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9m-9-4h9m-9-4h9m-9-4h9M3 4h6v16H3z"></path>
     </svg>
     Dokumentasi
-  </a>
+  </router-link>
   
   <!-- Tombol Demo -->
-  <a :href="article.demo" class="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition">
+  <router-link :to="{ name: 'demo', params: { id: article.link } }" class="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition">
     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-5.596 3.252A1 1 0 018 13.584V8.416a1 1 0 011.156-.987l5.596 3.252a1 1 0 010 1.736z"></path>
     </svg>
     Demo
-  </a>
+  </router-link>
 </div>
               <p class="text-sm leading-relaxed text-neutral-700 dark:text-neutral-400">
                 {{ article.content }}
@@ -308,6 +308,153 @@
             </div>
         `
     };
+    const Project = {
+      template: `
+<div class="p-2">
+  <div v-if="loading">Loading...</div>
+  <div v-else>
+    <div v-for="article in articles" :key="article.id" class="article">
+      <div v-if="article.link === projectId" class="p-2 mb-2 breadcrumbs flex gap-2">
+        <router-link to="/" class="text-blue-500">Back to Home</router-link> >
+        <h1 class="font-sora">{{ article.title }}</h1> >
+        <span class="font-sora">{{ article.published_date }}</span>
+      </div>
+    </div>
+    <div v-html="projectContent"></div>
+  </div>
+</div>
+            `,
+      data() {
+        return {
+          loading: true,
+          projectContent: '',
+          projectId: '',
+          articles: [],
+          tech: []
+        };
+      },
+      created() {
+        this.projectId = this.$route.params.id;
+        axios.get(`https://raw.githubusercontent.com/dupandes2000/my-projects/refs/heads/main/${this.projectId}/README.md`)
+          .then(response => {
+            this.projectContent = this.markdownToHtml(response.data)
+          })
+          .catch(error => {
+            console.error("There was an error!", error);
+          })
+          .finally(() => {
+            this.loading = false;
+          });
+
+        axios
+          .get(
+            "https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/post.json"
+          )
+          .then((response) => {
+            this.articles = response.data.articles.map((article) => ({
+              ...article,
+              slug:
+                article.path +
+                "/" +
+                article.title
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/-+$/g, "")
+            }));
+          })
+          .catch((error) => {
+            // handle error
+            console.log(error);
+          });
+
+        axios.get(`https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/svg.json`)
+          .then(response => {
+            this.tech = response.data.svg;
+          })
+          .catch(error => {
+            console.error("There was an error!", error);
+          })
+          .finally(() => {
+            this.loading = false;
+          });
+      },
+      methods: {
+        markdownToHtml(markdown) {
+          // Convert Markdown to HTML as before
+          markdown = markdown.replace(
+            /###### (.+)/g,
+            '<h6 class="text-base font-semibold">$1</h6>'
+          );
+          markdown = markdown.replace(
+            /##### (.+)/g,
+            '<h5 class="text-lg font-semibold">$1</h5>'
+          );
+          markdown = markdown.replace(
+            /#### (.+)/g,
+            '<h4 class="text-xl font-semibold">$1</h4>'
+          );
+          markdown = markdown.replace(
+            /### (.+)/g,
+            '<h3 class="text-2xl font-bold">$1</h3>'
+          );
+          markdown = markdown.replace(
+            /## (.+)/g,
+            '<h2 class="text-3xl font-bold">$1</h2>'
+          );
+          markdown = markdown.replace(/# (.+)/g, '<p class="font-semibold">$1</p>');
+
+          // Handle code blocks
+          markdown = markdown.replace(/```(.*?)\n([\s\S]*?)```/g, '<pre class="bg-gray-100 p-3 rounded"><code>$2</code></pre>');
+          markdown = markdown.replace(/`([^`]+)`/g, '<code class="bg-gray-200 p-1 rounded">$1</code>');
+
+          // Handle bold, italics, images, lists, and more
+          markdown = markdown.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+          markdown = markdown.replace(/\*(.+?)\*/g, "<em>$1</em>");
+          markdown = markdown.replace(
+            /!\[(.*?)\]\((.*?)\)/g,
+            '<img src="$2" alt="$1" class="my-2 max-w-full h-auto">'
+          );
+          markdown = markdown.replace(/^\s*-\s+(.+)/gm, "<li>$1</li>");
+          markdown = markdown.replace(/<\/li>\s*<li>/g, "</li><li>");
+          markdown = markdown.replace(
+            /<li>(.*?)<\/li>/g,
+            '<ul class="list-disc ml-5"><li>$1</li></ul>'
+          );
+          markdown = markdown.replace(/---+/g, "<hr>");
+          markdown = markdown
+            .replace(/\n\n+/g, "</p><p class='text-gray-800 my-3'>")
+            .replace(/\n/g, "<br>");
+          markdown = '<p class="text-gray-800 my-3">' + markdown + "</p>";
+
+          return markdown;
+        }
+      },
+    };
+    const Demo = {
+      template: `
+    <div class="p-2">
+      <div class="p-2 mb-2 breadcrumbs flex gap-2">
+        <router-link to="/" class="text-blue-500">Back to Home</router-link> >
+        <!-- Gunakan binding dinamis pada atribut 'to' -->
+        <router-link :to="'/project/' + projectId" class="text-blue-500">Source</router-link>
+      </div>
+      <!-- Iframe berada di dalam container yang sama -->
+      <iframe :src="'https://dupandes2000.github.io/my-projects/' + projectId" frameborder="0" class="w-full h-screen"></iframe>
+    </div>
+  `,
+      data() {
+        return {
+          loading: true,
+          projectContent: '',
+          projectId: '',
+        };
+      },
+      created() {
+        // Mengambil parameter 'id' dari route dan menyimpannya di data projectId
+        this.projectId = this.$route.params.id;
+      },
+    };
+
 
     const routes = [
       { path: '/', component: Home },
@@ -315,6 +462,8 @@
       { path: '/roadmap', component: Roadmap },
       { path: '/blog', component: Blog },
       { path: '/contact', component: Contact },
+      { path: '/project/:id', name: 'project', component: Project },
+      { path: '/demo/:id', name: 'demo', component: Demo }
     ];
     const router = new VueRouter({
       routes
