@@ -126,6 +126,13 @@ nav li:hover {
   height: 25px;
 }
 
+.breadcrumbs {
+  font-size: 10pt;
+  color: #666;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+}
+
 .dropdown {
   background-color: oklch(0.97 0 0 / 0.08);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -142,6 +149,17 @@ nav li:hover {
 /* The max-height should be set to something that will always be a little bit bigger than the height of the content. */
 .dropdown-open {
   max-height: 200px;
+}
+
+iframe {
+  width: 100%;
+  height: 100vh;
+}
+
+footer h6 {
+  float: right;
+  margin: 18px;
+  font-size: 9pt;
 }
 
 @media (max-width: 760px) {
