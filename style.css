@@ -1,26 +1,10 @@
-h1:hover,
-#typewriter {
-  color: #05bd70e5;
-}
-
-nav li,
-h1,
-h2 {
-  transition: all 0.3s ease-in-out;
-}
-
 #app {
   min-height: fit-content;
 }
 
-.blur {
-  filter: blur(6px);
-  transition: all 0.5s ease-in-out;
-}
-
-img.loaded {
-  opacity: 1;
-  filter: blur(0px);
+h1:hover,
+#typewriter {
+  color: #05bd70e5;
 }
 
 header h2 {
@@ -31,14 +15,49 @@ h2.loaded {
   opacity: 1;
 }
 
+nav li,
+h1,
+h2 {
+  transition: all 0.3s ease-in-out;
+}
+
 nav li:hover {
   background: rgba(212, 212, 223, 0.418);
   color: #10a573cb;
   border-radius: 10px;
 }
 
+/* animasi images */
+.blur {
+  filter: blur(6px);
+  transition: all 0.5s ease-in-out;
+}
 
-/* Gaya untuk transisi masuk */
+img.loaded {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+/* page project */
+.card-projects>div {
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.card-projects>div:hover {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    #05bd70e5 0px 0px 0px 1px;
+  color: #000;
+
+  h2,
+  p {
+    color: #05bd70e5;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/* Gaya untuk transisi page masuk */
 .home-enter-active,
 .home-leave-active {
   transition: opacity 0.5s ease;
@@ -76,22 +95,6 @@ nav li:hover {
   }
 }
 
-.card-projects>div {
-  transition: all 0.3s ease-in-out;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-
-.card-projects>div:hover {
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    #05bd70e5 0px 0px 0px 1px;
-  color: #000;
-
-  h2 {
-    color: #05bd70e5;
-  }
-}
-
 .project-code a:hover {
   color: #10a573cb;
 }
@@ -118,7 +121,7 @@ nav li:hover {
   }
 }
 
-
+/* animasi tepping */
 .cursor {
   border-left: 2px solid rgb(0, 0, 0);
   animation: blink 0.7s infinite;
@@ -263,14 +266,14 @@ footer h6 {
 
 .form-container {
   background-color: #fff;
-  border-radius: 25px;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   max-width: 606px;
   width: 100%;
   margin: auto;
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 97%;
   }
 
   span {
@@ -330,7 +333,7 @@ footer h6 {
 
       textarea {
         border: 2px solid #e6e6e6;
-        padding: 40px;
+        padding: 10px;
         border-radius: 10px;
         max-width: 476px;
         width: 100%;
@@ -347,13 +350,11 @@ footer h6 {
       background-color: #151534;
       border: none;
       color: #fff;
-      padding: 20px;
-      max-width: 475px;
-      width: 100%;
+      padding: 10px 20px;
       font-family: "Merriweather", serif;
       font-weight: 700;
-      font-size: 20px;
-      border-radius: 72px;
+      font-size: 13px;
+      border-radius: 2px;
       transition: 0.3s ease;
 
       &:hover {
