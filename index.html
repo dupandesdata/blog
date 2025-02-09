@@ -209,10 +209,12 @@
   </div>
   <section v-else>
     <input type="text" id="search" v-model="search" placeholder="Cari Project.." class="p-2 w-full mb-4" />
-    <section class="card-projects flex flex-wrap justify-between">
-      <div v-for="article in filteredArticles" :key="article.id" class="w-full lg:w-[45%] mb-6 relative">
-        <div class="space-y-2 p-2 border rounded shadow">
+    <section class="card-projects flex flex-wrap justify-around">
+      <div v-for="article in filteredArticles" :key="article.id" class="w-full lg:w-[40%] mb-6 relative">
           <router-link :to="{ name: 'project', params: { id: article.link } }">
+            <div class="absolute right-0 top-0 z-[2] rounded-bl-xl rounded-tr-xl bg-emerald-300 px-2 py-1 text-[13px] font-medium text-emerald-950">{{ article.price }}</div>
+          <img :src="article.image" alt="vcf-reader-and-edit.png">
+        <div class="p-2 mx-auto">
             <h2 class="font-sora cursor-pointer text-lg text-neutral-900">
               {{ article.title }}
             </h2>
@@ -220,13 +222,13 @@
               {{ article.content }}
             </p>
             <p class="text-xs leading-relaxed text-neutral-800">
-              Development: {{ article.dev }} > Published: {{ article.published_date }}
+              Published: {{ article.published_date }}
             </p>
             <p class="text-xs leading-relaxed text-neutral-800">
               Teknologi: {{ article.tags.join(", ") }}
             </p>
-          </router-link>
         </div>
+          </router-link>
       </div>
     </section>
   </section>
