@@ -140,8 +140,17 @@
     const Home = {
       data() {
         return {
+          search: '',
+          loading: false,
           articles: [],
         };
+      },
+      computed: {
+        filteredArticles() {
+          return this.articles.filter((article) =>
+            article.title.toLowerCase().includes(this.search.toLowerCase())
+          );
+        },
       },
       created() {
 
@@ -164,32 +173,45 @@
           });
       },
       template: `
-  <section>
-    <div class="flex">
-      <h2 class="text-center text-2xl">Hi, I'm</h2>
-      <span class="text-2xl font-bold ml-1" id="typewriter">
-        {{ $parent.currentText }}<span class="cursor"></span>
-      </span>
-    </div>
-    <p class="mt-4 text-neutral-800 leading-7">
-      Seorang insinyur pengembangan web dengan keahlian dalam <strong>front-end dan back-end development</strong>, khususnya dalam <strong>JavaScript dan Google Script</strong>. Terlepas dari keterbatasan motorik yang saya miliki sebagai individu difabel, saya tetap berkomitmen untuk menciptakan aplikasi web yang <strong>efisien, skalabel, dan mudah diakses</strong>. Saya percaya bahwa teknologi dapat membawa dampak positif bagi banyak orang, dan saya selalu berusaha menghadirkan solusi digital inovatif yang memberikan pengalaman pengguna yang luar biasa. Dengan semangat kolaborasi dan inovasi, saya terus belajar dan berkembang untuk menciptakan produk yang bermanfaat bagi semua.</p>
-    <div class="flex items-center gap-1 text-xl font-medium text-neutral-800 mt-5">
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="m21.706 5.291-2.999-2.998A.996.996 0 0 0 18 2H6a.996.996 0 0 0-.707.293L2.294 5.291A.994.994 0 0 0 2 5.999V19c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5.999a.994.994 0 0 0-.294-.708zM6.414 4h11.172l.999.999H5.415L6.414 4zM4 19V6.999h16L20.002 19H4z">
-        </path>
-        <path d="M15 12H9v-2H7v4h10v-4h-2z"></path>
-      </svg>
-      <div class="capitalize">Daftar Project Open Source Saya</div>
-    </div>
-    <p class="mb-6 border-b border-dashed border-neutral-600 pb-6 pt-2 text-neutral-600">
-      Menampilkan minat saya pada teknologi, desain, dan pemecahan masalah
-      melalui kode.
-    </p>
+<section class="home">
+  <div class="flex">
+    <h2 class="text-center text-2xl">Hi, I'm</h2>
+    <span class="text-2xl font-bold ml-1" id="typewriter">
+      {{ $parent.currentText }}<span class="cursor"></span>
+    </span>
+  </div>
+  <p class="mt-4 text-neutral-800 leading-7">
+    Seorang insinyur pengembangan web dengan keahlian dalam <strong>front-end dan back-end development</strong>,
+    khususnya dalam <strong>JavaScript dan Google Script</strong>. Terlepas dari keterbatasan motorik yang saya miliki
+    sebagai individu difabel, saya tetap berkomitmen untuk menciptakan aplikasi web yang <strong>efisien, skalabel, dan
+      mudah diakses</strong>. Saya percaya bahwa teknologi dapat membawa dampak positif bagi banyak orang, dan saya
+    selalu berusaha menghadirkan solusi digital inovatif yang memberikan pengalaman pengguna yang luar biasa. Dengan
+    semangat kolaborasi dan inovasi, saya terus belajar dan berkembang untuk menciptakan produk yang bermanfaat bagi
+    semua.</p>
+  <div class="flex items-center gap-1 text-xl font-medium text-neutral-800 mt-5">
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="m21.706 5.291-2.999-2.998A.996.996 0 0 0 18 2H6a.996.996 0 0 0-.707.293L2.294 5.291A.994.994 0 0 0 2 5.999V19c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5.999a.994.994 0 0 0-.294-.708zM6.414 4h11.172l.999.999H5.415L6.414 4zM4 19V6.999h16L20.002 19H4z">
+      </path>
+      <path d="M15 12H9v-2H7v4h10v-4h-2z"></path>
+    </svg>
+    <div class="capitalize">Daftar Project Saya</div>
+  </div>
+  <p class="mb-6 border-b border-dashed border-neutral-600 pb-6 pt-2 text-neutral-600">
+    Menampilkan minat saya pada teknologi, desain, dan pemecahan masalah
+    melalui kode.
+  </p>
+  <div v-if="!loading" class="loader">
+    <span class="element"></span>
+    <span class="element "></span>
+    <span class="element"></span>
+  </div>
+  <section v-else>
+    <input type="text" id="search" v-model="search" placeholder="Cari Project.." class="p-2 w-full mb-4" />
     <section class="card-projects flex flex-wrap justify-between">
-      <div v-for="article in articles" :key="article.id" class="w-full lg:w-[45%] mb-6 relative">
-        <div class="space-y-2 p-2">
+      <div v-for="article in filteredArticles" :key="article.id" class="w-full lg:w-[45%] mb-6 relative">
+        <div class="space-y-2 p-2 border rounded shadow">
           <router-link :to="{ name: 'project', params: { id: article.link } }">
             <h2 class="font-sora cursor-pointer text-lg text-neutral-900">
               {{ article.title }}
@@ -207,8 +229,9 @@
         </div>
       </div>
     </section>
-
   </section>
+
+</section>
     `
     };
     const About = {
@@ -259,7 +282,7 @@
         },
       },
       template: `
-    <section class="skils">
+    <section class="roadmap">
       <h1 class="font-sora text-2xl font-medium">Peta Perjalanan Saya</h1>
       <p class="mb-6 border-b border-dashed border-neutral-600 pb-6 pt-2 text-neutral-600 dark:text-neutral-400">
         Berikut adalah jalur pembelajaran dan playlist saya.
@@ -298,7 +321,7 @@
     };
     const Contact = {
       template: `
-  <section>
+  <section class="contact">
     <h1 class="font-sora text-2xl font-medium">Hubungi Saya</h1>
     <p class="mb-6 border-b border-dashed border-neutral-600 pb-6 pt-2 text-neutral-600"> Jika anda memiliki pertanyaan
       atau ingin membuat website & aplikasi. </p>
@@ -318,8 +341,10 @@
           <textarea id="message" v-model="form.message" placeholder="Tulis pesan Anda.." required></textarea>
         </div>
 
-        <button type="submit" class="submit-button">Kirim</button>
         <p v-if="statusMessage" :class="statusClass">{{ statusMessage }}</p>
+        <button type="submit" class="submit-button" :disabled="isSending">
+          {{ isSending ? "Mengirim..." : "Kirim" }}
+        </button>
       </form>
     </div>
   </section>
@@ -333,11 +358,14 @@
             message: ""
           },
           statusMessage: "",
-          statusClass: ""
+          statusClass: "",
+          isSending: false
         };
       },
       methods: {
         async sendMessage() {
+          this.isSending = true; // Tombol dinonaktifkan
+
           try {
             const response = await axios.get("https://script.google.com/macros/s/AKfycbwObAgPKGY-VRtvYK5Bu_1xZF1mEWzWPVewDZU5sAE05jxJce4v6KfICsH6nJnDpysY/exec", {
               params: this.form
@@ -345,21 +373,20 @@
 
             if (response.data.success === 1) {
               this.statusMessage = "Pesan berhasil dikirim!";
-              this.statusClass = "success";
+              this.statusClass = "text-teal-700";
+              this.form.full_name = "";
+              this.form.email = "";
+              this.form.message = "";
             } else {
               this.statusMessage = "Gagal mengirim pesan.";
               this.statusClass = "error";
             }
-
-            // Reset form setelah sukses
-            this.form.full_name = "";
-            this.form.email = "";
-            this.form.message = "";
-
           } catch (error) {
             console.error(error);
             this.statusMessage = "Gagal mengirim pesan. Coba lagi.";
-            this.statusClass = "error";
+            this.statusClass = "text-red-700";
+          } finally {
+            this.isSending = false;
           }
         }
       }
@@ -367,16 +394,20 @@
 
     const Project = {
       template: ` 
-  <section class="p-2">
-    <div v-if="loading">Loading...</div>
-    <section v-else>
-      <div v-for="article in articles" :key="article.id" class="article">
-        <div v-if="article.link === projectId" class="p-2 mb-2 breadcrumbs flex gap-2">
+<section class="p-2 project">
+  <div v-if="loading" class="loader">
+    <span class="element"></span>
+    <span class="element "></span>
+    <span class="element"></span>
+  </div>
+  <section v-else>
+    <section v-for="article in articles" :key="article.id" class="article">
+      <section v-if="article.link === projectId">
+        <div class="breadcrumbs p-2 mb-2 flex gap-2">
           <router-link to="/" class="text-blue-500">Back to Home</router-link> >
           <h1 class="font-sora">{{ article.title }}</h1> >
           <span class="font-sora">{{ article.published_date }}</span>
         </div>
-
         <section class="flex gap-4 mt-4 w-full project-button p-1">
           <div class="flex items-center gap-2 font-medium cursor-pointer p-2"
             :class="{ 'active-tab': tab === 'document' }" @click="tabClik('document')">
@@ -403,24 +434,27 @@
             <span class="text-[15px]">Demo</span>
           </div>
         </section>
-
-        <div class="project-content" :class="{ 'active': tab === 'document' }" v-html="projectContent"></div>
-        <div class="project-content mt-5" :class="{ 'active': tab === 'code' }">
-          <div class="code-by">
-            <span>Source Code by Dupandes Milenium</span>
+        <section>
+          <div class="project-content" :class="{ 'active': tab === 'document' }" v-html="projectContent"></div>
+          <div class="project-content mt-5" :class="{ 'active': tab === 'code' }">
+            <div class="code-by">
+              <span>Source Code by Dupandes Milenium</span>
+            </div>
+            <iframe height="300" style="width: 100%;" scrolling="no" :title="article.title"
+              :src="'https://codepen.io/dupandesdata/embed/' + article.codepen + '?default-tab=html'" frameborder="no"
+              allowtransparency="true" allowfullscreen="true">
+            </iframe>
           </div>
-          <iframe height="300" style="width: 100%;" scrolling="no" :title="article.title"
-            :src="'https://codepen.io/dupandesdata/embed/' + article.codepen + '?default-tab=html'" frameborder="no"
-            allowtransparency="true" allowfullscreen="true">
-          </iframe>
-        </div>
-        <div class="project-content mt-5" :class="{ 'active': tab === 'demo' }">
-          <iframe :src="'https://dupandes2000.github.io/my-projects/' + projectId" frameborder="0"
-            class="w-full h-screen"></iframe>
-        </div>
-      </div>
+          <div class="project-content mt-5" :class="{ 'active': tab === 'demo' }">
+            <iframe :src="'https://dupandes2000.github.io/my-projects/' + projectId" frameborder="0"
+              class="w-full h-screen"></iframe>
+          </div>
+          </div>
+        </section>
+      </section>
     </section>
   </section>
+</section>
             `,
       data() {
         return {
