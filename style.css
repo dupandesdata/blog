@@ -1,33 +1,116 @@
-#app {
-  min-height: fit-content;
+/* ROOT */
+:root {
+  --hover-color: #05bd70e5;
+  --main-background: rgba(212, 212, 223, 0.418);
+  --main-color: #05bd70e5;
+  --main-color-bg: #10a573cb;
 }
 
-h1:hover,
-#typewriter {
-  color: #05bd70e5;
+/* GLOBAL CSS */
+header {
+  width: 16rem;
+
+  @media (max-width: 760px) {
+    width: 100%;
+  }
+
+  .container {
+    margin-top: 56px;
+    width: 16rem !important;
+
+    @media (max-width: 760px) {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    margin-top: 12px;
+
+    @media (max-width: 760px) {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+
+  >div {
+    flex-direction: column;
+  }
+
+  .profile {
+    width: 86px;
+    display: block;
+    margin: 18px 41px 9px;
+
+    @media (max-width: 760px) {
+      border: 2px solid #fff;
+      margin: 56px 0;
+      width: 75px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .container-hiro {
+      position: absolute;
+      top: 38px;
+      width: 96%;
+
+    }
+
+    .mobile {
+      width: 100%;
+    }
+
+    .mobile-33 {
+      height: 33px;
+    }
+
+    .w-full-mx760 {
+      width: 100% !important;
+    }
+
+  }
 }
 
-header h2 {
-  opacity: 0;
+h1:hover {
+  color: var(--hover-color);
 }
+
 
 h2.loaded {
   opacity: 1;
 }
 
-nav li,
-h1,
-h2 {
-  transition: all 0.3s ease-in-out;
+
+nav {
+  transition: width 0.3s ease;
+  height: 100vh;
+  top: 153px !important;
+
+  @media (max-width: 760px) {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100vh;
+
+    ul {
+      margin-top: 132px;
+    }
+  }
+
+  li,
+  h1,
+  h2 {
+    transition: all 0.3s ease-in-out;
+  }
+
+  li:hover {
+    background: var(--main-background);
+    color: var(--main-color-bg);
+    border-radius: 10px;
+  }
+
 }
 
-nav li:hover {
-  background: rgba(212, 212, 223, 0.418);
-  color: #10a573cb;
-  border-radius: 10px;
-}
-
-/* animasi images */
+/* ANIMATION IMAGES */
 .blur {
   filter: blur(6px);
   transition: all 0.5s ease-in-out;
@@ -38,37 +121,18 @@ img.loaded {
   filter: blur(0px);
 }
 
-/* page project */
-.card-projects>div {
-  transition: all 0.3s ease-in-out;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-
-.card-projects>div:hover {
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    #05bd70e5 0px 0px 0px 1px;
-  color: #000;
-
-  h2,
-  p {
-    color: #05bd70e5;
-    transition: all 0.3s ease-in-out;
-  }
-}
-
-/* Gaya untuk transisi page masuk */
+/* ANIMATION PAGE IN */
 .home-enter-active,
 .home-leave-active {
   transition: opacity 0.5s ease;
 }
 
-/* Gaya saat elemen masuk */
+/* ANIMATION ELEMENT IN */
 .home-enter {
   opacity: 0;
 }
 
-/* Gaya saat elemen keluar */
+/* ANIMATION ELEMENT OUT */
 .home-leave-to {
   opacity: 0;
 }
@@ -95,78 +159,18 @@ img.loaded {
   }
 }
 
-.project-code a:hover {
-  color: #10a573cb;
-}
+footer {
+  h6 {
+    float: right;
+    margin: 18px;
+    font-size: 9pt;
 
-.project-content {
-  transition: opacity 2s ease;
-  opacity: 0;
-  display: none;
-}
-
-.project-content.active {
-  opacity: 1;
-  display: block;
-}
-
-@media (max-width: 760px) {
-  .project-containeiner {
-    flex-direction: column;
+    @media (max-width: 760px) {
+      float: none;
+      text-align: center;
+      font-size: 9pt;
+    }
   }
-
-  .project-containeiner div {
-    margin-top: 7px;
-
-  }
-}
-
-/* animasi tepping */
-.cursor {
-  border-left: 2px solid rgb(0, 0, 0);
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-}
-
-.skils svg {
-  width: 25px;
-  height: 25px;
-}
-
-.breadcrumbs {
-  font-size: 10pt;
-  color: #666;
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-}
-
-.dropdown {
-  background-color: oklch(0.97 0 0 / 0.08);
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-/* Make the dropdown animate. */
-.dropdown-content {
-  min-width: max-content;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 1s;
-}
-
-/* The max-height should be set to something that will always be a little bit bigger than the height of the content. */
-.dropdown-open {
-  max-height: 200px;
 }
 
 iframe {
@@ -174,133 +178,142 @@ iframe {
   height: 100vh;
 }
 
-.code-by {
-  padding: 19px;
-  position: absolute;
-  background: #3d3d3e;
-  height: 51px;
-  justify-content: end;
-  right: 48px;
-  width: 40%;
+/* LOADING */
+.loader {
+  overflow: hidden;
+  width: 100%;
+  height: 90%;
   display: flex;
   align-items: center;
-  color: aliceblue;
+  align-content: center;
+  justify-content: center;
+  z-index: 100000;
+
+  .element {
+    border-radius: 100%;
+    border: 5px solid var(--main-color-bg);
+    margin: calc(5px * 2);
+  }
+
+  .element:nth-child(1) {
+    animation: preloader 0.6s ease-in-out alternate infinite;
+  }
+
+  .element:nth-child(2) {
+    animation: preloader 0.6s ease-in-out alternate 0.2s infinite;
+  }
+
+  .element:nth-child(3) {
+    animation: preloader 0.6s ease-in-out alternate 0.4s infinite;
+  }
+
 }
 
-.project-button {
-  border: #00000026 1px solid;
-  border-radius: 3px;
-}
-
-.active-tab {
-  background: #f3f2f2;
-  border-radius: 3px;
-  border: #00000026 1px solid;
-  font-weight: bold;
-}
-
-footer h6 {
-  float: right;
-  margin: 18px;
-  font-size: 9pt;
-}
-
-@media (max-width: 760px) {
-  header h2 {
-    opacity: 1;
-  }
-
-  .mobile-33 {
-    height: 33px;
-  }
-
-  .main {
-    display: none;
-  }
-
-  .w-full-mx760 {
-    width: 100%;
-  }
-
-  .container-hiro {
-    position: absolute;
-    top: 38px;
-    width: 96%;
-
-    .profile {
-      border: 2px solid #fff;
-      margin: 56px 0;
-      width: 75px;
-    }
-  }
-
-  header .mobile {
-    width: 100%;
-  }
-
-  nav {
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    padding-bottom: 5px;
-    height: 100vh;
-  }
-
-  nav ul {
-    margin-top: 132px;
-  }
-
-  .breadcrumbs {
-    flex-wrap: wrap;
-  }
-
-  .code-by {
-    display: none;
-  }
-
-  footer h6 {
-    float: none;
-    text-align: center;
-    font-size: 9pt;
+@keyframes preloader {
+  100% {
+    transform: scale(2);
   }
 }
 
-.form-container {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  max-width: 606px;
-  width: 100%;
-  margin: auto;
+#app {
+  min-height: fit-content;
 
-  @media (max-width: 768px) {
-    width: 97%;
-  }
-
-  span {
-    float: right;
-    height: 60px;
-    width: 60px;
-    border: 1px solid #e6e6e6;
-    border-radius: 50%;
+  @media (min-width: 900px) {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #6c6b8a;
-    font-size: 1.4rem;
-    transition: 0.3s ease;
+    justify-content: space-between;
+  }
 
-    &:hover {
-      color: #e53935;
+  #typewriter {
+    color: var(--main-color);
+  }
+
+  /* ANIMATION TYPEWRITER */
+  .cursor {
+    border-left: 2px solid rgb(0, 0, 0);
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
     }
   }
 
-  h2 {
-    font-family: "Merriweather", serif;
-    font-weight: 700;
-    text-align: center;
-    color: #151534;
-    font-size: 1.8rem;
+}
+
+/* HOME CSS */
+.home {
+  input {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  }
+
+  input:focus {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      var(--hover-color) 0px 0px 0px 1px
+  }
+
+  .card-projects>div {
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  }
+
+  .card-projects>div:hover {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      var(--main-color) 0px 0px 0px 1px;
+    background: var(--main-background);
+
+  }
+}
+
+/* ROADMAP CSS */
+.roadmap {
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .dropdown {
+    background-color: oklch(0.97 0 0 / 0.08);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+
+  /* Make the dropdown animate. */
+  .dropdown-content {
+    min-width: max-content;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s;
+  }
+
+  /* The max-height should be set to something that will always be a little bit bigger than the height of the content. */
+  .dropdown-open {
+    max-height: 200px;
+  }
+}
+
+/* CONTACT CSS */
+.contact {
+  .form-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    max-width: 606px;
+    width: 100%;
+    margin: auto;
+
+    @media (max-width: 768px) {
+      width: 97%;
+    }
+
   }
 
   form {
@@ -315,15 +328,14 @@ footer h6 {
         font-size: 1.2rem;
       }
 
-      input,
-      select {
+      input {
         max-width: 418px;
         width: 100%;
         padding: 10px;
         border-top: none;
         border-left: none;
         border-right: none;
-        border-bottom: 2px solid lighten(#151534, 80%);
+        border-bottom: 2px solid var(--hover-color);
         outline: none;
         font-family: "IBM Plex Sans", sans-serif;
         font-weight: 500;
@@ -332,7 +344,7 @@ footer h6 {
       }
 
       textarea {
-        border: 2px solid #e6e6e6;
+        border: 2px solid var(--hover-color);
         padding: 10px;
         border-radius: 10px;
         max-width: 476px;
@@ -364,38 +376,69 @@ footer h6 {
   }
 }
 
-@media (min-width: 1024px) {
-  #app {
-    display: flex;
-    justify-content: space-between;
-  }
 
-  header {
-    width: 16rem !important;
+/* PROJECT CSS */
+.project {
+  .breadcrumbs {
+    font-size: 10pt;
+    color: #666;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
 
-    .container {
-      margin-top: 56px;
-      width: 16rem !important;
-    }
-
-    h2 {
-      margin-top: 12px;
+    @media (max-width: 760px) {
+      flex-wrap: wrap;
     }
   }
 
-  nav {
-    transition: width 0.3s ease;
-    height: 100vh;
-    top: 153px !important;
+  .project-button {
+    border: #00000026 1px solid;
+    border-radius: 3px;
+
+    @media (max-width: 760px) {
+      flex-wrap: wrap;
+    }
   }
 
-  header>div {
-    flex-direction: column;
+  .active-tab {
+    background: #f3f2f2;
+    border-radius: 3px;
+    border: #00000026 1px solid;
+    font-weight: bold;
   }
 
-  .profile {
-    width: 86px;
+  .project-content {
+    transition: opacity 2s ease;
+    opacity: 0;
+    display: none;
+  }
+
+  .project-content.active {
+    opacity: 1;
     display: block;
-    margin: 18px 41px 9px;
   }
+
+  .code-by {
+    padding: 19px;
+    position: absolute;
+    background: #3d3d3e;
+    height: 51px;
+    justify-content: end;
+    right: 48px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+
+    @media (max-width: 760px) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+
+  .main {
+    display: none;
+  }
+
 }
