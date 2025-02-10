@@ -1,5 +1,4 @@
-{
-  "articles": [
+[
     {
       "id": 2,
       "title": "OCR (Optical Character Recognition)",
@@ -29,4 +28,3 @@
       "path": "vue-cdn"
     }
   ]
-}
