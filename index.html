@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -7,12 +7,11 @@
   <title>Dupan Code</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.3/dist/vue-router.min.js"></script>
-  <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.min.js"></script>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuex@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@3"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 </head>
 
 <body>
@@ -125,52 +124,96 @@
   </footer>
 
   <script>
-    function getData(path, data) {
-      return new Promise((resolve, reject) => {
-        axios.get(`https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/${path}/${data}`)
-          .then(response => {
-            resolve({ responses: response.data, loading: true });
-          })
-          .catch(error => {
-            reject({ responses: error, loading: true });
-          });
-      });
-    }
+    // Vuex Store
+    const store = new Vuex.Store({
+      state: {
+        posts: [],
+        svgs: [],
+        skils: []
+      },
+      mutations: {
+        setPosts(state, posts) {
+          state.posts = posts;
+        },
+        setSvgs(state, svgs) {
+          state.svgs = svgs;
+        },
+        setSkils(state, skils) {
+          state.skils = skils;
+        },
+        setLoading(state, isLoading) {
+          state.loading = isLoading;
+        },
+      },
+      actions: {
+        fetchPosts({ commit }) {
+          axios.get('https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/post.json')
+            .then(response => {
+              const postsData = response.data
+              commit('setLoading', true);
+              commit('setPosts', postsData);
+            })
+            .catch(error => console.error('Error fetching posts:', error))
+            .finally(() => commit('setLoading', false));
+        },
+        fetchSvgs({ commit }) {
+          axios.get('https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/svg.json')
+            .then(response => {
+              commit('setLoading', true);
+              commit('setSvgs', response.data);
+            })
+            .catch(error => console.error('Error fetching SVGs:', error))
+            .finally(() => commit('setLoading', false));
+        },
+        fetchSkils({ commit }) {
+          axios.get('https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/sklis.json')
+            .then(response => {
+              commit('setLoading', true);
+              commit('setSkils', response.data);
+            })
+            .catch(error => console.error('Error fetching :', error))
+            .finally(() => commit('setLoading', false));
+        }
+      },
+      getters: {
+        posts: state => state.posts,
+        svgs: state => state.svgs,
+        skils: state => state.skils
+      }
+    });
 
     const Home = {
       data() {
         return {
-          search: '',
-          loading: false,
-          articles: [],
+          search: ""
         };
       },
       computed: {
+        posts() {
+          return this.$store.getters.posts;
+        },
+        svgs() {
+          return this.$store.getters.svgs;
+        },
         filteredArticles() {
-          return this.articles.filter((article) =>
-            article.title.toLowerCase().includes(this.search.toLowerCase())
+          return this.posts.filter((post) =>
+            post.title.toLowerCase().includes(this.search.toLowerCase())
           );
         },
+        loading() {
+          return this.$store.state.loading;
+        }
       },
       created() {
-
-        getData("assets", "post.json")
-          .then(result => {
-            this.articles = result.responses.articles.map((article) => ({
-              ...article,
-              slug:
-                article.path +
-                "/" +
-                article.title
-                  .toLowerCase()
-                  .replace(/[^a-z0-9]+/g, "-")
-                  .replace(/-+$/g, "")
-            }));
-            this.loading = result.loading;
-          })
-          .catch(error => {
-            console.error("Error fetching data:", error);
-          });
+        this.$store.dispatch('fetchPosts');
+        this.$store.dispatch('fetchSvgs');
+      },
+      methods: {
+        getSvg(tag) {
+          return this.svgs.find(
+            (svg) => svg.title.toLowerCase() === tag.toLowerCase()
+          );
+        },
       },
       template: `
 <section class="home">
@@ -202,7 +245,7 @@
     Menampilkan minat saya pada teknologi, desain, dan pemecahan masalah
     melalui kode.
   </p>
-  <div v-if="!loading" class="loader">
+  <div v-if="$store.state.loading" class="loader">
     <span class="element"></span>
     <span class="element "></span>
     <span class="element"></span>
@@ -210,31 +253,38 @@
   <section v-else>
     <input type="text" id="search" v-model="search" placeholder="Cari Project.." class="p-2 w-full mb-4" />
     <section class="card-projects flex flex-wrap justify-around">
-      <div v-for="article in filteredArticles" :key="article.id" class="w-full lg:w-[40%] mb-6 relative">
-          <router-link :to="{ name: 'project', params: { id: article.link } }">
-            <div class="absolute right-0 top-0 z-[2] rounded-bl-xl rounded-tr-xl bg-emerald-300 px-2 py-1 text-[13px] font-medium text-emerald-950">{{ article.price }}</div>
-          <img :src="article.image" alt="vcf-reader-and-edit.png">
-        <div class="p-2 mx-auto">
+      <div v-for="posts in filteredArticles" :key="posts.id" class="w-full lg:w-[40%] mb-6 relative">
+        <router-link :to="{ name: 'project', params: { id: posts.link } }">
+          <div
+            class="absolute right-0 top-0 z-[2] rounded-bl-xl rounded-tr-xl bg-emerald-300 px-2 py-1 text-[13px] font-medium text-emerald-950">
+            {{ posts.price }}</div>
+          <img :src="posts.image" alt="vcf-reader-and-edit.png">
+          <div class="p-2 mx-auto">
             <h2 class="font-sora cursor-pointer text-lg text-neutral-900">
-              {{ article.title }}
+              {{ posts.title }}
             </h2>
+            <div class="flex flex-wrap items-center mt-2" v-if="posts.tags">
+              <div v-for="tag in posts.tags" :key="tag" class="flex items-center space-x-1 mr-2 mb-1">
+                <svg v-if="getSvg(tag)" :viewBox="getSvg(tag).viewBox" :fill="getSvg(tag).color" class="w-4 h-4">
+                  <path :d="getSvg(tag).d" />
+                </svg>
+                <span class="text-xs text-neutral-800">{{ tag }}</span>
+              </div>
+            </div>
             <p class="text-sm leading-relaxed text-neutral-900">
-              {{ article.content }}
+              {{ posts.content }}
             </p>
             <p class="text-xs leading-relaxed text-neutral-800">
-              Published: {{ article.published_date }}
+              Published: {{ posts.published_date }}
             </p>
-            <p class="text-xs leading-relaxed text-neutral-800">
-              Teknologi: {{ article.tags.join(", ") }}
-            </p>
-        </div>
-          </router-link>
+          </div>
+        </router-link>
       </div>
     </section>
   </section>
 
 </section>
-    `
+      `,
     };
     const About = {
       template: `
@@ -262,21 +312,16 @@
     const Roadmap = {
       data() {
         return {
-          sklis: [],
-          openIndex: null, // Menyimpan index dropdown yang terbuka
+          openIndex: null
         };
       },
+      computed: {
+        skils() {
+          return this.$store.getters.skils;
+        },
+      },
       created() {
-        axios
-          .get(
-            "https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/sklis.json"
-          )
-          .then((response) => {
-            this.sklis = response.data.skils;
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        this.$store.dispatch('fetchSkils');
       },
       methods: {
         toggleDropdown(index) {
@@ -289,9 +334,8 @@
       <p class="mb-6 border-b border-dashed border-neutral-600 pb-6 pt-2 text-neutral-600 dark:text-neutral-400">
         Berikut adalah jalur pembelajaran dan playlist saya.
       </p>
-
       <ul>
-        <li v-for="(item, index) in sklis" :key="index" class="dropdown mt-5 p-3 rounded-lg"">
+        <li v-for="(item, index) in skils" :key="index" class="dropdown mt-5 p-3 rounded-lg"">
           <button @click="toggleDropdown(index)" class="w-full flex justify-between items-center w-full cursor-pointer">
             <div class="flex">
                 <svg stroke-width="0" role="img" :viewBox="item.viewBox" :fill="item.color" height="100%" width="100%"
@@ -393,113 +437,41 @@
         }
       }
     };
-
     const Project = {
-      template: ` 
-<section class="p-2 project">
-  <div v-if="loading" class="loader">
-    <span class="element"></span>
-    <span class="element "></span>
-    <span class="element"></span>
-  </div>
-  <section v-else>
-    <section v-for="article in articles" :key="article.id" class="article">
-      <section v-if="article.link === projectId">
-        <div class="breadcrumbs p-2 mb-2 flex gap-2">
-          <router-link to="/" class="text-blue-500">Back to Home</router-link> >
-          <h1 class="font-sora">{{ article.title }}</h1> >
-          <span class="font-sora">{{ article.published_date }}</span>
-        </div>
-        <section class="flex gap-4 mt-4 w-full project-button p-1">
-          <div class="flex items-center gap-2 font-medium cursor-pointer p-2"
-            :class="{ 'active-tab': tab === 'document' }" @click="tabClik('document')">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9m-9-4h9m-9-4h9m-9-4h9M3 4h6v16H3z"></path>
-            </svg>
-            <span class="text-[15px]">Dokumentasi</span>
-          </div>
-
-          <div class="flex items-center gap-2 font-medium cursor-pointer p-2" :class="{ 'active-tab': tab === 'code' }"
-            @click="tabClik('code')">
-            <svg stroke="currentColor" fill="#111" stroke-width="0" viewBox="0 0 16 16" height="22" width="22"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-              </path>
-            </svg>
-            <span class="text-[15px]">Source Code</span>
-          </div>
-          <div class="flex items-center gap-2 font-medium cursor-pointer p-2" :class="{ 'active-tab': tab === 'demo' }"
-            @click="tabClik('demo')">
-            <i class="fa-solid fa-play" style="font-size: 14pt;"></i>
-            <span class="text-[15px]">Demo</span>
-          </div>
-        </section>
-        <section>
-          <div class="project-content" :class="{ 'active': tab === 'document' }" v-html="projectContent"></div>
-          <div class="project-content mt-5" :class="{ 'active': tab === 'code' }">
-            <div class="code-by">
-              <span>Source Code by Dupandes Milenium</span>
-            </div>
-            <iframe height="300" style="width: 100%;" scrolling="no" :title="article.title"
-              :src="'https://codepen.io/dupandesdata/embed/' + article.codepen + '?default-tab=html'" frameborder="no"
-              allowtransparency="true" allowfullscreen="true">
-            </iframe>
-          </div>
-          <div class="project-content mt-5" :class="{ 'active': tab === 'demo' }">
-            <iframe :src="'https://dupandes2000.github.io/my-projects/' + projectId" frameborder="0"
-              class="w-full h-screen"></iframe>
-          </div>
-          </div>
-        </section>
-      </section>
-    </section>
-  </section>
-</section>
-            `,
       data() {
         return {
-          loading: true,
           projectContent: '',
           projectId: '',
-          articles: [],
+          loading: true,
           tab: 'document',
           code: ''
         };
       },
+      computed: {
+        posts() {
+          return this.$store.getters.posts;
+        },
+        svgs() {
+          return this.$store.getters.svgs;
+        },
+        loading() {
+          return this.$store.state.loading;
+        }
+      },
       created() {
         this.projectId = this.$route.params.id;
+        this.$store.dispatch('fetchPosts');
+        this.$store.dispatch('fetchSvgs');
         axios.get(`https://raw.githubusercontent.com/dupandes2000/my-projects/refs/heads/main/${this.projectId}/README.md`)
           .then(response => {
             this.projectContent = this.markdownToHtml(response.data)
+            this.loading = false;
           })
           .catch(error => {
             console.error("There was an error!", error);
           })
           .finally(() => {
             this.loading = false;
-          });
-
-        axios
-          .get(
-            "https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/post.json"
-          )
-          .then((response) => {
-            this.articles = response.data.articles.map((article) => ({
-              ...article,
-              slug:
-                article.path +
-                "/" +
-                article.title
-                  .toLowerCase()
-                  .replace(/[^a-z0-9]+/g, "-")
-                  .replace(/-+$/g, "")
-            }));
-          })
-          .catch((error) => {
-            // handle error
-            console.log(error);
           });
         axios.get(`https://raw.githubusercontent.com/dupandes2000/my-projects/refs/heads/main/${this.projectId}/index.html`)
           .then(response => {
@@ -508,13 +480,15 @@
           .catch(error => {
             console.error("There was an error!", error);
           })
-          .finally(() => {
-            this.loading = false;
-          });
       },
       methods: {
         tabClik(index) {
           this.tab = index
+        },
+        getSvg(tag) {
+          return this.svgs.find(
+            (svg) => svg.title.toLowerCase() === tag.toLowerCase()
+          );
         },
         markdownToHtml(markdown) {
           // Convert Markdown to HTML as before
@@ -565,33 +539,82 @@
 
           return markdown;
         }
-      },
-    };
-    const Demo = {
-      template: `
-    <div class="p-2">
-      <div class="p-2 mb-2 breadcrumbs flex gap-2">
-        <router-link to="/" class="text-blue-500">Back to Home</router-link> >
-        <!-- Gunakan binding dinamis pada atribut 'to' -->
-        <router-link :to="'/project/' + projectId" class="text-blue-500">Source</router-link>
-      </div>
-      <!-- Iframe berada di dalam container yang sama -->
-      <iframe :src="'https://dupandes2000.github.io/my-projects/' + projectId" frameborder="0" class="w-full h-screen"></iframe>
-    </div>
-  `,
-      data() {
-        return {
-          loading: true,
-          projectContent: '',
-          projectId: '',
-        };
-      },
-      created() {
-        // Mengambil parameter 'id' dari route dan menyimpannya di data projectId
-        this.projectId = this.$route.params.id;
-      },
-    };
+      }, template: ` 
+<section class="p-2 project">
 
+  <section>
+    <section v-for="article in posts" :key="article.id">
+      <section v-if="article.link === projectId">
+        <section class="flex gap-4 mt-4 w-full project-button p-1">
+          <div class="flex items-center gap-2 font-medium cursor-pointer p-2"
+            :class="{ 'active-tab': tab === 'document' }" @click="tabClik('document')">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9m-9-4h9m-9-4h9m-9-4h9M3 4h6v16H3z"></path>
+            </svg>
+            <span class="text-[15px]">Dokumentasi</span>
+          </div>
+
+          <div class="flex items-center gap-2 font-medium cursor-pointer p-2" :class="{ 'active-tab': tab === 'code' }"
+            @click="tabClik('code')">
+            <svg stroke="currentColor" fill="#111" stroke-width="0" viewBox="0 0 16 16" height="22" width="22"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+            <span class="text-[15px]">Source Code</span>
+          </div>
+          <div class="flex items-center gap-2 font-medium cursor-pointer p-2" :class="{ 'active-tab': tab === 'demo' }"
+            @click="tabClik('demo')">
+            <i class="fa-solid fa-play" style="font-size: 14pt;"></i>
+            <span class="text-[15px]">Demo</span>
+          </div>
+        </section>
+        <section>
+          <div class="project-content" :class="{ 'active': tab === 'document' }" >
+        <div class="breadcrumbs p-2 mb-2 mt-3">
+          <div class="font-sora text-neutral-800">Development: {{ article.dev }}</div> 
+            <div class="flex flex-wrap items-center gap-2 text-neutral-800" v-if="article.tags">
+              Technology: 
+              <div v-for="tag in article.tags" :key="tag" class="flex items-center space-x-1 mr-2 mb-1">
+                <svg v-if="getSvg(tag)" :viewBox="getSvg(tag).viewBox" :fill="getSvg(tag).color" class="w-4 mt-1 h-4">
+                  <path :d="getSvg(tag).d" />
+                </svg>
+                <span class="text-xs font-sora">{{ tag }}</span>
+              </div>
+            </div>
+          <div class="font-sora text-neutral-800">Dibuat: {{ article.published_date }}</div>
+        </div>
+  <div v-if="loading" class="loader">
+    <span class="element"></span>
+    <span class="element "></span>
+    <span class="element"></span>
+  </div>
+            <div v-else v-html="projectContent"></div>
+            </div>
+          <div class="project-content mt-5" :class="{ 'active': tab === 'code' }">
+            <div class="code-by">
+              <span>Source Code by Dupandes Milenium</span>
+            </div>
+            <iframe height="300" style="width: 100%;" scrolling="no" :title="article.title"
+              :src="'https://codepen.io/dupandesdata/embed/' + article.codepen + '?default-tab=html'" frameborder="no"
+              allowtransparency="true" allowfullscreen="true">
+            </iframe>
+          </div>
+          <div class="project-content mt-5" :class="{ 'active': tab === 'demo' }">
+            <iframe :src="'https://dupandes2000.github.io/my-projects/' + projectId" frameborder="0"
+              class="w-full h-screen"></iframe>
+          </div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+            `,
+
+    };
 
     const routes = [
       { path: '/', component: Home },
@@ -600,13 +623,16 @@
       { path: '/blog', component: Blog },
       { path: '/contact', component: Contact },
       { path: '/project/:id', name: 'project', component: Project },
-      { path: '/demo/:id', name: 'demo', component: Demo }
     ];
+
+    // Vue Instance
     const router = new VueRouter({
       routes
     });
+
     new Vue({
       el: "#app",
+      store,
       router,
       data() {
         return {
@@ -689,8 +715,6 @@
     });
 
   </script>
-
-  <script async src="https://public.codepenassets.com/embed/index.js"></script>
 </body>
 
 </html>
