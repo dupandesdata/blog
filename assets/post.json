@@ -1,29 +1,17 @@
 [
     {
-      "id": 3,
-      "title": "API Indodax dalam Google Apps Script",
-      "price": "Gratis",
-      "category": "Google App Script",
-      "image": "https://www.mediafire.com/convkey/a795/s25tkrmj7ly2g6y7g.jpg",
-      "dev": "Dupandes Milenium",
-      "published_date": "11-02-2025",
-      "content": "Panduan lengkap API Indodax untuk trading otomatis di Google Apps Script. Kelola saldo, buat order, dan pantau transaksi kripto dengan mudah...",
-      "codepen": "MYWWaaW",
-      "link": "indodax",
-      "tags": ["JavaScript"],
-    },
-    {
       "id": 2,
       "title": "OCR (Optical Character Recognition)",
       "price": "Gratis",
       "category": "Aplikasi Web",
       "image": "https://www.mediafire.com/convkey/71f7/vitgi6v9i17ukfb7g.jpg",
       "dev": "Dupandes Milenium",
-      "published_date": "10-06-2024",
+      "published_date": "2024-10-06",
       "content": "Teknologi OCR cerdas yang mengubah teks dalam gambar menjadi data digital yang dapat diedit, memudahkan pencarian dan pengolahan dokumen...",
       "codepen": "OPLKWwP",
       "link": "optical-character-recognition",
       "tags": ["vue.js", "tailwind css"],
+      "path": "vue-cdn"
     },
     {
       "id": 1,
@@ -32,10 +20,11 @@
       "category": "Aplikasi Web",
       "image": "https://www.mediafire.com/convkey/7f60/3v81hldw0b9nn4b7g.jpg",
       "dev": "Dupandes Milenium",
-      "published_date": "06-09-2024",
+      "published_date": "2024-09-26",
       "content": "Konverter Markdown inovatif mengubah file .md menjadi HTML atau teks, memudahkan pembaca memahami konten dengan tampilan yang terstruktur dan rapi...",
       "codepen": "GgKVXro",
       "link": "markdown",
       "tags": ["vue.js", "tailwind css"],
+      "path": "vue-cdn"
     }
   ]
