@@ -516,7 +516,7 @@
 
           // Handle code blocks
           markdown = markdown.replace(/```(.*?)\n([\s\S]*?)```/g, '<pre class="bg-gray-100 p-3 rounded"><code>$2</code></pre>');
-          markdown = markdown.replace(/`([^`]+)`/g, '<code class="bg-gray-200 p-1 rounded">$1</code>');
+          markdown = markdown.replace(/`([^`]+)`/g, '<code class="bg-gray-200 rounded">$1</code>');
 
           // Handle bold, italics, images, lists, and more
           markdown = markdown.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
