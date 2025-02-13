@@ -8,7 +8,7 @@
     "dev": "Dupandes Milenium",
     "published_date": "11-02-2025",
     "content": "Panduan lengkap API Indodax untuk trading otomatis di Google Apps Script. Kelola saldo, buat order, dan pantau transaksi kripto dengan mudah...",
-    "codepen": "MYWWaaW",
+    "link_code": "index.gs",
     "link": "indodax",
     "tags": ["JavaScript"]
   },
@@ -21,7 +21,7 @@
     "dev": "Dupandes Milenium",
     "published_date": "2024-10-06",
     "content": "Teknologi OCR cerdas yang mengubah teks dalam gambar menjadi data digital yang dapat diedit, memudahkan pencarian dan pengolahan dokumen...",
-    "codepen": "OPLKWwP",
+    "link_code": "index.html",
     "link": "optical-character-recognition",
     "tags": ["vue.js", "tailwind css"],
     "path": "vue-cdn"
@@ -35,7 +35,7 @@
     "dev": "Dupandes Milenium",
     "published_date": "2024-09-26",
     "content": "Konverter Markdown inovatif mengubah file .md menjadi HTML atau teks, memudahkan pembaca memahami konten dengan tampilan yang terstruktur dan rapi...",
-    "codepen": "GgKVXro",
+    "link_code": "index.html",
     "link": "markdown",
     "tags": ["vue.js", "tailwind css"],
     "path": "vue-cdn"
