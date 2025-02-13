@@ -149,7 +149,7 @@
         fetchPosts({ commit }) {
           axios.get('https://raw.githubusercontent.com/dupandesdata/blog/refs/heads/master/assets/post.json')
             .then(response => {
-              const postsData = response.data
+              const postsData = response.data;
               commit('setLoading', true);
               commit('setPosts', postsData);
             })
@@ -462,7 +462,7 @@
         this.projectId = this.$route.params.id;
         this.$store.dispatch('fetchPosts');
         this.$store.dispatch('fetchSvgs');
-        axios.get(`https://raw.githubusercontent.com/dupandes2000/my-projects/refs/heads/main/${this.projectId}/README.md`)
+        axios.get(`https://raw.githubusercontent.com/dupandesdata/article/refs/heads/main/projects/${this.projectId}.md`)
           .then(response => {
             this.projectContent = this.markdownToHtml(response.data)
             this.loading = false;
@@ -515,8 +515,8 @@
           markdown = markdown.replace(/# (.+)/g, '<p class="font-semibold">$1</p>');
 
           // Handle code blocks
-          markdown = markdown.replace(/```(.*?)\n([\s\S]*?)```/g, '<pre class="bg-gray-100 p-3 rounded"><code>$2</code></pre>');
-          markdown = markdown.replace(/`([^`]+)`/g, '<code class="bg-gray-200 rounded">$1</code>');
+          markdown = markdown.replace(/```(.*?)\n([\s\S]*?)```/g, '<pre class="bg-gray-100 p-3 rounded><code>$2</code></pre>');
+          markdown = markdown.replace(/`([^`]+)`/g, '<code class="bg-gray-200  rounded">$1</code>');
 
           // Handle bold, italics, images, lists, and more
           markdown = markdown.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
@@ -555,8 +555,7 @@
             <span class="text-[15px]">Dokumentasi</span>
           </div>
 
-          <div class="flex items-center gap-2 font-medium cursor-pointer p-2" :class="{ 'active-tab': tab === 'code' }"
-            @click="tabClik('code')">
+          <a class="flex items-center gap-2" :href="'https://github.com/dupandes2000/my-projects/blob/main/' + article.link + '/' + article.link_code" target="_blank">
             <svg stroke="currentColor" fill="#111" stroke-width="0" viewBox="0 0 16 16" height="22" width="22"
               xmlns="http://www.w3.org/2000/svg">
               <path
@@ -564,7 +563,7 @@
               </path>
             </svg>
             <span class="text-[15px]">Source Code</span>
-          </div>
+          </a>
           <div class="flex items-center gap-2 font-medium cursor-pointer p-2" :class="{ 'active-tab': tab === 'demo' }"
             @click="tabClik('demo')">
             <i class="fa-solid fa-play" style="font-size: 14pt;"></i>
@@ -593,15 +592,6 @@
   </div>
             <div v-else v-html="projectContent"></div>
             </div>
-          <div class="project-content mt-5" :class="{ 'active': tab === 'code' }">
-            <div class="code-by">
-              <span>Source Code by Dupandes Milenium</span>
-            </div>
-            <iframe height="300" style="width: 100%;" scrolling="no" :title="article.title"
-              :src="'https://codepen.io/dupandesdata/embed/' + article.codepen + '?default-tab=html'" frameborder="no"
-              allowtransparency="true" allowfullscreen="true">
-            </iframe>
-          </div>
           <div class="project-content mt-5" :class="{ 'active': tab === 'demo' }">
             <iframe :src="'https://dupandes2000.github.io/my-projects/' + projectId" frameborder="0"
               class="w-full h-screen"></iframe>
