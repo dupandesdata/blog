@@ -1,5 +1,18 @@
 [
   {
+    "id": 4,
+    "title": "Excel Converter",
+    "price": "Gratis",
+    "category": "Aplikasi Web",
+    "image": "https://www.mediafire.com/convkey/17a2/ikd5mz9hn0kkllx7g.jpg",
+    "dev": "Dupandes Milenium",
+    "published_date": "13-02-2025",
+    "content": "Excel Converter adalah aplikasi web intuitif untuk mengonversi file Excel ke format JSON, HTML, PDF, atau PNG, dengan fitur kustomisasi dan responsif...",
+    "link_code": "index.html",
+    "link": "optical-character-recognition",
+    "tags": ["vue.js", "tailwind css"]
+  },
+  {
     "id": 3,
     "title": "API Indodax dalam Google Apps Script",
     "price": "Gratis",
@@ -23,8 +36,7 @@
     "content": "Teknologi OCR cerdas yang mengubah teks dalam gambar menjadi data digital yang dapat diedit, memudahkan pencarian dan pengolahan dokumen...",
     "link_code": "index.html",
     "link": "optical-character-recognition",
-    "tags": ["vue.js", "tailwind css"],
-    "path": "vue-cdn"
+    "tags": ["vue.js", "tailwind css"]
   },
   {
     "id": 1,
