@@ -9,7 +9,7 @@
     "published_date": "13-02-2025",
     "content": "Excel Converter adalah aplikasi web intuitif untuk mengonversi file Excel ke format JSON, HTML, PDF, atau PNG, dengan fitur kustomisasi dan responsif...",
     "link_code": "index.html",
-    "link": "optical-character-recognition",
+    "link": "excel-converter",
     "tags": ["vue.js", "tailwind css"]
   },
   {
