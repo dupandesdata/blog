@@ -422,23 +422,6 @@ iframe {
     opacity: 1;
     display: block;
   }
-
-  .code-by {
-    padding: 19px;
-    position: absolute;
-    background: #3d3d3e;
-    height: 51px;
-    justify-content: end;
-    right: 48px;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    color: aliceblue;
-
-    @media (max-width: 760px) {
-      display: none;
-    }
-  }
 }
 
 @media (max-width: 760px) {
