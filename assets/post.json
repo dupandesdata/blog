@@ -10,7 +10,7 @@
     "content": "Excel Converter adalah aplikasi web intuitif untuk mengonversi file Excel ke format JSON, HTML, PDF, atau PNG, dengan fitur kustomisasi dan responsif...",
     "link_code": "index.html",
     "link": "excel-converter",
-    "tags": ["vue.js", "tailwind css"]
+    "tags": ["vue CDN", "tailwind css"]
   },
   {
     "id": 3,
@@ -36,7 +36,7 @@
     "content": "Teknologi OCR cerdas yang mengubah teks dalam gambar menjadi data digital yang dapat diedit, memudahkan pencarian dan pengolahan dokumen...",
     "link_code": "index.html",
     "link": "optical-character-recognition",
-    "tags": ["vue.js", "tailwind css"]
+    "tags": ["vue CDN", "tailwind css"]
   },
   {
     "id": 1,
@@ -49,7 +49,6 @@
     "content": "Konverter Markdown inovatif mengubah file .md menjadi HTML atau teks, memudahkan pembaca memahami konten dengan tampilan yang terstruktur dan rapi...",
     "link_code": "index.html",
     "link": "markdown",
-    "tags": ["vue.js", "tailwind css"],
-    "path": "vue-cdn"
+    "tags": ["vue CDN", "tailwind css"]
   }
 ]
