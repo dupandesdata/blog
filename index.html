@@ -462,9 +462,9 @@
         this.projectId = this.$route.params.id;
         this.$store.dispatch('fetchPosts');
         this.$store.dispatch('fetchSvgs');
-        axios.get(`https://raw.githubusercontent.com/dupandesdata/article/refs/heads/main/projects/${this.projectId}.md`)
+        axios.get(`https://raw.githubusercontent.com/dupandesdata/article/refs/heads/main/projects/${this.projectId}.html`)
           .then(response => {
-            this.projectContent = this.markdownToHtml(response.data)
+            this.projectContent = response.data;
             this.loading = false;
           })
           .catch(error => {
@@ -490,55 +490,6 @@
             (svg) => svg.title.toLowerCase() === tag.toLowerCase()
           );
         },
-        markdownToHtml(markdown) {
-          // Convert Markdown to HTML as before
-          markdown = markdown.replace(
-            /###### (.+)/g,
-            '<h6 class="text-base font-semibold">$1</h6>'
-          );
-          markdown = markdown.replace(
-            /##### (.+)/g,
-            '<h5 class="text-lg font-semibold">$1</h5>'
-          );
-          markdown = markdown.replace(
-            /#### (.+)/g,
-            '<h4 class="text-xl font-semibold">$1</h4>'
-          );
-          markdown = markdown.replace(
-            /### (.+)/g,
-            '<h3 class="text-2xl font-bold">$1</h3>'
-          );
-          markdown = markdown.replace(
-            /## (.+)/g,
-            '<h2 class="text-3xl font-bold">$1</h2>'
-          );
-          markdown = markdown.replace(/# (.+)/g, '<p class="font-semibold">$1</p>');
-
-          // Handle code blocks
-          markdown = markdown.replace(/```(.*?)\n([\s\S]*?)```/g, '<pre class="bg-gray-100 p-3 rounded><code>$2</code></pre>');
-          markdown = markdown.replace(/`([^`]+)`/g, '<code class="bg-gray-200  rounded">$1</code>');
-
-          // Handle bold, italics, images, lists, and more
-          markdown = markdown.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-          markdown = markdown.replace(/\*(.+?)\*/g, "<em>$1</em>");
-          markdown = markdown.replace(
-            /!\[(.*?)\]\((.*?)\)/g,
-            '<img src="$2" alt="$1" class="my-2 max-w-full h-auto">'
-          );
-          markdown = markdown.replace(/^\s*-\s+(.+)/gm, "<li>$1</li>");
-          markdown = markdown.replace(/<\/li>\s*<li>/g, "</li><li>");
-          markdown = markdown.replace(
-            /<li>(.*?)<\/li>/g,
-            '<ul class="list-disc ml-5"><li>$1</li></ul>'
-          );
-          markdown = markdown.replace(/---+/g, "<hr>");
-          markdown = markdown
-            .replace(/\n\n+/g, "</p><p class='text-gray-800 my-3'>")
-            .replace(/\n/g, "<br>");
-          markdown = '<p class="text-gray-800 my-3">' + markdown + "</p>";
-
-          return markdown;
-        }
       }, template: ` 
 <section class="p-2 project">
 
