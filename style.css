@@ -455,11 +455,6 @@ iframe {
     ol {
       list-style-type: decimal;
     }
-
-    code span:first-child {
-      margin-left: 16px;
-    }
-
     code span {
       max-width: 5em !important;
     }
