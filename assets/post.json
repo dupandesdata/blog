@@ -1,7 +1,19 @@
 [
   {
+    "id": 5,
+    "title": "Al-Qur'an Digital",
+    "price": "Gratis",
+    "category": "Aplikasi Web",
+    "image": "https://www.mediafire.com/convkey/3065/auhxa9w05txdrey7g.jpg",
+    "dev": "Dupandes Milenium",
+    "published_date": "06-03-2025",
+    "content": "Al-Qur'an Digital interaktif dan modern untuk membaca surah, ayat, dan terjemahan dengan aksesibilitas mudah, audio, dan navigasi responsif...",
+    "link_code": "index.html",
+    "link": "al-quran-digital",
+    "tags": ["Vue CDN", "Tailwind CSS"]
+  },
+  {
     "id": 4,
-    "token": "GHSAT0AAAAAAC6HEV3OVZWCQFU4YIKCQDH2Z5SUIFA",
     "title": "Excel Converter",
     "price": "Gratis",
     "category": "Aplikasi Web",
@@ -29,7 +41,6 @@
   },
   {
     "id": 2,
-    "token": "GHSAT0AAAAAAC6HEV3PPSDR77WYLVRLNFWWZ5SSTLA",
     "title": "OCR (Optical Character Recognition)",
     "price": "Gratis",
     "category": "Aplikasi Web",
@@ -43,7 +54,6 @@
   },
   {
     "id": 1,
-    "token": "GHSAT0AAAAAAC6HEV3PDMKPGNBS6TZS27J4Z5STBXQ",
     "title": "Markdown",
     "price": "Gratis",
     "category": "Aplikasi Web",
