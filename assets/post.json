@@ -1,5 +1,18 @@
 [
   {
+    "id": 6,
+    "title": "Random Number Generator",
+    "price": "Gratis",
+    "category": "Aplikasi Web",
+    "image": "https://www.mediafire.com/convkey/1c49/xyjex82azrrlu397g.jpg",
+    "dev": "Dupandes Milenium",
+    "published_date": "14-04-2025",
+    "content": "Membuat angka acak dengan mudah! Pilih rentang, mode unik atau duplikat, dan saksikan hasilnya dengan animasi menarik...",
+    "link_code": "index.html",
+    "link": "random-number-generator",
+    "tags": ["Vue CDN", "Tailwind CSS"]
+  },
+  {
     "id": 5,
     "title": "Al-Qur'an Digital",
     "price": "Gratis",
