@@ -1,5 +1,18 @@
 [
   {
+    "id": 7,
+    "title": "Create Barcode Pro",
+    "price": "Gratis",
+    "category": "Aplikasi Web",
+    "image": "https://i.imghippo.com/files/bwF8899EIg.jpg",
+    "dev": "Dupandes Milenium",
+    "published_date": "23-04-2025",
+    "content": "Barcode Generator Pro adalah aplikasi web yang memungkinkan pengguna membuat berbagai jenis barcode secara instan, responsif, mudah digunakan, dan mendukung banyak format gambar....",
+    "link_code": "index.html",
+    "link": "create-barcode",
+    "tags": ["Vue CDN", "Tailwind CSS"]
+  },
+  {
     "id": 6,
     "title": "Random Number Generator",
     "price": "Gratis",
@@ -13,7 +26,7 @@
     "tags": ["Vue CDN", "Tailwind CSS"]
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "Indeks Masa Tubuh",
     "price": "Gratis",
     "category": "Aplikasi Web",
