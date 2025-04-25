@@ -13,6 +13,19 @@
     "tags": ["Vue CDN", "Tailwind CSS"]
   },
   {
+    "id": 6,
+    "title": "Indeks Masa Tubuh",
+    "price": "Gratis",
+    "category": "Aplikasi Web",
+    "image": "https://i.imghippo.com/files/uTDj4524BM.jpg",
+    "dev": "Dupandes Milenium",
+    "published_date": "19-03-2025",
+    "content": "Aplikasi IMT berguna untuk memantau aktivitas, berat, tinggi, usia, kalori, protein, karbohidrat, lemak, rekomendasi, ideal, seimbang, pola, makanan, olahraga, hasil, kategori, defisit, penambahan, metabolisme, kesejahteraan....",
+    "link_code": "index.html",
+    "link": "imt",
+    "tags": ["Vue CDN", "Tailwind CSS"]
+  },
+  {
     "id": 5,
     "title": "Al-Qur'an Digital",
     "price": "Gratis",
