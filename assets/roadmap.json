@@ -1,0 +1,76 @@
+{
+  "frontEnd": [
+    {
+      "tech": "HTML",
+      "study": [
+        "Struktur Dasar",
+        "Elemen Semantik",
+        "Formulir dan Input",
+        "Tabel dan Daftar",
+        "Media dan Embedding"
+      ],
+      "docs": [
+        "https://www.w3schools.com/html/default.asp",
+        "https://youtu.be/hMDJyb7VkYw?si=rF9rLWOIHrVOYVR7"
+      ]
+    },
+    {
+      "tech": "CSS",
+      "study": [
+        "Box Model",
+        "Selectors dan Specificity",
+        "Layout Systems (flexbox)",
+        "Responsive Design",
+        "Transitions dan Animations"
+      ],
+      "docs": [
+        "https://www.w3schools.com/css/default.asp",
+        "https://youtu.be/8FhmFuGLhaQ?si=8qa0FqZymP61kyq8"
+      ]
+    },
+    {
+      "tech": "JavaScript",
+      "study": [
+        "Variabel dan Tipe Data",
+        "DOM Manipulation",
+        "Events dan Event Handling",
+        "Asynchronous JavaScript",
+        "Modern ES6+"
+      ],
+      "docs": [
+        "https://www.w3schools.com/js/default.asp",
+        "https://youtu.be/8FhmFuGLhaQ?si=8qa0FqZymP61kyq8"
+      ]
+    },
+    {
+      "tech": "Tailwind CSS",
+      "study": [
+        "Utility-First Approach",
+        "Responsive Design System",
+        "Customization & Configuration",
+        "Component Extraction",
+        "Plugin Ecosystem"
+      ],
+      "docs": [
+        "https://tailwindcss.com/docs/installation/using-vite",
+        "https://youtube.com/playlist?list=PLFIM0718LjIUHFRMzPJ0wGjx9_NlC5d1h&si=eRH-8SKmVRY4zlUB"
+      ]
+    },
+    {
+      "tech": "Vue CDN",
+      "study": [
+        "Instalasi dan Setup Proyek",
+        "Struktur Proyek",
+        "Vue UI",
+        "Plugin System",
+        "Build & Deployment"
+      ],
+      "docs": [
+        "https://vuejs.org/guide/quick-start.html",
+        "https://youtu.be/tQzWB1W0pok?si=a5lmWhotrRs8e78M"
+      ]
+    }
+  ],
+  "backEnd": {},
+  "tools": {}
+}
