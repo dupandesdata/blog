@@ -1,4 +1,4 @@
-[
+export const projects = [
   {
     "id": 7,
     "title": "Create Barcode Pro",
@@ -33,7 +33,7 @@
     "image": "https://i.imghippo.com/files/uTDj4524BM.jpg",
     "dev": "Dupandes Milenium",
     "published_date": "19-03-2025",
-    "content": "Aplikasi IMT berguna untuk memantau aktivitas, berat, tinggi, usia, kalori, protein, karbohidrat, lemak, rekomendasi, ideal, seimbang, pola, makanan, olahraga, hasil, kategori, defisit, penambahan, metabolisme, kesejahteraan....",
+    "content": "Aplikasi IMT berguna untuk memantau aktivitas, berat, tinggi, usia, kalori, protein, karbohidrat, lemak, rekomendasi, ideal, seimbang, pola, makanan, hasil, kategori, defisit, metabolisme....",
     "link_code": "index.html",
     "link": "imt",
     "tags": ["Vue CDN", "Tailwind CSS"]
@@ -66,8 +66,7 @@
   },
   {
     "id": 3,
-    "token": "GHSAT0AAAAAAC6HEV3ONJTWQRUEWUXMMMWWZ5STQXQ",
-    "title": "API Indodax dalam Google Apps Script",
+    "title": "API Indodax Google Script",
     "price": "Gratis",
     "category": "Google App Script",
     "image": "https://www.mediafire.com/convkey/a795/s25tkrmj7ly2g6y7g.jpg",
@@ -76,7 +75,7 @@
     "content": "Panduan lengkap API Indodax untuk trading otomatis di Google Apps Script. Kelola saldo, buat order, dan pantau transaksi kripto dengan mudah...",
     "link_code": "index.gs",
     "link": "indodax",
-    "tags": ["JavaScript"]
+    "tags": ["Google Script"]
   },
   {
     "id": 2,

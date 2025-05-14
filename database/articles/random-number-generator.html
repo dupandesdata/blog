@@ -1,0 +1,114 @@
+<h2 id="penjelasan-aplikasi-random-number-generator">Penjelasan Aplikasi Random Number Generator</h2>
+<p><strong>Random Number Generator</strong> adalah aplikasi web sederhana yang memungkinkan pengguna untuk menghasilkan angka acak dalam rentang yang ditentukan, dengan dua mode operasi: <strong>Random</strong> (mengizinkan duplikat) dan <strong>Unik</strong> (tanpa duplikat). Aplikasi ini dibangun menggunakan <strong>Vue.js 3</strong> untuk antarmuka yang responsif, <strong>Tailwind CSS</strong> untuk desain modern dengan gradien dan animasi, serta animasi kustom untuk transisi yang mulus. Aplikasi ini dirancang untuk memberikan pengalaman pengguna yang intuitif dengan pratinjau hasil yang menarik dan informasi tambahan seperti jumlah angka unik yang tersisa dalam mode Unik.</p>
+<p>Fitur utama aplikasi meliputi:</p>
+<ul>
+<li>Generasi angka acak berdasarkan rentang minimum dan maksimum yang ditentukan pengguna.</li>
+<li>Dua mode: Random (boleh duplikat) dan Unik (setiap angka hanya muncul sekali).</li>
+<li>Antarmuka responsif dengan desain estetis, termasuk gradien warna dan efek hover.</li>
+<li>Animasi fade-in untuk menampilkan hasil angka acak.</li>
+<li>Pelacakan angka unik yang tersisa dalam mode Unik untuk mencegah kehabisan angka.</li>
+<li>Validasi otomatis untuk menonaktifkan tombol saat tidak ada lagi angka unik yang tersedia.</li>
+</ul>
+<p>Aplikasi ini cocok untuk berbagai keperluan, seperti undian, simulasi, permainan, atau kebutuhan lain yang memerlukan angka acak atau unik.</p>
+<hr>
+<h3 id="cara-menggunakan-random-number-generator">Cara Menggunakan Random Number Generator</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan aplikasi ini secara detail:</p>
+<h4 id="1-akses-aplikasi-">1. <strong>Akses Aplikasi</strong></h4>
+<ul>
+<li>Buka aplikasi melalui browser modern (Chrome, Firefox, Safari) yang mendukung JavaScript dan Tailwind CSS.</li>
+<li>Aplikasi akan menampilkan antarmuka dengan judul <strong>&quot;Random Generator&quot;</strong>, kolom input untuk minimum dan maksimum, dropdown untuk memilih mode, tombol untuk menghasilkan angka, dan area untuk menampilkan hasil.</li>
+</ul>
+<h4 id="2-atur-rentang-angka-">2. <strong>Atur Rentang Angka</strong></h4>
+<ul>
+<li><strong>Minimum</strong>: Masukkan angka minimum untuk rentang di kolom bertanda <strong>&quot;Minimum&quot;</strong> (default: <code>1</code>).<ul>
+<li>Contoh: <code>1</code> untuk memulai dari angka 1.</li>
+</ul>
+</li>
+<li><strong>Maximum</strong>: Masukkan angka maksimum untuk rentang di kolom bertanda <strong>&quot;Maximum&quot;</strong> (default: <code>100</code>).<ul>
+<li>Contoh: <code>100</code> untuk membatasi hingga angka 100.</li>
+</ul>
+</li>
+<li>Kolom ini hanya menerima angka (integer). Jika Anda mengubah nilai minimum atau maksimum, daftar angka unik yang sudah digunakan akan direset secara otomatis untuk memulai dari awal.</li>
+</ul>
+<h4 id="3-pilih-mode-">3. <strong>Pilih Mode</strong></h4>
+<ul>
+<li>Di dropdown bertanda <strong>&quot;Mode&quot;</strong>, pilih salah satu opsi:<ul>
+<li><strong>Random (boleh duplikat)</strong>: Menghasilkan angka acak dalam rentang tanpa mempedulikan apakah angka tersebut sudah muncul sebelumnya.</li>
+<li><strong>Unik (hanya sekali)</strong>: Menghasilkan angka acak yang belum pernah muncul sebelumnya dalam sesi tersebut. Aplikasi akan melacak angka yang sudah digunakan.</li>
+</ul>
+</li>
+<li>Jika Anda mengubah mode, daftar angka unik yang sudah digunakan akan direset.</li>
+</ul>
+<h4 id="4-hasilkan-angka-">4. <strong>Hasilkan Angka</strong></h4>
+<ul>
+<li>Klik tombol <strong>&quot;Generate Number&quot;</strong> untuk menghasilkan angka acak sesuai pengaturan.</li>
+<li>Hasil akan ditampilkan di area di bawah tombol dengan animasi fade-in, menunjukkan:<ul>
+<li><strong>Your random number</strong>: Angka acak yang dihasilkan (misalnya, <code>42</code>).</li>
+<li>Jika mode <strong>Unik</strong>, informasi tambahan <strong>&quot;Tersisa: X angka unik&quot;</strong> akan ditampilkan, menunjukkan berapa banyak angka yang masih tersedia dalam rentang.</li>
+</ul>
+</li>
+<li>Jika mode <strong>Unik</strong> dan semua angka dalam rentang sudah digunakan:<ul>
+<li>Tombol akan dinonaktifkan (opacity 50% dan cursor tidak aktif).</li>
+<li>Klik tombol akan memunculkan peringatan <strong>&quot;Semua angka unik sudah digunakan!&quot;</strong>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-ulangi-atau-sesuaikan-">5. <strong>Ulangi atau Sesuaikan</strong></h4>
+<ul>
+<li>Untuk menghasilkan angka baru, klik kembali tombol <strong>&quot;Generate Number&quot;</strong>.</li>
+<li>Anda dapat:<ul>
+<li>Mengubah nilai <strong>Minimum</strong> atau <strong>Maksimum</strong> untuk rentang baru (ini akan mereset daftar angka unik).</li>
+<li>Beralih antara mode <strong>Random</strong> dan <strong>Unik</strong> (juga mereset daftar angka unik).</li>
+</ul>
+</li>
+<li>Hasil sebelumnya akan digantikan dengan angka baru setiap kali tombol ditekan.</li>
+</ul>
+<h4 id="6-gunakan-hasil-">6. <strong>Gunakan Hasil</strong></h4>
+<ul>
+<li>Angka yang dihasilkan dapat dicatat secara manual atau digunakan untuk keperluan seperti undian, pengujian, atau permainan.</li>
+<li>Aplikasi tidak menyediakan fitur untuk menyalin atau menyimpan hasil, jadi salin angka secara manual jika diperlukan.</li>
+</ul>
+<hr>
+<h3 id="fitur-utama">Fitur Utama</h3>
+<ul>
+<li><strong>Generasi Angka Acak</strong>: Menghasilkan angka dalam rentang yang ditentukan dengan dua mode (Random dan Unik).</li>
+<li><strong>Mode Unik</strong>: Melacak angka yang sudah digunakan untuk memastikan tidak ada duplikat dalam sesi.</li>
+<li><strong>Desain Estetis</strong>: Menggunakan gradien warna, efek hover, dan animasi fade-in untuk pengalaman visual yang menarik.</li>
+<li><strong>Validasi Otomatis</strong>: Menonaktifkan tombol saat tidak ada angka unik yang tersisa dalam mode Unik.</li>
+<li><strong>Antarmuka Responsif</strong>: Didesain dengan Tailwind CSS untuk mendukung penggunaan di desktop dan perangkat seluler.</li>
+<li><strong>Reset Otomatis</strong>: Mengosongkan daftar angka unik saat mode, minimum, atau maksimum diubah.</li>
+</ul>
+<hr>
+<h3 id="catatan-penting">Catatan Penting</h3>
+<ul>
+<li><strong>Validasi Input</strong>:<ul>
+<li>Kolom <strong>Minimum</strong> dan <strong>Maksimum</strong> harus berisi angka (integer). Nilai non-angka akan diabaikan oleh Vue.js.</li>
+<li>Pastikan <strong>Minimum</strong> lebih kecil atau sama dengan <strong>Maksimum</strong> untuk hasil yang logis (aplikasi tidak memvalidasi ini secara eksplisit).</li>
+</ul>
+</li>
+<li><strong>Mode Unik</strong>:<ul>
+<li>Jumlah angka yang tersedia adalah <code>max - min + 1</code>. Jika semua angka digunakan, tombol akan dinonaktifkan hingga rentang atau mode diubah.</li>
+<li>Daftar angka unik disimpan dalam sesi browser dan akan direset saat halaman dimuat ulang.</li>
+</ul>
+</li>
+<li><strong>Performa</strong>:<ul>
+<li>Generasi angka dilakukan di sisi klien menggunakan <code>Math.random()</code>, sehingga tidak memerlukan koneksi internet setelah aplikasi dimuat.</li>
+<li>Animasi dan transisi ringan, cocok untuk perangkat dengan spesifikasi rendah.</li>
+</ul>
+</li>
+<li><strong>Browser</strong>:<ul>
+<li>Gunakan browser modern untuk memastikan kompatibilitas dengan Vue.js 3 dan Tailwind CSS.</li>
+<li>Beberapa browser lama mungkin tidak mendukung fitur seperti gradien atau animasi CSS.</li>
+</ul>
+</li>
+<li><strong>Keterbatasan</strong>:<ul>
+<li>Tidak ada fitur untuk menyimpan atau mengekspor hasil angka.</li>
+<li>Tidak ada validasi untuk memastikan rentang logis (misalnya, <code>min &gt; max</code>).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Aplikasi <strong>Random Number Generator</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh kode sumber, desain, dan implementasi adalah hak cipta Dupan Code. Penggunaan, distribusi, atau modifikasi kode tanpa izin tertulis dari Dupan Code dilarang. Aplikasi ini disediakan sebagai alat gratis untuk penggunaan pribadi dan non-komersial. Untuk penggunaan komersial atau pertanyaan lebih lanjut, hubungi Dupan Code melalui saluran resmi.</p>
+<hr>
+<p>Jika Anda memiliki pertanyaan tentang penggunaan aplikasi, ingin melaporkan bug, atau membutuhkan bantuan, silakan hubungi pengembang melalui informasi kontak yang tersedia di situs resmi Dupan Code.</p>

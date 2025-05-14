@@ -1,0 +1,99 @@
+<h2 id="penjelasan-aplikasi-excel-converter">Penjelasan Aplikasi Excel Converter</h2>
+<p><strong>Excel Converter</strong> adalah aplikasi web yang dirancang untuk mengonversi file Excel (.xlsx, .xls) ke berbagai format keluaran, termasuk <strong>JSON</strong>, <strong>HTML Table</strong>, <strong>PDF</strong>, dan <strong>PNG</strong>. Aplikasi ini dibangun menggunakan <strong>Vue.js 3</strong> untuk antarmuka yang responsif, <strong>Tailwind CSS</strong> untuk desain modern, serta pustaka seperti <strong>XLSX</strong> untuk memproses file Excel, <strong>html2pdf.js</strong>, dan <strong>html2canvas</strong> untuk menghasilkan file PDF dan PNG. Aplikasi ini memungkinkan pengguna untuk mengunggah file Excel, melihat pratinjau data dalam bentuk tabel, dan mengekspornya ke format yang diinginkan dengan opsi untuk menambahkan header dan footer pada keluaran PDF dan PNG.</p>
+<p>Fitur utama aplikasi meliputi antarmuka drag-and-drop untuk mengunggah file, pratinjau data secara real-time, animasi transisi yang halus, dan kemampuan untuk menyesuaikan ekspor dengan header/footer. Aplikasi ini cocok untuk pengguna yang perlu mengubah data Excel ke format lain untuk keperluan pengembangan, presentasi, atau dokumentasi.</p>
+<hr>
+<h3 id="cara-menggunakan-excel-converter">Cara Menggunakan Excel Converter</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan aplikasi ini secara detail:</p>
+<h4 id="1-akses-aplikasi-">1. <strong>Akses Aplikasi</strong></h4>
+<ul>
+<li>Buka aplikasi melalui browser modern (Chrome, Firefox, Safari) yang mendukung JavaScript dan pustaka yang digunakan.</li>
+<li>Aplikasi akan menampilkan antarmuka dengan judul <strong>&quot;Excel Converter&quot;</strong>, deskripsi singkat, dan area drag-and-drop untuk mengunggah file Excel.</li>
+</ul>
+<h4 id="2-unggah-file-excel-">2. <strong>Unggah File Excel</strong></h4>
+<ul>
+<li>Klik area bertanda <strong>&quot;Select Excel file&quot;</strong> atau seret dan lepaskan file Excel (.xlsx atau .xls) ke area tersebut.</li>
+<li>Setelah file dipilih, aplikasi akan secara otomatis membaca isi file menggunakan pustaka XLSX.</li>
+<li>Data dari lembar kerja pertama dalam file Excel akan ditampilkan sebagai tabel pratinjau, dengan baris pertama dianggap sebagai header kolom.</li>
+</ul>
+<h4 id="3-lihat-pratinjau-data-">3. <strong>Lihat Pratinjau Data</strong></h4>
+<ul>
+<li>Jika file berhasil diunggah, aplikasi akan menampilkan:<ul>
+<li><strong>Tabel pratinjau</strong> yang menunjukkan data dari file Excel, dengan header kolom di bagian atas dan baris data di bawahnya.</li>
+<li><strong>Tombol format</strong> (JSON, HTML, PDF, PNG) untuk memilih jenis keluaran.</li>
+</ul>
+</li>
+<li>Tabel pratinjau akan muncul dalam format yang rapi dan dapat digulir jika datanya luas.</li>
+</ul>
+<h4 id="4-pilih-format-keluaran-">4. <strong>Pilih Format Keluaran</strong></h4>
+<ul>
+<li>Pilih format keluaran dengan mengklik salah satu tombol berikut:<ul>
+<li><strong>JSON</strong>: Menghasilkan file JSON yang mewakili data tabel sebagai array objek.</li>
+<li><strong>HTML</strong>: Menghasilkan kode HTML untuk tabel yang sesuai dengan data Excel.</li>
+<li><strong>PDF</strong>: Menghasilkan file PDF dari tabel pratinjau, dengan opsi untuk menambahkan header dan footer.</li>
+<li><strong>PNG</strong>: Menghasilkan gambar PNG dari tabel pratinjau, juga dengan opsi header dan footer.</li>
+</ul>
+</li>
+<li>Tombol format yang dipilih akan disorot dengan warna biru, sementara yang lain berwarna abu-abu.</li>
+</ul>
+<h4 id="5-konfigurasi-header-dan-footer-opsional-untuk-pdf-dan-png-">5. <strong>Konfigurasi Header dan Footer (Opsional, untuk PDF dan PNG)</strong></h4>
+<ul>
+<li>Jika format <strong>PDF</strong> atau <strong>PNG</strong> dipilih, opsi <strong>&quot;Show Header/Footer&quot;</strong> akan muncul.</li>
+<li>Centang kotak <strong>Show Header/Footer</strong> untuk mengaktifkan input header dan footer.</li>
+<li>Masukkan teks untuk:<ul>
+<li><strong>Header</strong>: Teks yang akan muncul di atas tabel (misalnya, &quot;Laporan Penjualan 2025&quot;).</li>
+<li><strong>Footer</strong>: Teks yang akan muncul di bawah tabel (misalnya, &quot;Dibuat oleh Dupan Code&quot;).</li>
+</ul>
+</li>
+<li>Teks header dan footer akan ditampilkan dalam pratinjau secara real-time dengan animasi slide saat opsi diaktifkan atau dinonaktifkan.</li>
+</ul>
+<h4 id="6-lihat-kode-untuk-json-dan-html-">6. <strong>Lihat Kode (untuk JSON dan HTML)</strong></h4>
+<ul>
+<li>Jika format <strong>JSON</strong> atau <strong>HTML</strong> dipilih, aplikasi akan menampilkan kode yang dihasilkan dalam elemen <code>&lt;pre&gt;</code> dengan latar belakang gelap.<ul>
+<li>Untuk <strong>JSON</strong>, kode akan berupa array objek JavaScript, di mana setiap objek mewakili satu baris data dengan header sebagai kunci.</li>
+<li>Untuk <strong>HTML</strong>, kode akan berupa struktur tabel HTML dengan elemen <code>&lt;thead&gt;</code> dan <code>&lt;tbody&gt;</code> yang mencerminkan data Excel.</li>
+</ul>
+</li>
+<li>Kode ini ditampilkan dengan animasi fade untuk transisi yang halus.</li>
+</ul>
+<h4 id="7-ekspor-data-">7. <strong>Ekspor Data</strong></h4>
+<ul>
+<li>Klik tombol <strong>&quot;Export as [Format]&quot;</strong> untuk mengunduh file dalam format yang dipilih.</li>
+<li>Proses ekspor akan berjalan sebagai berikut:<ul>
+<li><strong>JSON</strong>: Mengunduh file <code>.json</code> yang berisi data dalam format JSON.</li>
+<li><strong>HTML</strong>: Mengunduh file <code>.html</code> yang berisi kode tabel HTML.</li>
+<li><strong>PDF</strong>: Menggunakan html2pdf.js untuk menghasilkan file PDF dari area pratinjau (termasuk header/footer jika diaktifkan).</li>
+<li><strong>PNG</strong>: Menggunakan html2canvas untuk mengonversi area pratinjau menjadi gambar PNG yang diunduh.</li>
+</ul>
+</li>
+<li>File akan diunduh dengan nama default seperti <code>export.json</code>, <code>export.html</code>, <code>export.pdf</code>, atau <code>export.png</code>.</li>
+</ul>
+<h4 id="8-ulangi-proses-">8. <strong>Ulangi Proses</strong></h4>
+<ul>
+<li>Untuk mengonversi file lain, unggah file Excel baru. Pratinjau dan pengaturan sebelumnya akan direset secara otomatis.</li>
+<li>Anda juga dapat mengubah format keluaran atau mengedit header/footer tanpa perlu mengunggah ulang file.</li>
+</ul>
+<hr>
+<h3 id="fitur-utama">Fitur Utama</h3>
+<ul>
+<li><strong>Konversi Multi-Format</strong>: Mendukung ekspor ke JSON, HTML, PDF, dan PNG dari file Excel.</li>
+<li><strong>Pratinjau Real-Time</strong>: Menampilkan data Excel dalam tabel yang rapi sebelum ekspor.</li>
+<li><strong>Header dan Footer</strong>: Opsi untuk menambahkan teks header dan footer pada keluaran PDF dan PNG.</li>
+<li><strong>Animasi Transisi</strong>: Menggunakan animasi fade dan slide untuk pengalaman pengguna yang halus.</li>
+<li><strong>Antarmuka Responsif</strong>: Didesain dengan Tailwind CSS untuk tampilan yang menarik dan kompatibel dengan berbagai perangkat.</li>
+<li><strong>Drag-and-Drop</strong>: Mendukung unggah file dengan seret dan lepas untuk kemudahan penggunaan.</li>
+<li><strong>Error Handling</strong>: Secara implisit menangani file yang tidak valid dengan tidak menampilkan pratinjau jika file gagal diproses.</li>
+</ul>
+<hr>
+<h3 id="catatan-penting">Catatan Penting</h3>
+<ul>
+<li><strong>Format File</strong>: Hanya file Excel dengan ekstensi <code>.xlsx</code> atau <code>.xls</code> yang didukung.</li>
+<li><strong>Ukuran File</strong>: Pastikan file tidak terlalu besar untuk menghindari masalah performa, tergantung pada kemampuan browser.</li>
+<li><strong>Koneksi Internet</strong>: Tidak diperlukan koneksi internet setelah pustaka dimuat, karena pemrosesan dilakukan secara lokal di browser.</li>
+<li><strong>Browser</strong>: Gunakan browser modern untuk memastikan kompatibilitas dengan pustaka seperti XLSX dan html2canvas.</li>
+<li><strong>Kualitas PDF/PNG</strong>: Kualitas keluaran PDF dan PNG bergantung pada pengaturan pustaka (misalnya, skala html2canvas diatur ke 2 untuk ketajaman).</li>
+</ul>
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Aplikasi <strong>Excel Converter</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh kode sumber, desain, dan implementasi adalah hak cipta Dupan Code. Penggunaan, distribusi, atau modifikasi kode tanpa izin tertulis dari Dupan Code dilarang. Aplikasi ini disediakan sebagai alat gratis untuk penggunaan pribadi dan non-komersial. Untuk penggunaan komersial atau pertanyaan lebih lanjut, hubungi Dupan Code melalui saluran resmi.</p>
+<hr>
+<p>Jika Anda memiliki pertanyaan tentang penggunaan aplikasi, ingin melaporkan bug, atau membutuhkan bantuan, silakan hubungi pengembang melalui informasi kontak yang tersedia di situs resmi Dupan Code.</p>

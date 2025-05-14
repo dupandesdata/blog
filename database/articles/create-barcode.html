@@ -1,0 +1,100 @@
+<h2 id="penjelasan-aplikasi-barcode-generator-pro">Penjelasan Aplikasi Barcode Generator Pro</h2>
+<p><strong>Barcode Generator Pro</strong> adalah aplikasi web sederhana namun fungsional yang dirancang untuk menghasilkan berbagai jenis barcode dan QR code secara cepat dan mudah. Aplikasi ini dibangun menggunakan <strong>Vue.js 3</strong> untuk antarmuka yang responsif dan <strong>Tailwind CSS</strong> untuk tampilan modern serta ramah pengguna. Aplikasi ini mendukung berbagai jenis barcode seperti QR Code, Code 128, EAN-13, UPC-A, dan lainnya, serta menyediakan opsi format keluaran gambar seperti PNG, SVG, JPG, WebP, GIF, dan TIFF.</p>
+<p>Aplikasi ini memanfaatkan API eksternal dari <code>barcode.orcascan.com</code> untuk menghasilkan barcode berdasarkan input pengguna. Fitur utamanya meliputi validasi input sesuai jenis barcode, pratinjau gambar barcode, dan kemampuan untuk mengunduh hasil barcode dalam format yang diinginkan. Antarmuka aplikasi dirancang agar intuitif, dengan indikator loading, pesan error yang jelas, dan placeholder dinamis untuk memandu pengguna.</p>
+<hr>
+<h3 id="cara-menggunakan-barcode-generator-pro">Cara Menggunakan Barcode Generator Pro</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan aplikasi ini secara detail:</p>
+<h4 id="1-akses-aplikasi-">1. <strong>Akses Aplikasi</strong></h4>
+<ul>
+<li>Buka aplikasi melalui browser (pastikan terhubung ke internet karena aplikasi menggunakan API eksternal).</li>
+<li>Aplikasi akan menampilkan antarmuka dengan judul <strong>&quot;Barcode Generator Pro&quot;</strong> dan tiga elemen utama: kolom input teks, dropdown jenis barcode, dropdown format keluaran, serta tombol untuk membuat barcode.</li>
+</ul>
+<h4 id="2-pilih-jenis-barcode-">2. <strong>Pilih Jenis Barcode</strong></h4>
+<ul>
+<li>Pada dropdown <strong>Jenis Barcode</strong>, pilih jenis barcode yang diinginkan:<ul>
+<li><strong>QR Code</strong>: Untuk tautan, teks, atau data hingga 255 karakter.</li>
+<li><strong>Code 128</strong>: Untuk teks ASCII hingga 255 karakter.</li>
+<li><strong>EAN-13</strong>: Untuk kode produk 13 digit angka.</li>
+<li><strong>UPC-A</strong>: Untuk kode produk 12 digit angka.</li>
+<li><strong>Data Matrix</strong>: Untuk data hingga 2335 karakter.</li>
+<li><strong>Code 93</strong>: Untuk karakter khusus seperti angka, huruf, dan simbol tertentu.</li>
+<li><strong>Interleaved 2 of 5 (ITF)</strong>: Untuk angka dengan jumlah digit genap.</li>
+<li><strong>PDF417</strong>: Untuk data hingga 925 karakter.</li>
+<li><strong>Aztec</strong>: Untuk data hingga 3832 karakter.</li>
+</ul>
+</li>
+<li>Setiap kali jenis barcode diubah, kolom input akan direset, dan placeholder akan diperbarui untuk menunjukkan aturan input dan contoh yang sesuai (misalnya, &quot;13 digit angka. Contoh: 1234567890123&quot; untuk EAN-13).</li>
+</ul>
+<h4 id="3-masukkan-data-">3. <strong>Masukkan Data</strong></h4>
+<ul>
+<li>Ketik data yang ingin dijadikan barcode di kolom input.</li>
+<li>Pastikan data sesuai dengan aturan validasi untuk jenis barcode yang dipilih (lihat placeholder untuk panduan). Misalnya:<ul>
+<li>Untuk <strong>EAN-13</strong>, masukkan tepat 13 digit angka.</li>
+<li>Untuk <strong>QR Code</strong>, masukkan teks seperti URL atau pesan singkat.</li>
+</ul>
+</li>
+<li>Jika data tidak valid, tombol <strong>Buat Barcode</strong> akan dinonaktifkan untuk mencegah kesalahan.</li>
+</ul>
+<h4 id="4-pilih-format-keluaran-">4. <strong>Pilih Format Keluaran</strong></h4>
+<ul>
+<li>Pada dropdown <strong>Format</strong>, pilih format file untuk barcode yang dihasilkan:<ul>
+<li><strong>PNG</strong>: Format optimal untuk sebagian besar kebutuhan.</li>
+<li><strong>SVG</strong>: Format vektor untuk skalabilitas.</li>
+<li><strong>JPG</strong>: Format umum untuk gambar.</li>
+<li><strong>WebP</strong>: Format modern dengan kompresi baik.</li>
+<li><strong>GIF</strong>: Format sederhana, cocok untuk animasi (meskipun tidak diperlukan di sini).</li>
+<li><strong>TIFF</strong>: Format berkualitas tinggi untuk keperluan cetak.</li>
+</ul>
+</li>
+<li>PNG adalah pilihan default karena keseimbangan antara kualitas dan ukuran file.</li>
+</ul>
+<h4 id="5-buat-barcode-">5. <strong>Buat Barcode</strong></h4>
+<ul>
+<li>Klik tombol <strong>Buat Barcode</strong> atau tekan <strong>Enter</strong> pada kolom input setelah memasukkan data yang valid.</li>
+<li>Aplikasi akan menampilkan indikator loading (spinner) dengan pesan &quot;Sedang memproses, harap tunggu...&quot;.</li>
+<li>Proses ini biasanya memakan waktu beberapa detik, tetapi jika server tidak merespons dalam 10 detik, aplikasi akan menampilkan pesan error &quot;Timeout: Server tidak merespon&quot;.</li>
+</ul>
+<h4 id="6-pratinjau-dan-unduh-">6. <strong>Pratinjau dan Unduh</strong></h4>
+<ul>
+<li>Jika berhasil, barcode akan ditampilkan sebagai gambar di bawah tombol.</li>
+<li>Tombol <strong>Download</strong> akan muncul. Klik tombol ini untuk mengunduh barcode dalam format yang dipilih.</li>
+<li>Nama file unduhan akan mengikuti format <code>barcode-by-dupancode-[timestamp].[format]</code>, misalnya, <code>barcode-by-dupancode-1736700000000.png</code>.</li>
+<li>Jika gambar gagal dimuat, pesan error seperti &quot;Gagal memuat barcode&quot; akan ditampilkan.</li>
+</ul>
+<h4 id="7-tangani-error-">7. <strong>Tangani Error</strong></h4>
+<ul>
+<li>Jika input tidak valid atau terjadi masalah jaringan, aplikasi akan menampilkan pesan error di kotak merah, seperti:<ul>
+<li>&quot;Terjadi kesalahan&quot; untuk masalah umum.</li>
+<li>Pesan spesifik seperti &quot;Timeout: Server tidak merespon&quot; untuk kegagalan koneksi.</li>
+</ul>
+</li>
+<li>Perbaiki input atau coba lagi setelah memeriksa koneksi internet.</li>
+</ul>
+<h4 id="8-ulangi-proses-">8. <strong>Ulangi Proses</strong></h4>
+<ul>
+<li>Untuk membuat barcode baru, ubah input, jenis barcode, atau format, lalu klik <strong>Buat Barcode</strong> lagi.</li>
+<li>Aplikasi akan secara otomatis membersihkan pratinjau sebelumnya dan memproses permintaan baru.</li>
+</ul>
+<hr>
+<h3 id="fitur-utama">Fitur Utama</h3>
+<ul>
+<li><strong>Validasi Input</strong>: Setiap jenis barcode memiliki aturan validasi untuk memastikan data sesuai (misalnya, 13 digit untuk EAN-13).</li>
+<li><strong>Placeholder Dinamis</strong>: Memberikan panduan tentang aturan input dan contoh untuk setiap jenis barcode.</li>
+<li><strong>Responsif</strong>: Antarmuka menyesuaikan dengan berbagai ukuran layar (desktop, tablet, ponsel).</li>
+<li><strong>Error Handling</strong>: Menangani berbagai skenario error, seperti input tidak valid, kegagalan server, atau timeout.</li>
+<li><strong>Download Mudah</strong>: Barcode dapat diunduh dengan satu klik dalam format yang diinginkan.</li>
+<li><strong>Performa</strong>: Menggunakan API eksternal untuk pemrosesan cepat dan efisien.</li>
+</ul>
+<hr>
+<h3 id="catatan-penting">Catatan Penting</h3>
+<ul>
+<li><strong>Koneksi Internet</strong>: Aplikasi memerlukan akses internet untuk mengambil data dari API <code>barcode.orcascan.com</code>.</li>
+<li><strong>Batasan API</strong>: Keandalan aplikasi bergantung pada ketersediaan dan responsivitas API eksternal.</li>
+<li><strong>Privasi</strong>: Data yang dimasukkan dikirim ke API eksternal untuk diproses. Hindari memasukkan data sensitif kecuali Anda memahami kebijakan privasi API tersebut.</li>
+<li><strong>Browser</strong>: Gunakan browser modern (Chrome, Firefox, Safari) untuk pengalaman terbaik.</li>
+</ul>
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Aplikasi <strong>Barcode Generator Pro</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh kode sumber, desain, dan implementasi adalah hak cipta Dupan Code. Penggunaan, distribusi, atau modifikasi kode tanpa izin tertulis dari Dupan Code dilarang. Aplikasi ini disediakan sebagai alat gratis untuk penggunaan pribadi dan non-komersial. Untuk penggunaan komersial atau pertanyaan lebih lanjut, hubungi Dupan Code melalui saluran resmi.</p>
+<hr>
+<p>Jika Anda memiliki pertanyaan lebih lanjut tentang penggunaan aplikasi atau ingin melaporkan bug, silakan hubungi pengembang melalui informasi kontak yang tersedia di situs resmi Dupan Code.</p>

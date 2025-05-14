@@ -1,0 +1,129 @@
+<h2 id="penjelasan-aplikasi-ocr-with-optional-cropping">Penjelasan Aplikasi OCR with Optional Cropping</h2>
+<p><strong>OCR with Optional Cropping</strong> adalah aplikasi web yang memungkinkan pengguna untuk mengunggah gambar, secara opsional memotong (crop) bagian tertentu dari gambar, dan mengonversi teks dalam gambar tersebut menjadi teks digital menggunakan teknologi <strong>Optical Character Recognition (OCR)</strong>. Aplikasi ini dibangun menggunakan <strong>Vue.js 2</strong> untuk logika antarmuka, <strong>Tesseract.js</strong> untuk pemrosesan OCR, <strong>Cropper.js</strong> untuk fitur pemotongan gambar, dan <strong>Tailwind CSS</strong> untuk desain yang modern dan responsif.</p>
+<p>Fitur utama aplikasi meliputi:</p>
+<ul>
+<li>Pengunggahan gambar dari perangkat lokal.</li>
+<li>Pemotongan gambar secara interaktif untuk fokus pada area tertentu.</li>
+<li>Konversi teks dari gambar (baik asli maupun yang sudah dipotong) menjadi teks digital.</li>
+<li>Antarmuka pengguna yang intuitif dengan pratinjau gambar dan hasil teks.</li>
+<li>Desain responsif yang mendukung penggunaan di berbagai perangkat.</li>
+</ul>
+<p>Aplikasi ini ideal untuk pengguna yang perlu mengekstrak teks dari gambar, seperti dokumen, tanda, atau catatan, dengan opsi untuk mempersempit area pemrosesan OCR guna meningkatkan akurasi.</p>
+<hr>
+<h3 id="cara-menggunakan-ocr-with-optional-cropping">Cara Menggunakan OCR with Optional Cropping</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan aplikasi ini secara detail:</p>
+<h4 id="1-akses-aplikasi-">1. <strong>Akses Aplikasi</strong></h4>
+<ul>
+<li>Buka aplikasi melalui browser modern (Chrome, Firefox, Safari) yang mendukung JavaScript dan CDN yang digunakan.</li>
+<li>Aplikasi akan menampilkan antarmuka dengan judul <strong>&quot;Image OCR by DUPANDES&quot;</strong>, area untuk mengunggah gambar, dan tombol untuk memulai konversi teks.</li>
+</ul>
+<h4 id="2-unggah-gambar-">2. <strong>Unggah Gambar</strong></h4>
+<ul>
+<li>Klik kolom input bertanda <strong>&quot;Upload Image&quot;</strong> atau seret dan lepaskan file gambar (format seperti PNG, JPG, dll.) ke area tersebut.</li>
+<li>Setelah gambar diunggah:<ul>
+<li>Gambar akan ditampilkan di antarmuka sebagai pratinjau.</li>
+<li>Pesan <strong>&quot;Click the image to enable cropping&quot;</strong> akan muncul di bawah gambar untuk mengarahkan pengguna ke fitur pemotongan.</li>
+</ul>
+</li>
+<li>Catatan: Pastikan gambar memiliki teks yang jelas untuk hasil OCR yang optimal.</li>
+</ul>
+<h4 id="3-opsional-potong-gambar-">3. <strong>(Opsional) Potong Gambar</strong></h4>
+<ul>
+<li>Jika Anda ingin memfokuskan OCR pada bagian tertentu dari gambar:<ul>
+<li><strong>Klik gambar</strong> untuk mengaktifkan mode pemotongan.</li>
+<li>Area gambar akan menjadi interaktif, dengan alat Cropper.js yang memungkinkan Anda menyeret dan mengatur kotak pemotongan.</li>
+<li>Dua tombol akan muncul:<ul>
+<li><strong>Crop Image</strong> (hijau): Klik untuk menyimpan area yang dipotong. Gambar yang sudah dipotong akan ditampilkan di bawah dengan judul <strong>&quot;Cropped Image:&quot;</strong>.</li>
+<li><strong>Cancel</strong> (merah): Klik untuk membatalkan pemotongan dan kembali ke gambar asli.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Jika tidak ingin memotong, lewati langkah ini dan lanjutkan ke konversi teks.</li>
+</ul>
+<h4 id="4-konversi-gambar-ke-teks-">4. <strong>Konversi Gambar ke Teks</strong></h4>
+<ul>
+<li>Klik tombol <strong>&quot;Convert to Text&quot;</strong> untuk memulai proses OCR.<ul>
+<li>Jika gambar telah dipotong, OCR akan memproses gambar yang dipotong (<code>croppedImageUrl</code>).</li>
+<li>Jika tidak ada pemotongan, OCR akan memproses gambar asli (<code>imageUrl</code>).</li>
+</ul>
+</li>
+<li>Selama pemrosesan:<ul>
+<li>Tombol akan berubah menjadi <strong>&quot;Converting...&quot;</strong> dan dinonaktifkan untuk mencegah klik berulang.</li>
+<li>Tesseract.js akan menganalisis gambar untuk mengekstrak teks.</li>
+</ul>
+</li>
+<li>Jika berhasil:<ul>
+<li>Teks yang diekstrak akan ditampilkan di area berjudul <strong>&quot;Converted Text:&quot;</strong> dalam kotak abu-abu.</li>
+</ul>
+</li>
+<li>Jika gagal:<ul>
+<li>Pesan <strong>&quot;Error occurred during text conversion.&quot;</strong> akan ditampilkan.</li>
+<li>Periksa log konsol browser untuk detail kesalahan.</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-tinjau-hasil-">5. <strong>Tinjau Hasil</strong></h4>
+<ul>
+<li>Hasil teks dapat disalin secara manual dari area <strong>Converted Text</strong> untuk digunakan di aplikasi lain.</li>
+<li>Jika hasil OCR tidak akurat:<ul>
+<li>Pastikan gambar memiliki teks yang jelas dan cukup terang.</li>
+<li>Coba potong gambar untuk fokus pada area teks saja, lalu ulangi konversi.</li>
+</ul>
+</li>
+<li>Untuk mengunggah gambar baru, ulangi proses dari langkah 2. Gambar sebelumnya akan diganti, dan hasil teks akan direset.</li>
+</ul>
+<h4 id="6-ulangi-atau-eksperimen-">6. <strong>Ulangi atau Eksperimen</strong></h4>
+<ul>
+<li>Anda dapat:<ul>
+<li>Mengunggah gambar baru untuk diproses.</li>
+<li>Memotong ulang gambar yang sama dengan mengklik gambar dan menyesuaikan kotak pemotongan.</li>
+<li>Mengulangi konversi teks setelah pemotongan baru.</li>
+</ul>
+</li>
+<li>Aplikasi akan secara otomatis menghapus data pemotongan sebelumnya saat gambar baru diunggah.</li>
+</ul>
+<hr>
+<h3 id="fitur-utama">Fitur Utama</h3>
+<ul>
+<li><strong>Pengunggahan Gambar</strong>: Mendukung berbagai format gambar melalui input file.</li>
+<li><strong>Pemotongan Interaktif</strong>: Menggunakan Cropper.js untuk memungkinkan pemotongan gambar secara presisi.</li>
+<li><strong>Konversi OCR</strong>: Menggunakan Tesseract.js untuk mengekstrak teks dari gambar dengan akurasi tinggi.</li>
+<li><strong>Pratinjau Visual</strong>: Menampilkan gambar asli, gambar yang dipotong, dan hasil teks dalam antarmuka yang rapi.</li>
+<li><strong>Antarmuka Responsif</strong>: Didesain dengan Tailwind CSS untuk tampilan yang menarik di desktop dan perangkat seluler.</li>
+<li><strong>Efek Hover</strong>: Tombol dan gambar memiliki animasi hover untuk pengalaman pengguna yang lebih interaktif.</li>
+</ul>
+<hr>
+<h3 id="catatan-penting">Catatan Penting</h3>
+<ul>
+<li><strong>Kualitas Gambar</strong>:<ul>
+<li>Gambar harus memiliki teks yang jelas, kontras tinggi, dan resolusi memadai untuk hasil OCR yang baik.</li>
+<li>Teks yang buram, terdistorsi, atau dalam font yang tidak standar mungkin sulit dikenali.</li>
+</ul>
+</li>
+<li><strong>Pemotongan</strong>:<ul>
+<li>Pemotongan dapat meningkatkan akurasi OCR dengan mengurangi noise dari area non-teks.</li>
+<li>Pastikan kotak pemotongan mencakup semua teks yang ingin diekstrak.</li>
+</ul>
+</li>
+<li><strong>Performa</strong>:<ul>
+<li>Proses OCR bergantung pada Tesseract.js, yang berjalan di sisi klien. Gambar besar atau kompleks mungkin memakan waktu lebih lama.</li>
+<li>Tidak diperlukan koneksi internet setelah CDN dimuat, kecuali untuk mengunggah gambar dari URL (tidak didukung dalam versi ini).</li>
+</ul>
+</li>
+<li><strong>Browser</strong>:<ul>
+<li>Gunakan browser modern untuk memastikan kompatibilitas dengan Vue.js 2, Tesseract.js, dan Cropper.js.</li>
+<li>Beberapa browser lama mungkin tidak mendukung fitur seperti FileReader atau Cropper.js.</li>
+</ul>
+</li>
+<li><strong>Keterbatasan</strong>:<ul>
+<li>Aplikasi tidak menyimpan gambar atau teks setelah sesi browser berakhir.</li>
+<li>Tidak ada fitur untuk mengedit teks hasil OCR secara langsung di aplikasi.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Aplikasi <strong>OCR with Optional Cropping</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh kode sumber, desain, dan implementasi adalah hak cipta Dupan Code. Penggunaan, distribusi, atau modifikasi kode tanpa izin tertulis dari Dupan Code dilarang. Aplikasi ini disediakan sebagai alat gratis untuk penggunaan pribadi dan non-komersial. Untuk penggunaan komersial atau pertanyaan lebih lanjut, hubungi Dupan Code melalui saluran resmi.</p>
+<hr>
+<p>Jika Anda memiliki pertanyaan tentang penggunaan aplikasi, ingin melaporkan bug, atau membutuhkan bantuan, silakan hubungi pengembang melalui informasi kontak yang tersedia di situs resmi Dupan Code.</p>

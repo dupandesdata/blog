@@ -7,12 +7,31 @@
 }
 
 body {
+  overflow: hi;
   font-family: "Noto Sans",sans-serif;
 }
 
+.border-bottom {
+  border-bottom: 1px solid var(--primary-color);
+}
+.border {
+  border: 1px solid var(--primary-color) !important;
+  transition: 1s border ease-in-out;
+}
+.border-non {
+  border: 1px solid #42445AED;
+}
+.text-primary {
+  color: var(--primary-color);
+}
+/* HEADER START */
 header {
   background: #fff;
   transition: all 0.5s ease;
+  
+  h1 {
+    color: var(--primary-color);
+  }
 
   button {
     display: none;
@@ -59,13 +78,24 @@ header {
       color: var(--primary-color);
       
       svg {
-        fill: #fff;
+        fill: var(--primary-color);
       }
     }
   }
 
   &.active {
     height: 100vh;
+    
+    button {
+      span {
+        &:nth-child(2) {
+          width: 80%;
+        }
+        &:nth-child(3) {
+          width: 50%;
+        }
+      }
+    }
 
     .container-hiro,
     img {
@@ -82,6 +112,7 @@ header {
     height: 35px;
     position: fixed;
     z-index: 99;
+    top: 0px;
     transition: height 1s ease;
 
     button {
@@ -95,10 +126,115 @@ header {
         width: 100%;
         border-radius: 4px;
         background: var(--primary-color);
+        transition: width 1s ease;
       }
     }
   }
 }
+
+/* HOME START */
+.home {
+  overflow-x: hidden;
+  .typed-cursor {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #000;
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .typed-fade-out {
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  
+  .project {
+    .card {
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      transition: 1s box-shadow ease-in-out;
+      &:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+    }
+    .price {
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+  }
+}
+
+/* ABOUT START */
+.about {
+  br {
+    display: block;
+    margin: 7px 0;
+  }
+}
+
+
+  article {
+    
+    h2, h3, h4, h5, h6 {
+      margin-top: clamp(0.5rem, 1vw, 1.5rem);
+      margin-bottom: clamp(0.5rem, 1vw, 1.5rem);
+      color: #000000E6;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    h4 {
+      font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+    }
+
+    h5 {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    h6 {
+      font-size: clamp(0.875rem, 2.5vw, 1.25rem);
+    }
+
+    ul {
+      list-style-type: decimal;
+      li {
+        margin-left: 13px;
+      }
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+    code span {
+      max-width: 5em !important;
+    }
+    hr {
+      margin-top: clamp(0.5rem, 1vw, 1.5rem);
+      margin-bottom: clamp(0.5rem, 1vw, 1.5rem);
+      color: #000000A8;
+    }
+  }
+
+
+
+
+
+
+
 /* ANIMASI */
 .blur {
   filter: blur(6px);

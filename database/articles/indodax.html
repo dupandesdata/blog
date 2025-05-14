@@ -1,0 +1,213 @@
+<h2 id="penjelasan-aplikasi-indodax-trading-api">Penjelasan Aplikasi Indodax Trading API</h2>
+<p><strong>Indodax Trading API</strong> adalah fungsi JavaScript (kemungkinan besar dijalankan di Google Apps Script) yang dirancang untuk berinteraksi dengan API perdagangan <strong>Indodax</strong>, sebuah platform pertukaran kripto terkemuka di Indonesia. Fungsi ini memungkinkan pengguna untuk melakukan berbagai operasi perdagangan seperti memeriksa saldo, membuat pesanan (order), membatalkan pesanan, serta mengambil riwayat perdagangan, riwayat pesanan, pesanan terbuka, dan detail pesanan tertentu. Fungsi ini menggunakan otentikasi berbasis <strong>API Key</strong> dan <strong>Secret Key</strong> untuk mengamankan komunikasi dengan server Indodax.</p>
+<p>Fungsi ini mengintegrasikan beberapa fitur utama:</p>
+<ul>
+<li><strong>Otentikasi Aman</strong>: Menggunakan HMAC-SHA512 untuk menandatangani permintaan API.</li>
+<li><strong>Manajemen Perdagangan</strong>: Mendukung pembelian (buy) dan penjualan (sell) baik dalam mode limit maupun market.</li>
+<li><strong>Integrasi dengan Spreadsheet</strong>: Mengambil data API Key dan Secret Key dari lembar spreadsheet serta mengelola data pesanan tertunda (pending orders).</li>
+<li><strong>Fleksibilitas</strong>: Mendukung berbagai jenis aksi seperti cek saldo, riwayat perdagangan, dan manajemen pesanan.</li>
+</ul>
+<p>Aplikasi ini cocok untuk pengguna yang ingin mengotomatiskan perdagangan kripto di Indodax melalui script, terutama dalam lingkungan seperti Google Sheets untuk pelacakan dan manajemen data.</p>
+<hr>
+<h3 id="cara-menggunakan-indodax-trading-api">Cara Menggunakan Indodax Trading API</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan fungsi ini secara detail. Fungsi ini diasumsikan dijalankan dalam Google Apps Script, dengan integrasi ke Google Sheets untuk penyimpanan data.</p>
+<h4 id="1-persiapan-awal-">1. <strong>Persiapan Awal</strong></h4>
+<ul>
+<li><strong>Dapatkan API Key dan Secret Key</strong>:<ul>
+<li>Masuk ke akun Indodax Anda.</li>
+<li>Aktifkan akses API di pengaturan akun dan buat <strong>API Key</strong> serta <strong>Secret Key</strong>.</li>
+<li>Simpan kedua kunci ini dengan aman, karena akan digunakan untuk otentikasi.</li>
+</ul>
+</li>
+<li><strong>Siapkan Google Sheets</strong>:<ul>
+<li>Buat spreadsheet dengan lembar bernama <strong>User</strong> untuk menyimpan API Key dan Secret Key.</li>
+<li>Format lembar <strong>User</strong> dengan kolom <code>apiKey</code> dan <code>secretKey</code> (misalnya, baris pertama berisi <code>{apiKey: &quot;your_api_key&quot;, secretKey: &quot;your_secret_key&quot;}</code>).</li>
+<li>(Opsional) Buat lembar <strong>pending</strong> untuk menyimpan data pesanan tertunda, dengan kolom seperti <code>id</code>, <code>symbol</code>, dan <code>type</code>.</li>
+</ul>
+</li>
+<li><strong>Siapkan Google Apps Script</strong>:<ul>
+<li>Buka Google Sheets, lalu masuk ke <strong>Extensions &gt; Apps Script</strong>.</li>
+<li>Salin dan tempel kode fungsi <code>indodax</code> ke editor Apps Script.</li>
+<li>Pastikan fungsi pendukung seperti <code>getDataSheet</code> dan <code>deleteRow</code> sudah diimplementasikan (atau tambahkan logika untuk mengakses spreadsheet).</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-memahami-parameter-fungsi-">2. <strong>Memahami Parameter Fungsi</strong></h4>
+<p>Fungsi <code>indodax(action, type, pair, amount, price, market)</code> menerima parameter berikut:</p>
+<ul>
+<li><strong><code>action</code></strong>: Jenis operasi yang ingin dilakukan (<code>getBalance</code>, <code>order</code>, <code>cancel</code>, <code>orderHistory</code>, <code>tradeHistory</code>, <code>openOrders</code>, <code>getOrder</code>).</li>
+<li><strong><code>type</code></strong>: Tipe pesanan (<code>buy</code> atau <code>sell</code>) atau pasangan perdagangan (untuk beberapa aksi).</li>
+<li><strong><code>pair</code></strong>: Pasangan perdagangan (misalnya, <code>btc_idr</code>) atau ID pesanan (tergantung aksi).</li>
+<li><strong><code>amount</code></strong>: Jumlah aset atau IDR untuk perdagangan.</li>
+<li><strong><code>price</code></strong>: Harga per unit untuk pesanan limit (kosong untuk pesanan market).</li>
+<li><strong><code>market</code></strong>: Boolean (<code>true</code> untuk pesanan market, <code>false</code> untuk pesanan limit).</li>
+</ul>
+<h4 id="3-menggunakan-fungsi-untuk-berbagai-aksi-">3. <strong>Menggunakan Fungsi untuk Berbagai Aksi</strong></h4>
+<p>Berikut adalah cara memanggil fungsi untuk setiap aksi:</p>
+<h5 id="a-cek-saldo-getbalance-">a. <strong>Cek Saldo (<code>getBalance</code>)</strong></h5>
+<ul>
+<li><strong>Tujuan</strong>: Mengambil saldo aset yang tidak nol dari akun Indodax.</li>
+<li><strong>Pemanggilan</strong>:<pre><code class="lang-javascript">const balances = indodax(<span class="hljs-string">"getBalance"</span>)<span class="hljs-comment">;</span>
+Logger.log(balances)<span class="hljs-comment">;</span>
+</code></pre>
+</li>
+<li><strong>Output</strong>: Array objek dengan properti <code>symbol</code> (nama aset, misalnya <code>btc</code>) dan <code>amount</code> (jumlah aset).</li>
+<li><strong>Catatan</strong>: Tidak memerlukan parameter <code>type</code>, <code>pair</code>, <code>amount</code>, <code>price</code>, atau <code>market</code>.</li>
+</ul>
+<h5 id="b-membuat-pesanan-order-">b. <strong>Membuat Pesanan (<code>order</code>)</strong></h5>
+<ul>
+<li><strong>Tujuan</strong>: Membuat pesanan beli (<code>buy</code>) atau jual (<code>sell</code>) dalam mode limit atau market.</li>
+<li><strong>Pemanggilan</strong>:<ul>
+<li>Untuk pesanan <strong>limit</strong> (misalnya, beli 0.001 BTC di harga 500,000,000 IDR):<pre><code class="lang-javascript">const <span class="hljs-literal">result</span> = indodax(<span class="hljs-string">"order"</span>, <span class="hljs-string">"buy"</span>, <span class="hljs-string">"btc_idr"</span>, <span class="hljs-number">0.001</span>, <span class="hljs-number">500000000</span>, <span class="hljs-literal">false</span>);
+Logger.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);
+</code></pre>
+</li>
+<li>Untuk pesanan <strong>market</strong> (misalnya, beli BTC dengan 1,000,000 IDR):<pre><code class="lang-javascript">const <span class="hljs-literal">result</span> = indodax(<span class="hljs-string">"order"</span>, <span class="hljs-string">"buy"</span>, <span class="hljs-string">"btc_idr"</span>, <span class="hljs-number">1000000</span>, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>);
+Logger.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Output</strong>: Respons JSON dari Indodax, biasanya berisi status (<code>success</code>) dan detail pesanan.</li>
+<li><strong>Catatan</strong>:<ul>
+<li>Untuk pesanan limit, <code>price</code> harus diisi, dan <code>amount</code> adalah jumlah aset.</li>
+<li>Untuk pesanan market, <code>price</code> dikosongkan, dan <code>amount</code> adalah jumlah IDR (untuk beli) atau aset (untuk jual).</li>
+</ul>
+</li>
+</ul>
+<h5 id="c-membatalkan-pesanan-cancel-">c. <strong>Membatalkan Pesanan (<code>cancel</code>)</strong></h5>
+<ul>
+<li><strong>Tujuan</strong>: Membatalkan pesanan tertunda berdasarkan ID pesanan.</li>
+<li><strong>Pemanggilan</strong>:<pre><code class="lang-javascript">const <span class="hljs-literal">result</span> = indodax(<span class="hljs-string">"cancel"</span>, <span class="hljs-string">"order_id_here"</span>);
+Logger.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);
+</code></pre>
+</li>
+<li><strong>Proses</strong>:<ul>
+<li>Fungsi mencari ID pesanan di lembar <strong>pending</strong>.</li>
+<li>Jika ditemukan, mengatur <code>pair</code>, <code>order_id</code>, dan <code>type</code> untuk permintaan pembatalan.</li>
+<li>Baris yang sesuai dihapus dari lembar <strong>pending</strong> menggunakan <code>deleteRow</code>.</li>
+</ul>
+</li>
+<li><strong>Output</strong>: Respons JSON dari Indodax, biasanya berisi status pembatalan.</li>
+<li><strong>Catatan</strong>: Memerlukan lembar <strong>pending</strong> dengan data pesanan tertunda.</li>
+</ul>
+<h5 id="d-riwayat-pesanan-orderhistory-">d. <strong>Riwayat Pesanan (<code>orderHistory</code>)</strong></h5>
+<ul>
+<li><strong>Tujuan</strong>: Mengambil riwayat pesanan untuk pasangan perdagangan tertentu.</li>
+<li><strong>Pemanggilan</strong>:<pre><code class="lang-javascript">const <span class="hljs-literal">result</span> = indodax(<span class="hljs-string">"orderHistory"</span>, <span class="hljs-string">"btc_idr"</span>, <span class="hljs-string">"order_id_here"</span>);
+Logger.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);
+</code></pre>
+</li>
+<li><strong>Output</strong>: Respons JSON berisi daftar pesanan untuk pasangan tertentu, atau detail pesanan jika <code>pair</code> berisi <code>order_id</code>.</li>
+<li><strong>Catatan</strong>: Parameter <code>type</code> adalah pasangan perdagangan (misalnya, <code>btc_idr</code>), dan <code>pair</code> adalah ID pesanan (opsional).</li>
+</ul>
+<h5 id="e-riwayat-perdagangan-tradehistory-">e. <strong>Riwayat Perdagangan (<code>tradeHistory</code>)</strong></h5>
+<ul>
+<li><strong>Tujuan</strong>: Mengambil riwayat perdagangan yang telah dieksekusi.</li>
+<li><strong>Pemanggilan</strong>:<pre><code class="lang-javascript">const <span class="hljs-literal">result</span> = indodax(<span class="hljs-string">"tradeHistory"</span>, <span class="hljs-string">"btc_idr"</span>, <span class="hljs-string">"order_id_here"</span>);
+Logger.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);
+</code></pre>
+</li>
+<li><strong>Output</strong>: Respons JSON berisi detail perdagangan untuk pasangan dan ID pesanan tertentu.</li>
+<li><strong>Catatan</strong>: Parameter <code>type</code> adalah pasangan perdagangan, dan <code>pair</code> adalah ID pesanan.</li>
+</ul>
+<h5 id="f-pesanan-terbuka-openorders-">f. <strong>Pesanan Terbuka (<code>openOrders</code>)</strong></h5>
+<ul>
+<li><strong>Tujuan</strong>: Mengambil daftar pesanan yang masih aktif (belum dieksekusi).</li>
+<li><strong>Pemanggilan</strong>:<pre><code class="lang-javascript">const <span class="hljs-literal">result</span> = indodax(<span class="hljs-string">"openOrders"</span>, <span class="hljs-string">"btc_idr"</span>);
+Logger.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);
+</code></pre>
+</li>
+<li><strong>Output</strong>: Respons JSON berisi daftar pesanan terbuka untuk pasangan tertentu.</li>
+<li><strong>Catatan</strong>: Parameter <code>type</code> adalah pasangan perdagangan.</li>
+</ul>
+<h5 id="g-detail-pesanan-getorder-">g. <strong>Detail Pesanan (<code>getOrder</code>)</strong></h5>
+<ul>
+<li><strong>Tujuan</strong>: Mengambil informasi tentang pesanan tertentu.</li>
+<li><strong>Pemanggilan</strong>:<pre><code class="lang-javascript">const <span class="hljs-literal">result</span> = indodax(<span class="hljs-string">"getOrder"</span>, <span class="hljs-string">"btc_idr"</span>, <span class="hljs-string">"order_id_here"</span>);
+Logger.<span class="hljs-built_in">log</span>(<span class="hljs-literal">result</span>);
+</code></pre>
+</li>
+<li><strong>Output</strong>: Respons JSON berisi detail pesanan untuk ID dan pasangan tertentu.</li>
+<li><strong>Catatan</strong>: Parameter <code>type</code> adalah pasangan perdagangan, dan <code>pair</code> adalah ID pesanan.</li>
+</ul>
+<h4 id="4-otentikasi-dan-permintaan-">4. <strong>Otentikasi dan Permintaan</strong></h4>
+<ul>
+<li>Fungsi secara otomatis:<ul>
+<li>Membuat <strong>timestamp</strong> untuk setiap permintaan.</li>
+<li>Mengambil <strong>API Key</strong> dan <strong>Secret Key</strong> dari lembar <strong>User</strong>.</li>
+<li>Mengonversi parameter ke query string menggunakan <code>toQueryString</code>.</li>
+<li>Menghasilkan tanda tangan HMAC-SHA512 menggunakan <code>hmac_sha512</code>.</li>
+<li>Mengirim permintaan POST ke <code>https://indodax.com/tapi</code> dengan header <code>Key</code> dan <code>Sign</code>.</li>
+</ul>
+</li>
+<li>Respons dari API diuraikan sebagai JSON dan dikembalikan ke pemanggil.</li>
+</ul>
+<h4 id="5-tangani-respons-">5. <strong>Tangani Respons</strong></h4>
+<ul>
+<li>Setiap aksi mengembalikan respons JSON dari Indodax. Struktur respons tergantung pada aksi, tetapi biasanya berisi:<ul>
+<li><code>success</code>: <code>1</code> untuk sukses, <code>0</code> untuk gagal.</li>
+<li><code>return</code>: Objek berisi data (misalnya, saldo, detail pesanan).</li>
+<li><code>error</code>: Pesan kesalahan jika <code>success</code> adalah <code>0</code>.</li>
+</ul>
+</li>
+<li>Gunakan <code>Logger.log</code> atau simpan hasil ke spreadsheet untuk analisis lebih lanjut.</li>
+</ul>
+<h4 id="6-integrasi-dengan-spreadsheet-">6. <strong>Integrasi dengan Spreadsheet</strong></h4>
+<ul>
+<li><strong>Lembar User</strong>: Pastikan baris pertama memiliki kolom <code>apiKey</code> dan <code>secretKey</code>.</li>
+<li><strong>Lembar Pending</strong>: Digunakan untuk menyimpan pesanan tertunda (dengan kolom <code>id</code>, <code>symbol</code>, <code>type</code>). Fungsi <code>cancel</code> akan menghapus baris dari lembar ini setelah pembatalan.</li>
+<li><strong>Fungsi Pendukung</strong>:<ul>
+<li><code>getDataSheet</code>: Harus diimplementasikan untuk mengambil data dari lembar spreadsheet.</li>
+<li><code>deleteRow</code>: Harus diimplementasikan untuk menghapus baris dari lembar <strong>pending</strong>.</li>
+</ul>
+</li>
+<li>Contoh implementasi <code>getDataSheet</code>:<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDataSheet</span>(<span class="hljs-params">sheetName</span>) </span>{
+  <span class="hljs-keyword">const</span> spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  <span class="hljs-keyword">const</span> sheet = spreadsheet.getSheetByName(sheetName);
+  <span class="hljs-keyword">const</span> data = sheet.getDataRange().getValues();
+  <span class="hljs-keyword">const</span> headers = data[<span class="hljs-number">0</span>];
+  <span class="hljs-keyword">return</span> data.slice(<span class="hljs-number">1</span>).map(<span class="hljs-function"><span class="hljs-params">row</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> obj = {};
+    headers.forEach(<span class="hljs-function">(<span class="hljs-params">header, index</span>) =&gt;</span> obj[header] = row[index]);
+    <span class="hljs-keyword">return</span> obj;
+  });
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="7-uji-dan-otomatisasi-">7. <strong>Uji dan Otomatisasi</strong></h4>
+<ul>
+<li>Uji setiap aksi dengan memanggil fungsi dari editor Apps Script atau tombol di spreadsheet.</li>
+<li>Otomatisasi dengan menambahkan <strong>trigger</strong> (misalnya, <code>onEdit</code> atau waktu tertentu) untuk menjalankan fungsi secara berkala.</li>
+<li>Pantau log (View &gt; Logs) untuk memeriksa respons atau kesalahan.</li>
+</ul>
+<hr>
+<h3 id="fitur-utama">Fitur Utama</h3>
+<ul>
+<li><strong>Multi-Aksi</strong>: Mendukung cek saldo, pembuatan pesanan, pembatalan, dan berbagai jenis riwayat.</li>
+<li><strong>Otentikasi Aman</strong>: Menggunakan HMAC-SHA512 untuk menandatangani permintaan API.</li>
+<li><strong>Integrasi Spreadsheet</strong>: Mengelola kunci API dan pesanan tertunda melalui Google Sheets.</li>
+<li><strong>Fleksibel</strong>: Mendukung pesanan limit dan market, serta berbagai pasangan perdagangan.</li>
+<li><strong>Error Handling</strong>: Mengembalikan respons JSON untuk analisis status sukses/gagal.</li>
+<li><strong>Efisien</strong>: Menggunakan <code>UrlFetchApp</code> untuk komunikasi API yang cepat.</li>
+</ul>
+<hr>
+<h3 id="catatan-penting">Catatan Penting</h3>
+<ul>
+<li><strong>Keamanan Kunci API</strong>:<ul>
+<li>Jangan bagikan <strong>API Key</strong> atau <strong>Secret Key</strong> secara publik.</li>
+<li>Simpan kunci di lembar spreadsheet dengan akses terbatas.</li>
+</ul>
+</li>
+<li><strong>Batasan API</strong>: Indodax memiliki batas rate limit untuk permintaan API. Periksa dokumentasi resmi Indodax untuk detailnya.</li>
+<li><strong>Pasangan Perdagangan</strong>: Pastikan format pasangan benar (misalnya, <code>btc_idr</code>, <code>eth_idr</code>).</li>
+<li><strong>Ketergantungan</strong>: Fungsi bergantung pada <code>getDataSheet</code> dan <code>deleteRow</code>, yang harus diimplementasikan.</li>
+<li><strong>Lingkungan</strong>: Dirancang untuk Google Apps Script, bukan browser. Pastikan lingkungan mendukung <code>UrlFetchApp</code> dan <code>Utilities</code>.</li>
+<li><strong>Validasi Input</strong>: Fungsi tidak melakukan validasi ketat pada parameter. Pastikan input seperti <code>pair</code>, <code>amount</code>, dan <code>price</code> sesuai dengan kebutuhan API.</li>
+</ul>
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Fungsi <strong>Indodax Trading API</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh kode sumber dan implementasi adalah hak cipta Dupan Code. Penggunaan, distribusi, atau modifikasi kode tanpa izin tertulis dari Dupan Code dilarang. Fungsi ini disediakan untuk penggunaan pribadi dan non-komersial dalam otomatisasi perdagangan di platform Indodax. Untuk penggunaan komersial atau pertanyaan lebih lanjut, hubungi Dupan Code melalui saluran resmi.</p>
+<hr>
+<p>Jika Anda memiliki pertanyaan tentang penggunaan fungsi, ingin melaporkan bug, atau membutuhkan bantuan dengan implementasi, silakan hubungi pengembang melalui informasi kontak yang tersedia di situs resmi Dupan Code.</p>

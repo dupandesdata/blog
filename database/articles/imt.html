@@ -1,0 +1,98 @@
+<h2 id="penjelasan-aplikasi-indeks-masa-tubuh">Penjelasan Aplikasi Indeks Masa Tubuh</h2>
+<p><strong>Indeks Masa Tubuh (IMT)</strong> adalah aplikasi web yang dirancang untuk menghitung Indeks Massa Tubuh (Body Mass Index/BMI) pengguna berdasarkan input seperti usia, tinggi badan, berat badan, jenis kelamin, dan tingkat aktivitas fisik. Aplikasi ini juga memberikan informasi tentang berat badan ideal, kategori IMT, kebutuhan kalori harian, serta rekomendasi gizi yang dipersonalisasi. Dibangun menggunakan <strong>Vue.js 3</strong> untuk antarmuka yang responsif, <strong>Tailwind CSS</strong> untuk desain modern, dan <strong>Font Awesome</strong> untuk ikon, aplikasi ini menawarkan pengalaman pengguna yang intuitif dan informatif.</p>
+<p>Fitur utama aplikasi meliputi perhitungan IMT secara real-time, estimasi kebutuhan kalori berdasarkan Basal Metabolic Rate (BMR) dan tingkat aktivitas, serta rekomendasi gizi yang disesuaikan dengan kondisi tubuh pengguna. Aplikasi ini cocok untuk individu yang ingin memantau kesehatan, menjaga berat badan ideal, atau merencanakan pola makan sehat.</p>
+<hr>
+<h3 id="cara-menggunakan-indeks-masa-tubuh">Cara Menggunakan Indeks Masa Tubuh</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan aplikasi ini secara detail:</p>
+<h4 id="1-akses-aplikasi-">1. <strong>Akses Aplikasi</strong></h4>
+<ul>
+<li>Buka aplikasi melalui browser modern (Chrome, Firefox, Safari) yang mendukung JavaScript.</li>
+<li>Aplikasi akan menampilkan antarmuka dengan judul <strong>&quot;Indeks Masa Tubuh&quot;</strong> di bagian atas, diikuti oleh formulir input dan informasi hasil perhitungan.</li>
+</ul>
+<h4 id="2-masukkan-usia-dan-tinggi-badan-">2. <strong>Masukkan Usia dan Tinggi Badan</strong></h4>
+<ul>
+<li>Di bagian <strong>Usia</strong>, masukkan usia Anda dalam tahun pada kolom input (misalnya, <code>30</code>).<ul>
+<li>Kolom ini hanya menerima angka positif dan memiliki label satuan &quot;thn&quot; (tahun) di sisi kanan.</li>
+</ul>
+</li>
+<li>Di bagian <strong>Tinggi</strong>, masukkan tinggi badan Anda dalam sentimeter pada kolom input (misalnya, <code>170</code>).<ul>
+<li>Kolom ini juga hanya menerima angka positif dengan label satuan &quot;cm&quot;.</li>
+</ul>
+</li>
+<li>Kedua input ini akan diperbarui secara real-time untuk menghitung IMT dan parameter lainnya.</li>
+</ul>
+<h4 id="3-pilih-jenis-kelamin-">3. <strong>Pilih Jenis Kelamin</strong></h4>
+<ul>
+<li>Di bagian <strong>Jenis Kelamin</strong>, pilih salah satu opsi:<ul>
+<li>Klik ikon <strong>Pria</strong> (simbol laki-laki) untuk memilih jenis kelamin pria.</li>
+<li>Klik ikon <strong>Wanita</strong> (simbol perempuan) untuk memilih jenis kelamin wanita.</li>
+</ul>
+</li>
+<li>Ikon yang dipilih akan disorot dengan latar belakang biru muda, sementara ikon yang tidak dipilih tetap berwarna abu-abu.</li>
+</ul>
+<h4 id="4-masukkan-berat-badan-">4. <strong>Masukkan Berat Badan</strong></h4>
+<ul>
+<li>Di bagian <strong>Berat</strong>, masukkan berat badan Anda dalam kilogram pada kolom input (misalnya, <code>70</code>).<ul>
+<li>Kolom ini hanya menerima angka positif dengan label satuan &quot;kg&quot;.</li>
+</ul>
+</li>
+<li>Setelah berat badan dimasukkan, aplikasi akan langsung menghitung IMT dan menampilkan hasilnya.</li>
+</ul>
+<h4 id="5-pilih-tingkat-aktivitas-">5. <strong>Pilih Tingkat Aktivitas</strong></h4>
+<ul>
+<li>Di bagian <strong>Tingkat Aktivitas</strong>, pilih tingkat aktivitas fisik Anda dari dropdown:<ul>
+<li><strong>Sedenter (minim aktivitas)</strong>: Untuk aktivitas fisik minimal, seperti pekerja kantoran.</li>
+<li><strong>Ringan (olahraga 1-3x/minggu)</strong>: Untuk aktivitas ringan seperti berjalan atau olahraga sesekali.</li>
+<li><strong>Moderat (olahraga 3-5x/minggu)</strong>: Untuk olahraga rutin seperti jogging atau gym.</li>
+<li><strong>Aktif (olahraga 6-7x/minggu)</strong>: Untuk olahraga intens hampir setiap hari.</li>
+<li><strong>Sangat Aktif (pekerja fisik)</strong>: Untuk pekerjaan fisik berat atau atlet.</li>
+</ul>
+</li>
+<li>Pilihan ini memengaruhi perhitungan kebutuhan kalori harian.</li>
+</ul>
+<h4 id="6-lihat-hasil-perhitungan-">6. <strong>Lihat Hasil Perhitungan</strong></h4>
+<ul>
+<li><strong>Indeks IMT</strong>: Ditampilkan dalam kotak biru, menunjukkan nilai IMT (misalnya, <code>24.2</code>) berdasarkan rumus <code>berat (kg) / (tinggi (m)²)</code>.</li>
+<li><strong>Berat Ideal</strong>: Ditampilkan dalam kotak hijau, dihitung berdasarkan IMT ideal (22) dengan rumus <code>22 × (tinggi (m)²)</code>.</li>
+<li><strong>Kategori IMT</strong>: Aplikasi menampilkan daftar kategori IMT (Kurus, Normal, Kegemukan, Obesitas Kelas I, II, III) dengan rentang nilai. Kategori yang sesuai dengan IMT Anda akan disorot dengan latar belakang biru muda.</li>
+<li><strong>Rekomendasi Gizi</strong>:<ul>
+<li><strong>Kebutuhan Kalori Harian</strong>: Dihitung berdasarkan BMR (menggunakan rumus Mifflin-St Jeor) dan faktor aktivitas, ditampilkan dalam kilokalori (misalnya, <code>2000 kkal</code>).</li>
+<li><strong>Makronutrien</strong>: Menunjukkan kebutuhan protein (30% kalori), karbohidrat (50% kalori), dan lemak (20% kalori) dalam gram.</li>
+<li><strong>Rekomendasi</strong>: Pesan yang dipersonalisasi berdasarkan perbandingan berat badan aktual dengan berat ideal:<ul>
+<li>Jika berat badan &gt;5 kg dari ideal: Saran untuk defisit kalori dan pola makan tinggi protein/serat.</li>
+<li>Jika berat badan &lt;-5 kg dari ideal: Saran untuk surplus kalori dengan makanan padat nutrisi.</li>
+<li>Jika berat badan mendekati ideal: Saran untuk menjaga pola makan seimbang dan aktivitas fisik.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="7-ulangi-atau-sesuaikan-">7. <strong>Ulangi atau Sesuaikan</strong></h4>
+<ul>
+<li>Ubah nilai usia, tinggi, berat, jenis kelamin, atau tingkat aktivitas untuk memperbarui hasil secara real-time.</li>
+<li>Tidak perlu tombol submit, karena semua perhitungan dilakukan secara otomatis saat input berubah.</li>
+</ul>
+<hr>
+<h3 id="fitur-utama">Fitur Utama</h3>
+<ul>
+<li><strong>Perhitungan IMT Real-Time</strong>: Menghitung IMT, berat ideal, dan kategori IMT seketika saat input diubah.</li>
+<li><strong>Kebutuhan Kalori</strong>: Menggunakan rumus BMR dan faktor aktivitas untuk estimasi kalori harian yang akurat.</li>
+<li><strong>Rekomendasi Gizi</strong>: Memberikan saran pola makan berdasarkan kondisi tubuh pengguna.</li>
+<li><strong>Antarmuka Intuitif</strong>: Desain responsif dengan input yang jelas, ikon jenis kelamin, dan dropdown aktivitas.</li>
+<li><strong>Visualisasi Keren</strong>: Kotak berwarna untuk IMT dan berat ideal, serta daftar kategori IMT yang interaktif.</li>
+<li><strong>Aksesibilitas</strong>: Mendukung input numerik, ikon dengan label aria, dan navigasi yang mudah.</li>
+</ul>
+<hr>
+<h3 id="catatan-penting">Catatan Penting</h3>
+<ul>
+<li><strong>Validasi Input</strong>: Input hanya menerima angka positif. Jika input kosong atau tidak valid, hasil akan ditampilkan sebagai <code>0</code> atau <code>-</code>.</li>
+<li><strong>Akurasi</strong>: Perhitungan BMR dan kalori berdasarkan rumus standar (Mifflin-St Jeor), tetapi hasil adalah estimasi dan sebaiknya dikonsultasikan dengan ahli gizi untuk kebutuhan spesifik.</li>
+<li><strong>Privasi</strong>: Semua pemrosesan dilakukan di sisi klien (browser), sehingga data pengguna tidak dikirim ke server.</li>
+<li><strong>Browser</strong>: Gunakan browser modern untuk memastikan kompatibilitas dengan Vue.js dan Tailwind CSS.</li>
+<li><strong>Bahasa</strong>: Aplikasi menggunakan bahasa Indonesia untuk antarmuka yang ramah bagi pengguna lokal.</li>
+</ul>
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Aplikasi <strong>Indeks Masa Tubuh</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh kode sumber, desain, dan implementasi adalah hak cipta Dupan Code. Penggunaan, distribusi, atau modifikasi kode tanpa izin tertulis dari Dupan Code dilarang. Aplikasi ini disediakan sebagai alat gratis untuk penggunaan pribadi dan non-komersial. Untuk penggunaan komersial atau pertanyaan lebih lanjut, hubungi Dupan Code melalui saluran resmi.</p>
+<hr>
+<p>Jika Anda memiliki pertanyaan tentang penggunaan aplikasi, ingin melaporkan bug, atau membutuhkan bantuan, silakan hubungi pengembang melalui informasi kontak yang tersedia di situs resmi Dupan Code.</p>

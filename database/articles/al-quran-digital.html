@@ -1,0 +1,117 @@
+<h3 id="penjelasan-aplikasi-al-qur-an-digital">Penjelasan Aplikasi Al-Qur&#39;an Digital</h3>
+<p><strong>Al-Qur&#39;an Digital</strong> adalah aplikasi web berbasis Vue.js yang dirancang untuk memudahkan pengguna dalam membaca, mencari, dan mempelajari Al-Qur&#39;an secara digital. Aplikasi ini menyediakan daftar surah, detail ayat beserta teks Arab, transliterasi, terjemahan dalam bahasa Indonesia, serta fitur audio untuk mendengarkan bacaan ayat. Aplikasi ini juga dilengkapi dengan fitur pencarian, navigasi antar surah, dan penyimpanan bacaan terakhir menggunakan <code>localStorage</code>. Desainnya responsif, menggunakan Tailwind CSS untuk tampilan modern dan nyaman di berbagai perangkat.</p>
+<p>Aplikasi ini mengambil data dari API <strong>eQuran</strong> (<a href="https://equran.id/api/v2">https://equran.id/api/v2</a>), yang menyediakan informasi lengkap tentang surah dan ayat Al-Qur&#39;an. Fitur-fitur utama meliputi:</p>
+<ul>
+<li><strong>Daftar Surah</strong>: Menampilkan semua surah dengan nama Latin, nama Arab, arti, tempat turun, dan jumlah ayat.</li>
+<li><strong>Pencarian Surah</strong>: Memungkinkan pengguna mencari surah berdasarkan nama Arab atau Latin.</li>
+<li><strong>Detail Surah</strong>: Menampilkan teks Arab, transliterasi, terjemahan, dan audio untuk setiap ayat.</li>
+<li><strong>Navigasi Surah</strong>: Tombol untuk berpindah ke surah sebelumnya atau berikutnya.</li>
+<li><strong>Bacaan Terakhir</strong>: Menyimpan surah dan ayat terakhir yang dibaca, ditampilkan dalam popup saat membuka aplikasi.</li>
+<li><strong>Audio Ayat</strong>: Memungkinkan pengguna memutar audio bacaan ayat.</li>
+<li><strong>Tampilan Responsif</strong>: Disesuaikan untuk desktop dan perangkat mobile.</li>
+<li><strong>Transisi Halus</strong>: Menggunakan Vue Router dengan animasi fade untuk perpindahan halaman.</li>
+</ul>
+<hr>
+<h3 id="cara-menggunakan-aplikasi-secara-detail">Cara Menggunakan Aplikasi Secara Detail</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan aplikasi <strong>Al-Qur&#39;an Digital</strong>:</p>
+<h4 id="1-mengakses-aplikasi-">1. <strong>Mengakses Aplikasi</strong></h4>
+<ul>
+<li>Buka aplikasi di browser (pastikan terhubung ke internet untuk mengambil data dari API).</li>
+<li>Halaman utama akan menampilkan daftar surah dan header bertuliskan &quot;Al-Qur&#39;an Digital&quot;.</li>
+<li>Jika ada bacaan terakhir yang tersimpan, popup akan muncul menampilkan nama surah, nomor ayat, dan tombol &quot;Lanjutkan Membaca&quot;.</li>
+</ul>
+<h4 id="2-mencari-surah-">2. <strong>Mencari Surah</strong></h4>
+<ul>
+<li>Di halaman utama, terdapat kolom pencarian dengan placeholder <strong>&quot;Cari Surah...&quot;</strong>.</li>
+<li>Ketik nama surah (misalnya, &quot;Al-Fatihah&quot; atau &quot;الفاتحة&quot;) untuk memfilter daftar surah.</li>
+<li>Daftar surah akan diperbarui secara otomatis berdasarkan kata kunci yang dimasukkan.</li>
+</ul>
+<h4 id="3-melihat-daftar-surah-">3. <strong>Melihat Daftar Surah</strong></h4>
+<ul>
+<li>Setiap surah ditampilkan dalam bentuk kartu (card) dengan informasi:<ul>
+<li><strong>Nama Latin</strong> (misalnya, Al-Fatihah).</li>
+<li><strong>Nama Arab</strong> (misalnya, الفاتحة).</li>
+<li><strong>Arti</strong> (misalnya, Pembukaan).</li>
+<li><strong>Tempat Turun</strong> (Mekah/Madinah) dan <strong>Jumlah Ayat</strong>.</li>
+</ul>
+</li>
+<li>Klik kartu surah untuk masuk ke halaman detail surah.</li>
+</ul>
+<h4 id="4-membaca-detail-surah-">4. <strong>Membaca Detail Surah</strong></h4>
+<ul>
+<li>Halaman detail surah menampilkan:<ul>
+<li><strong>Judul Surah</strong>: Nama Latin dan Arab di bagian atas.</li>
+<li><strong>Deskripsi</strong>: Informasi tentang surah (misalnya, sejarah atau konteks).</li>
+<li><strong>Daftar Ayat</strong>: Setiap ayat menampilkan:<ul>
+<li><strong>Teks Arab</strong>: Ditampilkan dengan font besar dan arah kanan-ke-kiri (RTL).</li>
+<li><strong>Nomor Ayat</strong>: Dalam ikon khusus.</li>
+<li><strong>Transliterasi dan Terjemahan</strong>: Muncul saat tombol keterangan diklik.</li>
+<li><strong>Tombol Audio</strong>: Ikon segitiga untuk memutar/pause audio ayat.</li>
+<li><strong>Tombol Keterangan</strong>: Ikon untuk menampilkan/sembunyikan transliterasi dan terjemahan.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Navigasi</strong>:<ul>
+<li>Tombol <strong>Surat Sebelumnya</strong> (jika bukan surah pertama).</li>
+<li>Tombol <strong>Surat Selanjutnya</strong> (jika bukan surah terakhir).</li>
+</ul>
+</li>
+<li>Saat menggulir, aplikasi akan melacak ayat yang sedang dibaca dan menyimpannya sebagai bacaan terakhir.</li>
+</ul>
+<h4 id="5-menggunakan-fitur-bacaan-terakhir-">5. <strong>Menggunakan Fitur Bacaan Terakhir</strong></h4>
+<ul>
+<li>Aplikasi secara otomatis menyimpan surah dan ayat terakhir yang dibaca menggunakan <code>localStorage</code>.</li>
+<li>Saat membuka aplikasi, popup akan muncul jika ada bacaan terakhir, menampilkan:<ul>
+<li>Nama surah.</li>
+<li>Nomor ayat.</li>
+<li>Tombol <strong>Lanjutkan Membaca</strong> untuk langsung menuju ayat tersebut.</li>
+</ul>
+</li>
+<li>Untuk menutup popup, klik tombol <strong>×</strong> di pojok kanan atas.</li>
+<li>Bacaan terakhir akan dihapus saat pindah ke surah lain menggunakan tombol navigasi.</li>
+</ul>
+<h4 id="6-memutar-audio-ayat-">6. <strong>Memutar Audio Ayat</strong></h4>
+<ul>
+<li>Klik ikon segitiga (play) di samping ayat untuk memutar audio bacaan.</li>
+<li>Klik lagi untuk pause audio.</li>
+<li>Audio hanya memutar satu ayat pada satu waktu.</li>
+</ul>
+<h4 id="7-menampilkan-keterangan-ayat-">7. <strong>Menampilkan Keterangan Ayat</strong></h4>
+<ul>
+<li>Klik ikon keterangan (kotak dengan garis) untuk menampilkan transliterasi (teks Latin) dan terjemahan bahasa Indonesia.</li>
+<li>Klik lagi untuk menyembunyikan keterangan.</li>
+<li>Keterangan ditampilkan hanya untuk ayat yang dipilih.</li>
+</ul>
+<h4 id="8-navigasi-antar-surah-">8. <strong>Navigasi Antar Surah</strong></h4>
+<ul>
+<li>Gunakan tombol <strong>Surat Sebelumnya</strong> atau <strong>Surat Selanjutnya</strong> di bagian bawah halaman detail surah.</li>
+<li>Klik tombol ini akan menghapus bacaan terakhir dan menggulir ke atas halaman surah baru.</li>
+</ul>
+<h4 id="9-responsivitas-">9. <strong>Responsivitas</strong></h4>
+<ul>
+<li>Pada perangkat mobile (lebar &lt; 900px), kartu surah ditampilkan dalam satu kolom.</li>
+<li>Pada desktop (lebar ≥ 900px), kartu surah ditampilkan dalam dua kolom.</li>
+<li>Tata letak ayat dan elemen lain tetap rapi di semua ukuran layar.</li>
+</ul>
+<h4 id="10-keluar-atau-menutup-aplikasi-">10. <strong>Keluar atau Menutup Aplikasi</strong></h4>
+<ul>
+<li>Tutup tab browser untuk keluar.</li>
+<li>Bacaan terakhir akan tetap tersimpan dan muncul saat membuka aplikasi kembali.</li>
+</ul>
+<hr>
+<h3 id="catatan-teknis">Catatan Teknis</h3>
+<ul>
+<li><strong>API</strong>: Aplikasi menggunakan API eQuran untuk mengambil data surah dan ayat.</li>
+<li><strong>Vue.js</strong>: Framework utama untuk logika aplikasi, dengan Vue Router untuk navigasi.</li>
+<li><strong>Tailwind CSS</strong>: Untuk styling responsif dan modern.</li>
+<li><strong>Axios</strong>: Untuk mengambil data dari API.</li>
+<li><strong>localStorage</strong>: Untuk menyimpan bacaan terakhir.</li>
+<li><strong>IntersectionObserver</strong>: Untuk melacak ayat yang sedang dibaca.</li>
+<li><strong>Audio</strong>: Menggunakan elemen HTML Audio untuk memutar bacaan ayat.</li>
+</ul>
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Aplikasi <strong>Al-Qur&#39;an Digital</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh hak cipta dilindungi. Penggunaan, penyalinan, atau distribusi kode sumber tanpa izin tertulis dari Dupan Code dilarang. Aplikasi ini dibuat dengan cinta untuk memfasilitasi umat Islam dalam mempelajari Al-Qur&#39;an secara digital. Untuk pertanyaan atau izin penggunaan, silakan hubungi pembuat melalui saluran resmi Dupan Code.</p>
+<hr>
+<p>Semoga aplikasi ini bermanfaat untuk mempelajari dan mendekatkan diri kepada Al-Qur&#39;an!</p>
