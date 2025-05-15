@@ -3,6 +3,7 @@ import { projects } from '../database/projects.js';
 export default {
   data: () => ({ 
     projectId: "",
+    preview: true,
     projectContent: "",
     loading: true,
     tab: 0,
@@ -13,49 +14,52 @@ export default {
       { title: "Source Code", path: "<g id='SVGRepo_bgCarrier' stroke-width='0'></g><g id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'></g><g id='SVGRepo_iconCarrier'> <path d='M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'></path> </g>",viewBox:"0 0 24 24", fill: "none", link: "https://example.com/demo" },
     ]
   }),
-created() {
-  this.projectId = this.$route.params.id;
-  const { dev, published_date, tags } = projects.find(item => item.link === this.projectId) || {};
-  
-  axios.get(`database/articles/${this.projectId}.html`)
-    .then(res => {
-      const doc = new DOMParser().parseFromString(res.data, 'text/html');
-      const h2 = doc.querySelector('h2');
-      
-      if (h2) {
-        const section = document.createElement('section');
-        section.className = 'my-2';
+  created() {
+    this.projectId = this.$route.params.id;
+    const { dev, published_date, tags } = projects.find(item => item.link === this.projectId) || {};
+    
+    axios.get(`database/articles/${this.projectId}.html`)
+      .then(res => {
+        const doc = new DOMParser().parseFromString(res.data, 'text/html');
+        const h2 = doc.querySelector('h2');
         
-        const info = [
-          { title: dev, svg: '<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></g></svg>' },
-          { title: published_date, svg: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V12L14.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>' }
-        ];
+        if (h2) {
+          const section = document.createElement('section');
+          section.className = 'my-2';
+          
+          const info = [
+            { title: dev, svg: '<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></g></svg>' },
+            { title: published_date, svg: '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V12L14.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>' }
+          ];
+          
+          info.forEach(({ title, svg }) => {
+            const div = document.createElement('div');
+            div.className = 'flex items-center space-x-2';
+            
+            const temp = document.createElement('div');
+            temp.innerHTML = svg;
+            const svgEl = temp.firstChild;
+            
+            const span = document.createElement('span');
+            span.className = 'text-base';
+            span.textContent = title;
+            
+            div.append(svgEl, span);
+            section.appendChild(div);
+          });
+          
+          h2.insertAdjacentElement('afterend', section);
+        }
         
-        info.forEach(({ title, svg }) => {
-          const div = document.createElement('div');
-          div.className = 'flex items-center space-x-2';
-          
-          const temp = document.createElement('div');
-          temp.innerHTML = svg;
-          const svgEl = temp.firstChild;
-          
-          const span = document.createElement('span');
-          span.className = 'text-base';
-          span.textContent = title;
-          
-          div.append(svgEl, span);
-          section.appendChild(div);
-        });
-        
-        h2.insertAdjacentElement('afterend', section);
-      }
-      
-      this.projectContent = doc.body.innerHTML;
-    })
-    .catch(err => console.error("Gagal memuat artikel:", err))
-    .finally(() => { this.loading = false; });
-},
-
+        this.projectContent = doc.body.innerHTML;
+      })
+      .catch(err => console.error("Gagal memuat artikel:", err))
+      .finally(() => { this.loading = false; });
+  },
+  mounted() {
+    const { tags } = projects.find(p => p.link === this.projectId) || {};
+    this.preview = !tags?.some(tag => tag === "Google Script" || tag === "JavaScript");
+  },
   methods: {
     tabClick(index) {
       this.tab = index;
@@ -68,7 +72,7 @@ created() {
         <template v-for="(item, index) in navItems" :key="item.title">
           <a
             v-if="item.link"
-            :href="'https://github.com/dupancode/my-projects/blob/main/' + projectId + '/index.html'"
+            :href="'https://github.com/dupancode/my-projects/blob/main/' + projectId"
             target="_blank"
             rel="noopener"
             data-aos="fade-left"
@@ -103,30 +107,34 @@ created() {
       
       <template v-if="tab === 0">
         <article data-aos="fade-left" data-aos-delay="200" v-if="!loading" v-html="projectContent"></article>
-        <div v-else class="text-center py-4"> Memuat konten...</div>
+        <div v-else 
+          class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-10"
+        >
+          <div class="animate-spin rounded-full h-10 w-10 border-4 border-emerald-500 border-t-transparent"></div>
+        </div>
       </template>      
       
       <template v-if="tab === 1">
       <div
-        v-if="isLoading"
+        v-if="isLoading && preview"
         class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-10"
       >
         <div class="animate-spin rounded-full h-10 w-10 border-4 border-emerald-500 border-t-transparent"></div>
       </div>
       
-      <a class="flex gap-1 my-3 p-2 bg-emerald-400 text-white rounded-sm w-[118px]" :href="'https://dupancode.github.io/my-projects/' + projectId">
+      <a v-if="preview" class="flex gap-1 my-3 p-2 bg-emerald-400 text-white rounded-sm w-fit" :href="'https://dupancode.github.io/my-projects/' + projectId">
         <svg class="w-5 h-5" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="20 8 8 8 8 20"></polyline><line x1="8" y1="8" x2="24" y2="24"></line><polyline points="56 20 56 8 44 8"></polyline><line x1="56" y1="8" x2="40" y2="24"></line><polyline points="44 56 56 56 56 44"></polyline><line x1="56" y1="56" x2="40" y2="40"></line><polyline points="8 44 8 56 20 56"></polyline><line x1="8" y1="56" x2="24" y2="40"></line></g></svg>
         <span>Full Screen</span>
       </a>
 
       <iframe
+        v-if="preview"
         :src="'https://dupancode.github.io/my-projects/' + projectId"
         class="w-full h-screen"
-        height="100"
-        width="100"
         @load="isLoading = false"
         @beforeunload="isLoading = true"
       ></iframe>
+      <div v-else class="text-base mt-2"> Project ini memerlukan konfigurasi lebih lanjut, silahkan baca dokumentasi.. </div>
       </template>
     </section>
   `
