@@ -1,0 +1,118 @@
+<h2 id="penjelasan-aplikasi-qr-code-scanner">Penjelasan Aplikasi Scanner QR Code</h2>
+<p><strong>Aplikasi Scanner QR Code</strong> adalah aplikasi berbasis web yang memungkinkan pengguna untuk memindai kode QR menggunakan kamera perangkat atau mengunggah gambar yang berisi kode QR. Aplikasi ini dibangun dengan teknologi <strong>Vue.js</strong> untuk antarmuka pengguna, <strong>jsQR</strong> untuk pemrosesan kode QR, dan <strong>Tailwind CSS</strong> untuk desain responsif. Aplikasi ini ringan, mudah digunakan, dan mendukung pemindaian secara real-time melalui kamera atau dari file gambar.</p>
+<p><strong>Fitur Utama:</strong></p>
+<ul>
+<li>Pemindaian kode QR secara langsung menggunakan kamera perangkat.</li>
+<li>Pemindaian kode QR dari gambar yang diunggah.</li>
+<li>Tampilan hasil pemindaian yang jelas dan responsif.</li>
+<li>Suara notifikasi (beep) saat kode QR berhasil dipindai.</li>
+<li>Tombol untuk memulai ulang pemindaian.</li>
+<li>Pesan error untuk menangani masalah seperti izin kamera atau kode QR yang tidak dikenali.</li>
+</ul>
+<hr>
+<h3 id="cara-menggunakan-aplikasi">Cara Menggunakan Aplikasi</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan aplikasi QR Code Scanner:</p>
+<h4 id="1-persiapan-awal-">1. <strong>Persiapan Awal</strong></h4>
+<ul>
+<li><strong>Perangkat yang Dibutuhkan:</strong>  <ul>
+<li>Komputer, laptop, atau perangkat seluler dengan kamera (untuk pemindaian langsung).</li>
+<li>Browser modern (Chrome, Firefox, Safari, dll.) yang mendukung WebRTC untuk akses kamera.</li>
+</ul>
+</li>
+<li><strong>Izin Kamera:</strong><br>Pastikan browser memiliki izin untuk mengakses kamera perangkat. Jika diminta, klik &quot;Izinkan&quot; pada dialog izin kamera.</li>
+<li><strong>Koneksi Internet:</strong><br>Diperlukan untuk memuat pustaka eksternal seperti Vue.js, jsQR, dan Tailwind CSS, serta suara notifikasi.</li>
+</ul>
+<h4 id="2-mengakses-aplikasi-">2. <strong>Mengakses Aplikasi</strong></h4>
+<ul>
+<li>Buka file HTML aplikasi di browser (atau host file di server web lokal seperti XAMPP, jika diperlukan).</li>
+<li>Halaman akan menampilkan antarmuka dengan judul <strong>&quot;Scan QR Code&quot;</strong>, area pratinjau video/gambar, dan tombol unggah.</li>
+</ul>
+<h4 id="3-memindai-qr-code-dengan-kamera-">3. <strong>Memindai QR Code dengan Kamera</strong></h4>
+<ul>
+<li><strong>Langkah-langkah:</strong><ol>
+<li>Saat aplikasi dimuat, kamera belakang (jika tersedia) akan otomatis aktif, dan pratinjau video akan ditampilkan.</li>
+<li>Arahkan kamera ke kode QR yang ingin dipindai. Pastikan kode QR berada dalam fokus dan cukup terang.</li>
+<li>Aplikasi akan secara otomatis mendeteksi dan memindai kode QR dalam waktu nyata.</li>
+<li>Jika kode QR valid, hasilnya akan ditampilkan di kotak hijau dengan label <strong>&quot;Hasil:&quot;</strong> diikuti isi kode QR (misalnya, URL atau teks).</li>
+<li>Suara beep akan diputar sebagai konfirmasi pemindaian berhasil.</li>
+<li>Kamera akan berhenti, dan tombol <strong>&quot;Mulai Scanner Lagi&quot;</strong> akan muncul.</li>
+</ol>
+</li>
+<li><strong>Catatan:</strong><ul>
+<li>Jika kamera tidak dapat diakses, pesan error seperti <strong>&quot;Tidak dapat mengakses kamera. Periksa izin kamera.&quot;</strong> akan muncul.</li>
+<li>Pastikan lingkungan cukup terang dan kode QR tidak buram.</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-memindai-qr-code-dari-gambar-">4. <strong>Memindai QR Code dari Gambar</strong></h4>
+<ul>
+<li><strong>Langkah-langkah:</strong><ol>
+<li>Klik ikon unggah (gambar panah ke atas) di sudut kiri atas area pratinjau saat kamera aktif.</li>
+<li>Pilih file gambar (format seperti PNG, JPG) yang berisi kode QR dari perangkat Anda.</li>
+<li>Gambar akan ditampilkan sebagai pratinjau, dan aplikasi akan mencoba mendeteksi kode QR.</li>
+<li>Jika kode QR ditemukan, hasilnya akan ditampilkan di kotak hijau, dan suara beep akan diputar.</li>
+<li>Jika kode QR tidak dikenali, pesan error seperti <strong>&quot;QR code tidak dikenali dari gambar.&quot;</strong> akan muncul.</li>
+<li>Untuk memindai ulang, klik tombol <strong>&quot;Mulai Scanner Lagi&quot;</strong> untuk kembali ke mode kamera.</li>
+</ol>
+</li>
+<li><strong>Catatan:</strong><ul>
+<li>Pastikan gambar memiliki resolusi yang cukup dan kode QR terlihat jelas.</li>
+<li>File gambar harus berupa format yang didukung browser (<em>image/*</em>).</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-memulai-ulang-pemindaian-">5. <strong>Memulai Ulang Pemindaian</strong></h4>
+<ul>
+<li>Setelah pemindaian berhasil (baik melalui kamera atau gambar), klik tombol <strong>&quot;Mulai Scanner Lagi&quot;</strong> untuk:<ul>
+<li>Mengaktifkan kembali kamera.</li>
+<li>Menghapus hasil sebelumnya.</li>
+<li>Mengosongkan pratinjau gambar (jika ada).</li>
+</ul>
+</li>
+<li>Aplikasi akan kembali ke mode pemindaian kamera secara default.</li>
+</ul>
+<h4 id="6-menangani-error-">6. <strong>Menangani Error</strong></h4>
+<ul>
+<li><strong>Error Kamera:</strong><br>Jika kamera tidak dapat diakses, periksa:<ul>
+<li>Izin kamera di browser atau pengaturan perangkat.</li>
+<li>Apakah kamera sedang digunakan oleh aplikasi lain.</li>
+</ul>
+</li>
+<li><strong>Error Gambar:</strong><br>Jika kode QR tidak terdeteksi pada gambar, pastikan:<ul>
+<li>Gambar tidak buram atau terlalu kecil.</li>
+<li>Kode QR valid dan tidak rusak.</li>
+</ul>
+</li>
+<li>Pesan error akan ditampilkan di bawah area pratinjau untuk membantu pengguna memahami masalah.</li>
+</ul>
+<hr>
+<h3 id="struktur-kode-dan-teknologi-yang-digunakan">Struktur Kode dan Teknologi yang Digunakan</h3>
+<ul>
+<li><strong>HTML:</strong> Struktur dasar aplikasi dengan elemen seperti video, gambar pratinjau, dan tombol.</li>
+<li><strong>Vue.js:</strong> Mengelola logika antarmuka pengguna, seperti menampilkan/menyembunyikan elemen, menangani input pengguna, dan pembaruan data.</li>
+<li><strong>jsQR:</strong> Pustaka untuk mendeteksi dan mendekode kode QR dari data gambar (baik dari video maupun file).</li>
+<li><strong>Tailwind CSS:</strong> Framework CSS untuk desain responsif dan modern.</li>
+<li><strong>WebRTC (navigator.mediaDevices):</strong> API browser untuk mengakses kamera perangkat.</li>
+<li><strong>Canvas API:</strong> Digunakan untuk menangkap frame video atau gambar untuk analisis kode QR.</li>
+</ul>
+<p><strong>Alur Kerja Teknis:</strong></p>
+<ol>
+<li>Saat halaman dimuat, Vue.js menginisialisasi aplikasi dan memanggil <code>startScanning()</code> untuk mengaktifkan kamera.</li>
+<li>Frame video diambil secara berulang menggunakan <code>requestAnimationFrame</code> dan dianalisis oleh jsQR.</li>
+<li>Jika kode QR terdeteksi, hasilnya disimpan, kamera dimatikan, dan suara beep diputar.</li>
+<li>Untuk gambar, file diunggah, dikonversi ke data URL, dan dianalisis menggunakan jsQR.</li>
+<li>Event handler seperti <code>beforeDestroy</code> memastikan kamera dimatikan saat aplikasi ditutup.</li>
+</ol>
+<h3 id="keamanan">Keamanan</h3>
+<ul>
+<li><strong>Kamera</strong>: Hanya diakses saat diperlukan, dimatikan setelah selesai.</li>
+<li><strong>Gambar</strong>: Diproses lokal, tidak dikirim ke server.</li>
+<li><strong>CDN</strong>: Menggunakan CDN tepercaya (jsDelivr) untuk keamanan.</li>
+<li><strong>HTTPS</strong>: Host di HTTPS untuk produksi guna mendukung kamera.</li>
+</ul>
+
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Aplikasi <strong>Scanner QR Code</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh kode sumber, desain, dan implementasi adalah hak cipta Dupan Code. Penggunaan, distribusi, atau modifikasi kode tanpa izin tertulis dari Dupan Code dilarang. Aplikasi ini disediakan sebagai alat gratis untuk penggunaan pribadi dan non-komersial. Untuk penggunaan komersial atau pertanyaan lebih lanjut, hubungi Dupan Code melalui saluran resmi.</p>
+<hr>
+<p>Jika Anda memiliki pertanyaan tentang penggunaan aplikasi, ingin melaporkan bug, atau membutuhkan bantuan, silakan hubungi pengembang melalui informasi kontak yang tersedia di situs resmi Dupan Code.</p>

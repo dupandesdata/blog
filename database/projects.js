@@ -1,5 +1,18 @@
 export const projects = [
   {
+    "id": 8,
+    "title": "Scanner QR Code",
+    "price": "Gratis",
+    "category": "Aplikasi Web",
+    "image": "https://i.imghippo.com/files/EEC3043eoQ.jpg",
+    "dev": "Dupandes Milenium",
+    "published_date": "19-05-2025",
+    "content": "Aplikasi QR Code Scanner berbasis web, cepat, responsif. Pindai kode QR via kamera atau gambar dengan mudah, akurat, dan desain modern!....",
+    "link_code": "index.html",
+    "link": "scanner-qr-code",
+    "tags": ["Vue CDN", "jsQr", "Tailwind CSS"]
+  },
+  {
     "id": 7,
     "title": "Create Barcode Pro",
     "price": "Gratis",
