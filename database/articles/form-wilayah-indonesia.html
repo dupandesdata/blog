@@ -1,0 +1,77 @@
+<h2 id="penjelasan-aplikasi-form-wilayah-indonesia">Penjelasan Aplikasi Form Wilayah Indonesia</h2>
+<p><strong>Aplikasi Form Wilayah Indonesia</strong> adalah aplikasi web interaktif yang memungkinkan pengguna untuk memilih wilayah administratif di Indonesia (Provinsi, Kabupaten/Kota, Kecamatan, dan Kelurahan/Desa) secara berurutan menggunakan dropdown dengan fitur pencarian. Data wilayah diambil dari API publik <code>https://www.emsifa.com/api-wilayah-indonesia</code>. Aplikasi ini dirancang untuk memberikan pengalaman pengguna yang responsif dan intuitif dalam memilih wilayah.</p>
+<p><strong>Fitur Utama:</strong></p>
+<ul>
+<li>Input berbasis dropdown dengan fungsi pencarian untuk memudahkan pengguna menemukan wilayah.</li>
+<li>Struktur wilayah berjenjang: pemilihan provinsi mengaktifkan kabupaten, kabupaten mengaktifkan kecamatan, dan seterusnya.</li>
+<li>Output terpilih ditampilkan secara real-time di bagian bawah form.</li>
+</ul>
+<hr>
+<h3 id="cara-menggunakan-aplikasi">Cara Menggunakan Aplikasi</h3>
+<p>Berikut adalah panduan langkah demi langkah untuk menggunakan aplikasi ini:</p>
+<ol>
+<li><p><strong>Memilih Provinsi</strong>:</p>
+<ul>
+<li>Pada field <strong>Provinsi</strong>, klik input untuk membuka dropdown.</li>
+<li>Ketik nama provinsi (atau sebagian) untuk memfilter daftar. Misalnya, ketik &quot;Jawa&quot; untuk melihat provinsi seperti &quot;Jawa Barat&quot;, &quot;Jawa Tengah&quot;, dll.</li>
+<li>Klik salah satu opsi dari dropdown untuk memilih provinsi. Misalnya, pilih <strong>Jawa Barat</strong>.</li>
+<li>Setelah memilih, field <strong>Provinsi</strong> akan terisi, dan field <strong>Kabupaten</strong> akan aktif.</li>
+</ul>
+</li>
+<li><p><strong>Memilih Kabupaten/Kota</strong>:</p>
+<ul>
+<li>Klik field <strong>Kabupaten</strong> yang sudah aktif.</li>
+<li>Ketik untuk mencari kabupaten/kota di provinsi yang dipilih. Misalnya, jika provinsi adalah <strong>Jawa Barat</strong>, ketik &quot;Bandung&quot; untuk memfilter.</li>
+<li>Pilih kabupaten/kota, misalnya <strong>Kota Bandung</strong>.</li>
+<li>Field <strong>Kecamatan</strong> akan aktif setelah ini.</li>
+</ul>
+</li>
+<li><p><strong>Memilih Kecamatan</strong>:</p>
+<ul>
+<li>Klik field <strong>Kecamatan</strong>, lalu cari kecamatan di kabupaten/kota yang dipilih. Misalnya, ketik &quot;Cicendo&quot;.</li>
+<li>Pilih kecamatan, misalnya <strong>Cicendo</strong>.</li>
+<li>Field <strong>Kelurahan</strong> akan aktif.</li>
+</ul>
+</li>
+<li><p><strong>Memilih Kelurahan/Desa</strong>:</p>
+<ul>
+<li>Klik field <strong>Kelurahan</strong>, lalu cari kelurahan/desa di kecamatan yang dipilih. Misalnya, ketik &quot;Arjuna&quot;.</li>
+<li>Pilih kelurahan, misalnya <strong>Arjuna</strong>.</li>
+</ul>
+</li>
+<li><p><strong>Melihat Output</strong>:</p>
+<ul>
+<li>Setelah memilih wilayah, output akan ditampilkan di bagian <strong>Output Terpilih</strong> di bawah form.</li>
+<li>Output menunjukkan:<ul>
+<li><strong>Provinsi</strong>: Nama provinsi yang dipilih (atau &quot;-&quot; jika belum dipilih).</li>
+<li><strong>Kabupaten</strong>: Nama kabupaten/kota yang dipilih (atau &quot;-&quot;).</li>
+<li><strong>Kecamatan</strong>: Nama kecamatan yang dipilih (atau &quot;-&quot;).</li>
+<li><strong>Kelurahan</strong>: Nama kelurahan/desa yang dipilih (atau &quot;-&quot;).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Mengubah Pilihan</strong>:</p>
+<ul>
+<li>Jika ingin mengubah pilihan (misalnya, mengganti provinsi), klik kembali field <strong>Provinsi</strong> dan pilih provinsi baru. Ini akan mereset semua field di bawahnya (Kabupaten, Kecamatan, Kelurahan).</li>
+<li>Ulangi langkah-langkah di atas untuk memilih wilayah baru.</li>
+</ul>
+</li>
+<li><p><strong>Menutup Dropdown</strong>:</p>
+<ul>
+<li>Dropdown akan otomatis tertutup jika pengguna mengklik di luar area input atau dropdown.</li>
+<li>Dropdown juga tertutup setelah memilih opsi.</li>
+</ul>
+</li>
+<li><p><strong>Catatan Penggunaan</strong>:</p>
+<ul>
+<li>Field selanjutnya (misalnya Kabupaten) hanya aktif setelah field sebelumnya (Provinsi) terisi.</li>
+<li>Input bersifat case-insensitive, sehingga pencarian seperti &quot;bandung&quot; atau &quot;BANDUNG&quot; akan memberikan hasil yang sama.</li>
+<li>Aplikasi membutuhkan koneksi internet untuk mengambil data dari API.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="copyright">Copyright</h3>
+<p>Aplikasi <strong>Form Wilayah Indonesia</strong> dikembangkan oleh <strong>Dupan Code</strong>. Seluruh hak cipta dilindungi. Penggunaan, penyalinan, atau distribusi kode sumber tanpa izin tertulis dari Dupan Code dilarang. Aplikasi ini dibuat dengan cinta untuk memfasilitasi umat Islam dalam mempelajari Al-Qur&#39;an secara digital. Untuk pertanyaan atau izin penggunaan, silakan hubungi pembuat melalui saluran resmi Dupan Code.</p>
+
