@@ -1,5 +1,18 @@
 export const projects = [
   {
+    "id": 9,
+    "title": "Form Wilayah Indonesia",
+    "price": "Gratis",
+    "category": "Aplikasi Web",
+    "image": "https://i.imghippo.com/files/lCn2059.jpg",
+    "dev": "Dupandes Milenium",
+    "published_date": "25-05-2025",
+    "content": "Aplikasi pilih provinsi, kabupaten, kecamatan, kelurahan dengan mudah! Interaktif, responsif, dan modern....",
+    "link_code": "index.html",
+    "link": "form-wilayah-indonesia",
+    "tags": ["Vue CDN", "Tailwind CSS"]
+  },
+  {
     "id": 8,
     "title": "Scanner QR Code",
     "price": "Gratis",
